@@ -7,7 +7,7 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prettify": "prettier \"**/*.js\" --write",
+    "prettify": "prettier --write '{**/*,*}.{js,jsx,json}'",
     "lint": "eslint ./ --fix"
   },
   "author": "Jeremy Tenjo",

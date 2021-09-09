@@ -16,8 +16,7 @@ module.exports = {
     '_wapp',
     'build',
   ],
-  parser: '@babel/eslint-parser',
-  plugins: ['react', 'babel', 'react-hooks', 'import', 'jest', 'cypress', 'jsx-a11y'],
+  plugins: ['react', 'react-hooks', 'import', 'jest', 'cypress', 'jsx-a11y'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
