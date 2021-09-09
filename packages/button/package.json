@@ -7,5 +7,8 @@
   },
   "devDependencies": {
     "esbuild": "^0.12.26"
+  },
+  "dependencies": {
+    "@useweb/use-event-listener": "^0.0.2"
   }
 }
