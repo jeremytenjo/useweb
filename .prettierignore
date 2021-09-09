@@ -1,5 +1,2 @@
 node_modules
-_build
-compiled
-.next
-dist
+build
