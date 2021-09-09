@@ -1,0 +1,11 @@
+{
+  "name": "@useweb/button",
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "esbuild src/index.jsx --bundle --minify --outfile=build/index.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.12.26"
+  }
+}

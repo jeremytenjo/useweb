@@ -2,16 +2,17 @@
   "name": "useweb",
   "version": "1.0.0",
   "description": "Tools to build apps with web techonologies",
-  "main": "index.js",
   "private": true,
+  "main": "index.js",
+  "author": "Jeremy Tenjo",
+  "license": "ISC",
   "scripts": {
     "dev": "start-storybook -p 6006",
+    "lerna:bootstrap": "lerna bootstrap",
     "storybook:build": "build-storybook -o ./.storybook/build",
     "prettify": "prettier --write '{**/*,*}.{js,jsx,json}'",
     "lint": "eslint ./ --fix"
   },
-  "author": "Jeremy Tenjo",
-  "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.15.5",
     "@babel/eslint-parser": "^7.15.4",
