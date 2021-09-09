@@ -1,0 +1,13 @@
+{
+  "name": "@useweb/use-event-listener",
+  "version": "0.0.1",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "esbuild src/index.js --bundle --minify --outfile=build/index.js",
+    "prepublish": "npm run build",
+    "deploy": "npm publish --access public"
+  },
+  "devDependencies": {
+    "esbuild": "^0.12.26"
+  }
+}

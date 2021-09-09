@@ -1,12 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './button.css'
+import useEventListener from '@useweb/use-event-listener'
 
 /**
  * Primary UI component for user interaction
  */
 export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary'
+
+  useEventListener('click', () => console.log('hello'))
+
   return (
     <button
       type='button'

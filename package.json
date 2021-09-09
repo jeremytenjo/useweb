@@ -10,6 +10,7 @@
     "dev": "start-storybook -p 6006",
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:version": "lerna version",
+    "lerna:link": "lerna link",
     "storybook:build": "build-storybook -o ./.storybook/build",
     "prettify": "prettier --write '{**/*,*}.{js,jsx,json}'",
     "lint": "eslint ./ --fix"
