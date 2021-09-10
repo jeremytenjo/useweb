@@ -1,0 +1,19 @@
+{
+  "name": "@useweb/compiler",
+  "version": "0.0.1",
+  "main": "./build/index.js",
+  "author": "Jeremy Tenjo",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "node ./src/index --node",
+    "build:watch": "node ./src/index --node --watch",
+    "prepublish": "npm run build",
+    "deploy": "npm publish --access public"
+  },
+  "dependencies": {
+    "esbuild": "^0.12.26",
+    "command-line-args": "^5.2.0"
+  }
+}
