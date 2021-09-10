@@ -1,4 +1,4 @@
-const { watch, jsx } = require('./handlers/getOptions')()
+const { watch, jsx } = require('./handlers/getCommandLineArgs')()
 
 require('esbuild').build({
   entryPoints: [`src/index.${jsx ? 'jsx' : 'js'}`],
