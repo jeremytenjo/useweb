@@ -1,0 +1,39 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import useKeyPress from '..'
+import FunctionUsageExample from '../../../dataDisplay/showExample/FunctionUsageExample'
+
+<Meta title='Lib/feedback/useKeyPress' />
+
+# useKeyPress
+
+```js
+import useKeyPress from '@useweb/lib/feedback/useKeyPress'
+```
+
+#### Example
+
+export const Template = (args) => {
+  const onPressSingle = () => {
+    alert('b pressed')
+  }
+  const onPressMulti = () => {
+    alert('shift h pressed')
+  }
+  useKeyPress('b', onPressSingle)
+  useKeyPress('shift h', onPressMulti)
+  const usage = `const onPress = () => {
+   alert('b pressed')
+  }\n
+  const onPressMulti = () => {
+    alert('shift h pressed')
+  }\n
+  useKeyPress('b', onPressSingle)\n
+  useKeyPress('shift h', onPressMulti)`
+  return <FunctionUsageExample usage={usage} />
+}
+
+<Canvas>
+  <Story name='example' argTypes={{}} args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

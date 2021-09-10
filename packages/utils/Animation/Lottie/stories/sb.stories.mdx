@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import Lottie from '..'
+import Variants from './variants'
+
+<Meta title='Lib/utils/Animation/Lottie' />
+
+# Lottie
+
+```js
+import Lottie from '@useweb/lib/utils/Animation/Lottie/styles/1'
+```
+
+#### Props
+
+<ArgsTable of={Lottie.types} />
+
+#### Example
+
+<Canvas>
+  <Story name='Base'>
+    <Variants onlyBase />
+  </Story>
+</Canvas>

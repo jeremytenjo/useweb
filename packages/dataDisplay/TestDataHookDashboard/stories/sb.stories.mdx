@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import TestDataHookDashboard from '..'
+import Variants from './variants'
+
+<Meta title='Lib/Data Display/TestDataHookDashboard' />
+
+# TestDataHookDashboard
+
+`Fetcher` or `datahook` to mock data fetching
+
+`Fetcher` example:
+
+```js
+const fetcher = async () => {
+  let result = await fetch('https://launchlibrary.net/1.2/launch/next/1')
+  result = result.json()
+  return result
+}
+
+///...
+
+return <TestDataHookDashboard fetcher={fetcher} />
+```
+
+`datahook` has to return an object `{ loading, result, error, exec }`
+
+Example:
+
+```js
+const dataHook = useRest(`user/get`)
+
+/// ...
+
+return <TestDataHookDashboard dataHook={dataHook} />
+```
+
+<Canvas>
+  <Story name='Examples'>
+    <Variants onlyBase />
+  </Story>
+</Canvas>

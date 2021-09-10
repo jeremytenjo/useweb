@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import Variants, { Example } from './variants'
+
+<Meta title='Lib/Feedback/Notifications/Toast/useToast' />
+
+# useToast
+
+```js
+import useToast from '@useweb/lib/feedback/useToast/base/toast'
+```
+
+```js
+const { showToast } = useToast()
+```
+
+```js
+showToast({
+  location: 'center',
+  type: 'success',
+  message: 'Added to watchlist',
+})
+```
+
+#### Styles
+
+<Story name='Styles'>
+  <Variants />
+</Story>
+
+<Canvas>
+  <Story name='Example'>
+    <>
+      <Example />
+    </>
+  </Story>
+</Canvas>

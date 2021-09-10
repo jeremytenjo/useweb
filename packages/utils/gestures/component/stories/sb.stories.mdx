@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import Variants from './variants'
+
+<Meta title='Lib/utils/Gestures/OnSwipe' />
+
+# OnSwipe
+
+### as component
+
+```js
+<OnSwipe onSwipe={handleSwipe}>
+  Swipe screen Swipe screen Swipe screen Swipe screen Swipe screen
+</OnSwipe>
+```
+
+### as function
+
+```js
+useEffect(() => {
+  const removeListeners = onSwipeFunction(wrapperRef.current, handleSwipe)
+  return () => removeListeners()
+}, [])
+```
+
+## Styles
+
+<Canvas>
+  <Story name='Example'>
+    <Variants />
+  </Story>
+</Canvas>

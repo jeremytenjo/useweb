@@ -1,0 +1,25 @@
+import { Meta } from '@storybook/addon-docs'
+import GithubFolderViewer from '../'
+
+<Meta
+  title='Lib/data/github/GithubFolderViewer'
+  component={GithubFolderViewer}
+  argTypes={{}}
+  args={{
+    owner: 'jeremytenjo',
+    repo: 'tenjo-apps',
+    githubFolderUrl: 'lib/src/dataDisplay/Avatar',
+    title: 'Avatar',
+    githubLink:
+      'https://github.com/jeremytenjo/tenjo-apps/tree/master/lib/src/dataDisplay/Avatar',
+    onFetchedStories: (fetchedStories) => console.log(fetchedStories),
+  }}
+/>
+
+# GithubFolderViewer
+
+export const Template = (args) => <GithubFolderViewer {...args} />
+
+<Story name='default' argTypes={{}} args={{}}>
+  {Template.bind({})}
+</Story>

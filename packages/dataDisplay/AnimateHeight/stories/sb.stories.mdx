@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import AnimateHeight from '..'
+
+<Meta title='Lib/Data Display/AnimateHeight' component={AnimateHeight} />
+
+# AnimateHeight
+
+export const Template = (args) => (
+  <AnimateHeight {...args}>
+    <ul>
+      <li>helolo</li>
+      <li>helolo</li>
+      <li>helolo</li>
+      <li>helolo</li>
+      <li>helolo</li>
+      <li>helolo</li>
+    </ul>
+  </AnimateHeight>
+)
+
+#### Default
+
+<Story name='default' argTypes={{}} args={{ isOpen: true }}>
+  {Template.bind({})}
+</Story>

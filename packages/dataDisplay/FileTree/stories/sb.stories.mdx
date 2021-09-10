@@ -1,0 +1,58 @@
+import { Meta, Story } from '@storybook/addon-docs'
+import FileTree from '..'
+
+<Meta
+  title='Lib/Data Display/FileTree'
+  args={{
+    files: {
+      id: 'root',
+      name: 'Avatar',
+      files: [
+        {
+          id: 1,
+          type: 'directory',
+          name: 'bin',
+          files: [
+            {
+              id: 2,
+              type: 'file',
+              name: 'cs.js',
+              fileContent: 'content',
+            },
+          ],
+        },
+        {
+          id: 3,
+          type: 'directory',
+          name: 'docs',
+          files: [
+            {
+              id: 4,
+              type: 'file',
+              name: 'controllers.md',
+              fileContent: 'hello',
+            },
+            {
+              id: 5,
+              type: 'file',
+              name: 'es6.md',
+              fileContent: 'hello2',
+            },
+          ],
+        },
+      ],
+    },
+  }}
+/>
+
+# FileTree
+
+export const Template = (args) => (
+  <div style={{ backgroundColor: 'white' }}>
+    <FileTree {...args} />
+  </div>
+)
+
+<Story name='default' argTypes={{}} args={{}}>
+  {Template.bind({})}
+</Story>

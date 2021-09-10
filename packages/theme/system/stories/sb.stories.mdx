@@ -1,0 +1,84 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import styled from 'styled-components'
+import B from '../../../storybook/variationBlock/index'
+import System from '../'
+import Example from './example'
+
+<Meta title='Lib/Theme/System' />
+
+#### Theme System
+
+Pass a `styles` object with styles, arrays generate media queries set in the styles components theme provider
+
+```js
+mediaQueries = { minWidth: [400, 700, 1200], minHeight: [400, 700] }
+```
+
+if mediaQueries = [700, 1200] color: ['primary', 'secondary'] === 0-700 = primary, 700-1200=secondary
+
+```js
+import System from '@useweb/lib/theme/system/system.index'
+```
+
+```js
+import styled from 'styled-components'
+
+import System from '@useweb/lib/theme/system/system.index'
+
+const Wrapper = styled.div`
+  {system}
+`
+
+export default () => (
+  <Wrapper styles={{ color: ['primary', 'secondary'], margin: 'xl' }}>
+    Theme system
+  </Wrapper>
+)
+```
+
+Ignore theme variables by addding `--` before value
+
+```js
+<Wrapper
+  styles={{
+    color: '--lightblue',
+    gridGap: ['m', '--20px'],
+  }}
+/>
+```
+
+<Canvas>
+  <Story name='example'>
+    <>
+      <Example />
+    </>
+  </Story>
+</Canvas>
+
+#### Selectors
+
+Add a `:` before selector, accepts arrays in styles
+
+```js
+ ':hover': {
+        color: 'white',
+        backgroundColor: ['white', 'red'],
+      },
+
+```
+
+#### Min Height
+
+Add an array within an array
+
+```js
+ <Wrapper
+      styles={{
+        color: ['primary', 'secondary', ['primaryLighter', 'error']],
+        fontSize: [['20px', '33px']],
+,
+      }}
+    >
+      Theme system
+    </Wrapper>
+```

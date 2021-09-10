@@ -1,0 +1,63 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import FunctionUsageExample from '../../../dataDisplay/showExample/FunctionUsageExample'
+import Button from '../../../input/Button/styles/1'
+import useLocalDb from '../'
+
+<Meta
+  title='lib/data/useLocalDb'
+  component={useLocalDb}
+  argTypes={{}}
+  args={{
+    initialData: [
+      {
+        id: 1,
+        name: 'range',
+      },
+      {
+        id: 2,
+        name: 'mazda',
+      },
+      {
+        id: 3,
+        name: 'peugetot',
+      },
+    ],
+  }}
+/>
+
+# useLocalDb
+
+export const Template = (args) => {
+  const cars = useLocalDb(args.initialData)
+  const usage = `hee`
+  return (
+    <FunctionUsageExample
+      usage={usage}
+      result={
+        <div>
+          Add - Replace:
+          <Button
+            text='add car - replace'
+            onClick={() => cars.add({ id: 1, name: 'rover' })}
+          />
+          Add - Remove:
+          <Button
+            text='add car - remove'
+            onClick={() => cars.add({ id: 1, name: 'rover' }, { ifExists: 'remove' })}
+          />
+          Remove:
+          <Button text='remove car' onClick={() => cars.remove({ id: 1 })} />
+          Reset:
+          <Button text='reset' onClick={() => cars.reset()} />
+          {JSON.stringify(cars.data)}{' '}
+        </div>
+      }
+    />
+  )
+}
+
+<Canvas>
+  <Story name='example' argTypes={{}} args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

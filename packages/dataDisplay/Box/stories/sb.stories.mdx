@@ -1,0 +1,82 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+
+import B from '../../../storybook/variationBlock/index'
+import Icon from '../../Icon/library/IconSearchMaterial/index'
+import Text from '../../Text'
+import Box from '../index'
+import BoxPullToRefresh from '../Ext/BoxPullToRefresh'
+
+<Meta title='Lib/Data Display/Box' parameters={{ githubPath: 'dataDisplay/Box' }} />
+
+# Box
+
+```js
+import Box from '@useweb/lib/Data Display/Box'
+```
+
+#### Props
+
+<Props of={Box} />
+
+#### Example
+
+<Canvas>
+  <Story name='Examples'>
+    <>
+      <B title='default' background contentStyle={{ padding: 0 }}>
+        <Box
+          name='box name'
+          styles={{
+            justifyContent: 'space-between',
+            gridAutoFlow: 'column',
+            background: ['lightblue', 'lightgreen'],
+            width: '400px',
+            alignItems: 'center',
+            padding: 'xs',
+          }}
+        >
+          <Text text='Featured' variant='h6' />
+          <Icon color='primary' />
+        </Box>
+      </B>
+      <B title='sticky' background contentStyle={{ padding: 0, height: '300px' }}>
+        <nav style={{ height: '100px' }}>Imagine a bunch of nav up here</nav>
+        <Box
+          sticky
+          name='box name'
+          styles={{
+            justifyContent: 'space-between',
+            gridAutoFlow: 'column',
+            background: 'lightpink',
+            width: '400px',
+            alignItems: 'center',
+            padding: 'xs',
+            marginBottom: 'xxl',
+          }}
+        >
+          <Text text='Featured' variant='h6' />
+          <Icon color='primary' />
+        </Box>
+        <p style={{ height: '1000px' }}>And a bunch of content</p>
+        <p style={{ height: '1000px' }}>And a bunch of content</p>
+      </B>
+    </>
+  </Story>
+</Canvas>
+
+#### BoxPullToRefresh
+
+<Story name='BoxPullToRefresh'>
+  <BoxPullToRefresh onPullToRefresh={() => console.log('pulled')}>
+    <div>hello</div>
+    <div>hello</div>
+    <div>hello</div>
+    <div>hello</div>
+    <div>hello</div>
+    <div>hello</div>
+    <div>blarrr</div>
+    <div>blarrr</div>
+    <div>blarrr</div>
+    <div>blarrr</div>
+  </BoxPullToRefresh>
+</Story>

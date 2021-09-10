@@ -1,0 +1,61 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import B from '../../../storybook/variationBlock/index'
+
+import Avatar from '../'
+
+<Meta
+  title='Lib/Data Display/Avatar'
+  component={Avatar}
+  parameters={{ githubPath: 'dataDisplay/Avatar' }}
+/>
+
+# Avatar
+
+<Canvas>
+  <Story name='default'>
+    <>
+      <B title='With image'>
+        <Avatar
+          name='Hayle Whitehead'
+          src={
+            'https://firebasestorage.googleapis.com/v0/b/estilistta.appspot.com/o/hayle.jpeg?alt=media&token=b8eb9208-6456-4075-9f57-c2c680745604'
+          }
+        />
+      </B>
+      <B title='No Image'>
+        <Avatar name='Hayle Whitehead' />
+      </B>
+      <B title='No Image no lastname'>
+        <Avatar name='Hayle' />
+      </B>
+      <B title='editable'>
+        <Avatar
+          type='secondary'
+          name='Hayle Whitehead'
+          inputProps={{ onInput: (file) => console.log(file) }}
+        />
+      </B>
+      <B title='border'>
+        <Avatar
+          type='secondary'
+          name='Hayle Whitehead'
+          borderColor='primary'
+          src={
+            'https://firebasestorage.googleapis.com/v0/b/estilistta.appspot.com/o/hayle.jpeg?alt=media&token=b8eb9208-6456-4075-9f57-c2c680745604'
+          }
+        />
+      </B>
+      <B title='paddedBorder'>
+        <Avatar
+          type='secondary'
+          name='Hayle Whitehead'
+          borderColor='primary'
+          paddedBorder
+          src={
+            'https://firebasestorage.googleapis.com/v0/b/estilistta.appspot.com/o/hayle.jpeg?alt=media&token=b8eb9208-6456-4075-9f57-c2c680745604'
+          }
+        />
+      </B>
+    </>
+  </Story>
+</Canvas>

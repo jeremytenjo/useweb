@@ -1,0 +1,24 @@
+import { Meta, Story } from '@storybook/addon-docs'
+import TestFirebaseCloudFunction from '..'
+
+<!-- /Users/jeremytenjo/Dev/tenjo-apps/lib/functions/index.js -->
+
+<Meta
+  title='Lib/dataDisplay/TestFirebaseCloudFunction'
+  args={{
+    functionName: 'helloWorld',
+    defaultData: { name: 'Jeremy' },
+  }}
+/>
+
+# TestFirebaseCloudFunction
+
+#### Default
+
+<Story name='default' argTypes={{}} args={{}}>
+  {Template.bind({})}
+</Story>
+
+export const Template = (args) => {
+  return <TestFirebaseCloudFunction {...args} />
+}

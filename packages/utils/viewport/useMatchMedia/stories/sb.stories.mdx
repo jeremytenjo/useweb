@@ -1,0 +1,26 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import useMatchMedia from '../'
+import FunctionUsageExample from '../../../../dataDisplay/showExample/FunctionUsageExample'
+
+<Meta title='Lib/utils/viewport/useMatchMedia' />
+
+# useMatchMedia
+
+```js
+import useMatchMedia from '@useweb/lib/utils/viewport/useMatchMedia'
+```
+
+export const Template = (args) => {
+  const isMobile = useMatchMedia('max-width: 768px')
+  const text = isMobile ? 'mobile' : 'desktop'
+  const usage = `const isMobile = useMatchMedia('max-width: 768px')
+const text = isMobile ? 'mobile' : 'desktop'\n
+return <div>Viewport is {text}</div>`
+  return <FunctionUsageExample usage={usage} result={<div>Viewport is {text}</div>} />
+}
+
+<Canvas>
+  <Story name='example' argTypes={{}} args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

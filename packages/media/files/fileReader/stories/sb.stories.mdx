@@ -1,0 +1,25 @@
+import { Meta, Story } from '@storybook/addon-docs'
+import Example from './example'
+
+<Meta title='Lib/Media/File/fileReader' />
+
+# fileReader
+
+```js
+import fileReader from '@useweb/lib/media/file/fileReader'
+
+const base64 = await fileReader({ file })
+```
+
+Props
+
+| Name         |  Default  | Type |
+| ------------ | :-------: | ---: |
+| file         | undefined | File |
+| fullCompress |   false   | bool |
+
+#### Example
+
+<Story name='Example'>
+  <Example />
+</Story>

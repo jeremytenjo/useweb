@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title='Lib/Data/Faker' />
+
+Uses Faker under the hood - [Documentation](https://github.com/Marak/faker.js)
+
+# faker
+
+```js
+import faker from '@useweb/lib/data/faker'
+```
+
+### Example
+
+```js
+import faker from '@useweb/lib/data/faker'
+
+const stub = () => ({
+  name: faker.name.findName(),
+  email: faker.internet.email(),
+  teamId: faker.datatype.uuid(),
+  leagueId: faker.datatype.uuid(),
+  position: 'ST',
+  avatar: faker.image.image(),
+})
+```

@@ -1,0 +1,100 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import ReceiveNotificationStory from './ReceiveNotificationStory'
+import SendNotificationStory from './SendNotificationStory'
+
+<Meta
+  title='Lib/Engagement/Push Notifications/Firebase/usePushNotifications'
+  parameters={{
+    githubPath: 'engagement/pushNotifications/firebase/usePushNotifications',
+  }}
+/>
+
+# Firebase Push Notifications
+
+### Usage
+
+```js
+import usePushNotifications from '@useweb/lib/engagement/PushNotifications/firebase/usePushNotifications'
+
+const pushNotfications = usePushNotifications()
+```
+
+### Setup
+
+1. Add provider to your app.
+
+```js
+import PushNotificationsProvider from '@useweb/lib/engagement/PushNotifications/firebase/usePushNotifications/PushNotificationsProvider'
+;<PushNotificationsProvider>
+  <App />
+</PushNotificationsProvider>
+```
+
+2. Add `gcm_sender_id` property to `manifest.json` . Insert the value below AS IT IS, without changing anything.
+
+```json
+{
+  "gcm_sender_id": "103953800507"
+}
+```
+
+3. Create [firebase-messaging-sw.js](https://firebase.google.com/docs/cloud-messaging/js/receive#web-v9_2)
+   file and add it to your public folder. This shows notitifications when the app is in the background.
+
+```js
+/* eslint-disable no-undef */
+importScripts('https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/8.6.8/firebase-messaging.js');
+
+firebase.initializeApp(<firebaseConfig>)
+
+const messaging = firebase.messaging()
+
+messaging.onBackgroundMessage((payload) => {
+  console.log('[firebase-messaging-sw.js] Received background message ', payload)
+  const notificationTitle = payload.title
+  const notificationOptions = {
+    body: payload.body,
+    icon: payload.image,
+  }
+
+  self.registration.showNotification(notificationTitle,
+    notificationOptions);
+});
+
+self.addEventListener('notificationclick', (event) => {
+  if (event.action) {
+    clients.openWindow(event.action)
+  }
+  event.notification.close()
+})
+
+```
+
+4. Use `usePushNotifications` to handle messages when app is in the foreground.
+
+### Example Result
+
+[Send messages from the firebase console](https://console.firebase.google.com/u/0/project/useweb-lib/notification/compose)
+
+Cloud Function `functions/examples/sendPushNotificationExample.js`
+
+<Canvas>
+  <Story name='Receive Notification'>
+    <ReceiveNotificationStory />
+  </Story>
+</Canvas>
+
+export const Template = (args) => <SendNotificationStory {...args} />
+
+<Canvas>
+  <Story
+    name='Send Notification'
+    args={{
+      fcmRegistrationToken:
+        'fd2C0wP3pZMQjDyoeo3i5y:APA91bFdhSC9R0ar_TO64qE3-BJqCPouyPsSzj27a81XZOvCoEjerAHw7sYEIXEynrnSdu0ON8SBPwUUWFgdyCmakOGGV83bHaLIUguequQKijYJrcqTWOgzNIOmLMGeCEe2M6R0sEhc',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

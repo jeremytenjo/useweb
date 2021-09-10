@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import useToggle from '..'
+
+<Meta title='Lib/utils/misc/useToggle' />
+
+export const Default = (args) => {
+  const [active, setActive] = useToggle()
+  return (
+    <div>
+      <button onClick={setActive}>toggle</button>
+      <p>{active ? 'active' : 'inactive'}</p>
+    </div>
+  )
+}
+
+# useToggle
+
+#### Default
+
+<Story name='default' argTypes={{}} args={{}}>
+  {Default.bind()}
+</Story>

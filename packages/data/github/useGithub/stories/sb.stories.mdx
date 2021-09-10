@@ -1,0 +1,63 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import { GithubProvider } from '..'
+import GetRepos from './examples/GetRepos'
+import GetFileFromRepo from './examples/GetFileFromRepo'
+import EditFileInRepo from './examples/EditFileInRepo'
+import SignInToGithub from './examples/signInToGithub'
+import CreateFileInRepo from './examples/CreateFileInRepo'
+
+<Meta title='Lib/data/github/useGithub' />
+
+# useGithub
+
+Uses [Oktokit](https://octokit.github.io/rest.js/v18#repos-create-or-update-file-contents) under the hood to access the Github API.
+
+#### Get Repos
+
+<Canvas>
+  <Story name='Get Repos'>
+    <GithubProvider>
+      <GetRepos />
+    </GithubProvider>
+  </Story>
+</Canvas>
+
+#### Get file from repo
+
+<Canvas>
+  <Story name='Get file from repo'>
+    <GithubProvider>
+      <GetFileFromRepo />
+    </GithubProvider>
+  </Story>
+</Canvas>
+
+#### Edit file in repo
+
+<Canvas>
+  <Story name='Edit file in repo'>
+    <GithubProvider>
+      <EditFileInRepo />
+    </GithubProvider>
+  </Story>
+</Canvas>
+
+#### Sign in to github
+
+<Canvas>
+  <Story name='Sign in to github'>
+    <GithubProvider>
+      <SignInToGithub />
+    </GithubProvider>
+  </Story>
+</Canvas>
+
+#### Create file in repo
+
+<Canvas>
+  <Story name='Create file in repo'>
+    <GithubProvider>
+      <CreateFileInRepo />
+    </GithubProvider>
+  </Story>
+</Canvas>

@@ -1,0 +1,36 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs'
+import Button from '../../../../../input/Button/styles/1'
+import Code from '../../../../../dataDisplay/Code'
+import downloadString from '../'
+import FunctionUsageExample from '../../../../../dataDisplay/showExample/FunctionUsageExample'
+
+<Meta
+  title='lib/utils/files/browser/downloadString'
+  argTypes={{}}
+  args={{ string: 'test string', fileName: 'test.js' }}
+/>
+
+# downloadString
+
+Download strings from the browser.
+
+export const Template = (args) => {
+  function download() {
+    downloadString(args.string, args.fileName)
+  }
+  const usage = `<button onClick={() => downloadString('${args.string}', '${args.fileName}')}>
+  Download ${args.fileName}
+<button/>`
+  return (
+    <FunctionUsageExample
+      usage={usage}
+      result={<Button onClick={download} text={`Download ${args.fileName}`} />}
+    />
+  )
+}
+
+<Canvas>
+  <Story name='example' argTypes={{}} args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>

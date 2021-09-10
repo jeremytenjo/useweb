@@ -1,0 +1,32 @@
+import { useState } from 'react'
+import { Meta, Story } from '@storybook/addon-docs'
+import FirebaseUi from '..'
+import Code from '../../../dataDisplay/Code'
+import FadeInOut from '../../../utils/Animation/components/FadeInOut'
+
+<Meta title='Lib/authentication/FirebaseUi' />
+
+# FirebaseUi
+
+#### Default
+
+export const Example = () => {
+  const [signInData, setSignInData] = useState(null)
+  const clientId =
+    '1029586460785-46mt7acava9edl44vnokidvlrbk9p717.apps.googleusercontent.com'
+  return (
+    <div style={{ padding: '20px' }}>
+      <FirebaseUi clientId={clientId} onSignIn={setSignInData} />
+      Result - User login info:
+      <br />
+      <br />
+      <FadeInOut show={signInData}>
+        <Code code={signInData} stringify />
+      </FadeInOut>
+    </div>
+  )
+}
+
+<Story name='default'>
+  <Example />
+</Story>
