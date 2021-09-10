@@ -7,7 +7,7 @@
   "author": "Jeremy Tenjo",
   "license": "ISC",
   "scripts": {
-    "dev": "start-storybook -p 6006",
+    "dev": "start-storybook -p 6008",
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:version": "lerna version",
     "lerna:link": "lerna link",
