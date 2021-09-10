@@ -15,5 +15,8 @@
   "dependencies": {
     "esbuild": "^0.12.26",
     "command-line-args": "^5.2.0"
+  },
+  "peerDependencies": {
+    "esbuild": "^0.12.26"
   }
 }
