@@ -1,16 +1,22 @@
 {
   "name": "@useweb/button",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "main": "./build/index.js",
+  "files": [
+    "build"
+  ],
   "scripts": {
-    "build": "esbuild src/index.jsx --bundle --minify --outfile=build/index.js",
+    "build": "node ./scripts/build.js",
     "prepublish": "npm run build",
     "deploy": "npm publish --access public"
   },
   "devDependencies": {
     "esbuild": "^0.12.26"
   },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  },
   "dependencies": {
-    "@useweb/use-event-listener": "^0.0.1"
+    "@useweb/use-event-listener": "0.0.2"
   }
 }
