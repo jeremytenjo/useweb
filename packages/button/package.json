@@ -1,12 +1,13 @@
 {
   "name": "@useweb/button",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "./build/index.js",
   "files": [
     "build"
   ],
   "scripts": {
-    "build": "node ./scripts/build.js",
+    "build": "node ./node_modules/@useweb/compiler/build --jsx",
+    "build:watch": "node ./node_modules/@useweb/compiler/build --jsx --watch",
     "prepublish": "npm run build",
     "deploy": "npm publish --access public"
   },
@@ -17,6 +18,7 @@
     "react": "^17.0.0"
   },
   "dependencies": {
+    "@useweb/compiler": "0.0.2",
     "@useweb/use-event-listener": "0.0.2"
   }
 }
