@@ -7,7 +7,8 @@
     "build"
   ],
   "scripts": {
-    "build": "node ./scripts/build",
+    "build": "node ./scripts/compile",
+    "build:watch": "node ./scripts/compile --watch",
     "prepublish": "npm run build",
     "deploy": "npm publish --access public"
   },
@@ -15,6 +16,7 @@
     "react": "^17.0.0"
   },
   "devDependencies": {
-    "esbuild": "^0.12.26"
+    "esbuild": "^0.12.26",
+    "command-line-args": "^5.2.0"
   }
 }
