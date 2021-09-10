@@ -1,3 +1,7 @@
+/**
+ * Get script options eg --watch
+ * {@link https://github.com/75lb/command-line-args#readme|Docs}
+ */
 module.exports = function getOptions() {
   const optionDefinitions = [
     { name: 'watch', alias: 'w', type: Boolean, defaultOption: false },

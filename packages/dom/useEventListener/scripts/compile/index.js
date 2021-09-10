@@ -1,4 +1,4 @@
-const { watch } = require('./handlers/getOptions')
+const { watch } = require('./handlers/getOptions')()
 
 require('esbuild').build({
   entryPoints: ['src/index.js'],
