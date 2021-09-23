@@ -18,7 +18,7 @@ export const AuthProvider = ({ children, service = 'firebase' }) => {
   }, [user])
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
+    const cleanOnAuthStateChanged = firebase.auth().onAuthStateChanged((user) => {
       if (user) setUser(user)
       else {
         if (user !== null) {
@@ -26,6 +26,10 @@ export const AuthProvider = ({ children, service = 'firebase' }) => {
         }
       }
     })
+
+    return () => {
+      cleanOnAuthStateChanged()
+    }
   }, [])
 
   const signIn = async ({ provider = 'email', credentials, action = 'login' }) => {
