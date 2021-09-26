@@ -3,7 +3,6 @@ module.exports = {
     browser: true,
     commonjs: true,
     node: true,
-    es6: true,
     jest: true,
     'cypress/globals': true,
   },
@@ -26,7 +25,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 9,
+    ecmaVersion: 2021,
     sourceType: 'module',
   },
   settings: {
