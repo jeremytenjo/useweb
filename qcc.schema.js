@@ -5,7 +5,7 @@ module.exports = [
     type: 'React component',
     hooks: {
       onCreate: ({ outputPath }) => {
-        shell.exec(`cd ${outputPath} && npm i && cd .. && npm run lerna:bootstrap`)
+        shell.exec(`cd ${outputPath} && npm i`)
       },
     },
     files: [
