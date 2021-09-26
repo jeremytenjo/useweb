@@ -1,22 +1,21 @@
-const shell = require('shelljs')
+const shell = require('child_process')
 
 module.exports = [
   {
     type: 'React component',
     hooks: {
       onCreate: ({ outputPath }) => {
-        shell(`cd ${outputPath} && npm i`)
+        shell.exec(`cd ${outputPath} && npm i && cd .. && npm run lerna:bootstrap`)
       },
     },
     files: [
       {
-        path: () => 'src/index.js',
+        path: () => 'src/index.jsx',
         template: ({ name, helpers: { changeCase } }) => `
         import React from 'react';
-        import styles from './${changeCase.paramCase(name)}.css';
         
         export default function ${changeCase.pascalCase(name)}() {
-          return ${changeCase.pascalCase(name)}
+          return <div>${changeCase.pascalCase(name)}</div>
         }
           `,
       },
