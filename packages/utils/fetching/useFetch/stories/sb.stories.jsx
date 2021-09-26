@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react'
 
 import B from '../../../../storybook/variationBlock/index'
-import useFetch from '../build'
+import useFetch from '../src/index'
 
 const GET = () => {
   const url = 'http://dummy.restapiexample.com/api/v1/employees'
