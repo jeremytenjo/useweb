@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 export default function useLocalDb(initialData = []) {
   const [data, setData] = useState(initialData)
 
@@ -27,11 +29,7 @@ export default function useLocalDb(initialData = []) {
     setData(dataRemoved)
   }
 
-  const update = (id, callback) => {
-    console.log(id, callback)
-  }
-
   const reset = () => setData([])
 
-  return { data, add, remove, update, reset }
+  return { data, add, remove, reset }
 }
