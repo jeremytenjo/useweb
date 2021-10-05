@@ -1,7 +1,7 @@
 {
   "name": "useweb",
   "version": "1.0.0",
-  "description": "Tools to build apps with web techonologies",
+  "description": "Tools to build apps with web technologies",
   "private": true,
   "main": "index.js",
   "author": "Jeremy Tenjo",
