@@ -5,7 +5,10 @@ import { useState, useCallback, useEffect } from 'react'
  *
  * usage example: "useJoiValidator/index.js"
  */
-export default function useAsync(fetcher = () => null, { autoExec } = {}) {
+export default function useAsync(
+  fetcher = () => null,
+  { autoExec, onResult, onError } = {},
+) {
   const [loading, setLoading] = useState(null)
   const [result, setResult] = useState(null)
   const [error, setError] = useState(null)
@@ -20,9 +23,11 @@ export default function useAsync(fetcher = () => null, { autoExec } = {}) {
         setError(null)
         const res = await fetcher(payload)
         setResult(res)
+        onResult && onResult(res)
         return res
       } catch (error) {
         setError(error)
+        onError && onError(error)
       } finally {
         setLoading(false)
       }
