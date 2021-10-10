@@ -7,7 +7,7 @@ import { useState, useCallback, useEffect } from 'react'
  */
 export default function useAsync(
   fetcher = () => null,
-  { autoExec, onResult, onError } = {},
+  { autoExec, onResult, onError, onLoading } = {},
 ) {
   const [loading, setLoading] = useState(null)
   const [result, setResult] = useState(null)
@@ -19,6 +19,7 @@ export default function useAsync(
 
       try {
         setLoading(true)
+        onLoading && onLoading(true)
         setResult(null)
         setError(null)
         const res = await fetcher(payload)
@@ -30,6 +31,7 @@ export default function useAsync(
         onError && onError(error)
       } finally {
         setLoading(false)
+        onLoading && onLoading(false)
       }
     },
     [fetcher],
