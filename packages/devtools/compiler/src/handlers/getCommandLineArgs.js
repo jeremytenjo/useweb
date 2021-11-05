@@ -7,6 +7,7 @@ module.exports = function getCommandLineArgs() {
     { name: 'watch', alias: 'w', type: Boolean },
     { name: 'jsx', type: Boolean },
     { name: 'node', type: Boolean },
+    { name: 'format', type: String, options: ['esm', 'cjs'] },
   ]
   const commandLineArgs = require('command-line-args')
   const options = commandLineArgs(optionDefinitions)

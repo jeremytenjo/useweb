@@ -10,6 +10,7 @@ const payload = { packageJson }
 // esbuild options
 const entryPoint = path.join(packageDir, 'src', `index.${args.jsx ? 'jsx' : 'js'}`)
 const outfile = path.join(packageDir, 'build', 'index.js')
+const format = args.format || 'esm'
 
 require('esbuild').build({
   entryPoints: [entryPoint],
@@ -17,7 +18,7 @@ require('esbuild').build({
   platform: args.node ? 'node' : 'browser',
   bundle: true,
   minify: true,
-  format: 'esm',
+  format,
   target: ['esnext'],
   watch: args.watch,
   external: require('./handlers/getExternals')(payload),

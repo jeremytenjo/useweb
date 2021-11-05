@@ -9,7 +9,7 @@
     "build": "node ./node_modules/@useweb/compiler/build --jsx",
     "build:watch": "node ./node_modules/@useweb/compiler/build --jsx --watch",
     "prepublish": "npm run build",
-    "deploy": "npm publish --access public"
+    "deploy": "npm run build && npm publish --access public"
   },
   "devDependencies": {
     "esbuild": "^0.12.26"
@@ -18,7 +18,7 @@
     "react": "^17.0.0"
   },
   "dependencies": {
-    "@useweb/compiler": "0.0.2",
+    "@useweb/compiler": "0.0.3",
     "@useweb/use-event-listener": "0.0.2"
   }
 }
