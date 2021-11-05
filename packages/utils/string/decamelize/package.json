@@ -1,0 +1,21 @@
+{
+  "name": "@useweb/decamelize",
+  "version": "0.1.0",
+  "main": "./build/index.js",
+  "author": "Jeremy Tenjo",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "node ./node_modules/@useweb/compiler/build",
+    "build:watch": "node ./node_modules/@useweb/compiler/build --watch",
+    "prepublish": "npm run build",
+    "deploy": "npm publish --access public"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  },
+  "devDependencies": {
+    "@useweb/compiler": "0.0.2"
+  }
+}

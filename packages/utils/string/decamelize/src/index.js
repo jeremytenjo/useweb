@@ -5,7 +5,7 @@
  * @param separator Separator for the new decamelized string.
  */
 
-export default (str, separator = '-') => {
+export default function decamelize(str, separator = '-') {
   if (!str) return console.error(`str is ${str} , add string as first parameter`)
 
   return str
