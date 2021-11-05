@@ -1,5 +1,6 @@
-export default ({ data, comp }) =>
-  comp ? handleArrayOfObjects(data, comp) : handleArrayWithSingleValues(data)
+export default function removeDuplicatesFromArray({ data, comp }) {
+  return comp ? handleArrayOfObjects(data, comp) : handleArrayWithSingleValues(data)
+}
 
 // [1,2]
 const handleArrayWithSingleValues = (data) => Array.from(new Set(data))

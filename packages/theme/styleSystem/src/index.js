@@ -1,7 +1,7 @@
-import decamelize from '../../utils/string/decamelize/index'
-import removeDuplicatesInArray from '../../../utils/array/functions/removeDuplicates'
+import decamelize from '@useweb/decamelize'
+import removeDuplicatesFromArray from '@useweb/remove-duplicates-from-array'
 
-export default (props) => {
+export default function styleSystem(props) {
   const {
     styles,
     theme: { mediaQueries = { minWidth: [400, 700, 1200], minHeight: [400, 700] } },
@@ -12,8 +12,10 @@ export default (props) => {
   const raw = []
   mediaQueries.minWidth.unshift(0)
   mediaQueries.minHeight.unshift(0)
-  const minWidthMediaQueries = removeDuplicatesInArray({ data: mediaQueries.minWidth })
-  const minHeightMediaQueries = removeDuplicatesInArray({ data: mediaQueries.minHeight })
+  const minWidthMediaQueries = removeDuplicatesFromArray({ data: mediaQueries.minWidth })
+  const minHeightMediaQueries = removeDuplicatesFromArray({
+    data: mediaQueries.minHeight,
+  })
 
   const handleVariableValue = ({ varName, value }) => {
     const isString = typeof value === 'string'
