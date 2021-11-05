@@ -1,3 +1,5 @@
+import { memo, forwardRef } from 'react'
+
 import { BoxWrapper } from './styles'
 
 const Box = ({ children, name, styles = {}, ...rest }, ref) => {

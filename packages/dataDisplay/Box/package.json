@@ -1,0 +1,23 @@
+{
+  "name": "@useweb/box",
+  "version": "0.1.0",
+  "main": "./build/index.jsx",
+  "author": "Jeremy Tenjo",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "node ./node_modules/@useweb/compiler/build --jsx",
+    "build:watch": "node ./node_modules/@useweb/compiler/build --watch",
+    "prepublish": "npm run build",
+    "deploy": "npm publish --access public"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0",
+    "@useweb/style-system": "^0.1.0",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@useweb/compiler": "0.0.2"
+  }
+}

@@ -1,4 +1,4 @@
-import PullToRefresh from '../../../../input/PullToRefresh'
+import PullToRefresh from '../../input/PullToRefresh'
 import Box from '../..'
 
 const BoxPullToRefresh = ({ onPullToRefresh = () => null, children, ...rest }) => {

@@ -1,6 +1,5 @@
+import system from '@useweb/style-system'
 import styled from 'styled-components'
-
-import system from '../../theme/system'
 
 export const BoxWrapper = styled.div`
   ${system}
