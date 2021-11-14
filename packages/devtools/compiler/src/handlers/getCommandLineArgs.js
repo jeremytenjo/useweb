@@ -5,7 +5,6 @@
 module.exports = function getCommandLineArgs() {
   const optionDefinitions = [
     { name: 'watch', alias: 'w', type: Boolean },
-    { name: 'jsx', type: Boolean },
     { name: 'node', type: Boolean },
     { name: 'format', type: String, options: ['esm', 'cjs'] },
   ]
