@@ -1,0 +1,25 @@
+{
+  "name": "@useweb/particles",
+  "version": "0.0.1",
+  "main": "./build/index.js",
+  "author": "Jeremy Tenjo",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "node ./node_modules/@useweb/compiler/build --jsx --format cjs",
+    "build:watch": "node ./node_modules/@useweb/compiler/build --watch",
+    "prepublish": "npm run build",
+    "deploy": "npm run build && npm publish --access public"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  },
+  "devDependencies": {
+    "@useweb/compiler": "0.0.3"
+  },
+  "dependencies": {
+    "react-particles-js": "^3.6.0",
+    "tsparticles": "^1.37.3"
+  }
+}

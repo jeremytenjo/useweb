@@ -1,3 +1,4 @@
+import React from 'react'
 import ParticlesLib from 'react-particles-js'
 
 import { defaultProps, propTypes } from './props'
