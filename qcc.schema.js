@@ -26,6 +26,7 @@ module.exports = [
           "version": "0.0.1",
           "main": "./build/index.js",
           "author": "Jeremy Tenjo",
+          "types": "./build/types/index.d.ts",
           "files": [
             "build"
           ],
