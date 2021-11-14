@@ -52,7 +52,7 @@ module.exports = async function generateTypes(packageDir) {
     strict: true,
     types: ['node'],
     declaration: true,
-    declarationDir: './build/types',
+    declarationDir: outputPath,
     emitDeclarationOnly: true,
     noEmit: false,
   }
