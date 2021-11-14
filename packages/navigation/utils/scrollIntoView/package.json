@@ -1,0 +1,18 @@
+{
+  "name": "@useweb/scroll-into-view",
+  "version": "0.0.1",
+  "main": "./build/index.js",
+  "author": "Jeremy Tenjo",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "node ./node_modules/@useweb/compiler/build",
+    "build:watch": "node ./node_modules/@useweb/compiler/build --watch",
+    "prepublish": "npm run build",
+    "deploy": "npm run build && npm publish --access public"
+  },
+  "devDependencies": {
+    "@useweb/compiler": "0.0.3"
+  }
+}

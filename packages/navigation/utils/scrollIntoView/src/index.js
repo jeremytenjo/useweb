@@ -1,4 +1,4 @@
-export default (id, config = { behavior: 'smooth' }) => {
+export default function scrollIntoView(id, config = { behavior: 'smooth' }) {
   if (!id)
     return console.error('scrollIntoView error - add a selector as the first parameter')
 
