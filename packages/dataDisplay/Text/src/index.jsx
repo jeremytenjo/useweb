@@ -1,6 +1,6 @@
+import React from 'react'
 import styled from 'styled-components'
-
-import system from '../../theme/system'
+import system from '@useweb/style-system'
 
 import { defaultProps, propTypes } from './props'
 
