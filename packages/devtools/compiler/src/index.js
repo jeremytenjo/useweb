@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-extra-semi
 ;(async () => {
   const path = require('path')
+  const esbuild = require('esbuild')
 
   const args = require('./handlers/getCommandLineArgs')()
   const getEntryPoint = require('./handlers/getEntryPoint')
@@ -15,7 +16,7 @@
   const outfile = path.join(packageDir, 'build', 'index.js')
   const format = args.format || 'cjs'
 
-  require('esbuild').build({
+  esbuild.build({
     entryPoints: [entryPoint],
     outfile,
     platform: args.node ? 'node' : 'browser',
