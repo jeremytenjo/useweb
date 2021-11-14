@@ -28,20 +28,34 @@ function compile(fileNames, options) {
 // Run the compiler
 
 module.exports = async function generateTypes(packageDir) {
-  const filesPath = path.join(packageDir, 'src*')
+  // https://www.typescriptlang.org/tsconfig#include
+  const includePattern = path.join(packageDir, 'src/*')
+  const include = await glob(includePattern)
+
   const outputPath = path.join(packageDir, 'build', 'types')
-  const command = `rm -rf ${outputPath} && tsc`
+  const command = `rm -rf ${outputPath}`
 
-  const files = await glob(filesPath)
-  console.log(files)
-
-  const types = 'types'
-
-  compile(files, {
-    allowJs: true,
+  // https://www.typescriptlang.org/tsconfig#compilerOptions
+  const compilerOptions = {
+    esModuleInterop: true,
+    isolatedModules: true,
+    jsx: 'react',
+    lib: ['ESNext', 'dom'],
+    target: 'es5',
+    noImplicitAny: true,
+    noImplicitReturns: false,
+    noImplicitThis: true,
+    noUnusedLocals: true,
+    noUnusedParameters: true,
+    noUncheckedIndexedAccess: true,
+    skipLibCheck: true,
+    strict: true,
+    types: ['node'],
     declaration: true,
+    declarationDir: './build/types',
     emitDeclarationOnly: true,
-  })
+    noEmit: false,
+  }
 
-  return types
+  compile(include, compilerOptions)
 }
