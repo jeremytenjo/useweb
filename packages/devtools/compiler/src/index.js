@@ -1,25 +1,29 @@
-const path = require('path')
+// eslint-disable-next-line no-extra-semi
+;(async () => {
+  const path = require('path')
 
-const args = require('./handlers/getCommandLineArgs')()
+  const args = require('./handlers/getCommandLineArgs')()
+  const getEntryPoint = require('./handlers/getEntryPoint')
 
-const packageDir = process.cwd()
-const packageJson = require(path.join(packageDir, 'package.json'))
+  const packageDir = process.cwd()
+  const packageJson = require(path.join(packageDir, 'package.json'))
 
-const payload = { packageJson }
+  const payload = { packageJson }
 
-// esbuild options
-const entryPoint = path.join(packageDir, 'src', `index.${args.jsx ? 'jsx' : 'js'}`)
-const outfile = path.join(packageDir, 'build', 'index.js')
-const format = args.format || 'esm'
+  // esbuild options
+  const entryPoint = await getEntryPoint(packageDir)
+  const outfile = path.join(packageDir, 'build', 'index.js')
+  const format = args.format || 'cjs'
 
-require('esbuild').build({
-  entryPoints: [entryPoint],
-  outfile,
-  platform: args.node ? 'node' : 'browser',
-  bundle: true,
-  minify: true,
-  format,
-  target: ['esnext'],
-  watch: args.watch,
-  external: require('./handlers/getExternals')(payload),
-})
+  require('esbuild').build({
+    entryPoints: [entryPoint],
+    outfile,
+    platform: args.node ? 'node' : 'browser',
+    bundle: true,
+    minify: true,
+    format,
+    target: ['esnext'],
+    watch: args.watch,
+    external: require('./handlers/getExternals')(payload),
+  })
+})()
