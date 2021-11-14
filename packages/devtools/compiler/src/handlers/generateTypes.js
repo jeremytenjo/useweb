@@ -2,6 +2,8 @@ const path = require('path')
 
 const ts = require('typescript')
 
+const glob = require('../utils/glob')
+
 function compile(fileNames, options) {
   // Create a Program with an in-memory emit
   const createdFiles = {}
@@ -25,13 +27,17 @@ function compile(fileNames, options) {
 
 // Run the compiler
 
-module.exports = function generateTypes(packageDir) {
-  const outputDir = path.join(packageDir, 'build', 'types')
-  const command = `rm -rf ${outputDir} && tsc`
+module.exports = async function generateTypes(packageDir) {
+  const filesPath = path.join(packageDir, 'src*')
+  const outputPath = path.join(packageDir, 'build', 'types')
+  const command = `rm -rf ${outputPath} && tsc`
+
+  const files = await glob(filesPath)
+  console.log(files)
 
   const types = 'types'
 
-  compile(process.argv.slice(2), {
+  compile(files, {
     allowJs: true,
     declaration: true,
     emitDeclarationOnly: true,
