@@ -1,6 +1,6 @@
 {
   "name": "@useweb/box",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "files": [
