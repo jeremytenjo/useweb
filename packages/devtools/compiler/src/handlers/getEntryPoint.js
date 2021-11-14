@@ -1,21 +1,11 @@
 const path = require('path')
 
-const glob = require('glob')
-
-const getFiles = (pattern) => {
-  // eslint-disable-next-line no-undef
-  return new Promise(async (resolve, reject) => {
-    glob(pattern, null, (err, files) => {
-      if (err) reject(err)
-      resolve(files)
-    })
-  })
-}
+const glob = require('../utils/glob')
 
 module.exports = async function getEntryPoint(packageDir) {
   const pattern = path.join(packageDir, 'src', '/index.*')
   let entryPointFile = 'index.js'
-  const srcFiles = await getFiles(pattern)
+  const srcFiles = await glob(pattern)
 
   if (srcFiles.length) {
     const indexFile = srcFiles[0].split('/').pop()
