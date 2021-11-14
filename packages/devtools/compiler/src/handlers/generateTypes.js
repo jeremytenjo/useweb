@@ -25,15 +25,12 @@ function compile(fileNames, options) {
   })
 }
 
-// Run the compiler
-
 module.exports = async function generateTypes(packageDir) {
   // https://www.typescriptlang.org/tsconfig#include
   const includePattern = path.join(packageDir, 'src/*')
   const include = await glob(includePattern)
 
   const outputPath = path.join(packageDir, 'build', 'types')
-  const command = `rm -rf ${outputPath}`
 
   // https://www.typescriptlang.org/tsconfig#compilerOptions
   const compilerOptions = {
