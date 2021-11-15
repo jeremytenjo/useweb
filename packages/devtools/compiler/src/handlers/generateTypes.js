@@ -11,7 +11,7 @@ module.exports = async function generateTypes(packageDir) {
   // const include = await glob(includePattern)
 
   // https://www.typescriptlang.org/tsconfig#compilerOptions
-  const tsConfig = {
+  const tscArgs = {
     esModuleInterop: true,
     isolatedModules: true,
     jsx: 'react',
@@ -32,5 +32,5 @@ module.exports = async function generateTypes(packageDir) {
     noEmit: false,
   }
 
-  await runCLI('tsc', tsConfig)
+  await runCLI('tsc', tscArgs)
 }
