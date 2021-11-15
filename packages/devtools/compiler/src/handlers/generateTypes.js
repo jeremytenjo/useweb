@@ -1,16 +1,14 @@
 const path = require('path')
 
 const runCLI = require('../utils/runCLI')
-const glob = require('../utils/glob')
 
 module.exports = async function generateTypes(packageDir) {
   const outputPath = path.join(packageDir, 'build', 'types')
 
   // https://www.typescriptlang.org/tsconfig#include
-  // const includePattern = path.join(packageDir, 'src/*')
-  // const include = await glob(includePattern)
+  const include = path.join(packageDir, 'src/*')
 
-  // https://www.typescriptlang.org/tsconfig#compilerOptions
+  // https://www.typescriptlang.org/docs/handbook/compiler-options.html
   const tscArgs = {
     esModuleInterop: true,
     isolatedModules: true,
@@ -32,5 +30,5 @@ module.exports = async function generateTypes(packageDir) {
     noEmit: false,
   }
 
-  await runCLI('tsc', tscArgs)
+  await runCLI(`tsc ${include}`, tscArgs)
 }
