@@ -18,7 +18,6 @@
   const format = args.format || 'cjs'
 
   await generateTypes(packageDir)
-  process.exit(0)
 
   esbuild.build({
     entryPoints: [entryPoint],
