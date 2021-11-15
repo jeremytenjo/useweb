@@ -40,7 +40,7 @@ module.exports = [
             "react": "^17.0.0"
           },
           "devDependencies": {
-            "@useweb/compiler": "0.0.3"
+            "@useweb/compiler": "1.0.0"
           }
         }`,
       },
