@@ -2,7 +2,11 @@ import React, { createContext, useContext, useRef, useEffect, useState } from 'r
 
 export const UseInstallPromptContext = createContext(null)
 
-export const UseInstallPromptProvider = ({ children }) => {
+type Props = {
+  children: JSX.Element
+}
+
+export const UseInstallPromptProvider = ({ children }: Props) => {
   const [isNotInstalledRef, setIsNotInstalled] = useState(null)
   const deferredPromptRef = useRef(null)
   const isNotInstalled = isNotInstalledRef === null ? false : isNotInstalledRef
@@ -51,6 +55,11 @@ export const UseInstallPromptProvider = ({ children }) => {
   )
 }
 
-const useInstallPrompt = () => useContext(UseInstallPromptContext)
+type Return = {
+  prompt: () => void
+  isNotInstalled: boolean
+}
+
+const useInstallPrompt = () => useContext<Return>(UseInstallPromptContext)
 
 export default useInstallPrompt
