@@ -11,8 +11,6 @@
   const packageJson = require(path.join(packageDir, 'package.json'))
 
   const payload = { packageJson }
-
-  // esbuild options
   const entryPoint = await getEntryPoint(packageDir)
   const outfile = path.join(packageDir, 'build', 'index.js')
   const format = args.format || 'cjs'
