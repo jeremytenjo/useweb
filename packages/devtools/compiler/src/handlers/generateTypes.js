@@ -2,7 +2,9 @@ const path = require('path')
 
 const runCLI = require('../utils/runCLI')
 
-module.exports = async function generateTypes(packageDir) {
+module.exports = async function generateTypes(packageDir, entryPointFile) {
+  if (entryPointFile !== 'index.ts' && entryPointFile !== 'index.tsx') return null
+
   const outputPath = path.join(packageDir, 'build', 'types')
 
   // https://www.typescriptlang.org/tsconfig#include

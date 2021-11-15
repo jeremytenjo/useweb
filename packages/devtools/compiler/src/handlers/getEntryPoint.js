@@ -14,5 +14,5 @@ module.exports = async function getEntryPoint(packageDir) {
 
   const entryPoint = path.join(packageDir, 'src', entryPointFile)
 
-  return entryPoint
+  return { entryPoint, entryPointFile }
 }

@@ -11,11 +11,11 @@
   const packageJson = require(path.join(packageDir, 'package.json'))
 
   const payload = { packageJson }
-  const entryPoint = await getEntryPoint(packageDir)
+  const { entryPoint, entryPointFile } = await getEntryPoint(packageDir)
   const outfile = path.join(packageDir, 'build', 'index.js')
   const format = args.format || 'cjs'
 
-  await generateTypes(packageDir)
+  await generateTypes(packageDir, entryPointFile)
 
   esbuild.build({
     entryPoints: [entryPoint],
