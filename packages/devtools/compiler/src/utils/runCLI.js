@@ -1,9 +1,10 @@
 //https://github.com/sindresorhus/dargs
-const dargs = require('dargs').default
 const concurrently = require('concurrently')
 
+const objectToCliArgs = require('./objectToCliArgs')
+
 module.exports = async function runCLI(name, args) {
-  const argsObj = dargs(args, {
+  const argsObj = objectToCliArgs(args, {
     allowCamelCase: true,
     ignoreFalse: true,
     useEquals: false,
