@@ -1,18 +1,20 @@
 import React, { memo } from 'react'
 import Box from '@useweb/box'
 
-import { defaultProps, propTypes } from './props'
 import * as localStyles from './styles'
 
-const Link = ({ children, styles, ...rest }) => {
+type Props = {
+  children: any
+  href: string
+  styles?: object
+}
+
+const Link = ({ children, styles = {}, ...rest }: Props) => {
   return (
     <Box styles={{ ...localStyles.wrapper, ...styles }} {...rest} as='a'>
       {children}
     </Box>
   )
 }
-
-Link.defaultProps = defaultProps
-Link.propTypes = propTypes
 
 export default memo(Link)
