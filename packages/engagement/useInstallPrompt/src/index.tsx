@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useRef, useEffect, useState } from 'react'
+import React, { createContext, useContext, useRef, useState } from 'react'
+import useEventListener from '@useweb/use-event-listener'
 
 export const UseInstallPromptContext = createContext(null)
 
@@ -35,13 +36,7 @@ export const UseInstallPromptProvider = ({ children }: Props) => {
     }
   }
 
-  useEffect(() => {
-    window.addEventListener('beforeinstallprompt', setPromptFunction)
-
-    return () => {
-      window.removeEventListener('beforeinstallprompt', setPromptFunction)
-    }
-  }, [])
+  useEventListener('beforeinstallprompt', setPromptFunction)
 
   return (
     <UseInstallPromptContext.Provider

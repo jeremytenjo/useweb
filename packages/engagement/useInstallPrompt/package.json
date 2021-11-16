@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-install-prompt",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -18,5 +18,8 @@
   },
   "devDependencies": {
     "@useweb/compiler": "1.0.0"
+  },
+  "dependencies": {
+    "@useweb/use-event-listener": "^0.1.0"
   }
 }

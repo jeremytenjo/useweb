@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-event-listener",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",

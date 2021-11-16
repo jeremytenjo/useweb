@@ -4,16 +4,23 @@ import { useEffect, useRef } from 'react'
  * @example
  * useEventListener('click', handleClick)
  */
-export default function useEventListener(eventName, handler, element) {
+export default function useEventListener(
+  eventName: string,
+  handler: (event: Event) => void,
+  element?: HTMLElement,
+) {
   // Create a ref that stores handler
-  const savedHandler = useRef()
+  type SavedHandler = {
+    triggerHandler: (event: Event) => void
+  }
+  const savedHandler = useRef<SavedHandler>(null)
 
   // Update ref.current value if handler changes.
   // This allows our effect below to always get latest handler ...
   // ... without us needing to pass it in effect deps array ...
   // ... and potentially cause effect to re-run every render.
   useEffect(() => {
-    savedHandler.current = handler
+    savedHandler.current && (savedHandler.current.triggerHandler = handler)
   }, [handler])
 
   useEffect(
@@ -24,7 +31,8 @@ export default function useEventListener(eventName, handler, element) {
       if (!isSupported) return
 
       // Create event listener that calls handler function stored in ref
-      const eventListener = (event) => savedHandler.current(event)
+      const eventListener = (event: Event) =>
+        savedHandler.current && savedHandler.current.triggerHandler(event)
 
       // Add event listener
       el.addEventListener(eventName, eventListener)
