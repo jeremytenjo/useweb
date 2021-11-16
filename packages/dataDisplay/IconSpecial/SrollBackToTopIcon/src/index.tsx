@@ -6,7 +6,7 @@ import IconArrowFeather from './IconArrowFeather'
 
 import { iconStyles } from './styles'
 
-export default function SrollBackToTopIcon({
+export default function ScrollBackToTopIcon({
   Icon = IconArrowFeather,
   animationProps = {},
   iconProps = {},
