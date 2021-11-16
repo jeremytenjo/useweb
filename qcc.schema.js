@@ -1,5 +1,7 @@
 const shell = require('child_process')
 
+// changeCase API https://github.com/blakeembrey/change-case#core
+
 module.exports = [
   {
     type: 'React component',
@@ -21,8 +23,8 @@ module.exports = [
       },
       {
         path: () => 'package.json',
-        template: ({ name }) => `{
-          "name": "@useweb/${name}",
+        template: ({ name, helpers: { changeCase } }) => `{
+          "name": "@useweb/${changeCase.lowerCase(name)}",
           "version": "0.0.1",
           "main": "./build/index.js",
           "author": "Jeremy Tenjo",
