@@ -14,12 +14,11 @@
     "deploy": "npm run build && npm publish --access public"
   },
   "peerDependencies": {
-    "react": "^17.0.0"
+    "react": "^17.0.0",
+    "@useweb/on-swipe": "^1.0.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "1.1.0"
-  },
-  "dependencies": {
+    "@useweb/compiler": "1.1.0",
     "@useweb/on-swipe": "^1.0.0"
   }
 }

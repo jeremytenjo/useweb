@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+
 import animationPresets from './presets'
 
 const defaultConfig = {
