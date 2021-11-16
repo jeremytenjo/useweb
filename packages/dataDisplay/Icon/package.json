@@ -18,7 +18,7 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "@useweb/compiler": "1.0.0",
+    "@useweb/compiler": "1.1.0",
     "styled-components": "^5.3.3"
   }
 }
