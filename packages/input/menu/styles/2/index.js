@@ -1,7 +1,7 @@
 import Text from '../../../../dataDisplay/Text'
 import Animation from '../../../../utils/Animation'
 import Overlay from '../../../../utils/overlay'
-import Box from '../../../../dataDisplay/Box'
+import Box from '@useweb/box'
 import IconClose from '../../../../dataDisplay/Icon/library/IconCloseMaterial'
 import Iconfilter from '../../../../dataDisplay/Icon/library/IconFilter1/'
 import { defaultProps, propTypes } from '../../props'

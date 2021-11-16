@@ -1,4 +1,4 @@
-import Box from '../../dataDisplay/Box'
+import Box from '@useweb/box'
 import Text from '../../dataDisplay/Text'
 import useTimeout from '../timeout/useTimeout'
 import makeTwoDigit from '../../utils/numbers/makeTwoDigit'

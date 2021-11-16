@@ -1,4 +1,5 @@
-import Box from '../../dataDisplay/Box'
+import React, { memo } from 'react'
+import Box from '@useweb/box'
 
 import { defaultProps, propTypes } from './props'
 import * as localStyles from './styles'

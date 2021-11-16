@@ -1,4 +1,4 @@
-import Box from '../../../dataDisplay/Box'
+import Box from '@useweb/box'
 import useClickOutside from '../'
 
 export default () => {

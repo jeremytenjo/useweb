@@ -1,5 +1,5 @@
 import useAnimation from '../Animation'
-import Box from '../../dataDisplay/Box'
+import Box from '@useweb/box'
 import preventBodyScroll from '../scrolling/preventBodyScroll'
 
 import { defaultProps, propTypes } from './props'

@@ -1,4 +1,4 @@
-import Box from '../../../../dataDisplay/Box'
+import Box from '@useweb/box'
 import Image from '../../../images/Image'
 import fileReader from '..'
 
