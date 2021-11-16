@@ -16,11 +16,13 @@
   "peerDependencies": {
     "react": "^17.0.0",
     "@useweb/use-event-listener": "^0.1.0",
-    "@useweb/icon": "0.0.1"
+    "@useweb/icon": "0.0.1",
+    "@useweb/animate": "^1.0.0"
   },
   "devDependencies": {
     "@useweb/compiler": "1.1.0",
     "@useweb/use-event-listener": "^0.1.0",
-    "@useweb/icon": "0.0.1"
+    "@useweb/icon": "0.0.1",
+    "@useweb/animate": "^1.0.0"
   }
 }

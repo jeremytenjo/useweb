@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import useEventListener from '@useweb/use-event-listener'
+import Animate from '@useweb/animate'
 
-import Animation from '../../../../utils/Animation/src'
 import IconArrowFeather from './IconArrowFeather'
 
 import { iconStyles } from './styles'
@@ -24,7 +24,7 @@ export default function SrollBackToTopIcon({
   const handleClick = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
   return (
-    <Animation show={show} {...animationProps}>
+    <Animate show={show} {...animationProps}>
       <Icon
         background
         color='white'
@@ -35,6 +35,6 @@ export default function SrollBackToTopIcon({
         backgroundSize='20px'
         {...iconProps}
       />
-    </Animation>
+    </Animate>
   )
 }
