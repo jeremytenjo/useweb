@@ -1,4 +1,5 @@
-import onSwipe from '../../gestures/onSwipe'
+import onSwipe from '@useweb/on-swipe'
+
 // Keyframes should be set before used in animate()
 export default ({ el, config, show, direction = 'bottomUp', returnsOnEnd, children }) => {
   const LOWEST_POINT = '0'

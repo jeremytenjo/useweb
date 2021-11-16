@@ -1,3 +1,4 @@
+import React from 'react'
 import LottieReact from 'lottie-react'
 
 import { defaultProps } from './props'

@@ -1,4 +1,4 @@
-import Lottie from '../../'
+import Lottie from '../..'
 
 export default (props) => (
   <Lottie

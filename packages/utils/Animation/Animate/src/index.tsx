@@ -1,4 +1,5 @@
-import animationPresets from './presets/presets'
+import { useEffect, useRef } from 'react'
+import animationPresets from './presets'
 
 const defaultConfig = {
   fill: 'forwards',
@@ -7,7 +8,7 @@ const defaultConfig = {
   easing: 'ease-out',
 }
 
-const AnimationWap = ({
+export default function Animate({
   name = 'showHide',
   el = null,
   config = defaultConfig,
@@ -15,7 +16,7 @@ const AnimationWap = ({
   children,
   style = {},
   ...rest
-}) => {
+}) {
   const wrapperRef = useRef(null)
   const element = el || wrapperRef
 
@@ -44,5 +45,3 @@ const AnimationWap = ({
     </div>
   ) : null
 }
-
-export default AnimationWap

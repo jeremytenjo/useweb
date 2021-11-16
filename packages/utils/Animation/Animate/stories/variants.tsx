@@ -1,4 +1,4 @@
-import Animation from '..'
+import Animation from '../src'
 
 const Example = ({ type }) => {
   const divRef = useRef(null)
