@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Icon from '@useweb/icon'
 
 export default function IconArrowFeather(props) {
