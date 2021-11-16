@@ -21,7 +21,13 @@ const Link = ({
   ...rest
 }: Props) => {
   return (
-    <Box styles={{ ...localStyles.wrapper, ...styles }} {...rest} as='a'>
+    <Box
+      styles={{ ...localStyles.wrapper, ...styles }}
+      target={target}
+      rel={rel}
+      {...rest}
+      as='a'
+    >
       {children}
     </Box>
   )
