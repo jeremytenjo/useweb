@@ -2,13 +2,36 @@ const shell = require('child_process')
 
 // changeCase API https://github.com/blakeembrey/change-case#core
 
+const packageJsonCommon = `
+  "version": "0.0.1",
+  "main": "./build/index.js",
+  "author": "Jeremy Tenjo",
+  "types": "./build/types/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "node ./node_modules/@useweb/compiler/build",
+    "build:watch": "node ./node_modules/@useweb/compiler/build --watch",
+    "prepublish": "npm run build",
+    "deploy": "npm run build && npm publish --access public"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  },
+  "devDependencies": {
+    "@useweb/compiler": "1.0.0"
+  }`
+
+const onCreate = ({ outputPath }) => {
+  shell.exec(`cd ${outputPath} && npm i`)
+}
+
 module.exports = [
   {
-    type: 'React component',
+    type: 'React Component',
     hooks: {
-      onCreate: ({ outputPath }) => {
-        shell.exec(`cd ${outputPath} && npm i`)
-      },
+      onCreate,
     },
     files: [
       {
@@ -24,27 +47,35 @@ module.exports = [
       {
         path: () => 'package.json',
         template: ({ name, helpers: { changeCase } }) => `{
-          "name": "@useweb/${changeCase.lowerCase(name)}",
-          "version": "0.0.1",
-          "main": "./build/index.js",
-          "author": "Jeremy Tenjo",
-          "types": "./build/types/index.d.ts",
-          "files": [
-            "build"
-          ],
-          "scripts": {
-            "build": "node ./node_modules/@useweb/compiler/build",
-            "build:watch": "node ./node_modules/@useweb/compiler/build --watch",
-            "prepublish": "npm run build",
-            "deploy": "npm run build && npm publish --access public"
-          },
-          "peerDependencies": {
-            "react": "^17.0.0"
-          },
-          "devDependencies": {
-            "@useweb/compiler": "1.0.0"
+        "name": "@useweb/${changeCase.lowerCase(name)}",
+        ${packageJsonCommon}
+      }`,
+      },
+    ],
+  },
+  {
+    type: 'React Hook',
+    hooks: {
+      onCreate,
+    },
+    files: [
+      {
+        path: () => 'src/index.ts',
+        template: ({ name }) => `
+        export default function ${name}() {
+          const title = '${name}'
+          return {
+            title
           }
-        }`,
+        }
+          `,
+      },
+      {
+        path: () => 'package.json',
+        template: ({ name, helpers: { changeCase } }) => `{
+        "name": "@useweb/${changeCase.paramCase(name)}",
+        ${packageJsonCommon}
+      }`,
       },
     ],
   },
