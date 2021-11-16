@@ -19,6 +19,7 @@ module.exports = async function generateTypes(packageDir, entryPointFile) {
     target: 'es5',
     noImplicitAny: false,
     noImplicitReturns: false,
+    allowJs: true,
     noImplicitThis: true,
     noUnusedLocals: true,
     noUnusedParameters: true,
