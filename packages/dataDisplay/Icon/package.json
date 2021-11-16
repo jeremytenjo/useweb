@@ -1,6 +1,6 @@
 {
-  "name": "@useweb/use-install-prompt",
-  "version": "1.0.0",
+  "name": "@useweb/icon",
+  "version": "0.0.1",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -14,11 +14,9 @@
     "deploy": "npm run build && npm publish --access public"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
-    "@useweb/use-event-listener": "^0.1.0"
+    "react": "^17.0.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "1.0.0",
-    "@useweb/use-event-listener": "^0.1.0"
+    "@useweb/compiler": "1.0.0"
   }
 }
