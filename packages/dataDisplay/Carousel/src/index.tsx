@@ -3,7 +3,7 @@ import SwipeableViews from 'react-swipeable-views'
 import Box from '@useweb/box'
 import useKeyPress from '@useweb/use-key-press'
 
-import IconArrowFeather from '../Icon/library/IconArrowFeather/index'
+import IconArrow from './IconArrow'
 
 import { defaultProps, propTypes } from './props'
 import * as styles from './styles'
