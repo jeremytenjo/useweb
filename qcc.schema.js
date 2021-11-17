@@ -13,7 +13,6 @@ const packageJsonCommon = `
   "scripts": {
     "build": "node ./node_modules/@useweb/compiler/build",
     "build:watch": "node ./node_modules/@useweb/compiler/build --watch",
-    
     "deploy": "npm run build && npm publish --access public"
   },
   "peerDependencies": {
