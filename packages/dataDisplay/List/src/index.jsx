@@ -1,4 +1,6 @@
-import BottomScrollListener from '../../utils/scrolling/eventListeners/scrollEnd'
+import React, { forwardRef } from 'react'
+// https://github.com/karl-run/react-bottom-scroll-listener
+import { BottomScrollListener } from 'react-bottom-scroll-listener'
 
 import { Wrapper } from './styles'
 
@@ -75,4 +77,4 @@ const List = (
   )
 }
 
-export default memo(forwardRef(List))
+export default forwardRef(List)

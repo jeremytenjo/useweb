@@ -2,9 +2,3 @@
 import { BottomScrollListener } from 'react-bottom-scroll-listener'
 
 export default BottomScrollListener
-
-// On bottom of entire screen
-
-// import BottomScrollListener from '@useweb/lib/utils/Scrolling/EventListeners/scrollEnd'
-
-// <BottomScrollListener onBottom={callback} />

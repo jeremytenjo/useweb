@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-
-import system from '../../theme/system'
+import system from '@useweb/style-system'
 
 export const Wrapper = styled.ul`
   ${system}
