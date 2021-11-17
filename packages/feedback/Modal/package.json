@@ -18,10 +18,14 @@
   },
   "devDependencies": {
     "@useweb/animate": "^1.0.1",
+    "@useweb/box": "^1.1.0",
     "@useweb/compiler": "1.1.4",
+    "@useweb/decamelize": "^0.1.1",
+    "@useweb/on-swipe": "^1.0.0",
     "@useweb/overlay": "^1.0.1",
-    "styled-components": "^5.3.3",
+    "@useweb/prevent-body-scroll": "^1.0.0",
     "@useweb/remove-duplicates-from-array": "^0.1.1",
-    "@useweb/decamelize": "^0.1.1"
+    "@useweb/style-system": "^0.1.3",
+    "styled-components": "^5.3.3"
   }
 }
