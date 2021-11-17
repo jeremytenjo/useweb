@@ -1,6 +1,6 @@
 import ImageCompressor from 'image-compressor.js'
 
-const imagesFixRotation = (file) => {
+export default function imagesFixRotation(file) {
   return new Promise((resolve, reject) => {
     new ImageCompressor(file, {
       checkOrientation: true,
@@ -13,5 +13,3 @@ const imagesFixRotation = (file) => {
     })
   })
 }
-
-export default imagesFixRotation

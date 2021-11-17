@@ -1,6 +1,6 @@
 import ImageCompressor from 'image-compressor.js'
 
-export default (file, width = 300) => {
+export default function resizeImage(file, width = 300) {
   return new Promise((resolve, reject) => {
     new ImageCompressor(file, {
       width,
