@@ -19,7 +19,7 @@ const packageJsonCommon = `
     "react": "^17.0.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "1.1.2"
+    "@useweb/compiler": "1.1.3"
   }`
 
 const onCreate = ({ outputPath }) => {

@@ -1,9 +1,9 @@
+import React, { memo, useEffect, useRef } from 'react'
 import Overlay from '@useweb/overlay'
 import useAnimation from '@useweb/animate'
 
 import { defaultProps, propTypes } from './props'
 import { ModalWrapper } from './styles'
-import { memo, useEffect, useRef } from 'react'
 
 const Modal = ({
   show,
