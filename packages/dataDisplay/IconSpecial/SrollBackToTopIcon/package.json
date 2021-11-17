@@ -1,6 +1,6 @@
 {
   "name": "@useweb/scroll-back-to-top-icon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -14,7 +14,7 @@
   },
   "peerDependencies": {
     "react": "^17.0.0",
-    "@useweb/use-event-listener": "^0.1.0",
+    "@useweb/use-event-listener": "^0.1.1",
     "@useweb/icon": "0.0.1",
     "@useweb/animate": "^1.0.0"
   },
@@ -22,6 +22,6 @@
     "@useweb/animate": "^1.0.0",
     "@useweb/compiler": "1.1.4",
     "@useweb/icon": "0.0.1",
-    "@useweb/use-event-listener": "^0.1.0"
+    "@useweb/use-event-listener": "^0.1.1"
   }
 }
