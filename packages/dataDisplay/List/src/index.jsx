@@ -1,32 +1,29 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 // https://github.com/karl-run/react-bottom-scroll-listener
 import { BottomScrollListener } from 'react-bottom-scroll-listener'
 
 import { Wrapper } from './styles'
 
-const List = (
-  {
-    photoGrid,
-    data = [],
-    children,
-    direction = 'column',
-    onItemClick = () => null,
-    ItemComponent,
-    listItemDefinitions,
-    repeat = 3,
-    autoColumns,
-    overflows,
-    minWidth = 600,
-    repeatOnMinWidth = 3,
-    onScrollEnd,
-    rawChildren,
-    gap = 'xs',
-    padding = 'xs',
-    styles = {},
-    ...rest
-  },
-  ref,
-) => {
+const List = ({
+  photoGrid,
+  data = [],
+  children,
+  direction = 'column',
+  onItemClick = () => null,
+  ItemComponent,
+  listItemDefinitions,
+  repeat = 3,
+  autoColumns,
+  overflows,
+  minWidth = 600,
+  repeatOnMinWidth = 3,
+  onScrollEnd,
+  rawChildren,
+  gap = 'xs',
+  padding = 'xs',
+  styles = {},
+  ...rest
+}) => {
   const dataLength = data.length
   children = Array.isArray(children) ? children : [children]
 
@@ -44,9 +41,8 @@ const List = (
       </li>
     ))
 
-  const Main = (scrollRef) => (
+  const Main = () => (
     <Wrapper
-      ref={scrollRef}
       direction={direction}
       dataLength={dataLength}
       repeat={repeat}
@@ -73,8 +69,8 @@ const List = (
   return onScrollEnd ? (
     <BottomScrollListener onBottom={onScrollEnd}>{Main}</BottomScrollListener>
   ) : (
-    Main(ref)
+    <Main />
   )
 }
 
-export default forwardRef(List)
+export default List

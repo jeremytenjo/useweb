@@ -1,6 +1,4 @@
 import React from 'react'
-import Text from '@useweb/text'
-import Animate from '@useweb/animate'
 
 import { defaultProps, propTypes } from './props'
 
@@ -48,19 +46,10 @@ export default function Button({
           {...rest}
         >
           {beforeIcon && beforeIcon}
-          <Text
-            text={text}
-            variant={typographyVariant}
-            styles={{ color: textColor, transform: 'translateY(1px)' }}
-            {...textProps}
-          />
+          {text}
           {afterIcon && afterIcon}
         </ButtonInner>
       </button>
-
-      <Animate name='showHide' show={isLoading}>
-        <LoadingCon color={color}>{ProgressComponent && ProgressComponent}</LoadingCon>
-      </Animate>
     </Wrapper>
   )
 }

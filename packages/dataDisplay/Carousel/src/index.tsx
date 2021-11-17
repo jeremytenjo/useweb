@@ -59,19 +59,11 @@ export default function Carousel({
       </SwipeableViews>
 
       {showLeftArrow && !hasOneItem && (
-        <IconArrowFeather
-          onClick={handleBack}
-          color={iconColor}
-          style={styles.leftArrow}
-        />
+        <IconArrow onClick={handleBack} color={iconColor} style={styles.leftArrow} />
       )}
 
       {showRightArrow && !hasOneItem && (
-        <IconArrowFeather
-          onClick={handleNext}
-          style={styles.rightArrow}
-          color={iconColor}
-        />
+        <IconArrow onClick={handleNext} style={styles.rightArrow} color={iconColor} />
       )}
     </Box>
   )
