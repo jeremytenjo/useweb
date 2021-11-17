@@ -6,7 +6,6 @@ const getDeepestFolderLength = require('../utils/getDeepestFolderLength')
 module.exports = async function generateTypes(packageDir, entryPointFile) {
   if (entryPointFile !== 'index.ts' && entryPointFile !== 'index.tsx') return null
   const packageSrcDir = path.join(packageDir, 'src')
-
   const outputPath = path.join(packageDir, 'build', 'types')
 
   const srcDirLengh = await getDeepestFolderLength(packageSrcDir)
