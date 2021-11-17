@@ -18,7 +18,7 @@
     "react": "^17.0.0"
   },
   "dependencies": {
-    "@useweb/compiler": "1.1.1",
+    "@useweb/compiler": "1.1.2",
     "@useweb/use-event-listener": "0.0.2"
   }
 }

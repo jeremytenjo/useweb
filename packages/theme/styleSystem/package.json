@@ -19,6 +19,6 @@
     "@useweb/decamelize": "^0.1.1"
   },
   "devDependencies": {
-    "@useweb/compiler": "1.1.1"
+    "@useweb/compiler": "1.1.2"
   }
 }

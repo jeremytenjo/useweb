@@ -18,7 +18,7 @@
     "@useweb/on-swipe": "^1.0.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "1.1.1",
+    "@useweb/compiler": "1.1.2",
     "@useweb/on-swipe": "^1.0.0"
   }
 }
