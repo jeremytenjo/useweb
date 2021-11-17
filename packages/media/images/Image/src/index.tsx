@@ -1,3 +1,5 @@
+import React, { useState, memo } from 'react'
+
 import { defaultProps, propTypes } from './props'
 import { ImageWrapper, InnerImage } from './styles'
 

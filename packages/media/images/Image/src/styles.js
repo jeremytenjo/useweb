@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-
-import system from '../../../theme/system'
+import system from '@useweb/style-system'
 
 export const ImageWrapper = styled.div`
   width: 300px;
