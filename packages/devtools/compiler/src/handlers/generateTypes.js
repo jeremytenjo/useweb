@@ -8,7 +8,7 @@ module.exports = async function generateTypes(packageDir, entryPointFile) {
   const outputPath = path.join(packageDir, 'build', 'types')
 
   // https://www.typescriptlang.org/tsconfig#include
-  const include = path.join(packageDir, 'src/*/**')
+  const include = path.join(packageDir, 'src/**/**/**/**')
 
   // https://www.typescriptlang.org/docs/handbook/compiler-options.html
   const tscArgs = {
