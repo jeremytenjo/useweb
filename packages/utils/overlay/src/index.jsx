@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import useAnimation from '@useweb/animate'
 import Box from '@useweb/box'
 import preventBodyScroll from '@useweb/prevent-body-scroll'

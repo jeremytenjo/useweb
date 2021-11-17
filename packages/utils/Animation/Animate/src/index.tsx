@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-import animationPresets from './presets'
+import animationPresets from './presets/presets'
 
 const defaultConfig = {
   fill: 'forwards',
