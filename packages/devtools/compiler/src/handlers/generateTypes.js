@@ -1,14 +1,19 @@
 const path = require('path')
 
 const runCLI = require('../utils/runCLI')
+const glob = require('../utils/glob')
 
 module.exports = async function generateTypes(packageDir, entryPointFile) {
   if (entryPointFile !== 'index.ts' && entryPointFile !== 'index.tsx') return null
 
   const outputPath = path.join(packageDir, 'build', 'types')
 
+  const srcDirLengh = await glob(path.join(packageDir, 'src/*/'))
+  console.log(srcDirLengh)
+  process.exit(0)
+
   // https://www.typescriptlang.org/tsconfig#include
-  const include = path.join(packageDir, 'src/**/*')
+  const include = path.join(packageDir, 'src/**')
 
   // https://www.typescriptlang.org/docs/handbook/compiler-options.html
   const tscArgs = {
