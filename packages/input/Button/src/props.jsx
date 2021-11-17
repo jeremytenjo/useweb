@@ -1,6 +1,5 @@
 import { string, func, bool, object, oneOfType, node } from 'prop-types'
-
-import Dots from '../../feedback/progress/dots'
+import Dots from '@useweb/progress-dots'
 
 export const defaultProps = {
   Wrapper: ({ children }) => children,

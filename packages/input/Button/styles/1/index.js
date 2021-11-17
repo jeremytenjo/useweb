@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import Button from '../..'
+import Button from '../../src'
 
 export const BaseWrapper = styled.div`
   position: relative;

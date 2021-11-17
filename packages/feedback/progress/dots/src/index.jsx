@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 const Dots = ({ style, color = 'white' }) => (
@@ -70,4 +71,4 @@ const Wrapper = styled.div`
   }
 `
 
-export default memo(Dots)
+export default Dots
