@@ -1,8 +1,8 @@
 import SwipeableViews from 'react-swipeable-views'
 
-import Box from '../Box'
+import Box from '../../Box/build/types'
 import IconArrowFeather from '../Icon/library/IconArrowFeather/index'
-import useKeyPress from '../../feedback/useKeyPress'
+import useKeyPress from '../../../feedback/useKeyPress'
 
 import { defaultProps, propTypes } from './props'
 import * as styles from './styles'
