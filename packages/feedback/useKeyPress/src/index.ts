@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react'
+
 /**
  * {@link https://keycode.info/ Find key code}
  * @param  {string} keys (use event.key)

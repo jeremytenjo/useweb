@@ -1,8 +1,9 @@
+import React, { Fragment, useEffect, useRef } from 'react'
 import SwipeableViews from 'react-swipeable-views'
+import Box from '@useweb/box'
+import useKeyPress from '@useweb/use-key-press'
 
-import Box from '../../Box/build/types'
 import IconArrowFeather from '../Icon/library/IconArrowFeather/index'
-import useKeyPress from '../../../feedback/useKeyPress'
 
 import { defaultProps, propTypes } from './props'
 import * as styles from './styles'

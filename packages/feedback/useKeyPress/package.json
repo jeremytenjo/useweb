@@ -1,6 +1,6 @@
 {
-  "name": "@useweb/carousel",
-  "version": "1.0.0",
+  "name": "@useweb/use-key-press",
+  "version": "1.0.",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
