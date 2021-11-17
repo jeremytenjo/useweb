@@ -1,4 +1,4 @@
-import { Document, Window } from '../../browser'
+import { Document, Window } from '@useweb/dom'
 
 const body = Document().querySelector('body')
 
