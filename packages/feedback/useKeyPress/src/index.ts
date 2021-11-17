@@ -11,14 +11,14 @@ import { useEffect, useRef } from 'react'
  * useKeyPress('a', onPress)
  * @description WARNING - if `onPress` function updates state, ensure to track that state in useRef and useState to keep state up to date. See `Carousel` for example.
  */
-export default function useKeyPress(keys, onPress) {
-  keys = keys.split(' ').map((key) => key.toLowerCase())
-  const isSingleKey = keys.length === 1
+export default function useKeyPress(keys: string, onPress?: () => void) {
+  const keysArray = keys.split(' ').map((key) => key.toLowerCase())
+  const isSingleKey = keysArray.length === 1
   const pressedKeys = useRef([])
 
   const keyIsRequested = (key) => {
     key = key.toLowerCase()
-    return keys.includes(key)
+    return keysArray.includes(key)
   }
 
   const addPressedKey = (key) => {
@@ -50,7 +50,7 @@ export default function useKeyPress(keys, onPress) {
         pressedKeys.current = []
         onPress()
       } else {
-        const containsAll = keys.every((i) => pressedKeys.current.includes(i))
+        const containsAll = keysArray.every((i) => pressedKeys.current.includes(i))
         removePressedKey(key)
         if (containsAll) {
           onPress()

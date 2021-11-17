@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@useweb/box": "^1.1.0",
-    "@useweb/compiler": "1.1.4"
+    "@useweb/compiler": "1.1.4",
+    "react-swipeable-views": "^0.14.0"
   }
 }
