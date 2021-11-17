@@ -5,14 +5,15 @@ const getDeepestFolderLength = require('../utils/getDeepestFolderLength')
 
 module.exports = async function generateTypes(packageDir, entryPointFile) {
   if (entryPointFile !== 'index.ts' && entryPointFile !== 'index.tsx') return null
+  const packageSrcDir = path.join(packageDir, 'src')
 
   const outputPath = path.join(packageDir, 'build', 'types')
 
-  const srcDirLengh = await getDeepestFolderLength(path.join(packageDir, 'src'))
+  const srcDirLengh = await getDeepestFolderLength(packageSrcDir)
   const srcDirLengArray = Array.from(Array(srcDirLengh).keys())
   const inlcudePatt = srcDirLengArray.reduce((accumulator) => `${accumulator}/**`, '/**')
   // https://www.typescriptlang.org/tsconfig#include
-  const include = path.join(packageDir, 'src', inlcudePatt)
+  const include = path.join(packageSrcDir, inlcudePatt)
 
   // https://www.typescriptlang.org/docs/handbook/compiler-options.html
   const tscArgs = {
