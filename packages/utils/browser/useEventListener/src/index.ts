@@ -13,14 +13,14 @@ export default function useEventListener(
   type SavedHandler = {
     triggerHandler: (event: Event) => void
   }
-  const savedHandler = useRef<SavedHandler>(null)
+  const savedHandler = useRef<SavedHandler>({ triggerHandler: () => null })
 
   // Update ref.current value if handler changes.
   // This allows our effect below to always get latest handler ...
   // ... without us needing to pass it in effect deps array ...
   // ... and potentially cause effect to re-run every render.
   useEffect(() => {
-    savedHandler.current && (savedHandler.current.triggerHandler = handler)
+    savedHandler.current.triggerHandler = handler
   }, [handler])
 
   useEffect(
