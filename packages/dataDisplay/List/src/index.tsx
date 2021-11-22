@@ -9,7 +9,6 @@ type Props = {
   data?: any
   children?: any
   direction?: string
-  onItemClick?: string
   ItemComponent?: string
   listItemDefinitions?: string
   repeat?: number
@@ -17,11 +16,12 @@ type Props = {
   overflows?: boolean
   minWidth?: number
   repeatOnMinWidth?: number
-  onScrollEnd?: string
   rawChildren?: string
   gap?: string
   padding?: string
   styles?: object
+  onItemClick?: (data: any) => void
+  onScrollEnd?: () => void
 }
 
 const List = ({
