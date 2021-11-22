@@ -1,9 +1,9 @@
-import webpack from './webpack'
+// import webpack from './webpack'
 
-export default {
+module.exports = {
   stories: ['../../packages/**/*.stories.@(js|jsx|ts|tsx|mdx))'],
   addons: ['@storybook/addon-docs', '@storybook/addon-controls'],
-  webpackFinal: async (defaultConfig) => {
-    return webpack(defaultConfig)
-  },
+  // webpackFinal: async (defaultConfig) => {
+  //   return webpack(defaultConfig)
+  // },
 }

@@ -9,7 +9,7 @@
   "license": "ISC",
   "scripts": {
     "dev": "start-storybook -p 6008",
-    "dev:storybook": "start-storybook -c ./devtools/storybook -p 6007 --quiet --ci",
+    "dev:storybook": "start-storybook -c ./devtools/storybook -p 6007 --quiet --ci --modern",
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:version": "lerna version",
     "lerna:link": "lerna link",
