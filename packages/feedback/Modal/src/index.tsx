@@ -14,13 +14,14 @@ export default function Modal({
   style,
   overlayStyles,
 }) {
+  const handleKeyInput = ({ key }) => key === 'Escape' && onClose()
+
   useEffect(() => {
     window.addEventListener('keydown', handleKeyInput, true)
     return () => {
       window.removeEventListener('keydown', handleKeyInput, true)
     }
   }, [])
-  const handleKeyInput = ({ key }) => key === 'Escape' && onClose()
 
   const modalRef = useRef(null)
 
