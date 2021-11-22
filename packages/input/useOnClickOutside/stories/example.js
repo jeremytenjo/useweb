@@ -1,4 +1,5 @@
 import Box from '@useweb/box'
+
 import useClickOutside from '../'
 
 export default () => {

@@ -1,5 +1,6 @@
-import FileUpload from '../../../../media/files/fileInput'
 import Box from '@useweb/box/'
+
+import FileUpload from '../../../../media/files/fileInput'
 import Image from '../../../../media/images/Image/'
 import extractColors from '../'
 

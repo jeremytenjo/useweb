@@ -5,6 +5,7 @@ module.exports = {
     node: true,
     jest: true,
     'cypress/globals': true,
+    es6: true,
   },
   ignorePatterns: [
     'node_modules',

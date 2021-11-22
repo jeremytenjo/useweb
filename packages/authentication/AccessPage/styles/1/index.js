@@ -1,6 +1,7 @@
+import Box from '@useweb/box'
+
 import Text from '../../../../dataDisplay/Text'
 import Drawer from '../../../../feedback/drawer'
-import Box from '@useweb/box'
 import { defaultProps, propTypes } from '../../props'
 import Animation from '../../../../utils/Animation'
 import providerLogos from '../../utils/providerLogos'
