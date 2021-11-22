@@ -13,17 +13,13 @@ export default function Animate({
   name = 'showHide',
   el = null,
   config = defaultConfig,
-  show,
+  show = null,
   children,
   style = {},
   ...rest
 }) {
   const wrapperRef = useRef(null)
   const element = el || wrapperRef
-
-  useEffect(() => {
-    if (show !== null) execAnimation()
-  }, [show])
 
   const execAnimation = () => {
     animationPresets(name, {
@@ -35,6 +31,10 @@ export default function Animate({
       ...rest,
     })
   }
+
+  useEffect(() => {
+    if (show !== null) execAnimation()
+  }, [show])
 
   return children ? (
     <div
