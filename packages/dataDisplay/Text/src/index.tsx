@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import system from '@useweb/style-system'
 
-import { defaultProps, propTypes } from './props'
-
 const defineTag = (tag, variant) => {
   switch (variant) {
     case 'body1':
@@ -17,12 +15,29 @@ const defineTag = (tag, variant) => {
 const El = styled.span`
   ${system}
 `
+type Props = {
+  tag: string
+  variant: string
+  styles: object
+  onClick: any
+  text: string
+  className: string
+  children: any
+}
 
 /**
  * @example
  * <Text text={initials} />
  */
-const Text = ({ tag, variant, styles, onClick, text, className = '', children }) => {
+export default function Text({
+  tag,
+  variant,
+  styles,
+  onClick,
+  text,
+  className = '',
+  children,
+}: Props) {
   const classN = `typography-${variant} ${className}`
   const Tag = defineTag(tag, variant)
 
@@ -32,8 +47,3 @@ const Text = ({ tag, variant, styles, onClick, text, className = '', children })
     </El>
   )
 }
-
-Text.defaultProps = defaultProps
-Text.propTypes = propTypes
-
-export default Text
