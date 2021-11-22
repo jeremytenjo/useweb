@@ -16,12 +16,12 @@ const El = styled.span`
   ${system}
 `
 type Props = {
-  tag: string
-  variant: string
-  styles: object
-  onClick: any
-  text: string
-  className: string
+  tag?: string
+  variant?: string
+  styles?: object
+  onClick?: any
+  text?: string
+  className?: string
 }
 
 /**
