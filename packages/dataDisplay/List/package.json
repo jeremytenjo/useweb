@@ -1,6 +1,6 @@
 {
   "name": "@useweb/list",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",

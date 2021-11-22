@@ -9,7 +9,7 @@ const List = ({
   data = [],
   children,
   direction = 'column',
-  onItemClick = () => null,
+  onItemClick,
   ItemComponent,
   listItemDefinitions,
   repeat = 3,
@@ -33,7 +33,7 @@ const List = ({
         <ItemComponent
           item={item}
           index={index}
-          onClick={() => onItemClick({ item, index })}
+          onClick={() => onItemClick && onItemClick({ item, index })}
           id={item._id || item.id || index}
           definitions={listItemDefinitions}
           {...item}
