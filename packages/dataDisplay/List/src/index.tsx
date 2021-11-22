@@ -4,6 +4,26 @@ import { BottomScrollListener } from 'react-bottom-scroll-listener'
 
 import { Wrapper } from './styles'
 
+type Props = {
+  photoGrid?: string
+  data?: any
+  children?: any
+  direction?: string
+  onItemClick?: string
+  ItemComponent?: string
+  listItemDefinitions?: string
+  repeat?: number
+  autoColumns?: boolean
+  overflows?: boolean
+  minWidth?: number
+  repeatOnMinWidth?: number
+  onScrollEnd?: string
+  rawChildren?: string
+  gap?: string
+  padding?: string
+  styles?: object
+}
+
 const List = ({
   photoGrid,
   data = [],
@@ -23,7 +43,7 @@ const List = ({
   padding = 'xs',
   styles = {},
   ...rest
-}) => {
+}: Props) => {
   const dataLength = data.length
   children = Array.isArray(children) ? children : [children]
 
