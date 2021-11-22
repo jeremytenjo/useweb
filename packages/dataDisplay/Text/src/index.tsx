@@ -32,7 +32,7 @@ type Props = {
 export default function Text({
   tag,
   variant,
-  styles,
+  styles = {},
   onClick,
   text,
   className = '',
