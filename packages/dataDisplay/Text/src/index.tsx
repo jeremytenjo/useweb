@@ -22,28 +22,26 @@ type Props = {
   onClick: any
   text: string
   className: string
-  children: any
 }
 
 /**
  * @example
- * <Text text={initials} />
+ * <Text text='hello' />
  */
 export default function Text({
   tag,
   variant,
   styles = {},
   onClick,
-  text,
+  text = '',
   className = '',
-  children,
 }: Props) {
   const classN = `typography-${variant} ${className}`
   const Tag = defineTag(tag, variant)
 
   return (
     <El as={Tag} styles={styles} className={classN} onClick={onClick}>
-      {children || text}
+      {text}
     </El>
   )
 }
