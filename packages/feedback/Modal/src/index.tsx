@@ -1,11 +1,11 @@
-import React, { memo, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Overlay from '@useweb/overlay'
 import useAnimation from '@useweb/animate'
 
 import { defaultProps, propTypes } from './props'
 import { ModalWrapper } from './styles'
 
-const Modal = ({
+export default function Modal({
   show,
   children,
   onClose,
@@ -13,7 +13,7 @@ const Modal = ({
   animationsStyles,
   style,
   overlayStyles,
-}) => {
+}) {
   useEffect(() => {
     window.addEventListener('keydown', handleKeyInput, true)
     return () => {
@@ -44,5 +44,3 @@ const Modal = ({
 
 Modal.defaultProps = defaultProps
 Modal.propTypes = propTypes
-
-export default memo(Modal)

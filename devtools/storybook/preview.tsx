@@ -1,6 +1,6 @@
 import { create } from '@storybook/theming/create'
 
-import StorybookTheme from './theme'
+// import StorybookTheme from './theme'
 
 const theme = create({
   base: 'light',
@@ -10,9 +10,9 @@ const theme = create({
 export const decorators = [
   (Story) => {
     return (
-      <StorybookTheme>
+      <>
         <Story />
-      </StorybookTheme>
+      </>
     )
   },
 ]
