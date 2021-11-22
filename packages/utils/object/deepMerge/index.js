@@ -4,4 +4,6 @@ const lodash = require('lodash')
  * @example
  * deepMerge(defaultConfigOptions, config)
  */
-module.exports = (defaultValues, newValues) => lodash.merge(defaultValues, newValues)
+export default function deepMerge(defaultValues, newValues) {
+  return lodash.merge(defaultValues, newValues)
+}
