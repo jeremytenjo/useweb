@@ -1,20 +1,20 @@
 type Props = {
-  id: string
+  selector: string
   behavior?: ScrollBehavior
   inline?: ScrollLogicalPosition
   block?: ScrollLogicalPosition
 }
 
 export default function scrollIntoView({
-  id,
+  selector,
   behavior = 'smooth',
   inline = 'nearest',
   block = 'start',
 }: Props) {
-  if (!id)
+  if (!selector)
     return console.error('scrollIntoView error - add a selector as the first parameter')
 
-  const element = document.querySelector(id)
+  const element = document.querySelector(selector)
 
   if (element) {
     element.scrollIntoView({
