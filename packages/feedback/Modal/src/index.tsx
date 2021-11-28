@@ -6,7 +6,7 @@ import useEventListener from '@useweb/use-event-listener'
 import { ModalWrapper } from './styles'
 
 type Props = {
-  show?: boolean
+  show: boolean
   children?: any
   onClose?: () => void
   animationStyle?: 'blinking' | 'centerOut' | 'outmostIn' | 'showHide'
