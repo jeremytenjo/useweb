@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Meta } from '@storybook/react'
 
+import ModalDocs from './docs'
 import Modal from '../src'
 
 export default {
-  title: 'packages/feedback/modal',
+  title: 'packages/feedback/Modal',
   component: Modal,
   args: {
     show: null,
@@ -19,16 +20,17 @@ export default {
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
     docs: {
-      page: () => <>ssss</>,
+      page: () => <ModalDocs />,
     },
   },
 } as Meta
 
 const Template = (args) => {
+  const [show, setShow] = useState(args.show)
   return (
     <>
       Background text
-      <Modal {...args}>
+      <Modal {...args} show={show} onClose={() => setShow(false)}>
         <div>hello Modal</div>
       </Modal>
     </>
