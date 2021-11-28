@@ -1,12 +1,22 @@
 import path from 'path'
 
 import glob from '../../../../../../packages/node/glob/index.js'
+import createFile from '../../../../../../packages/node/createFile/index.js'
+import { PayloadTypes } from '../../index'
 
-export default async function generateStoriesList() {
-  //get list
-  console.log(process.cwd())
-  const stories = await glob(`${process.cwd()}/packages/**/*.stories.@(tsx|mdx)`, {
-    ignore: 'node_modules',
+export default async function generateStoriesList(payload: PayloadTypes) {
+  const storiesWithFullPaths = await glob(
+    `${process.cwd()}/packages/**/*.stories.@(tsx|mdx)`,
+    {
+      ignore: 'node_modules',
+    },
+  )
+  const stories = storiesWithFullPaths.map((storyFullPath) => {
+    return storyFullPath.replace(process.cwd(), '../..')
   })
-  console.log(stories)
+
+  const storiesListPath = path.join(payload.storybookPath, 'storiesList.cjs')
+  const storiesListContent = `module.exports = [${JSON.stringify(stories)}]`
+
+  await createFile(storiesListPath, storiesListContent)
 }

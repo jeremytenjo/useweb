@@ -4,7 +4,7 @@ import globLib from 'glob'
  */
 export default function glob(pattern: string, options?: object) {
   // eslint-disable-next-line no-undef
-  return new Promise(async (resolve, reject) => {
+  return new Promise<string[]>(async (resolve, reject) => {
     globLib(pattern, options || null, (err, files) => {
       if (err) reject(err)
       resolve(files)

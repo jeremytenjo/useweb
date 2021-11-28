@@ -1,7 +1,7 @@
-const fs = require('fs-extra')
-const prettier = require('prettier')
+import fs from 'fs-extra'
+import prettier from 'prettier'
 
-const prettierConfig = require('../../../.prettierrc.js')
+import prettierConfig from '../../../.prettierrc.cjs'
 
 const addTimestamp = (fileContent) => {
   const fileContentWithTimestamp = `
