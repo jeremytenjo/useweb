@@ -1,6 +1,6 @@
 {
   "name": "@useweb/overlay",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -14,13 +14,13 @@
   },
   "peerDependencies": {
     "react": "^17.0.0",
-    "@useweb/animate": "^1.0.0",
+    "@useweb/animate": "^1.0.3",
     "@useweb/box": "^1.1.0",
     "@useweb/prevent-body-scroll": "^1.0.0",
     "@useweb/use-event-listener": "^0.1.2"
   },
   "devDependencies": {
-    "@useweb/animate": "^1.0.0",
+    "@useweb/animate": "^1.0.3",
     "@useweb/box": "^1.1.0",
     "@useweb/compiler": "1.1.4",
     "@useweb/prevent-body-scroll": "^1.0.0",

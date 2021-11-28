@@ -2,11 +2,27 @@ import React, { useEffect, useRef } from 'react'
 
 import animationPresets from './presets/presets'
 
-const defaultConfig = {
+type ConfigProps = {
+  fill?: string
+  duration?: number
+  direction?: string
+  easing?: string
+}
+
+const defaultConfig: ConfigProps = {
   fill: 'forwards',
   duration: 200,
   direction: 'normal',
   easing: 'ease-out',
+}
+
+type Props = {
+  name: 'blinking' | 'centerOut' | 'outmostIn' | 'showHide'
+  el?: any
+  config?: ConfigProps
+  show?: string
+  children?: any
+  style?: object
 }
 
 export default function Animate({
@@ -17,7 +33,7 @@ export default function Animate({
   children,
   style = {},
   ...rest
-}) {
+}: Props) {
   const wrapperRef = useRef(null)
   const element = el || wrapperRef
 

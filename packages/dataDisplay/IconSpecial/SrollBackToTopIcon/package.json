@@ -16,10 +16,10 @@
     "react": "^17.0.0",
     "@useweb/use-event-listener": "^0.1.2",
     "@useweb/icon": "0.0.1",
-    "@useweb/animate": "^1.0.0"
+    "@useweb/animate": "^1.0.3"
   },
   "devDependencies": {
-    "@useweb/animate": "^1.0.0",
+    "@useweb/animate": "^1.0.3",
     "@useweb/compiler": "1.1.4",
     "@useweb/icon": "0.0.1",
     "@useweb/use-event-listener": "^0.1.2"
