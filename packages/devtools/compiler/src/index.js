@@ -6,6 +6,7 @@
   const args = require('./handlers/getCommandLineArgs')()
   const getEntryPoint = require('./handlers/getEntryPoint')
   const generateTypes = require('./handlers/generateTypes')
+  const removeBuildFolder = require('./handlers/removeBuildFolder')
 
   const packageDir = process.cwd()
   const packageJson = require(path.join(packageDir, 'package.json'))
@@ -15,6 +16,7 @@
   const outfile = path.join(packageDir, 'build', 'index.js')
   const format = args.format || 'cjs'
 
+  await removeBuildFolder()
   await generateTypes(packageDir, entryPointFile)
 
   esbuild.build({

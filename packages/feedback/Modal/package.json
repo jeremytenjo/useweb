@@ -19,7 +19,7 @@
   "devDependencies": {
     "@useweb/animate": "^1.0.3",
     "@useweb/box": "^1.1.0",
-    "@useweb/compiler": "1.1.4",
+    "@useweb/compiler": "1.1.5",
     "@useweb/decamelize": "^0.1.1",
     "@useweb/on-swipe": "^1.0.0",
     "@useweb/overlay": "^1.0.1",
