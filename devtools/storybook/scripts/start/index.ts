@@ -14,5 +14,5 @@ export default async function startStorybook() {
   }
 
   await generateStoriesList(payload)
-  runStorybookStartCli(payload)
+  runStorybookStartCli()
 }
