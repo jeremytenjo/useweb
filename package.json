@@ -7,8 +7,7 @@
   "author": "Jeremy Tenjo",
   "license": "ISC",
   "scripts": {
-    "dev": "node --loader ts-node/esm  ./scripts/dev/index.ts",
-    "dev:storyoo": "start-storybook -c ./devtools/storybook -p 6007 --quiet --ci --no-manager-cache --modern",
+    "dev": "node --loader ts-node/esm ./scripts/dev/index.ts",
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:version": "lerna version",
     "lerna:link": "lerna link",
