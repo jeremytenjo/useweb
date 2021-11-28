@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Modal = () => {
-  return <div>hello</div>
+  return <div>hellos</div>
 }
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
