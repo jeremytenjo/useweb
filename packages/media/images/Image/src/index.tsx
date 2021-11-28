@@ -6,22 +6,25 @@ type Types = {
   src: string
   alt: string
   base64?: string
-  onClick?: (props: any) => void
+  onClick?: () => void
   objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
   definitions?: object
   styles?: object
-  loading?: boolean
+  loading?: 'eager' | 'lazy'
 }
 
+/**
+ * definitions: In case  the src key in not called src in props, expects `{src: <propsrcname>}`
+ */
 export default function Image({
   src,
   base64,
-  alt,
+  alt = '',
   onClick = () => null,
   objectFit = 'cover',
   definitions,
-  styles: customStyles,
-  loading,
+  styles: customStyles = {},
+  loading = 'eager',
   ...props
 }: Types) {
   const [srcLoaded, setSrcLoaded] = useState(!base64)
@@ -40,7 +43,7 @@ export default function Image({
   const onLoadFunction = showBase ? { onLoad: handleImageLoad } : {}
 
   return (
-    <ImageWrapper onClick={() => onClick(props)} styles={customStyles} data-image-wrapper>
+    <ImageWrapper onClick={() => onClick()} styles={customStyles} data-image-wrapper>
       {showBase && (
         <InnerImage
           data-base64
