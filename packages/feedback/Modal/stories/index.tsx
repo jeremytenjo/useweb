@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Meta } from '@storybook/react'
 
 import ModalDocs from './docs'
-import { Modal } from './argtypes'
+import { Modal } from './component'
 
 export default {
   title: 'packages/feedback/Modal',
@@ -10,13 +10,6 @@ export default {
   args: {
     show: null,
   },
-  // // https://storybook.js.org/docs/react/essentials/controls#annotation
-  // argTypes: {
-  //   show: {
-  //     control: 'boolean',
-  //     defaultValue: null,
-  //   },
-  // },
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
     docs: {
