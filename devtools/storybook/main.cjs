@@ -1,4 +1,6 @@
+const stories = require('./storiesList.cjs')
+
 module.exports = {
-  stories: ['../../packages/**/*.stories.@(ts|tsx)'],
+  stories,
   addons: ['@storybook/addon-essentials'],
 }
