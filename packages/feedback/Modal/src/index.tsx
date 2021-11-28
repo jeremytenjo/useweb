@@ -9,7 +9,7 @@ type Props = {
   show?: boolean
   children?: any
   onClose?: () => void
-  animationStyle: 'blinking' | 'centerOut' | 'outmostIn' | 'showHide'
+  animationStyle?: 'blinking' | 'centerOut' | 'outmostIn' | 'showHide'
   animationsStyles?: object
   style?: object
   overlayStyles?: object
