@@ -1,7 +1,7 @@
 import Box from '@useweb/box'
 
 import Button from '../../../../../../input/Button/styles/1'
-import IconGithub from '../../../../../../dataDisplay/Icon/library/IconGithub1'
+// import IconGithub from '../../../../../../dataDisplay/Icon/library/IconGithub1'
 import useGithubFolderViewerProps from '../../../DataProvider/useGithubFolderViewerProps'
 
 export default function Options() {
@@ -24,7 +24,7 @@ export default function Options() {
           rel='noreferrer'
           title='Open in github'
         >
-          <IconGithub size='22px' />
+          'IconGithub size='22px'
         </a>
       )}
     </Box>
