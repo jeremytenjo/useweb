@@ -6,10 +6,7 @@ import {
   PRIMARY_STORY,
 } from '@storybook/addon-docs'
 
-import Modal from '../src'
-
 export default function ModalDocs() {
-  // TODO create reusable storybook themes text component with title, description variants
   return (
     <>
       <Title />
