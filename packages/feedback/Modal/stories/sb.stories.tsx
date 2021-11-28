@@ -26,9 +26,6 @@ const Template = (args) => (
 )
 
 export const Example = Template.bind({})
-Example.args = {
-  show: null,
-}
 
 export const Show = Template.bind({})
 Show.args = {
