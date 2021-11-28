@@ -1,27 +1,31 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import Overlay from '@useweb/overlay'
 import useAnimation from '@useweb/animate'
+import useEventListener from '@useweb/use-event-listener'
 
-import { defaultProps, propTypes } from './props'
 import { ModalWrapper } from './styles'
 
+type Props = {
+  show?: boolean
+  children?: any
+  onClose?: () => void
+  animationStyle?: string
+  animationsStyles?: object
+  style?: object
+  overlayStyles?: object
+}
 export default function Modal({
-  show,
+  show = null,
   children,
-  onClose,
-  animationStyle,
-  animationsStyles,
-  style,
-  overlayStyles,
-}) {
-  const handleKeyInput = ({ key }) => key === 'Escape' && onClose()
+  onClose = () => null,
+  animationStyle = 'centerOut',
+  animationsStyles = {},
+  style = {},
+  overlayStyles = {},
+}: Props) {
+  const handleKeyInput = (e) => e.key === 'Escape' && show !== null && onClose()
 
-  useEffect(() => {
-    window.addEventListener('keydown', handleKeyInput, true)
-    return () => {
-      window.removeEventListener('keydown', handleKeyInput, true)
-    }
-  }, [])
+  useEventListener('keydown', handleKeyInput)
 
   const modalRef = useRef(null)
 
@@ -42,6 +46,3 @@ export default function Modal({
     </>
   )
 }
-
-Modal.defaultProps = defaultProps
-Modal.propTypes = propTypes
