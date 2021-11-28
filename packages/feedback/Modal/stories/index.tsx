@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Meta } from '@storybook/react'
 
 import ModalDocs from './docs'
-import Modal from '../src'
+import Modal, { Button } from '../src'
 
 export default {
   title: 'packages/feedback/Modal',

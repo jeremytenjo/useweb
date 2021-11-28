@@ -1,6 +1,5 @@
 import {
   Title,
-  Subtitle,
   Description,
   Primary,
   ArgsTable,
@@ -13,7 +12,8 @@ export default function ModalDocs() {
     <>
       <Title />
       <Description>This is a modal</Description>
-      <ArgsTable />
+      <Primary />
+      <ArgsTable story={PRIMARY_STORY} />
     </>
   )
 }

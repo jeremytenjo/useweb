@@ -5,7 +5,26 @@ import useEventListener from '@useweb/use-event-listener'
 
 import { ModalWrapper } from './styles'
 
-type Props = {
+export type ButtonProps = {
+  /**
+   * Checks if the button should be disabled
+   */
+  isDisabled: boolean
+  /**
+  The display content of the button
+  */
+  content: string
+}
+
+export const Button: React.FC<ButtonProps> = ({ isDisabled = false, content = '' }) => {
+  return (
+    <button type='button' disabled={isDisabled}>
+      {content}
+    </button>
+  )
+}
+
+export type Props = {
   show: boolean
   children?: any
   onClose?: () => void
@@ -23,11 +42,11 @@ export default function Modal({
   style = {},
   overlayStyles = {},
 }: Props) {
+  const modalRef = useRef(null)
+
   const handleKeyInput = (e) => e.key === 'Escape' && show !== null && onClose()
 
   useEventListener('keydown', handleKeyInput)
-
-  const modalRef = useRef(null)
 
   useAnimation({
     name: animationStyle,
