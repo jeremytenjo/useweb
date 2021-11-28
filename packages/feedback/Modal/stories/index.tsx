@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Meta } from '@storybook/react'
 
 import ModalDocs from './docs'
-import Modal, { Button } from '../src'
+import { Modal } from './argtypes'
 
 export default {
   title: 'packages/feedback/Modal',
@@ -10,13 +10,13 @@ export default {
   args: {
     show: null,
   },
-  // https://storybook.js.org/docs/react/essentials/controls#annotation
-  argTypes: {
-    show: {
-      control: 'boolean',
-      defaultValue: null,
-    },
-  },
+  // // https://storybook.js.org/docs/react/essentials/controls#annotation
+  // argTypes: {
+  //   show: {
+  //     control: 'boolean',
+  //     defaultValue: null,
+  //   },
+  // },
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
     docs: {
@@ -31,7 +31,7 @@ const Template = (args) => {
     <>
       Background text
       <Modal {...args} show={show} onClose={() => setShow(false)}>
-        <div>hello Modal</div>
+        <div>Hello Modal</div>
       </Modal>
     </>
   )

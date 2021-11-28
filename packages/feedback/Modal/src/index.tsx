@@ -5,26 +5,7 @@ import useEventListener from '@useweb/use-event-listener'
 
 import { ModalWrapper } from './styles'
 
-export type ButtonProps = {
-  /**
-   * Checks if the button should be disabled
-   */
-  isDisabled: boolean
-  /**
-  The display content of the button
-  */
-  content: string
-}
-
-export const Button: React.FC<ButtonProps> = ({ isDisabled = false, content = '' }) => {
-  return (
-    <button type='button' disabled={isDisabled}>
-      {content}
-    </button>
-  )
-}
-
-export type Props = {
+type Props = {
   show: boolean
   children?: any
   onClose?: () => void
@@ -33,6 +14,7 @@ export type Props = {
   style?: object
   overlayStyles?: object
 }
+
 export default function Modal({
   show = null,
   children,
