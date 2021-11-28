@@ -16,7 +16,7 @@ export default async function generateStoriesList(payload: PayloadTypes) {
   })
 
   const storiesListPath = path.join(payload.storybookPath, 'storiesList.cjs')
-  const storiesListContent = `module.exports = [${JSON.stringify(stories)}]`
+  const storiesListContent = `module.exports = ${JSON.stringify(stories)}`
 
   await createFile(storiesListPath, storiesListContent)
 }
