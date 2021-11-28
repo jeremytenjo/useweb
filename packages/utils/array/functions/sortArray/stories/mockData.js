@@ -21,8 +21,7 @@ export default [
     seeds: 14920,
     peers: 5570,
     size: '2.3 GB',
-    desc:
-      'http://www.1337x.to/torrent/4382526/Bad-Boys-for-Life-2020-1080p-WEBRip-5-1-YTS-YIFY/',
+    desc: 'http://www.1337x.to/torrent/4382526/Bad-Boys-for-Life-2020-1080p-WEBRip-5-1-YTS-YIFY/',
     provider: '1337x',
     magnet:
       'magnet:?xt=urn:btih:B17E2C6CE8D901A59B77F68781500640E5C0D917&dn=Bad+Boys+for+Life+%282020%29+%5B1080p%5D+%5BWEBRip%5D+%5B5.1%5D+%5BYTS%5D+%5BYIFY%5D&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2710%2Fannounce&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fcoppersurfer.tk%3A6969%2Fannounce',
@@ -45,8 +44,7 @@ export default [
     seeds: 11286,
     peers: 3115,
     size: '2.0 GB',
-    desc:
-      'http://www.1337x.to/torrent/4367691/Birds-of-Prey-And-the-Fantabulous-Emancipation-of-One-Harley-Quinn-2020-1080p-WEBRip-5-1-YTS-YIFY/',
+    desc: 'http://www.1337x.to/torrent/4367691/Birds-of-Prey-And-the-Fantabulous-Emancipation-of-One-Harley-Quinn-2020-1080p-WEBRip-5-1-YTS-YIFY/',
     provider: '1337x',
     magnet:
       'magnet:?xt=urn:btih:F49C6932A9D762E36573AE039949E7EC5521E16B&dn=Birds+of+Prey%3A+And+the+Fantabulous+Emancipation+of+One+Harley+Quinn+%282020%29+%5B1080p%5D+%5BWEBRip%5D+%5B5.1%5D+%5BYTS%5D+%5BYIFY%5D&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2710%2Fannounce&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fcoppersurfer.tk%3A6969%2Fannounce',
@@ -104,8 +102,7 @@ export default [
     seeds: 8600,
     peers: 2488,
     size: '1.7 GB',
-    desc:
-      'http://www.1337x.to/torrent/4396982/Trolls-World-Tour-2020-1080p-WEBRip-5-1-YTS-YIFY/',
+    desc: 'http://www.1337x.to/torrent/4396982/Trolls-World-Tour-2020-1080p-WEBRip-5-1-YTS-YIFY/',
     provider: '1337x',
     overview:
       'Queen Poppy and Branch make a surprising discovery — there are other Troll worlds beyond their own, and their distinct differences create big clashes between these various tribes. When a mysterious threat puts all of the Trolls across the land in danger, Poppy, Branch, and their band of friends must embark on an epic quest to create harmony among the feuding Trolls to unite them against certain doom.',

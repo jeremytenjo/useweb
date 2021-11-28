@@ -10,7 +10,7 @@ const Example = () => {
     </B>
   )
 }
-storiesOf(
-  'Lib/Data Display/Icon/Special/Scroll back to top',
-  module,
-).add('ScrollBackToTop', () => <Example />)
+storiesOf('Lib/Data Display/Icon/Special/Scroll back to top', module).add(
+  'ScrollBackToTop',
+  () => <Example />,
+)

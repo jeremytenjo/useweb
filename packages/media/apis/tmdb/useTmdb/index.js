@@ -15,7 +15,12 @@ const useTmdb = ({
   const url = `https://api.themoviedb.org/${version}/${action}/${type}?api_key=${apiKey}&language=e${language}-US&page=${page}&query=${encodeURIComponent(
     query,
   )}`
-  const { request: fetchTmdb, response, fetching, error } = useFetch({
+  const {
+    request: fetchTmdb,
+    response,
+    fetching,
+    error,
+  } = useFetch({
     url,
     method: reqType,
   })
