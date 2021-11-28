@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Image from '@useweb/image'
 
 import B from '../../../storybook/variationBlock/index'
+import Image from '../../../media/images/Image/build/types'
 import Modal from '../../../feedback/Modal/build/types'
 import Carousel from '../build/types'
 
