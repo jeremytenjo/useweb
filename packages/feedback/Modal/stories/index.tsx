@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Meta } from '@storybook/react'
 
-import ModalDocs from './docs'
+import Docs from './docs'
 import { Modal } from './component'
 
 export default {
@@ -13,7 +13,7 @@ export default {
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
     docs: {
-      page: () => <ModalDocs />,
+      page: () => <Docs />,
     },
   },
 } as Meta

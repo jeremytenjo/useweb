@@ -6,7 +6,7 @@ import {
   PRIMARY_STORY,
 } from '@storybook/addon-docs'
 
-export default function ModalDocs() {
+export default function Docs() {
   return (
     <>
       <Title />
