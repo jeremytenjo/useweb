@@ -1,11 +1,13 @@
-import Image from '../../../media/images/Image/index'
+import { lazy, useEffect, useRef, Suspense } from 'react'
+import Image from '../../../media/images/Image/src'
 
 import { defaultProps, propTypes } from './props'
 import { Wrapper, InfoContainer, TypographyWrapper, Label } from './styles'
 
-const Text = lazy(() => import(/* webpackChunkName: 'Text' */ '../../Text'))
-const Animation = lazy(() =>
-  import(/* webpackChunkName: 'Animation' */ '../../../utils/Animation/index'),
+const Text = lazy(() => import(/* webpackChunkName: 'Text' */ '../../Text/build/types'))
+const Animation = lazy(
+  () =>
+    import(/* webpackChunkName: 'Animation' */ '../../../utils/Animation/Animate/src'),
 )
 
 const Poster = ({
@@ -111,4 +113,4 @@ const Poster = ({
 Poster.defaultProps = defaultProps
 Poster.propTypes = propTypes
 
-export default memo(Poster)
+export default Poster

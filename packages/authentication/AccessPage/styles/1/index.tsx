@@ -1,12 +1,13 @@
 import Box from '@useweb/box'
+import { useState, Fragment } from 'react'
 
-import Text from '../../../../dataDisplay/Text'
+import Text from '../../../../dataDisplay/Text/build/types'
 import Drawer from '../../../../feedback/drawer'
 import { defaultProps, propTypes } from '../../props'
-import Animation from '../../../../utils/Animation'
+import Animation from '../../../../utils/Animation/Animate/src'
 import providerLogos from '../../utils/providerLogos'
 
-const AccessPage1 = ({
+export default function AccessPage1({
   user,
   onSuccess,
   onError,
@@ -14,7 +15,7 @@ const AccessPage1 = ({
   onClose,
   service,
   typographyVariant,
-}) => {
+}) {
   const userIsSignedin = user === null ? null : !user
   const [error, seterror] = useState(null)
   const [loading, setLoading] = useState(null)
@@ -88,5 +89,3 @@ const AccessPage1 = ({
 
 AccessPage1.defaultProps = defaultProps
 AccessPage1.propTypes = propTypes
-
-export default memo(AccessPage1)

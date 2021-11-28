@@ -1,13 +1,14 @@
 import Box from '@useweb/box'
 
-import Text from '../../../../dataDisplay/Text'
+import Text from '../../../../dataDisplay/Text/build/types'
 import Animation from '../../../../utils/Animation'
-import Overlay from '../../../../utils/overlay'
+import Overlay from '../../../../utils/overlay/build/types'
 import IconClose from '../../../../dataDisplay/Icon/library/IconCloseMaterial'
-import Iconfilter from '../../../../dataDisplay/Icon/library/IconFilter1/'
+import Iconfilter from '../../../../dataDisplay/Icon/library/IconFilter1'
 import { defaultProps, propTypes } from '../../props'
 
 import styles from './styles'
+import { useState } from 'react'
 
 const Menu2 = ({ iconProps, iconWrapperStyles }) => {
   const [show, setShow] = useState(null)
@@ -41,4 +42,4 @@ const Menu2 = ({ iconProps, iconWrapperStyles }) => {
 Menu2.defaultProps = defaultProps
 Menu2.propTypes = propTypes
 
-export default memo(Menu2)
+export default Menu2

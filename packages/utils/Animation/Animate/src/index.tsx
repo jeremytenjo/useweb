@@ -17,7 +17,7 @@ const defaultConfig: ConfigProps = {
 }
 
 type Props = {
-  name: 'blinking' | 'centerOut' | 'outmostIn' | 'showHide'
+  name?: 'blinking' | 'centerOut' | 'outmostIn' | 'showHide'
   el?: any
   config?: ConfigProps
   show?: string
