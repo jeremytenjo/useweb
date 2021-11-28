@@ -6,7 +6,7 @@ import { useEffect, useRef } from 'react'
  */
 export default function useEventListener(
   eventName: string,
-  handler: (event: Event) => void,
+  handler: (event: Event | KeyboardEvent) => void,
   element?: HTMLElement,
 ) {
   // Create a ref that stores handler

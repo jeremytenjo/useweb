@@ -14,10 +14,10 @@
   },
   "peerDependencies": {
     "react": "^17.0.0",
-    "@useweb/use-event-listener": "^0.1.1"
+    "@useweb/use-event-listener": "^0.1.2"
   },
   "devDependencies": {
     "@useweb/compiler": "1.1.4",
-    "@useweb/use-event-listener": "^0.1.1"
+    "@useweb/use-event-listener": "^0.1.2"
   }
 }
