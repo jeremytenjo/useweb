@@ -1,6 +1,5 @@
-import React, { useState, memo } from 'react'
+import React, { useState } from 'react'
 
-import { defaultProps, propTypes } from './props'
 import { ImageWrapper, InnerImage } from './styles'
 
 type Types = {
@@ -14,17 +13,17 @@ type Types = {
   loading?: boolean
 }
 
-const Image = ({
+export default function Image({
   src,
   base64,
   alt,
   onClick = () => null,
-  objectFit = 'fill',
+  objectFit = 'cover',
   definitions,
   styles: customStyles,
   loading,
   ...props
-}: Types) => {
+}: Types) {
   const [srcLoaded, setSrcLoaded] = useState(!base64)
 
   // In case  the src key in not called src in props, expects {src: <propsrcname>}
@@ -61,8 +60,3 @@ const Image = ({
     </ImageWrapper>
   )
 }
-
-Image.defaultProps = defaultProps
-Image.propTypes = propTypes
-
-export default memo(Image)
