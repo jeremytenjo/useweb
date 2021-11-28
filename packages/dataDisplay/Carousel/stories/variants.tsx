@@ -1,7 +1,9 @@
-import B from '../../../storybook/variationBlock/index'
-import Image from '../../../media/images/Image'
-import Modal from '../../../feedback/Modal'
-import Carousel from '../'
+import React, { useState } from 'react'
+import Image from '@useweb/image'
+
+// import B from '../../../storybook/variationBlock/index'
+import Modal from '../../../feedback/Modal/build/types'
+import Carousel from '../build/types'
 
 import stubs from './stubs'
 
@@ -13,15 +15,15 @@ export default () => {
 
   return (
     <div>
-      <B title='default'>
+      <div title='default'>
         <Carousel index={index} setIndex={setIndex}>
           <Image {...simple} />
           <Image {...simple} />
           <Image {...simple2} />
         </Carousel>
-      </B>
+      </div>
 
-      <B title='in modal'>
+      <div title='in modal'>
         <button onClick={() => setshowModal(!showModal)}>toggle</button>
         <Modal show={showModal} onClose={() => setshowModal(false)}>
           <Carousel index={index} setIndex={setIndex}>
@@ -30,7 +32,7 @@ export default () => {
             <Image {...simple2} />
           </Carousel>
         </Modal>
-      </B>
+      </div>
     </div>
   )
 }
