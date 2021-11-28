@@ -1,9 +1,10 @@
 import toBoolean from '../../../utils/string/toBoolean'
 import IconCloseMaterial from '../../../dataDisplay/Icon/library/IconCloseMaterial/index'
-import Animation from '../../../utils/Animation'
-import Text from '../../../dataDisplay/Text'
+import Animation from '../../../utils/Animation/Animate/src'
+import Text from '../../../dataDisplay/Text/build/types'
 
 import { defaultProps } from './props'
+import { useEffect, useRef, useState } from 'react'
 
 export default function TextField({
   Wrapper,
