@@ -26,8 +26,7 @@ const Overlay = ({ show, onClick, dataCy, appendToBody, wrapperStyles }) => {
     }
   }, [])
 
-  const handleKeyInput = (e: KeyboardEvent) =>
-    e.key === 'Escape' && show !== null && onClick()
+  const handleKeyInput = (e) => e.key === 'Escape' && show !== null && onClick()
 
   useEventListener('keydown', handleKeyInput)
 
