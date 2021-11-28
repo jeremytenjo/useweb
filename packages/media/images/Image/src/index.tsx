@@ -3,17 +3,28 @@ import React, { useState, memo } from 'react'
 import { defaultProps, propTypes } from './props'
 import { ImageWrapper, InnerImage } from './styles'
 
+type Types = {
+  src: string
+  alt: string
+  base64?: string
+  onClick?: (props: any) => void
+  objectFit?: string
+  definitions?: object
+  styles?: object
+  loading?: boolean
+}
+
 const Image = ({
   src,
   base64,
   alt,
-  onClick,
+  onClick = () => null,
   objectFit,
   definitions,
   styles: customStyles,
   loading,
   ...props
-}) => {
+}: Types) => {
   const [srcLoaded, setSrcLoaded] = useState(!base64)
 
   // In case  the src key in not called src in props, expects {src: <propsrcname>}
