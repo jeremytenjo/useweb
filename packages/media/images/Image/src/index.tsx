@@ -8,7 +8,7 @@ type Types = {
   alt: string
   base64?: string
   onClick?: (props: any) => void
-  objectFit?: string
+  objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
   definitions?: object
   styles?: object
   loading?: boolean
@@ -19,7 +19,7 @@ const Image = ({
   base64,
   alt,
   onClick = () => null,
-  objectFit,
+  objectFit = 'fill',
   definitions,
   styles: customStyles,
   loading,
