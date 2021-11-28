@@ -43,7 +43,7 @@ export default function Image({
   const onLoadFunction = showBase ? { onLoad: handleImageLoad } : {}
 
   return (
-    <ImageWrapper onClick={() => onClick()} styles={customStyles} data-image-wrapper>
+    <ImageWrapper onClick={onClick} styles={customStyles} data-image-wrapper>
       {showBase && (
         <InnerImage
           data-base64
