@@ -8,7 +8,7 @@
   "license": "ISC",
   "scripts": {
     "dev": "node --loader ts-node/esm ./scripts/dev/index.ts",
-    "storybook:refresh-storiesList": "node --loader ts-node/esm ./scripts/dev/index.ts --refresh-stories-list",
+    "dev:refresh-storiesList": "node --loader ts-node/esm ./scripts/dev/index.ts --refresh-stories-list",
     "lerna:link": "lerna link",
     "storybook:build": "build-storybook -o ./devtools/storybook/build",
     "prettify": "prettier --write '{**/*,*}.{js,jsx,json,ts,tsx}'",
