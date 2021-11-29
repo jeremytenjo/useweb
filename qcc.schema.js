@@ -44,6 +44,66 @@ module.exports = [
           `,
       },
       {
+        path: () => 'stories/index.tsx',
+        template: ({ name, helpers: { changeCase } }) => `
+        import React from 'react'
+        import { Meta } from '@storybook/react'
+
+        import Docs from './docs'
+        import { ${changeCase.pascalCase(name)} } from './component'
+
+        export default {
+          title: 'packages/folder/${changeCase.pascalCase(name)}',
+          component: ${changeCase.pascalCase(name)},
+          // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
+          parameters: {
+            docs: {
+              page: () => <Docs />,
+            },
+          },
+        } as Meta
+
+        const Template = () => {
+          return (
+            <${changeCase.pascalCase(name)} {...args} />
+          )
+        }
+
+        export const Example = Template.bind({})`,
+      },
+      {
+        path: () => 'stories/component.tsx',
+        template: ({ name, helpers: { changeCase } }) => `
+        import Component from '../src'
+
+        // export const in order to automatically populate argtypes table https://storybook.js.org/docs/react/api/argtypes
+        export const ${changeCase.pascalCase(name)} = Component
+`,
+      },
+      {
+        path: () => 'stories/docs.tsx',
+        template: ({ name, helpers: { changeCase } }) => `
+        import {
+          Title,
+          Description,
+          Primary,
+          ArgsTable,
+          PRIMARY_STORY,
+        } from '@storybook/addon-docs'
+        
+        // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
+        export default function Docs() {
+          return (
+            <>
+              <Title />
+              <Description>This is a ${changeCase.pascalCase(name)}</Description>
+              <Primary />
+              <ArgsTable story={PRIMARY_STORY} />
+            </>
+          )
+        }`,
+      },
+      {
         path: () => 'package.json',
         template: ({ name, helpers: { changeCase } }) => `{
         "name": "@useweb/${changeCase.lowerCase(name)}",
