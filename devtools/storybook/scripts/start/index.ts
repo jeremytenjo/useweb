@@ -1,5 +1,5 @@
 import path from 'path'
-import generateStoriesList from './handlers/generateStories/index.js'
+import generateStoriesList from './handlers/generateStoriesList/index.js'
 import runStorybookStartCli from './handlers/runStorybookStartCli/index.js'
 
 export type PayloadTypes = {
@@ -13,6 +13,6 @@ export default async function startStorybook() {
     storybookPath,
   }
 
-  // await generateStoriesList(payload)
+  await generateStoriesList(payload)
   runStorybookStartCli()
 }

@@ -6,7 +6,7 @@ import { PayloadTypes } from '../../index'
 
 export default async function generateStoriesList(payload: PayloadTypes) {
   const storiesWithFullPaths = await glob(
-    `${process.cwd()}/packages/**/stories/index.@(tsx)`,
+    `${process.cwd()}/packages/**/stories/stories.@(tsx)`,
     {
       ignore: 'node_modules',
     },
