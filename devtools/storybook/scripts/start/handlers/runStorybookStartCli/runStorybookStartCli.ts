@@ -1,7 +1,13 @@
 import shell from '../../../../../../packages/node/shell/index.js'
 
-export default async function runStorybookStartCli() {
+type Props = {
+  noManagerCache?: boolean
+}
+
+export default async function runStorybookStartCli({ noManagerCache }: Props) {
+  const noManagerCacheArg = noManagerCache ? '--no-manager-cache' : ''
+
   shell(
-    'start-storybook -c ./devtools/storybook -p 6007 --quiet --ci --no-manager-cache --modern',
+    `start-storybook -c ./devtools/storybook -p 6007 --quiet --ci --modern ${noManagerCacheArg}`,
   )
 }

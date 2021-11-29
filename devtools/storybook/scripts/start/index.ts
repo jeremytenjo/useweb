@@ -18,5 +18,5 @@ export default async function startStorybook() {
 
   scriptArgs['refresh-stories-list'] && (await generateStoriesList(payload))
 
-  runStorybookStartCli()
+  runStorybookStartCli({ noManagerCache: scriptArgs['refresh-stories-list'] })
 }
