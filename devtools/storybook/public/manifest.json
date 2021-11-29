@@ -1,6 +1,6 @@
 {
   "short_name": "Useweb",
-  "name": "@useweb/lib",
+  "name": "useweb",
   "icons": [
     {
       "src": "logo-192.png",
