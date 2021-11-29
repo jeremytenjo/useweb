@@ -4,12 +4,6 @@ export default {
   primaryLighter: '#09FFF1',
   primaryOpaque: 'rgba(2, 63, 34, 0.65)',
 
-  storybook: {
-    appBg: '#081427',
-    appContentBg: '#fff',
-    barBg: '#081427',
-  },
-
   secondary: '#6700ca',
   secondaryDarker: '#6700ca',
   secondaryLighter: '#ebe8ff',

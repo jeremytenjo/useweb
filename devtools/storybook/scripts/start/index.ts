@@ -13,6 +13,6 @@ export default async function startStorybook() {
     storybookPath,
   }
 
-  await generateStoriesList(payload)
+  // await generateStoriesList(payload)
   runStorybookStartCli()
 }

@@ -1,6 +1,5 @@
 import typographyResets from '../typography/resets'
 import colorVars from '../colors/vars'
-import selection from '../browser/selection'
 import body from '../browser/body'
 import typography from '../typography/index.css'
 import spacing from '../spacing'
@@ -11,7 +10,6 @@ export default `
 ${typographyResets}
 ${typography}
 ${body}
-${selection}
 ${colorVars}
 ${spacing}
 ${transitions}
