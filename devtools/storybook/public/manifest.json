@@ -1,0 +1,21 @@
+{
+  "short_name": "Useweb",
+  "name": "@useweb/lib",
+  "icons": [
+    {
+      "src": "logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0A1930",
+  "background_color": "#0A1930",
+  "gcm_sender_id": "103953800507"
+}
