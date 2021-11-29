@@ -10,7 +10,6 @@ type ArgOptions = {
   type: any
 }
 export default function getCommandLineArgs(argOptions: ArgOptions[]) {
-  const optionDefinitions = [{ name: 'refresh-stories-list', type: Boolean }]
   const options = commandLineArgs(argOptions)
 
   return options

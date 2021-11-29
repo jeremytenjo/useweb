@@ -1,7 +1,7 @@
 {
   "name": "useweb",
   "version": "1.0.0",
-  "description": "Tools to build apps with web technologies",
+  "description": "A component and utility library to speed up app developments",
   "private": true,
   "type": "module",
   "author": "Jeremy Tenjo",

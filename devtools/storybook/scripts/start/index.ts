@@ -12,12 +12,11 @@ export default async function startStorybook() {
   const storybookPath = path.join(process.cwd(), 'devtools', 'storybook')
   const scriptArgs = getScriptCallArgs()
 
-  console.log(scriptArgs)
-
   const payload: PayloadTypes = {
     storybookPath,
   }
 
-  scriptArgs.hello && (await generateStoriesList(payload))
+  scriptArgs['refresh-stories-list'] && (await generateStoriesList(payload))
+
   runStorybookStartCli()
 }
