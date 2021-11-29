@@ -63,7 +63,7 @@ module.exports = [
           },
         } as Meta
 
-        const Template = () => {
+        const Template = (args) => {
           return (
             <${changeCase.pascalCase(name)} {...args} />
           )
