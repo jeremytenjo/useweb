@@ -4,5 +4,7 @@
     "titleBar.inactiveForeground": "#ffffff",
     "titleBar.activeBackground": "#081427",
     "titleBar.inactiveBackground": "#081427"
-  }
+  },
+  "quickComponentCreator.prettierConfigFilePath": ".prettierrc.cjs",
+  "quickComponentCreator.schemaFilePath": "qcc.schema.cjs"
 }
