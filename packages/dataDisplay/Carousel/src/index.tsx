@@ -1,19 +1,11 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react'
+import React, { Fragment, useEffect, useRef } from 'react'
+import SwipeableViews from 'react-swipeable-views'
 import Box from '@useweb/box'
 import useKeyPress from '@useweb/use-key-press'
 
 import IconArrow from './IconArrow'
 
 import * as styles from './styles'
-
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react'
-
-// import Swiper core and required modules
-import SwiperCore, { Navigation } from 'swiper'
-
-// install Swiper modules
-SwiperCore.use([Navigation])
 
 type Props = {
   setIndex: (item) => void
@@ -68,11 +60,11 @@ export default function Carousel({
 
   return (
     <Box name='carousel' styles={{ ...styles.wrapper, ...wrapperStyles }}>
-      <Swiper navigation={true} className='mySwiper'>
+      <SwipeableViews index={index} onChangeIndex={handleItemChange}>
         {children.map((child, index) => {
-          return <SwiperSlide key={index + Math.random()}>{child}</SwiperSlide>
+          return <Fragment key={index + Math.random()}>{child}</Fragment>
         })}
-      </Swiper>
+      </SwipeableViews>
 
       {showLeftArrow && !hasOneItem && (
         <IconArrow onClick={handleBack} color={iconColor} style={styles.leftArrow} />
