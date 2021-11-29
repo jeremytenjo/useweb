@@ -15,7 +15,7 @@ type Props = {
   overlayStyles?: object
 }
 
-export default function Modals({
+export default function Modal({
   show = null,
   children,
   onClose = () => null,
