@@ -53,7 +53,7 @@ module.exports = [
         import { ${changeCase.pascalCase(name)} } from './component'
 
         export default {
-          title: 'packages/folder/${changeCase.pascalCase(name)}',
+          title: 'packages/namethisfolder/${changeCase.pascalCase(name)}',
           component: ${changeCase.pascalCase(name)},
           // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
           parameters: {
