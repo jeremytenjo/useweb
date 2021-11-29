@@ -6,6 +6,7 @@ import {
   PRIMARY_STORY,
 } from '@storybook/addon-docs'
 
+// https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
 export default function Docs() {
   return (
     <>
