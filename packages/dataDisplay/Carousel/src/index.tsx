@@ -5,17 +5,24 @@ import useKeyPress from '@useweb/use-key-press'
 
 import IconArrow from './IconArrow'
 
-import { defaultProps, propTypes } from './props'
 import * as styles from './styles'
 
+type Props = {
+  setIndex: (item) => void
+  children: any
+  wrapperStyles?: object
+  infinite?: boolean
+  index?: any
+  iconColor?: string
+}
 export default function Carousel({
   children,
-  wrapperStyles,
-  infinite,
-  index,
+  wrapperStyles = {},
+  infinite = null,
+  index = 0,
   setIndex,
-  iconColor,
-}) {
+  iconColor = 'white',
+}: Props) {
   const selectedIndexRef = useRef(index)
   children = Array.isArray(children) ? children : [children]
   const childrenLength = children.length
@@ -68,6 +75,3 @@ export default function Carousel({
     </Box>
   )
 }
-
-Carousel.defaultProps = defaultProps
-Carousel.propTypes = propTypes

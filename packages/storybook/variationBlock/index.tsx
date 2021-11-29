@@ -28,4 +28,4 @@ const VariationBlock = ({
   )
 }
 
-export default memo(VariationBlock)
+export default VariationBlock

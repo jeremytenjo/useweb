@@ -3,4 +3,7 @@
  * This file is auto generated
  */
 
-module.exports = ['../../packages/feedback/Modal/stories/index.tsx']
+module.exports = [
+  '../../packages/dataDisplay/Carousel/stories/index.tsx',
+  '../../packages/feedback/Modal/stories/index.tsx',
+]
