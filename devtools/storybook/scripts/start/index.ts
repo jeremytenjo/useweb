@@ -1,8 +1,8 @@
 import path from 'path'
 
 import getScriptCallArgs from './handlers/getScriptCallArgs/getScriptCallArgs.js'
-import generateStoriesList from './handlers/generateStoriesList/index.js'
-import runStorybookStartCli from './handlers/runStorybookStartCli/index.js'
+import generateStoriesList from './handlers/generateStoriesList/generateStoriesList.js'
+import runStorybookStartCli from './handlers/runStorybookStartCli/runStorybookStartCli.js'
 
 export type PayloadTypes = {
   storybookPath: string
