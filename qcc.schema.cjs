@@ -34,7 +34,7 @@ module.exports = [
     },
     files: [
       {
-        path: () => 'src/index.jsx',
+        path: ({ name }) => `src/${name}.jsx`,
         template: ({ name, helpers: { changeCase } }) => `
         import React from 'react';
         
@@ -74,7 +74,7 @@ module.exports = [
       {
         path: () => 'stories/component.tsx',
         template: ({ name, helpers: { changeCase } }) => `
-        import Component from '../src'
+        import Component from '../src/${name}'
 
         // export const in order to automatically populate argtypes table https://storybook.js.org/docs/react/api/argtypes
         export const ${changeCase.pascalCase(name)} = Component
