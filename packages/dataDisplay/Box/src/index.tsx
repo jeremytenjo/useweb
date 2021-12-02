@@ -2,13 +2,7 @@ import React, { memo, forwardRef } from 'react'
 
 import { BoxWrapper } from './styles'
 
-type Props = {
-  children?: any
-  name?: string
-  styles?: object
-}
-
-const Box = ({ children, name, styles = {}, ...rest }: Props, ref) => {
+const Box = ({ children, name, styles = {}, ...rest }, ref) => {
   return (
     <BoxWrapper
       ref={ref}
