@@ -8,10 +8,10 @@ import concurrently from 'concurrently'
 // run concurrently
  * shell(['npm run start:app', 'npm run start:storybook'])
  */
-export default function shell(commands: string | string[]) {
+export default async function shell(commands: string | string[]) {
   const _commands = typeof commands === 'string' ? [commands] : commands
 
-  concurrently(_commands, {
+  await concurrently(_commands, {
     prefix: 'none',
   })
 }
