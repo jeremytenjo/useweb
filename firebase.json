@@ -5,7 +5,11 @@
   },
   "hosting": {
     "public": "devtools/storybook/build",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
   },
   "storage": {
     "rules": "firebase/storage.rules"

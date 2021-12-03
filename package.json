@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "node --loader ts-node/esm ./scripts/dev/dev.ts",
     "dev:refresh-storiesList": "node --loader ts-node/esm ./scripts/dev/dev.ts --refresh-stories-list",
+    "build": "node --loader ts-node/esm ./scripts/buildApp/run.ts",
     "lerna:link": "lerna link",
     "deploy": "node --loader ts-node/esm ./scripts/deploy/deploy.ts",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
