@@ -1,6 +1,6 @@
 {
-  "name": "@useweb/use-firebase",
-  "version": "2.1.2",
+  "name": "@useweb/use-firestore",
+  "version": "1.0.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -14,10 +14,15 @@
   },
   "peerDependencies": {
     "react": "^17.0.0",
-    "firebase": "^9.6.0"
+    "firebase": "^9.6.0",
+    "@useweb/use-firebase": "^2.1.2"
   },
   "devDependencies": {
+    "@useweb/array-db": "0.0.1",
     "@useweb/compiler": "1.1.5",
-    "firebase": "^9.6.0"
+    "@useweb/use-firebase": "^2.1.2",
+    "firebase": "^9.6.0",
+    "swr": "^1.1.0",
+    "zustand": "^3.6.6"
   }
 }
