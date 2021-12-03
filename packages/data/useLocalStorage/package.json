@@ -1,5 +1,5 @@
 {
-  "name": "@useweb/use-firestore",
+  "name": "@useweb/use-local-storage",
   "version": "1.0.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
@@ -14,22 +14,13 @@
   },
   "peerDependencies": {
     "react": "^17.0.0",
-    "@useweb/array-db": "0.0.1",
-    "@useweb/use-async": "^0.3.2",
-    "firebase": "^9.6.0",
-    "@useweb/use-firebase": "^2.1.2",
-    "@useweb/use-local-storage": "^1.0.0",
-    "swr": "^1.1.0",
-    "zustand": "^3.6.6"
+    "@capacitor/storage": "^1.2.3",
+    "@useweb/compiler": "1.1.5",
+    "swr": "^1.1.0"
   },
   "devDependencies": {
-    "@useweb/array-db": "0.0.1",
+    "@capacitor/storage": "^1.2.3",
     "@useweb/compiler": "1.1.5",
-    "@useweb/use-async": "^0.3.2",
-    "@useweb/use-firebase": "^2.1.2",
-    "firebase": "^9.6.0",
-    "@useweb/use-local-storage": "^1.0.0",
-    "swr": "^1.1.0",
-    "zustand": "^3.6.6"
+    "swr": "^1.1.0"
   }
 }
