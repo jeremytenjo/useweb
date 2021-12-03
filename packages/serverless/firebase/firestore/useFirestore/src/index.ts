@@ -35,7 +35,6 @@ type Options = {
   onUpdateLoading?: (loading: boolean) => void
 }
 
-// TODO extract to npm package
 export default function useFirestore(
   collectionName: string,
   {
