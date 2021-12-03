@@ -13,7 +13,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/",
+  "start_url": "/?path=/docs/introduction--page",
   "display": "standalone",
   "theme_color": "#0A1930",
   "background_color": "#0A1930",
