@@ -9,6 +9,6 @@ export const parameters = {
     },
   },
   previewTabs: {
-    'storybook/docs/panel': { index: isProd ? -1 : 0 },
+    'storybook/docs/panel': { index: isProd ? -1 : 1 },
   },
 }
