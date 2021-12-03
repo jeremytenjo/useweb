@@ -1,6 +1,6 @@
 {
-  "name": "@useweb/usefirebase",
-  "version": "1.0.0",
+  "name": "@useweb/use-firebase",
+  "version": "2.1.2",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -8,17 +8,16 @@
     "build"
   ],
   "scripts": {
-    "build": "node ./node_modules/@useweb/compiler/build",
+    "build": "node ./node_modules/@useweb/compiler/build --format esm",
     "build:watch": "node ./node_modules/@useweb/compiler/build --watch",
     "deploy": "npm run build && npm publish --access public"
   },
   "peerDependencies": {
-    "react": "^17.0.0"
+    "react": "^17.0.0",
+    "firebase": "^9.6.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "1.1.5"
-  },
-  "dependencies": {
+    "@useweb/compiler": "1.1.5",
     "firebase": "^9.6.0"
   }
 }
