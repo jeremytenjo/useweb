@@ -13,6 +13,6 @@ export default function storybookTheme() {
     base: 'light',
     brandUrl: 'https://github.com/jeremytenjo/useweb',
     colorSecondary: primary,
-    brandImage: '/banner-sb.svg',
+    brandImage: '/images/banner-sb.svg',
   })
 }

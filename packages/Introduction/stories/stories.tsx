@@ -5,12 +5,17 @@ import Docs from './docs.mdx'
 import { Introduction } from './component'
 
 export default {
-  title: 'Introduction',
+  title: 'Introductionsss',
   component: Introduction,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
     docs: {
       page: Docs,
+    },
+    previewTabs: {
+      canvas: {
+        hidden: true,
+      },
     },
   },
 } as Meta
