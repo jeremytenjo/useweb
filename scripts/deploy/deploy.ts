@@ -1,4 +1,6 @@
-import shell from '../../packages/node/shell/index.js'
+import buildStorybook from '../../devtools/storybook/scripts/buildStorybook/buildStorybook.js'
+import deployHosting from '../../firebase/scrips/deployHosting/deployHosting.js'
 ;(async function devScript() {
-  await shell('npm run build:storybook && firebase deploy --only hosting')
+  await buildStorybook()
+  deployHosting()
 })()

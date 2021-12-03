@@ -10,7 +10,7 @@
     "dev": "node --loader ts-node/esm ./scripts/dev/dev.ts",
     "dev:refresh-storiesList": "node --loader ts-node/esm ./scripts/dev/dev.ts --refresh-stories-list",
     "lerna:link": "lerna link",
-    "build:storybook": "build-storybook -o ./devtools/storybook/build",
+    "deploy": "node --loader ts-node/esm ./scripts/deploy/deploy.ts",
     "prettify": "prettier --write '{**/*,*}.{js,jsx,json,ts,tsx}'",
     "lint": "eslint ./ --fix"
   },
