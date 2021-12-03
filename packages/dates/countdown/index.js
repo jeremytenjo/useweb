@@ -62,7 +62,10 @@ const Countdown = ({
       const isLastInterval = timeLeftKeys.length === index + 1
       const separatorString = isLastInterval ? '' : separator
       const name = noText ? '' : interval
-      const mergedTypographyStyles = { ...styles.typographyStyles, ...typographyStyles }
+      const mergedTypographyStyles = {
+        ...styles.typographyStyles,
+        ...typographyStyles,
+      }
 
       newTimerComponents.push(
         <Fragment key={key}>

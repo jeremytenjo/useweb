@@ -38,7 +38,11 @@ const useSignInToGithub = () => {
   }
 
   const exec = async () => {
-    await asyncFetch.request({ method: 'HEAD', credentials: 'include', mode: 'no-cors' })
+    await asyncFetch.request({
+      method: 'HEAD',
+      credentials: 'include',
+      mode: 'no-cors',
+    })
     window.location = url
   }
 

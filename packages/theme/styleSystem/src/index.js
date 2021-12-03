@@ -12,7 +12,9 @@ export default function styleSystem(props) {
   const raw = []
   mediaQueries.minWidth.unshift(0)
   mediaQueries.minHeight.unshift(0)
-  const minWidthMediaQueries = removeDuplicatesFromArray({ data: mediaQueries.minWidth })
+  const minWidthMediaQueries = removeDuplicatesFromArray({
+    data: mediaQueries.minWidth,
+  })
   const minHeightMediaQueries = removeDuplicatesFromArray({
     data: mediaQueries.minHeight,
   })

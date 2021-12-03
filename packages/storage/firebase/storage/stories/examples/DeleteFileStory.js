@@ -2,7 +2,10 @@ import useFirebaseStorage from '../../useFirebaseStorage'
 
 export default function DeleteFileStory() {
   const [fileToDelete, setFileToDelete] = useState(null)
-  const firebaseStorage = useFirebaseStorage({ path: fileToDelete, type: 'delete' })
+  const firebaseStorage = useFirebaseStorage({
+    path: fileToDelete,
+    type: 'delete',
+  })
 
   useEffect(() => {
     if (fileToDelete) {

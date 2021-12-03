@@ -7,7 +7,9 @@ const shareFunction = async (data) => {
   const dataIsValid = title && text && url
 
   if (!dataIsValid)
-    return { error: 'Fail: Data has to be object {title, text, url} all strings' }
+    return {
+      error: 'Fail: Data has to be object {title, text, url} all strings',
+    }
 
   try {
     await navigator.share(data)

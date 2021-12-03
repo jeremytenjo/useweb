@@ -73,7 +73,10 @@ const Poster = ({
       {src && (
         <Image
           src={src}
-          styles={{ width: widthString, height: sizeIsAuto ? undefined : heightString }}
+          styles={{
+            width: widthString,
+            height: sizeIsAuto ? undefined : heightString,
+          }}
           alt={alt}
         />
       )}
@@ -82,7 +85,11 @@ const Poster = ({
           <TypographyWrapper ref={typographyWrapperRef}>
             <Text
               text={alt}
-              styles={{ color: 'white', textAlign: 'center', cursor: 'default' }}
+              styles={{
+                color: 'white',
+                textAlign: 'center',
+                cursor: 'default',
+              }}
               variant='caption'
             />
           </TypographyWrapper>

@@ -49,7 +49,10 @@ const Example = () => {
         data-cy='button-signin'
         onClick={() =>
           signIn({
-            credentials: { email: 'tenjojeremy@gmail.com', password: 'testpass' },
+            credentials: {
+              email: 'tenjojeremy@gmail.com',
+              password: 'testpass',
+            },
           })
         }
       >

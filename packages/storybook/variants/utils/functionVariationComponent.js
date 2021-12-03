@@ -1,5 +1,9 @@
 export default ({ func, testValue }) => {
-  const subTitileStyles = { color: '#dcdcdc', fontSize: '12px', fontStyle: 'italic' }
+  const subTitileStyles = {
+    color: '#dcdcdc',
+    fontSize: '12px',
+    fontStyle: 'italic',
+  }
   const valueStyles = { color: '#ffffff', fontSize: '12px' }
   const wrapperStyles = { display: 'grid', gridGap: '5px' }
 
