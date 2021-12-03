@@ -22,7 +22,7 @@ const Template = (args) => {
   const [show, setShow] = useState(args.show)
   return (
     <>
-      Background text
+      <button onClick={() => setShow((c) => !c)}>toggle</button>
       <Modal {...args} show={show} onClose={() => setShow(false)}>
         <div>Hello Modal</div>
       </Modal>
