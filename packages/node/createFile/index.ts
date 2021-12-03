@@ -1,7 +1,7 @@
 import fs from 'fs-extra'
 import prettier from 'prettier'
 
-import prettierConfig from '../../../.prettierrc.cjs'
+import prettierConfig from '../../../devtools/prettier/prettierConfig.cjs'
 
 const addTimestamp = (fileContent) => {
   const fileContentWithTimestamp = `
