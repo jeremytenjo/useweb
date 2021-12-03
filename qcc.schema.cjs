@@ -44,7 +44,7 @@ module.exports = [
           `,
       },
       {
-        path: () => 'stories/index.tsx',
+        path: () => 'stories/stories.tsx',
         template: ({ name, helpers: { changeCase } }) => `
         import React from 'react'
         import { Meta } from '@storybook/react'
@@ -69,7 +69,8 @@ module.exports = [
           )
         }
 
-        export const Example = Template.bind({})`,
+        export const Example = Template.bind({})
+        Example.args = {}`,
       },
       {
         path: () => 'stories/component.tsx',

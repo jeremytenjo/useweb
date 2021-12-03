@@ -6,4 +6,5 @@
 module.exports = [
   '../../packages/dataDisplay/Carousel/stories/stories.tsx',
   '../../packages/feedback/Modal/stories/stories.tsx',
+  '../../packages/Introduction/stories/stories.tsx',
 ]
