@@ -34,7 +34,7 @@ module.exports = [
     },
     files: [
       {
-        path: () => 'src/index.jsx',
+        path: () => 'src/index.tsx',
         template: ({ name, helpers: { changeCase } }) => `
         import React from 'react';
         
