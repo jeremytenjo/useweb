@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@useweb/animate": "^1.0.3",
-    "@useweb/compiler": "1.1.5",
+    "@useweb/compiler": "1.1.6",
     "@useweb/decamelize": "^0.1.1",
     "@useweb/on-swipe": "^1.0.0",
     "@useweb/progress-dots": "^1.0.0",

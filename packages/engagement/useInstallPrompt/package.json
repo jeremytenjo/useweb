@@ -17,7 +17,7 @@
     "@useweb/use-event-listener": "^0.1.2"
   },
   "devDependencies": {
-    "@useweb/compiler": "1.1.5",
+    "@useweb/compiler": "1.1.6",
     "@useweb/use-event-listener": "^0.1.2"
   }
 }
