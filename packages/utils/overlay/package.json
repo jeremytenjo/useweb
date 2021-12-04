@@ -22,7 +22,7 @@
   "devDependencies": {
     "@useweb/animate": "^1.0.3",
     "@useweb/box": "^1.1.0",
-    "@useweb/compiler": "1.1.6",
+    "@useweb/compiler": "latest",
     "@useweb/prevent-body-scroll": "^1.0.0",
     "@useweb/use-event-listener": "^0.1.3"
   }

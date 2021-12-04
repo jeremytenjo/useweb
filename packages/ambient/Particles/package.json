@@ -16,7 +16,7 @@
     "react": "^17.0.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "1.1.6"
+    "@useweb/compiler": "latest"
   },
   "dependencies": {
     "react-particles-js": "^3.6.0",

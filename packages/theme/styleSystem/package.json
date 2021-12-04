@@ -18,8 +18,8 @@
     "@useweb/decamelize": "^0.1.1"
   },
   "devDependencies": {
-    "@useweb/compiler": "1.1.6",
-    "@useweb/remove-duplicates-from-array": "^0.1.1",
-    "@useweb/decamelize": "^0.1.1"
+    "@useweb/compiler": "latest",
+    "@useweb/decamelize": "^0.1.1",
+    "@useweb/remove-duplicates-from-array": "^0.1.1"
   }
 }

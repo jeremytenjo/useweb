@@ -18,7 +18,7 @@
     "firebase": "^9.6.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "1.1.6",
+    "@useweb/compiler": "latest",
     "@useweb/use-local-storage": "^1.1.0",
     "firebase": "^9.6.0"
   }
