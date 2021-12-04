@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-local-storage",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -14,12 +14,10 @@
   },
   "peerDependencies": {
     "react": "^17.0.0",
-    "@capacitor/storage": "^1.2.3",
     "@useweb/compiler": "1.1.5",
     "swr": "^1.1.0"
   },
   "devDependencies": {
-    "@capacitor/storage": "^1.2.3",
     "@useweb/compiler": "1.1.5",
     "swr": "^1.1.0"
   }

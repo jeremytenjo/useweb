@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-firebase",
-  "version": "2.1.2",
+  "version": "2.3.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -14,10 +14,12 @@
   },
   "peerDependencies": {
     "react": "^17.0.0",
+    "@useweb/use-local-storage": "^1.1.0",
     "firebase": "^9.6.0"
   },
   "devDependencies": {
     "@useweb/compiler": "1.1.5",
+    "@useweb/use-local-storage": "^1.1.0",
     "firebase": "^9.6.0"
   }
 }

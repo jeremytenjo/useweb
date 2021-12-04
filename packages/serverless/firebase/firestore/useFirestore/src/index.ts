@@ -1,4 +1,5 @@
 import useFirebase from '@useweb/use-firebase'
+import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
 
 import useGet from './handlers/useGet'
 import useCreate from './handlers/useCreate'
@@ -17,6 +18,7 @@ export type HandlerPayloadType = {
 type Options = {
   defaultData?: any
   returnDefaultData?: boolean
+  localStorageOptions?: LocalStorageOptionsTypes
 
   onGet?: (result: any) => void
   onGetError?: (error: any) => void
@@ -40,6 +42,7 @@ export default function useFirestore(
   {
     defaultData,
     returnDefaultData,
+    localStorageOptions,
 
     onGet = () => null,
     onGetError = () => null,
@@ -73,6 +76,7 @@ export default function useFirestore(
     onGet,
     onGetError,
     onGetLoading,
+    localStorageOptions: localStorageOptions || firebase.localStorageOptions,
   })
 
   handlerPayload.updateData = get.update

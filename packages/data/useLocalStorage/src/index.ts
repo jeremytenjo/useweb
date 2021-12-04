@@ -1,11 +1,21 @@
 import { useState } from 'react'
 import useSWRImmutable from 'swr/immutable'
-import { Storage } from '@capacitor/storage'
+
+type GetterType = { key: string }
+type SetterType = { key: string; data: any }
+type RemoveType = { key: string }
+
+export type LocalStorageOptionsTypes = {
+  getterFunction?: (options: GetterType) => any
+  setterFunction?: (options: SetterType) => void
+  removeFunction?: (options: RemoveType) => void
+}
 
 type Options = {
   onGet?: (result: any) => void
   onUpdate?: (result: any) => void
   onError?: (error: any) => void
+  localStorageOptions?: LocalStorageOptionsTypes
 }
 
 type Return = {
@@ -15,6 +25,19 @@ type Return = {
   fetching: boolean
   update: (newData: any) => void
   remove: () => void
+}
+
+const defaultGetterFunction = ({ key }: GetterType) => {
+  const localStorageData = localStorage.getItem(key)
+  return localStorageData
+}
+
+const defaultSetterFunction = ({ key, data }: SetterType) => {
+  localStorage.setItem(key, data)
+}
+
+const defaultRemoveFunction = ({ key }: RemoveType) => {
+  localStorage.removeItem(key)
 }
 
 /**
@@ -28,8 +51,10 @@ export default function useLocalStorage(key: string, options?: Options): Return 
   const [error, setError] = useState(null)
 
   const fetcher = async () => {
-    const { value } = await Storage.get({ key })
-    const valueParsed = JSON.parse(value)
+    const getterFunction =
+      options?.localStorageOptions?.getterFunction || defaultGetterFunction
+    const localStorageData = await getterFunction({ key })
+    const valueParsed = JSON.parse(localStorageData)
 
     return valueParsed
   }
@@ -51,7 +76,9 @@ export default function useLocalStorage(key: string, options?: Options): Return 
 
     try {
       const valueStringifyed = JSON.stringify(newData)
-      await Storage.set({ key: key, value: valueStringifyed })
+      const setterFunction =
+        options?.localStorageOptions?.setterFunction || defaultSetterFunction
+      await setterFunction({ key: key, data: valueStringifyed })
       swr.mutate(newData, false)
       options?.onUpdate && options?.onUpdate(newData)
     } catch (error) {
@@ -62,7 +89,9 @@ export default function useLocalStorage(key: string, options?: Options): Return 
   }
 
   const remove = async () => {
-    await Storage.remove({ key: key })
+    const removeFunction =
+      options?.localStorageOptions?.removeFunction || defaultRemoveFunction
+    await removeFunction({ key })
   }
 
   const fetching = !swr.data && !swr.error

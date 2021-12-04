@@ -1,8 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 export { default as initializeFirebaseEmulator } from './utils/initializeFirebaseEmulator'
-
-const FirebaseContext = createContext(null)
+import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
 
 type Props = {
   firebaseApp: any
@@ -10,7 +9,18 @@ type Props = {
   children: any
   auth?: any
   enableAuth?: boolean
+  localStorageOptions?: LocalStorageOptionsTypes
 }
+
+type Return = {
+  firebaseApp: any
+  auth: any
+  db: any
+  user: any
+  localStorageOptions: LocalStorageOptionsTypes
+}
+
+const FirebaseContext = createContext<Return>(null)
 
 export const FirebaseProvider = ({
   firebaseApp,
@@ -18,6 +28,7 @@ export const FirebaseProvider = ({
   db,
   children,
   enableAuth = true,
+  localStorageOptions,
 }: Props) => {
   const [user, setUser] = useState(null)
 
@@ -43,6 +54,7 @@ export const FirebaseProvider = ({
         auth,
         db,
         user,
+        localStorageOptions,
       }}
     >
       {children}
@@ -50,13 +62,6 @@ export const FirebaseProvider = ({
   )
 }
 
-type Return = {
-  firebaseApp: any
-  auth: any
-  db: any
-  user: any
-}
-
-const useFirebase = () => useContext<Return>(FirebaseContext)
+const useFirebase = () => useContext(FirebaseContext)
 
 export default useFirebase

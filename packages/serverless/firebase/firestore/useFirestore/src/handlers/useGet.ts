@@ -5,6 +5,7 @@ import create from 'zustand'
 import arrayDB from '@useweb/array-db'
 import useFirebase from '@useweb/use-firebase'
 import useLocalStorage from '@useweb/use-local-storage'
+import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
 
 import type { HandlerPayloadType } from '..'
 
@@ -18,15 +19,16 @@ const useGetStore = create<Types>((set) => ({
   setFetchedCollections: (newValue) => set(() => ({ fetchedCollections: newValue })),
 }))
 
-type Callbacks = {
+type Options = {
   onGet?: (result: any) => void
   onGetError?: (error: any) => void
   onGetLoading?: (loading: boolean) => void
+  localStorageOptions?: LocalStorageOptionsTypes
 }
 
 export default function useGet(
   { userId, collectionName, defaultData, returnDefaultData }: HandlerPayloadType,
-  callbacks?: Callbacks,
+  options?: Options,
 ) {
   const firebase = useFirebase()
   const getStore: any = useGetStore()
@@ -65,9 +67,10 @@ export default function useGet(
   }
 
   const localStorageData = useLocalStorage(collectionName, {
+    localStorageOptions: options.localStorageOptions,
     onGet: (result) => {
       updateFetchedCollections()
-      callbacks.onGet(result)
+      options.onGet(result)
     },
   })
 
@@ -82,10 +85,10 @@ export default function useGet(
 
       getStore.setFetchedCollections(updatedFetchedCollections)
       localStorageData.update(data)
-      callbacks.onGet(data)
+      options.onGet(data)
     },
     onError: (error) => {
-      callbacks.onGetError(error)
+      options.onGetError(error)
     },
   })
 
