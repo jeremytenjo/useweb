@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
-export { default as initializeFirebaseEmulator } from './utils/initializeFirebaseEmulator'
 import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
 
 type Props = {
