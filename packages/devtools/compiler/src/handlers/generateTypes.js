@@ -1,7 +1,7 @@
 const path = require('path')
 
 const runCLI = require('../utils/runCLI')
-const getDeepestFolderLength = require('../utils/getDeepestFolderLength')
+// const getDeepestFolderLength = require('../utils/getDeepestFolderLength')
 
 module.exports = async function generateTypes(packageDir, entryPointFile) {
   if (entryPointFile !== 'index.ts' && entryPointFile !== 'index.tsx') return null
@@ -9,11 +9,11 @@ module.exports = async function generateTypes(packageDir, entryPointFile) {
   const packageSrcDir = path.join(packageDir, 'src')
   const outputPath = path.join(packageDir, 'build', 'types')
 
-  const srcDirLengh = await getDeepestFolderLength(packageSrcDir)
-  const srcDirLengArray = Array.from(Array(srcDirLengh).keys())
-  const inlcudePath = srcDirLengArray.reduce((accumulator) => `${accumulator}/**`, '/**')
+  // const srcDirLengh = await getDeepestFolderLength(packageSrcDir)
+  // const srcDirLengArray = Array.from(Array(srcDirLengh).keys())
+  // const inlcudePath = srcDirLengArray.reduce((accumulator) => `${accumulator}/**`, '/**')
   // https://www.typescriptlang.org/tsconfig#include
-  const include = path.join(packageSrcDir, inlcudePath)
+  const include = path.join(packageSrcDir, 'index.*')
 
   // https://www.typescriptlang.org/docs/handbook/compiler-options.html
   const tscArgs = {

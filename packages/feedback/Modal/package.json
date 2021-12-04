@@ -19,14 +19,14 @@
   "devDependencies": {
     "@useweb/animate": "^1.0.4",
     "@useweb/box": "^1.1.0",
-    "@useweb/compiler": "1.1.5",
+    "@useweb/compiler": "^1.1.6",
     "@useweb/decamelize": "^0.1.1",
     "@useweb/on-swipe": "^1.0.0",
     "@useweb/overlay": "^1.0.1",
     "@useweb/prevent-body-scroll": "^1.0.0",
     "@useweb/remove-duplicates-from-array": "^0.1.1",
-    "@useweb/use-event-listener": "^0.1.3",
     "@useweb/style-system": "^0.1.3",
+    "@useweb/use-event-listener": "^0.1.3",
     "styled-components": "^5.3.3"
   }
 }
