@@ -78,6 +78,7 @@ export const PushNotificationsProvider = ({
       const token = await messaging.getToken()
       token && setFcmRegistrationToken(token)
       messaging.onMessage((payload) => setMessage(payload))
+//Todo handle messaging unsubscribe
     } catch (error) {
       setError(error)
     } finally {
