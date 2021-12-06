@@ -7,11 +7,11 @@ export type MessagingOptions = {
   forceSupport?: boolean
   serviceWorkerFileName?: string
   onMessage: (payload: any) => void
-  onError: (error: any) => void
+  onError?: (error: any) => void
 }
 
 export type Return = {
-  isSupported: () => void
+  isSupported: () => boolean
   init: () => void
   fcmRegistrationToken: string
   initializing: boolean

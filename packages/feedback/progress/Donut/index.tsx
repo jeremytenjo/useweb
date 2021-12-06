@@ -1,6 +1,8 @@
 import styled, { keyframes } from 'styled-components'
 
-const Donut = ({ style, color = 'primary' }) => <Wrapper style={style} color={color} />
+const Donut = ({ style = {}, color = 'primary' }) => (
+  <Wrapper style={style} color={color} />
+)
 
 // Style
 const donutSpin = keyframes`
@@ -24,4 +26,4 @@ const Wrapper = styled.div`
  * @example
  * <Donut />
  */
-export default memo(Donut)
+export default Donut

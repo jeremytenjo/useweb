@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { CopyToClipboard as ReactCopyToClipboard } from 'react-copy-to-clipboard'
 
 import Tooltip from '../../dataDisplay/Tooltip'
@@ -15,7 +16,7 @@ export default function CopyToClipboard({
   onCopy = () => null,
   tooltip = 'Copy to clipboard',
 }) {
-  const [tooltipText, setTooltipText] = useState()
+  const [tooltipText, setTooltipText] = useState(null)
   const [showTooltip, setShowTooltip] = useState(null)
 
   const handleCopy = () => {

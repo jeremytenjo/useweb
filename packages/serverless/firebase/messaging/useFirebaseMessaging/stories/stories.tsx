@@ -6,6 +6,8 @@ import { FirebaseProvider } from '@useweb/use-firebase'
 
 import firebaseConfig from '../../../../../../firebase/firebase.config'
 
+import ReceiveNotificationStory from './examples/ReceiveNotificationStory'
+
 import Docs from './docs.mdx'
 
 const firebaseApp = initializeApp(firebaseConfig)
@@ -30,4 +32,6 @@ const Template = (args) => {
   )
 }
 
-export const Example = Template.bind({})
+export const Example = Template.bind({
+  children: ReceiveNotificationStory,
+})
