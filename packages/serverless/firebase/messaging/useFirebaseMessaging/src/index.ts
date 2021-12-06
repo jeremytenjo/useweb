@@ -3,7 +3,7 @@ import useFirebase from '@useweb/use-firebase'
 
 const isProduction = () => process.env.NODE_ENV === 'production'
 
-type Props = {
+export type MessagingOptions = {
   forceSupport?: boolean
   serviceWorkerFileName?: string
   onMessage: (payload: any) => void
@@ -11,12 +11,18 @@ type Props = {
 }
 
 export default function useFirebaseMessaging({
-  forceSupport,
-  serviceWorkerFileName = '/firebase-messaging-sw.js',
-  onMessage = () => null,
-  onError = () => null,
-}: Props) {
+  forceSupport: defaultForceSupport,
+  serviceWorkerFileName: defaultServiceWorkerFileName = '/firebase-messaging-sw.js',
+  onMessage: defaultOnMessage = () => null,
+  onError: defaultOnError = () => null,
+}: MessagingOptions) {
   const firebase = useFirebase()
+  const forceSupport = firebase?.messagingOptions?.forceSupport || defaultForceSupport
+  const serviceWorkerFileName =
+    firebase?.messagingOptions?.serviceWorkerFileName || defaultServiceWorkerFileName
+  const onMessage = firebase?.messagingOptions?.onMessage || defaultOnMessage
+  const onError = firebase?.messagingOptions?.onError || defaultOnError
+
   const messaging = firebase.messaging.isSupported() ? firebase.messaging() : null
   const isProductionApp = isProduction()
   const [initialized, setInitialized] = useState(null)
