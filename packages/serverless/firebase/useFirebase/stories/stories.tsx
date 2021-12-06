@@ -4,7 +4,7 @@ import { Meta } from '@storybook/react'
 import Docs from './docs'
 
 export default {
-  title: 'packages/serverless/firebase/UseFirebase',
+  title: 'packages/serverless/firebase/useFirebase',
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
     docs: {
