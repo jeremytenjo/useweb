@@ -10,12 +10,21 @@ export type MessagingOptions = {
   onError: (error: any) => void
 }
 
+export type Return = {
+  isSupported: () => void
+  init: () => void
+  fcmRegistrationToken: string
+  initializing: boolean
+  error: any
+  isReadyToUse: boolean
+}
+
 export default function useFirebaseMessaging({
   forceSupport: defaultForceSupport,
   serviceWorkerFileName: defaultServiceWorkerFileName = '/firebase-messaging-sw.js',
   onMessage: defaultOnMessage = () => null,
   onError: defaultOnError = () => null,
-}: MessagingOptions) {
+}: MessagingOptions): Return {
   const firebase = useFirebase()
   const forceSupport = firebase?.messagingOptions?.forceSupport || defaultForceSupport
   const serviceWorkerFileName =
