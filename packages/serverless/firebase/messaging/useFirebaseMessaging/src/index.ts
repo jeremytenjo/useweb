@@ -39,11 +39,6 @@ export default function useFirebaseMessaging({
         setNotificationListener()
         setInitialized(true)
       }
-    } else {
-      const notSupportedMessage =
-        'usePushNotifications: Push notifications are not supported on the current device'
-      setError(notSupportedMessage)
-      console.error(notSupportedMessage)
     }
   }, [])
 
@@ -55,7 +50,7 @@ export default function useFirebaseMessaging({
       isProductionApp
 
     if (!result && !forceSupport) {
-      console.warn('push notifications not supported', {
+      console.warn('Push notifications are not supported on the current device', {
         Notification: 'Notification' in window,
         serviceWorker: 'serviceWorker' in navigator,
         PushManager: 'PushManager' in window,
