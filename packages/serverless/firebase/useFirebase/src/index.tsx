@@ -5,10 +5,9 @@ import type { MessagingOptions } from '@useweb/use-firebase-messaging'
 
 type Props = {
   firebaseApp: any
-  db: any
   children: any
+  db?: any
   auth?: any
-  enableAuth?: boolean
   localStorageOptions?: LocalStorageOptionsTypes
   messaging?: any
   messagingOptions?: MessagingOptions
@@ -35,7 +34,6 @@ export const FirebaseProvider = ({
   auth,
   db,
   children,
-  enableAuth = true,
   localStorageOptions,
   messaging,
   messagingOptions,
@@ -45,7 +43,7 @@ export const FirebaseProvider = ({
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    if (enableAuth) {
+    if (auth) {
       const cleanOnAuthStateChanged = onAuthStateChanged(auth, (user) => {
         if (user) setUser(user)
         if (user !== null) {
