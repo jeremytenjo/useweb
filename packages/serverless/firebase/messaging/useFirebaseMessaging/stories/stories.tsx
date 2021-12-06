@@ -1,5 +1,6 @@
 import React from 'react'
 import { initializeApp } from 'firebase/app'
+import { getMessaging } from 'firebase/messaging'
 
 import { Meta } from '@storybook/react'
 import { FirebaseProvider } from '@useweb/use-firebase'
@@ -9,12 +10,11 @@ import firebaseConfig from '../../../../../../firebase/firebase.config'
 import Docs from './docs'
 
 const firebaseApp = initializeApp(firebaseConfig)
+const messaging = getMessaging()
 
 export default {
   title: 'packages/serverless/firebase/messaging/useFirebaseMessaging',
-  args: {
-    show: null,
-  },
+  args: {},
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
     docs: {
@@ -24,7 +24,11 @@ export default {
 } as Meta
 
 const Template = (args) => {
-  return <FirebaseProvider firebaseApp={firebaseApp}>Hello</FirebaseProvider>
+  return (
+    <FirebaseProvider firebaseApp={firebaseApp} messaging={messaging}>
+      Hello
+    </FirebaseProvider>
+  )
 }
 
 export const Example = Template.bind({})

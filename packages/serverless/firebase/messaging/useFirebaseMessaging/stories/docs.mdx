@@ -1,0 +1,91 @@
+# Firebase Push Notifications
+
+### Usage
+
+```js
+import useFirebaseMessaging from '@useweb/use-firebase-messaging'
+
+useFirebaseMessaging({
+  onMessage: (message) => {
+    console.log({ message })
+  },
+})
+```
+
+Optionally, you can add a global `onMessage` handler using `FirebaseProvider`.
+
+```js
+return (
+  <FirebaseProvider
+    messagingOptions={{
+      onMessage: (message) => {
+        console.log({ message })
+      },
+    }}
+  >
+    <App />
+  </FirebaseProvider>
+)
+```
+
+### Setup
+
+1. Add provider to your app.
+
+```js
+import { initializeApp } from 'firebase/app'
+import { getMessaging } from 'firebase/messaging'
+import { FirebaseProvider } from '@useweb/use-firebase'
+
+const firebaseApp = initializeApp(firebaseConfig)
+const messaging = getMessaging()
+
+return (
+  <FirebaseProvider firebaseApp={firebaseApp} messaging={messaging}>
+    <App />
+  </FirebaseProvider>
+)
+```
+
+2. Add `gcm_sender_id` property to `manifest.json` . Insert the value below AS IT IS, without changing anything.
+
+```json
+{
+  "gcm_sender_id": "103953800507"
+}
+```
+
+3. Create [firebase-messaging-sw.js](https://firebase.google.com/docs/cloud-messaging/js/receive#web-v9_2)
+   file and add it to your public folder. This shows notitifications when the app is in the background.
+
+```js
+/* eslint-disable no-undef */
+importScripts('https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/8.6.8/firebase-messaging.js');
+
+firebase.initializeApp(<firebaseConfig>)
+
+const messaging = firebase.messaging()
+
+messaging.onBackgroundMessage((payload) => {
+  console.log('[firebase-messaging-sw.js] Received background message ', payload)
+  const notificationTitle = payload.title
+  const notificationOptions = {
+    body: payload.body,
+    icon: payload.image,
+  }
+
+  self.registration.showNotification(notificationTitle,
+    notificationOptions);
+});
+
+self.addEventListener('notificationclick', (event) => {
+  if (event.action) {
+    clients.openWindow(event.action)
+  }
+  event.notification.close()
+})
+
+```
+
+4. Use `useFirebaseMessaging` to handle messages when app is in the foreground.
