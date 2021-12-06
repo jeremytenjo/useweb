@@ -9,6 +9,10 @@ type Props = {
   auth?: any
   enableAuth?: boolean
   localStorageOptions?: LocalStorageOptionsTypes
+  messaging?: any
+  messagingOptions?: object
+  analytics?: any
+  analyticsOptions?: object
 }
 
 type Return = {
@@ -17,6 +21,10 @@ type Return = {
   db: any
   user: any
   localStorageOptions: LocalStorageOptionsTypes
+  messaging: any
+  messagingOptions?: object
+  analytics?: any
+  analyticsOptions?: object
 }
 
 const FirebaseContext = createContext<Return>(null)
@@ -28,6 +36,10 @@ export const FirebaseProvider = ({
   children,
   enableAuth = true,
   localStorageOptions,
+  messaging,
+  messagingOptions,
+  analytics,
+  analyticsOptions,
 }: Props) => {
   const [user, setUser] = useState(null)
 
@@ -54,6 +66,10 @@ export const FirebaseProvider = ({
         db,
         user,
         localStorageOptions,
+        messaging,
+        messagingOptions,
+        analytics,
+        analyticsOptions,
       }}
     >
       {children}

@@ -1,21 +1,26 @@
-import firebase from 'firebase/app'
+import { useEffect, useState } from 'react'
+import useFirebase from '@useweb/use-firebase'
 
-import isProduction from '../../../../utils/enviroment/isEnvProduction'
-import 'firebase/messaging'
+const isProduction = () => process.env.NODE_ENV === 'production'
 
-const messaging = firebase.messaging.isSupported() ? firebase.messaging() : null
+type Props = {
+  forceSupport?: boolean
+  serviceWorkerFileName?: string
+  onMessage: (payload: any) => void
+  onError: (error: any) => void
+}
 
-export const PushNotificationsContext = createContext(null)
-
-export const PushNotificationsProvider = ({
-  children,
+export default function useFirebaseMessaging({
   forceSupport,
   serviceWorkerFileName = '/firebase-messaging-sw.js',
-}) => {
+  onMessage = () => null,
+  onError = () => null,
+}: Props) {
+  const firebase = useFirebase()
+  const messaging = firebase.messaging.isSupported() ? firebase.messaging() : null
   const isProductionApp = isProduction()
   const [initialized, setInitialized] = useState(null)
   const [fcmRegistrationToken, setFcmRegistrationToken] = useState(null)
-  const [message, setMessage] = useState(null)
   const [initializing, setInitializing] = useState(null)
   const [error, setError] = useState(null)
 
@@ -44,7 +49,7 @@ export const PushNotificationsProvider = ({
       isProductionApp
 
     if (!result && !forceSupport) {
-      console.error({
+      console.warn('push notifications not supported', {
         Notification: 'Notification' in window,
         serviceWorker: 'serviceWorker' in navigator,
         PushManager: 'PushManager' in window,
@@ -77,10 +82,10 @@ export const PushNotificationsProvider = ({
     try {
       const token = await messaging.getToken()
       token && setFcmRegistrationToken(token)
-      messaging.onMessage((payload) => setMessage(payload))
-      //Todo handle messaging unsubscribe
+      messaging.onMessage(onMessage)
     } catch (error) {
       setError(error)
+      onError(error)
     } finally {
       setInitializing(false)
     }
@@ -88,37 +93,12 @@ export const PushNotificationsProvider = ({
 
   const isReadyToUse = isSupported() && !initializing && fcmRegistrationToken
 
-  return (
-    <PushNotificationsContext.Provider
-      value={{
-        isSupported,
-        init,
-        fcmRegistrationToken,
-        message,
-        initializing,
-        error,
-        isReadyToUse,
-      }}
-    >
-      {children}
-    </PushNotificationsContext.Provider>
-  )
-}
-
-/**
- * @returns {{
- * isSupported: function
- * init: function
- * fcmRegistrationToken: string
- * message: string
- * initializing: boolean
- * isReadyToUse: boolean
- * error: object
- * }} object
- *
- * @example
- * const pushNotitications = usePushNotifications()
- */
-export default function usePushNotifications() {
-  return useContext(PushNotificationsContext)
+  return {
+    isSupported,
+    init,
+    fcmRegistrationToken,
+    initializing,
+    error,
+    isReadyToUse,
+  }
 }
