@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Meta } from '@storybook/react'
+import { ComponentMeta } from '@storybook/react'
 
 import Docs from './docs'
 import { Modal } from './component'
@@ -16,7 +16,7 @@ export default {
       page: () => <Docs />,
     },
   },
-} as Meta
+} as ComponentMeta<typeof Modal>
 
 const Template = (args) => {
   const [show, setShow] = useState(args.show)

@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-firebase",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",

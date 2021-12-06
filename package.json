@@ -11,6 +11,7 @@
     "dev:refresh-storiesList": "node --loader ts-node/esm ./scripts/dev/run.ts --refresh-stories-list",
     "build": "node --loader ts-node/esm ./scripts/buildApp/run.ts",
     "lerna:link": "lerna link",
+    "lerna:install-deps": "lerna exec npm i",
     "deploy": "node --loader ts-node/esm ./scripts/deploy/run.ts",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
     "lint": "eslint ./ --fix"

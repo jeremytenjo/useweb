@@ -1,7 +1,6 @@
 import React from 'react'
 import { initializeApp } from 'firebase/app'
 import { getMessaging } from 'firebase/messaging'
-
 import { Meta } from '@storybook/react'
 import { FirebaseProvider } from '@useweb/use-firebase'
 
