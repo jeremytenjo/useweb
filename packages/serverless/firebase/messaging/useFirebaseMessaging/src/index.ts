@@ -26,6 +26,7 @@ export default function useFirebaseMessaging({
   onError: defaultOnError = () => null,
 }: MessagingOptions): Return {
   const firebase = useFirebase()
+
   const forceSupport = firebase?.messagingOptions?.forceSupport || defaultForceSupport
   const serviceWorkerFileName =
     firebase?.messagingOptions?.serviceWorkerFileName || defaultServiceWorkerFileName
@@ -34,6 +35,7 @@ export default function useFirebaseMessaging({
 
   const messaging = firebase.messaging.isSupported() ? firebase.messaging() : null
   const isProductionApp = isProduction()
+
   const [initialized, setInitialized] = useState(null)
   const [fcmRegistrationToken, setFcmRegistrationToken] = useState(null)
   const [initializing, setInitializing] = useState(null)
