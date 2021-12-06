@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import TextField from '../../'
+import TextField from '../..'
 
 const Wrapper = styled.div`
   transition: 0.2s;

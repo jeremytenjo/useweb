@@ -1,4 +1,5 @@
-import Particles from '../'
+import { memo } from 'react'
+import Particles from '../build'
 
 const ParticlesStory = () => {
   return <Particles />

@@ -1,6 +1,6 @@
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload'
 
-import Box from '../Box'
+import Box from '../Box/build/types'
 import downloadString from '../../utils/files/browser/downloadString'
 
 export default function File({ file, name, content, onFileSelected = () => null }) {

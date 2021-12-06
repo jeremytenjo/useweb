@@ -1,5 +1,5 @@
 import B from '../../../storybook/variationBlock/index'
-import Countdown from '../'
+import Countdown from '..'
 
 function addSeconds(days) {
   const result = new Date()

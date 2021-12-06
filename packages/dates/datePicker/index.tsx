@@ -1,5 +1,5 @@
 import monthData from '../utils/monthList'
-import Icon from '../../dataDisplay/Icon'
+import Icon from '../../dataDisplay/Icon/build'
 
 import { defaultProps, propTypes } from './props'
 import { Wrapper } from './styles'

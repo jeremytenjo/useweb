@@ -1,4 +1,4 @@
-import Avatar from '../../'
+import Avatar from '../..'
 import Rating from '../../../../feedback/rating'
 
 import { defaultProps, propTypes } from './stylistsInfo.props'
