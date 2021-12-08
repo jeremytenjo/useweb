@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 
-type Options = {
+export type Options = {
   autoExec?: boolean
   onResult?: (result: any) => void
   onError?: (error: any) => void
