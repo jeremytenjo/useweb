@@ -30,11 +30,15 @@ export default function ReceiveNotificationStory() {
           styles={{ color: 'red' }}
         />
       )}
+
       {error && <ErrorMessage error={error} />}
-      {isSupported() && !isReadyToUse && !initializing && (
+
+      {isSupported() && !error && !isReadyToUse && !initializing && (
         <button onClick={() => init()}>Initialize</button>
       )}
+
       {initializing && <Donut />}
+
       {isReadyToUse && (
         <>
           <p>Your FCM Registration Token:</p>
