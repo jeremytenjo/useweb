@@ -22,9 +22,11 @@ export default function ShareButton({
     if (error) onError(error)
   }
 
-  return shareIsSupported
-    ? <div onClick={handleShare}> {children}</div> || (
-        <IconShare1 onClick={handleShare} {...rest} />
-      )
-    : null
+  return shareIsSupported ? (
+    children ? (
+      <div onClick={handleShare}>{children}</div>
+    ) : (
+      <IconShare1 onClick={handleShare} {...rest} />
+    )
+  ) : null
 }
