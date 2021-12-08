@@ -11,10 +11,9 @@ import useFirebaseMessaging from '../../src'
 export default function ReceiveNotificationStory() {
   const [message, setMessage] = useState(null)
 
-  const { init, fcmRegistrationToken, isSupported, isReadyToUse, initializing, error } =
-    useFirebaseMessaging({
-      onMessage: (payload) => setMessage(payload),
-    })
+  const messaging = useFirebaseMessaging({
+    onMessage: (payload) => setMessage(payload),
+  })
 
   useEffect(() => {
     if (message) {
@@ -24,27 +23,30 @@ export default function ReceiveNotificationStory() {
 
   return (
     <div style={{ padding: 10 }}>
-      {!isSupported() && (
+      {!messaging.isSupported() && (
         <Text
           text='Push notifications are not supported in the current device'
           styles={{ color: 'red' }}
         />
       )}
 
-      {error && <ErrorMessage error={error} />}
+      {messaging.error && <ErrorMessage error={messaging.error} />}
 
-      {isSupported() && !error && !isReadyToUse && !initializing && (
-        <button onClick={() => init()}>Initialize</button>
-      )}
+      {messaging.isSupported() &&
+        !messaging.error &&
+        !messaging.isReadyToUse &&
+        !messaging.initializing && (
+          <button onClick={() => messaging.init()}>Initialize</button>
+        )}
 
-      {initializing && <Donut />}
+      {messaging.initializing && <Donut />}
 
-      {isReadyToUse && (
+      {messaging.isReadyToUse && (
         <>
           <p>Your FCM Registration Token:</p>
           <br />
-          <CopyToClipboard text={fcmRegistrationToken}>
-            <p>{fcmRegistrationToken}</p>
+          <CopyToClipboard text={messaging.fcmRegistrationToken}>
+            <p>{messaging.fcmRegistrationToken}</p>
           </CopyToClipboard>
           <br />
           <p>Setup complete. Waiting for notifications...</p>
