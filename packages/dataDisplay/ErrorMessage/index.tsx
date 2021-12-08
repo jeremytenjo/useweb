@@ -13,7 +13,7 @@ export default function ErrorMessage({ error }) {
         border: '7px solid #DA0000',
         borderRadius: '10px',
         backgroundColor: '--#EADDDD',
-        padding: 's',
+        padding: '--0 20px',
         width: '100%',
         maxWidth: '500px',
       }}
