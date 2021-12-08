@@ -14,7 +14,10 @@ export default function ReceiveNotificationStory() {
   const [message, setMessage] = useState(null)
 
   const messaging = useFirebaseMessaging({
-    onMessage: (payload) => setMessage(payload),
+    onMessage: (payload) => {
+      alert(JSON.stringify(payload))
+      setMessage(payload)
+    },
   })
 
   useEffect(() => {
