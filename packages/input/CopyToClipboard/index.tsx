@@ -3,6 +3,14 @@ import { CopyToClipboard as ReactCopyToClipboard } from 'react-copy-to-clipboard
 
 import Tooltip from '../../dataDisplay/Tooltip'
 
+type Props = {
+  children?: any
+  text?: string
+  onCopy?: (text: string) => string
+  tooltip?: any
+  style?: object
+}
+
 /**
  * {@link https://github.com/nkbt/react-copy-to-clipboard#usage|Docs}
  * @example
@@ -16,13 +24,13 @@ export default function CopyToClipboard({
   onCopy = () => null,
   tooltip = 'Copy to clipboard',
   style = {},
-}) {
+}: Props) {
   const [tooltipText, setTooltipText] = useState(null)
   const [showTooltip, setShowTooltip] = useState(null)
 
-  const handleCopy = () => {
+  const handleCopy = (text) => {
     setTooltipText('Copied to clipboard!')
-    onCopy()
+    onCopy(text)
   }
 
   const onMouseEnter = () => {

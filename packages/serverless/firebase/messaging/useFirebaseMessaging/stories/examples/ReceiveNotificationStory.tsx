@@ -23,6 +23,10 @@ export default function ReceiveNotificationStory() {
 
   return (
     <div style={{ padding: 10 }}>
+      <CopyToClipboard style={{ width: '100%', overflow: 'auto' }} text='hello copy this'>
+        <p>hello copy this</p>
+      </CopyToClipboard>
+
       {!messaging.isSupported() && (
         <Text
           text='Push notifications are not supported in the current device'
