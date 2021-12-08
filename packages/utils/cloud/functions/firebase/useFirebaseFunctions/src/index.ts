@@ -4,11 +4,14 @@ import useAsync from '@useweb/use-async'
 
 const isProduction = () => process.env.NODE_ENV === 'production'
 
-type Props = {
+export type Props = {
   name: string
   localPort?: number
 }
-
+/**
+ * @example
+ * const helloWorld = useFirebaseFunction({name: 'helloWorld'})
+ */
 export default function useFirebaseFunctions({
   name,
   localPort: defaultLocalPort = 5002,
@@ -22,13 +25,8 @@ export default function useFirebaseFunctions({
     }
 
     const result = await httpsCallable(firebase.functions, name)(payload)
-    const data = result.data
-    const sanitizedMessage = data.text
 
-    return {
-      data,
-      sanitizedMessage,
-    }
+    return result
   }
 
   const cloudFunction = useAsync(fetcher)

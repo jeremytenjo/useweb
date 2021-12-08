@@ -12,7 +12,9 @@ type Props = {
   messaging?: any
   messagingOptions?: MessagingProps
   analytics?: any
-  analyticsOptions?: object
+  analyticsOptions?: any
+  functions?: any
+  functionsOptions?: any
 }
 
 type Return = {
@@ -24,7 +26,9 @@ type Return = {
   messaging: any
   messagingOptions?: MessagingProps
   analytics?: any
-  analyticsOptions?: object
+  analyticsOptions?: any
+  functions?: any
+  functionsOptions?: any
 }
 
 const FirebaseContext = createContext<Return>(null)
@@ -39,6 +43,8 @@ export const FirebaseProvider = ({
   messagingOptions,
   analytics,
   analyticsOptions,
+  functions,
+  functionsOptions,
 }: Props) => {
   const [user, setUser] = useState(null)
 
@@ -69,6 +75,8 @@ export const FirebaseProvider = ({
         messagingOptions,
         analytics,
         analyticsOptions,
+        functions,
+        functionsOptions,
       }}
     >
       {children}
