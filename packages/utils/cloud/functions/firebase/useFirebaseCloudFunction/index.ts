@@ -1,10 +1,11 @@
 // uses local functions in development and production function when depoyed
+import { useState } from 'react'
 import firebase from 'firebase/app'
 
 import isEnvProduction from '../../../../enviroment/isEnvProduction'
 
 // window.cloudFunctionsLocalPort set by wapp/generators/firebase/index.js
-export default function useCloudFunction(
+export default function useFirebaseCloudFunction(
   cloudFunctionName = 'search',
   options = {
     cloudFunctionsLocalPort: window.cloudFunctionsLocalPort,
@@ -15,6 +16,8 @@ export default function useCloudFunction(
   const [result, setResult] = useState(null)
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(null)
+
+  // TODO replace with useAsync
 
   const exec = async (data = defaultData) => {
     if (loading) return null
