@@ -14,7 +14,7 @@
   },
   "peerDependencies": {
     "react": "^17.0.0",
-    "@useweb/use-firebase": "^4.0.3"
+    "@useweb/use-firebase": "^4.0.4"
   },
   "devDependencies": {
     "@useweb/compiler": "latest",
