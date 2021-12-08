@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import useFirebase from '@useweb/use-firebase'
+import { getToken } from 'firebase/messaging'
 
 const isProduction = () => process.env.NODE_ENV === 'production'
 
@@ -100,7 +101,7 @@ export default function useFirebaseMessaging({
     setError(false)
 
     try {
-      const token = await firebase.messaging.getToken({ vapidKey })
+      const token = await getToken(firebase.messaging, { vapidKey })
       token && setFcmRegistrationToken(token)
       onMessageRemoveListenerRef.current = firebase.messaging.onMessage(onMessage)
     } catch (error) {
