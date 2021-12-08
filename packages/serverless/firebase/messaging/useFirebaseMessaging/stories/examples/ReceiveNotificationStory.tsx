@@ -61,7 +61,7 @@ export default function ReceiveNotificationStory() {
               marginTop: '10px',
             }}
           >
-            <ShareButton>Share Key</ShareButton>
+            <ShareButton>Share FCM Registration Token</ShareButton>
           </div>
 
           <br />
