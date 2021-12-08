@@ -7,6 +7,7 @@ import Text from '../../../../../../dataDisplay/Text/src/index'
 import showNotification from '../../../../../../feedback/notification/showNotification'
 import ErrorMessage from '../../../../../../dataDisplay/ErrorMessage'
 import ShareButton from '../../../../../../dataDisplay/IconSpecial/ShareButton'
+import Button from '../../../../../../input/Button/styles/1'
 import useFirebaseMessaging from '../../src'
 
 export default function ReceiveNotificationStory() {
@@ -24,6 +25,8 @@ export default function ReceiveNotificationStory() {
 
   return (
     <div style={{ padding: 10 }}>
+      <Button text='Share FCM Registration Token' />
+
       {!messaging.isSupported() && (
         <Text
           text='Push notifications are not supported in the current device'
@@ -68,7 +71,7 @@ export default function ReceiveNotificationStory() {
                 url: messaging.fcmRegistrationToken,
               }}
             >
-              <button>Share FCM Registration Token </button>
+              <Button text='Share FCM Registration Token' />
             </ShareButton>
           </div>
 

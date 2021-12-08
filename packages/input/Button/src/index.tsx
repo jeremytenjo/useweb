@@ -5,7 +5,6 @@ import { defaultProps, propTypes } from './props'
 export default function Button({
   Wrapper,
   ButtonInner,
-  LoadingCon,
   color,
   text,
   onClick,
@@ -15,17 +14,13 @@ export default function Button({
   style,
   dataCy,
   loading,
-  typographyVariant,
-  ProgressComponent,
   url,
   beforeIcon,
   afterIcon,
   size,
-  textProps = {},
   type = 'button',
   ...rest
 }) {
-  const textColor = disabled ? 'disabledDarker' : outlined ? 'white' : `${color}Darker`
   const isLoading = typeof loading !== 'string' ? loading : false
   const matchesUrl = url && location.pathname === url
 

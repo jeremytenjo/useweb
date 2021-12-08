@@ -2,9 +2,6 @@
 import { create } from '@storybook/theming'
 
 import colors from './colors'
-// Add theme to <head>
-import headCss from './head'
-document.write(headCss)
 
 export default function storybookTheme() {
   const { primary } = colors
