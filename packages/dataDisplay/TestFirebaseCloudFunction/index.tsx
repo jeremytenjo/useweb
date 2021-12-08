@@ -1,4 +1,4 @@
-import useFirebaseCloudFunction from '../../utils/cloud/functions/firebase/useFirebaseCloudFunction'
+import useFirebaseFunctions from '../../utils/cloud/functions/firebase/useFirebaseFunctions'
 import Button1 from '../../input/Button/styles/1'
 import Text from '../Text/build/types'
 import Box from '../Box/build/types'
@@ -15,7 +15,7 @@ export default function TestFirebaseCloudFunction({
   styles = {},
 }) {
   const [jsonData, setJsonData] = useState(defaultData)
-  const cloudFunction = useFirebaseCloudFunction(functionName, {
+  const cloudFunction = useFirebaseFunctions(functionName, {
     data: jsonData,
     cloudFunctionsLocalPort,
   })
