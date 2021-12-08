@@ -4,7 +4,7 @@ import useFirebase from '@useweb/use-firebase'
 const isProduction = () => process.env.NODE_ENV === 'production'
 
 export type MessagingProps = {
-  vapidKey: string
+  vapidKey?: string
   forceSupport?: boolean
   serviceWorkerFileName?: string
   onMessage?: (payload: any) => any

@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-firebase",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@useweb/compiler": "latest",
-    "@useweb/use-firebase-messaging": "^1.0.2",
+    "@useweb/use-firebase-messaging": "^1.0.3",
     "@useweb/use-local-storage": "^1.1.0",
     "firebase": "^9.6.0"
   }

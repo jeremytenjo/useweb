@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-firebase-messaging",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@useweb/compiler": "latest",
-    "@useweb/use-firebase": "^4.0.3",
+    "@useweb/use-firebase": "^4.0.4",
     "firebase": "^9.6.0"
   }
 }
