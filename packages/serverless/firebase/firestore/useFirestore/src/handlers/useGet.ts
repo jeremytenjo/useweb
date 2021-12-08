@@ -24,10 +24,11 @@ type Options = {
   onGetError?: (error: any) => void
   onGetLoading?: (loading: boolean) => void
   localStorageOptions?: LocalStorageOptionsTypes
+  fetcher?: () => any
 }
 
 export default function useGet(
-  { userId, collectionName, defaultData, returnDefaultData }: HandlerPayloadType,
+  { userId, collectionName, defaultData = [] }: HandlerPayloadType,
   options?: Options,
 ) {
   const firebase = useFirebase()
@@ -40,7 +41,7 @@ export default function useGet(
     return wasCollectionFetched
   }, [collectionName, getStore.fetchedCollections])
 
-  const firestoreFetcher = async () => {
+  const defaultFetcher = async () => {
     const data = []
     const q = query(
       collection(firebase.db, collectionName),
@@ -77,7 +78,7 @@ export default function useGet(
   const swrKey = () => (userId ? collectionName : null)
 
   // https://swr.vercel.app/docs/options
-  const swr = useSWRImmutable(swrKey, firestoreFetcher, {
+  const swr = useSWRImmutable(swrKey, options?.fetcher || defaultFetcher, {
     onSuccess: (data) => {
       const updatedFetchedCollections = arrayDB.add(getStore.fetchedCollections, {
         data: { id: collectionName },
@@ -109,21 +110,11 @@ export default function useGet(
       return swr.data
     }
 
-    if (!swr.data && localStorageData.data) {
+    if (!swr.data && !!localStorageData?.data?.length) {
       return localStorageData.data
     }
 
-    if (
-      collectionWasFetched &&
-      !swr.data &&
-      !localStorageData.data &&
-      returnDefaultData &&
-      defaultData
-    ) {
-      return defaultData
-    }
-
-    return []
+    return defaultData
   }
 
   const fetching = !swr.data && !swr.error

@@ -27,6 +27,8 @@ export default function useFirebaseMessaging({
 }: MessagingOptions): Return {
   const firebase = useFirebase()
 
+  console.log(firebase)
+
   const forceSupport = firebase?.messagingOptions?.forceSupport || defaultForceSupport
   const serviceWorkerFileName =
     firebase?.messagingOptions?.serviceWorkerFileName || defaultServiceWorkerFileName

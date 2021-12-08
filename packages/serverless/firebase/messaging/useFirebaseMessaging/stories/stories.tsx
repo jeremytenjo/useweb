@@ -27,11 +27,12 @@ export default {
 const Template = (args) => {
   return (
     <FirebaseProvider firebaseApp={firebaseApp} messaging={messaging}>
-      Hello
+      {args.children}
     </FirebaseProvider>
   )
 }
 
-export const Example = Template.bind({
-  children: ReceiveNotificationStory,
-})
+export const ReceiveNotification = Template.bind({})
+ReceiveNotification.args = {
+  children: <ReceiveNotificationStory />,
+}

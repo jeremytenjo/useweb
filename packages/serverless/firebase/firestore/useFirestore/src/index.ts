@@ -9,15 +9,14 @@ import useUpdate from './handlers/useUpdate'
 export type HandlerPayloadType = {
   userId: string
   collectionName: string
-  returnDefaultData: any
   defaultData: any
   updateData: (newData: any) => void
   data: any
 }
 
 type Options = {
+  fetcher?: () => any
   defaultData?: any
-  returnDefaultData?: boolean
   localStorageOptions?: LocalStorageOptionsTypes
 
   onGet?: (result: any) => void
@@ -40,8 +39,8 @@ type Options = {
 export default function useFirestore(
   collectionName: string,
   {
+    fetcher,
     defaultData,
-    returnDefaultData,
     localStorageOptions,
 
     onGet = () => null,
@@ -66,7 +65,6 @@ export default function useFirestore(
   const handlerPayload: HandlerPayloadType = {
     userId: firebase.user?.uid,
     collectionName,
-    returnDefaultData,
     defaultData,
     updateData: () => null,
     data: [],
@@ -77,6 +75,7 @@ export default function useFirestore(
     onGetError,
     onGetLoading,
     localStorageOptions: localStorageOptions || firebase.localStorageOptions,
+    fetcher,
   })
 
   handlerPayload.updateData = get.update
