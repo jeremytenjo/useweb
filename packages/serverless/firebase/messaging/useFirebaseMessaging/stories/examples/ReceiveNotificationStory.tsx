@@ -6,6 +6,7 @@ import Code from '../../../../../../dataDisplay/Code/index'
 import Text from '../../../../../../dataDisplay/Text/src/index'
 import showNotification from '../../../../../../feedback/notification/showNotification'
 import ErrorMessage from '../../../../../../dataDisplay/ErrorMessage'
+import ShareButton from '../../../../../../dataDisplay/IconSpecial/ShareButton'
 import useFirebaseMessaging from '../../src'
 
 export default function ReceiveNotificationStory() {
@@ -23,10 +24,6 @@ export default function ReceiveNotificationStory() {
 
   return (
     <div style={{ padding: 10 }}>
-      <CopyToClipboard style={{ width: '100%', overflow: 'auto' }} text='hello copy this'>
-        <p>hello copy this</p>
-      </CopyToClipboard>
-
       {!messaging.isSupported() && (
         <Text
           text='Push notifications are not supported in the current device'
@@ -55,6 +52,18 @@ export default function ReceiveNotificationStory() {
           >
             <p>{messaging.fcmRegistrationToken}</p>
           </CopyToClipboard>
+
+          <div
+            style={{
+              display: 'grid',
+              gridAutoFlow: 'column',
+              gridGap: '10px',
+              marginTop: '10px',
+            }}
+          >
+            <ShareButton>Share Key</ShareButton>
+          </div>
+
           <br />
           <p>Setup complete. Waiting for notifications...</p>
 
