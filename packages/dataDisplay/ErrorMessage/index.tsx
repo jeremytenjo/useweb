@@ -23,7 +23,7 @@ export default function ErrorMessage({ error }) {
       </Box>
       {error && (
         <Box as='p' styles={{ color: '--#DB0000', fontSize: '16px' }}>
-          {JSON.stringify(error)}
+          {error.toString()}
         </Box>
       )}
     </Box>
