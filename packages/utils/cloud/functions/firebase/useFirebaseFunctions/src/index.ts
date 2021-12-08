@@ -19,7 +19,7 @@ export default function useFirebaseFunctions({
   const firebase = useFirebase()
   const localPort = firebase?.functionsOptions?.localPort || defaultLocalPort
 
-  const fetcher = async ({ payload }) => {
+  const fetcher = async ({ payload }: { payload?: any } = {}) => {
     if (!isProduction()) {
       connectFunctionsEmulator(firebase.functions, 'localhost', localPort)
     }

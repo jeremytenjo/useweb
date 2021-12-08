@@ -3,6 +3,7 @@ import { initializeApp } from 'firebase/app'
 import { getFunctions } from 'firebase/functions'
 import { Meta } from '@storybook/react'
 import { FirebaseProvider } from '@useweb/use-firebase'
+import useFirebaseFunctions from '../src'
 
 import firebaseConfig from '../../../../../../../firebase/firebase.config'
 
@@ -30,7 +31,20 @@ const Template = (args) => {
   )
 }
 
+const Examp = () => {
+  const helloWorld = useFirebaseFunctions({ name: 'helloWorld' })
+
+  console.log(helloWorld)
+
+  return (
+    <div>
+      Hellos
+      <button onClick={() => helloWorld.exec()}>execute</button>
+    </div>
+  )
+}
+
 export const Example = Template.bind({})
 Example.args = {
-  children: <div>Hello</div>,
+  children: <Examp />,
 }
