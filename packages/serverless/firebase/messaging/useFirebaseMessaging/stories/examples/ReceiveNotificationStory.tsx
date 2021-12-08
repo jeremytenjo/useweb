@@ -68,7 +68,7 @@ export default function ReceiveNotificationStory() {
                 url: messaging.fcmRegistrationToken,
               }}
             >
-              Share FCM Registration Token
+              <button>Share FCM Registration Token </button>
             </ShareButton>
           </div>
 
