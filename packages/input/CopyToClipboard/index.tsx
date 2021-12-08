@@ -15,6 +15,7 @@ export default function CopyToClipboard({
   text,
   onCopy = () => null,
   tooltip = 'Copy to clipboard',
+  style = {},
 }) {
   const [tooltipText, setTooltipText] = useState(null)
   const [showTooltip, setShowTooltip] = useState(null)
@@ -33,7 +34,7 @@ export default function CopyToClipboard({
     <div
       onMouseEnter={onMouseEnter}
       onMouseLeave={() => setShowTooltip(false)}
-      style={{ cursor: 'pointer' }}
+      style={{ cursor: 'pointer', ...style }}
     >
       <Tooltip text={tooltipText} visible={showTooltip}>
         <ReactCopyToClipboard text={text} onCopy={handleCopy}>

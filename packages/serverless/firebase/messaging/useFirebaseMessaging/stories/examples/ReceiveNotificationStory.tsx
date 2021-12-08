@@ -45,11 +45,12 @@ export default function ReceiveNotificationStory() {
         <>
           <p>Your FCM Registration Token:</p>
           <br />
-          <div style={{ width: '100%', overflow: 'auto' }}>
-            <CopyToClipboard text={messaging.fcmRegistrationToken}>
-              <p>{messaging.fcmRegistrationToken}</p>
-            </CopyToClipboard>
-          </div>
+          <CopyToClipboard
+            text={messaging.fcmRegistrationToken}
+            style={{ width: '100%', overflow: 'auto' }}
+          >
+            <p>{messaging.fcmRegistrationToken}</p>
+          </CopyToClipboard>
           <br />
           <p>Setup complete. Waiting for notifications...</p>
 
