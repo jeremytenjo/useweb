@@ -5,7 +5,7 @@ import Docs from './docs'
 import { Modal } from './component'
 
 export default {
-  title: 'packages/feedback/Modal',
+  title: 'packages/Feedback/Modal',
   component: Modal,
   args: {
     show: null,

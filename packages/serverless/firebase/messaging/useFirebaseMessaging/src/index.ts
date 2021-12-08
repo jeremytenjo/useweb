@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import useFirebase from '@useweb/use-firebase'
 
 const isProduction = () => process.env.NODE_ENV === 'production'
 
 export type MessagingProps = {
-  vapidKey?: string
+  vapidKey: string
   forceSupport?: boolean
   serviceWorkerFileName?: string
-  onMessage: (payload: any) => any
+  onMessage?: (payload: any) => any
   onError?: (error: any) => any
 }
 
@@ -27,6 +27,7 @@ export default function useFirebaseMessaging({
   onMessage: defaultOnMessage = () => null,
   onError: defaultOnError = () => null,
 }: MessagingProps): Return {
+  const onMessageRemoveListenerRef = useRef(null)
   const firebase = useFirebase()
 
   const forceSupport = firebase?.messagingOptions?.forceSupport || defaultForceSupport
@@ -50,6 +51,12 @@ export default function useFirebaseMessaging({
         registerServiceWorker()
         setNotificationListener()
         setInitialized(true)
+      }
+
+      if (onMessageRemoveListenerRef.current) {
+        return () => {
+          onMessageRemoveListenerRef.current()
+        }
       }
     }
   }, [])
@@ -95,7 +102,7 @@ export default function useFirebaseMessaging({
     try {
       const token = await firebase.messaging.getToken({ vapidKey })
       token && setFcmRegistrationToken(token)
-      firebase.messaging.onMessage(onMessage)
+      onMessageRemoveListenerRef.current = firebase.messaging.onMessage(onMessage)
     } catch (error) {
       setError(error)
       onError(error)
