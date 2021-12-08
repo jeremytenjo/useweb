@@ -3,11 +3,12 @@ import useFirebase from '@useweb/use-firebase'
 
 const isProduction = () => process.env.NODE_ENV === 'production'
 
-export type MessagingOptions = {
+export type MessagingProps = {
+  vapidKey?: string
   forceSupport?: boolean
   serviceWorkerFileName?: string
-  onMessage: (payload: any) => void
-  onError?: (error: any) => void
+  onMessage: (payload: any) => any
+  onError?: (error: any) => any
 }
 
 export type Return = {
@@ -20,14 +21,13 @@ export type Return = {
 }
 
 export default function useFirebaseMessaging({
+  vapidKey,
   forceSupport: defaultForceSupport,
   serviceWorkerFileName: defaultServiceWorkerFileName = '/firebase-messaging-sw.js',
   onMessage: defaultOnMessage = () => null,
   onError: defaultOnError = () => null,
-}: MessagingOptions): Return {
+}: MessagingProps): Return {
   const firebase = useFirebase()
-
-  console.log(firebase)
 
   const forceSupport = firebase?.messagingOptions?.forceSupport || defaultForceSupport
   const serviceWorkerFileName =
@@ -35,7 +35,6 @@ export default function useFirebaseMessaging({
   const onMessage = firebase?.messagingOptions?.onMessage || defaultOnMessage
   const onError = firebase?.messagingOptions?.onError || defaultOnError
 
-  const messaging = firebase.messaging.isSupported() ? firebase.messaging() : null
   const isProductionApp = isProduction()
 
   const [initialized, setInitialized] = useState(null)
@@ -94,9 +93,9 @@ export default function useFirebaseMessaging({
     setError(false)
 
     try {
-      const token = await messaging.getToken()
+      const token = await firebase.messaging.getToken({ vapidKey })
       token && setFcmRegistrationToken(token)
-      messaging.onMessage(onMessage)
+      firebase.messaging.onMessage(onMessage)
     } catch (error) {
       setError(error)
       onError(error)

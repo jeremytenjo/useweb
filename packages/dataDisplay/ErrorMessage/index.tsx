@@ -1,4 +1,5 @@
-import Box from '../Box'
+import { useEffect } from 'react'
+import Box from '../Box/src'
 
 export default function ErrorMessage({ error }) {
   useEffect(() => {

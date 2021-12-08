@@ -25,8 +25,14 @@ export default {
 } as Meta
 
 const Template = (args) => {
+  const vapidKey =
+    'BN00LZftcTdyP4TYvFRnfWe_jjfTOSc-9rUFEOf2VxnxGlf_IP6bbPvFJLbBB9QZzixT4MHQK5QFM_1NTt_frsE'
   return (
-    <FirebaseProvider firebaseApp={firebaseApp} messaging={messaging}>
+    <FirebaseProvider
+      firebaseApp={firebaseApp}
+      messaging={messaging}
+      messagingOptions={{ vapidKey }}
+    >
       {args.children}
     </FirebaseProvider>
   )

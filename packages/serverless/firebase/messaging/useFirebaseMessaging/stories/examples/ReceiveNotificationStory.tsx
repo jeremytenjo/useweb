@@ -5,6 +5,7 @@ import Donut from '../../../../../../feedback/progress/Donut/index'
 import Code from '../../../../../../dataDisplay/Code/index'
 import Text from '../../../../../../dataDisplay/Text/src/index'
 import showNotification from '../../../../../../feedback/notification/showNotification'
+import ErrorMessage from '../../../../../../dataDisplay/ErrorMessage'
 import useFirebaseMessaging from '../../src'
 
 export default function ReceiveNotificationStory() {
@@ -25,19 +26,15 @@ export default function ReceiveNotificationStory() {
     <div style={{ padding: 10 }}>
       {!isSupported() && (
         <Text
-          text='Push notifications are not supported on the current device'
+          text='Push notifications are not supported in the current device'
           styles={{ color: 'red' }}
         />
       )}
-
-      {error && <Code code={error} stringify />}
-
+      {error && <ErrorMessage error={error} />}
       {isSupported() && !isReadyToUse && !initializing && (
         <button onClick={() => init()}>Initialize</button>
       )}
-
       {initializing && <Donut />}
-
       {isReadyToUse && (
         <>
           <p>Your FCM Registration Token:</p>

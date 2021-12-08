@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
-import type { MessagingOptions } from '@useweb/use-firebase-messaging'
+import type { MessagingProps } from '@useweb/use-firebase-messaging'
 
 type Props = {
   firebaseApp: any
@@ -10,7 +10,7 @@ type Props = {
   auth?: any
   localStorageOptions?: LocalStorageOptionsTypes
   messaging?: any
-  messagingOptions?: MessagingOptions
+  messagingOptions?: MessagingProps
   analytics?: any
   analyticsOptions?: object
 }
@@ -22,7 +22,7 @@ type Return = {
   user: any
   localStorageOptions: LocalStorageOptionsTypes
   messaging: any
-  messagingOptions?: MessagingOptions
+  messagingOptions?: MessagingProps
   analytics?: any
   analyticsOptions?: object
 }
