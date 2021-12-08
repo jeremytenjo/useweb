@@ -61,7 +61,15 @@ export default function ReceiveNotificationStory() {
               marginTop: '10px',
             }}
           >
-            <ShareButton>Share FCM Registration Token</ShareButton>
+            <ShareButton
+              data={{
+                title: messaging.fcmRegistrationToken,
+                text: messaging.fcmRegistrationToken,
+                url: messaging.fcmRegistrationToken,
+              }}
+            >
+              Share FCM Registration Token
+            </ShareButton>
           </div>
 
           <br />
