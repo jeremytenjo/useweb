@@ -25,8 +25,6 @@ export default function ReceiveNotificationStory() {
 
   return (
     <div style={{ padding: 10 }}>
-      <Button text='Share FCM Registration Token' />
-
       {!messaging.isSupported() && (
         <Text
           text='Push notifications are not supported in the current device'
