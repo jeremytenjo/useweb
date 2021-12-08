@@ -1,6 +1,11 @@
 export const shareIsSupported = navigator.share
 
-const shareFunction = async (data) => {
+export type Props = {
+  title: string
+  text: string
+  url: string
+}
+const shareFunction = async (data: Props) => {
   if (!shareIsSupported)
     return { error: 'Fail: Web Share is not supported in this browser' }
   const { title, text, url } = data

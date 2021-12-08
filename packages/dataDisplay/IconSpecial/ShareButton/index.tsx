@@ -1,8 +1,9 @@
 import IconShare1 from '../../Icon/library/IconShare1'
 import share, { shareIsSupported } from '../../../engagement/share'
+import type { Props as ShareProps } from '../../../engagement/share'
 
 type Props = {
-  data?: any
+  data?: ShareProps
   children?: any
   onShare?: (result: boolean) => boolean
   onError?: (error: any) => void
