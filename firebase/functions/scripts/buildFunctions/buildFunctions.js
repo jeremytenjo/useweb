@@ -19,7 +19,7 @@ export default async function buildFunctions() {
     platform: 'browser',
     bundle: true,
     minify: true,
-    format: 'cjs',
+    format: 'esm',
     target: ['es2017'],
     watch: args.watch,
     external: ['firebase-admin', 'firebase-functions'],
