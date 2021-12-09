@@ -12,7 +12,7 @@ export type Props = {
  * @example
  * const helloWorld = useFirebaseFunction({name: 'helloWorld'})
  */
-export default function useFirebaseFunctions({
+export default function useFirebaseFunction({
   name,
   localPort: defaultLocalPort = 5002,
 }: Props) {

@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 
-import useFirebaseFunctions from '../../../../../../utils/cloud/functions/firebase/useFirebaseFunctions'
+import useFirebaseFunction from '../../../../../../utils/cloud/functions/firebase/useFirebaseFunction'
 import Button from '../../../../../../input/Button/styles/1'
 import useToast from '../../../../../../feedback/useToast'
 import useOnTrue from '../../../../../../utils/hooks/useOnTrue/src'
@@ -8,8 +8,8 @@ import ErrorMessage from '../../../../../../dataDisplay/ErrorMessage'
 
 export default function SendNotificationStory({ fcmRegistrationToken }) {
   const toast = useToast()
-  const sendPushNotification = useFirebaseFunctions('sendPushNotification', {
-    cloudFunctionsLocalPort: 5002,
+  const sendPushNotification = useFirebaseFunction({
+    name: 'sendPushNotification',
   })
 
   const send = () => {

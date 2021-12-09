@@ -1,8 +1,8 @@
-import useFirebaseFunctions from '../../utils/cloud/functions/firebase/useFirebaseFunctions'
+import useFirebaseFunction from '../../utils/cloud/functions/firebase/useFirebaseFunction'
 
 export default function useRest(path, { autoExec, restFunctionName = 'rest' } = {}) {
   const [state, setState] = useState(null)
-  const cFunction = useFirebaseFunctions(restFunctionName)
+  const cFunction = useFirebaseFunction(restFunctionName)
 
   const exec = () => {
     const payload = { path }

@@ -3,7 +3,7 @@ import { initializeApp } from 'firebase/app'
 import { getFunctions } from 'firebase/functions'
 import { Meta } from '@storybook/react'
 import { FirebaseProvider } from '@useweb/use-firebase'
-import useFirebaseFunctions from '../src'
+import useFirebaseFunction from '../src'
 
 import firebaseConfig from '../../../../../../../firebase/firebase.config'
 
@@ -13,7 +13,7 @@ const firebaseApp = initializeApp(firebaseConfig)
 const functions = getFunctions()
 
 export default {
-  title: 'packages/Serverless/firebase/functions/useFirebaseFunctions',
+  title: 'packages/Serverless/firebase/functions/useFirebaseFunction',
   args: {},
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
@@ -32,7 +32,7 @@ const Template = (args) => {
 }
 
 const Examp = () => {
-  const helloWorld = useFirebaseFunctions({ name: 'helloWorld' })
+  const helloWorld = useFirebaseFunction({ name: 'helloWorld' })
 
   return (
     <div>
