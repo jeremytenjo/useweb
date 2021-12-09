@@ -1,11 +1,12 @@
-const path = require('path')
+import path from 'path'
 
-const esbuild = require('esbuild')
+import esbuild from 'esbuild'
 
-const args = require('./handlers/getCommandLineArgs')()
-const removeBuildFolder = require('./handlers/removeBuildFolder')
+import getCommandLineArgs from './handlers/getCommandLineArgs.js'
+import removeBuildFolder from './handlers/removeBuildFolder.js'
 
-module.exports = async function buildFunctions() {
+export default async function buildFunctions() {
+  const args = getCommandLineArgs()
   const rootPath = path.join(process.cwd(), 'firebase', 'functions')
   const entryPoint = path.join(rootPath, 'src', 'index.js')
   const outfile = path.join(rootPath, 'build', 'index.js')
