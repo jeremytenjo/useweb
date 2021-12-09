@@ -54,6 +54,7 @@
   "devDependencies": {
     "command-line-args": "^5.2.0",
     "concurrently": "^6.4.0",
+    "framer-motion": "^5.4.4",
     "fs-extra": "^10.0.0",
     "glob": "^7.2.0",
     "styled-components": "^5.3.3",

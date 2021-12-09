@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 
-import useFirebaseFunction from '../../../../../../utils/cloud/functions/firebase/useFirebaseFunction'
+import useFirebaseFunction from '../../../../../../utils/cloud/functions/firebase/useFirebaseFunction/src/index.js'
 import Button from '../../../../../../input/Button/styles/1'
 import useToast from '../../../../../../feedback/useToast'
 import useOnTrue from '../../../../../../utils/hooks/useOnTrue/src'
