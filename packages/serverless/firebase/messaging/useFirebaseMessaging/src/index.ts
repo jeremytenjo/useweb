@@ -44,12 +44,8 @@ export default function useFirebaseMessaging({
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    if (isSupported() && fcmRegistrationToken) {
-      if (onMessageRemoveListenerRef.current) {
-        return () => {
-          onMessageRemoveListenerRef.current()
-        }
-      }
+    return () => {
+      onMessageRemoveListenerRef.current && onMessageRemoveListenerRef.current()
     }
   }, [])
 
