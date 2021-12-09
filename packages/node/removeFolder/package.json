@@ -1,0 +1,19 @@
+{
+  "name": "@useweb/node-remove-folder",
+  "version": "1.0.3",
+  "main": "./build/index.js",
+  "author": "Jeremy Tenjo",
+  "types": "./build/types/index.d.ts",
+  "type": "module",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "node ./node_modules/@useweb/compiler/build --node",
+    "build:watch": "node ./node_modules/@useweb/compiler/build --node --watch",
+    "deploy": "npm run build && npm publish --access public"
+  },
+  "devDependencies": {
+    "@useweb/compiler": "latest"
+  }
+}
