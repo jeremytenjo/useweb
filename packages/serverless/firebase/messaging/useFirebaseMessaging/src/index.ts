@@ -39,21 +39,12 @@ export default function useFirebaseMessaging({
 
   const isProductionApp = isProduction()
 
-  const [initialized, setInitialized] = useState(null)
   const [fcmRegistrationToken, setFcmRegistrationToken] = useState(null)
   const [initializing, setInitializing] = useState(null)
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    if (isSupported()) {
-      const hasPermission = Notification.permission === 'granted'
-
-      if (hasPermission) {
-        registerServiceWorker()
-        setNotificationListener()
-        setInitialized(true)
-      }
-
+    if (isSupported() && fcmRegistrationToken) {
       if (onMessageRemoveListenerRef.current) {
         return () => {
           onMessageRemoveListenerRef.current()
@@ -70,7 +61,7 @@ export default function useFirebaseMessaging({
       isProductionApp
 
     if (!result && !forceSupport) {
-      console.warn('Push notifications are not supported on the current device', {
+      console.log('Push notifications are not supported on the current device', {
         Notification: 'Notification' in window,
         serviceWorker: 'serviceWorker' in navigator,
         PushManager: 'PushManager' in window,
@@ -88,25 +79,26 @@ export default function useFirebaseMessaging({
   }
 
   const init = async () => {
-    if (isSupported() && !initialized) {
-      const permission = await Notification.requestPermission()
-      if (permission === 'granted') setNotificationListener()
+    if (isSupported() && !fcmRegistrationToken) {
+      startNotificationListener()
     }
-
-    setInitialized(true)
   }
 
-  const setNotificationListener = async () => {
+  const startNotificationListener = async () => {
     setInitializing(true)
     setError(false)
 
     try {
       const token = await getToken(firebase.messaging, { vapidKey })
-      token && setFcmRegistrationToken(token)
-      onMessageRemoveListenerRef.current = messagingOnMessage(
-        firebase.messaging,
-        onMessage,
-      )
+
+      if (token) {
+        registerServiceWorker()
+        setFcmRegistrationToken(token)
+        onMessageRemoveListenerRef.current = messagingOnMessage(
+          firebase.messaging,
+          onMessage,
+        )
+      }
     } catch (error) {
       setError(error)
       onError(error)
