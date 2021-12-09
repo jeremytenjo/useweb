@@ -34,12 +34,11 @@ const Template = (args) => {
 const Examp = () => {
   const helloWorld = useFirebaseFunctions({ name: 'helloWorld' })
 
-  console.log(helloWorld)
-
   return (
     <div>
-      Hellos
       <button onClick={() => helloWorld.exec()}>execute</button>
+      <p>Result</p>
+      <div>{helloWorld?.result?.data?.hello}</div>
     </div>
   )
 }
