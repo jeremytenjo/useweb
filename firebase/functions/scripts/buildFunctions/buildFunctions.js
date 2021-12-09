@@ -6,7 +6,7 @@ const args = require('./handlers/getCommandLineArgs')()
 const removeBuildFolder = require('./handlers/removeBuildFolder')
 
 module.exports = async function buildFunctions() {
-  const rootPath = process.cwd()
+  const rootPath = path.join(process.cwd(), 'firebase', 'functions')
   const entryPoint = path.join(rootPath, 'src', 'index.js')
   const outfile = path.join(rootPath, 'build', 'index.js')
 

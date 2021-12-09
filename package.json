@@ -6,9 +6,16 @@
   "type": "module",
   "author": "Jeremy Tenjo",
   "license": "ISC",
+  "main": "firebase/functions/build/index.js",
   "scripts": {
     "dev": "node --loader ts-node/esm ./scripts/dev/run.ts",
+    "dev:with-firebase-emulators": "concurrently 'npm run dev' 'cd functions && echo hello'",
     "dev:refresh-storiesList": "node --loader ts-node/esm ./scripts/dev/run.ts --refresh-stories-list",
+    "functions:dev": "concurrently 'npm run functions:build:watch' 'npm run functions:serve'",
+    "functions:build": "node firebase/functions/scripts/buildFunctions/run.js",
+    "functions:build:watch": "node firebase/functions/scripts/buildFunctions/run.js --watch",
+    "functions:serve": "firebase emulators:start --only functions",
+    "functions:deploy": "firebase deploy --only functions",
     "build": "node --loader ts-node/esm ./scripts/buildApp/run.ts",
     "lerna:link": "lerna link",
     "lerna:install-deps": "lerna exec npm i",
@@ -37,7 +44,12 @@
     "lerna": "^4.0.0",
     "react": "^17.0.2",
     "react-copy-to-clipboard": "^5.0.4",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "command-line-args": "^5.2.0",
+    "concurrently": "^6.4.0",
+    "esbuild": "^0.14.2",
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1"
   },
   "devDependencies": {
     "command-line-args": "^5.2.0",
@@ -47,5 +59,8 @@
     "styled-components": "^5.3.3",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
+  },
+  "engines": {
+    "node": "14"
   }
 }
