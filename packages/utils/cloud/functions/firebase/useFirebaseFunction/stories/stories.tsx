@@ -4,6 +4,7 @@ import { getFunctions } from 'firebase/functions'
 import { Meta } from '@storybook/react'
 import { FirebaseProvider } from '@useweb/use-firebase'
 import useFirebaseFunction from '../src'
+import ErrorMessage from '../../../../../../dataDisplay/ErrorMessage'
 
 import firebaseConfig from '../../../../../../../firebase/firebase.config'
 
@@ -36,9 +37,16 @@ const Examp = () => {
 
   return (
     <div>
-      <button onClick={() => helloWorld.exec()}>execute</button>
-      <p>Result</p>
-      <div>{helloWorld?.result?.data?.hello}</div>
+      <button onClick={() => helloWorld.exec()}>Execute</button>
+      <br />
+      <br />
+      {helloWorld.result && (
+        <>
+          <p>Result</p>
+          <div>{helloWorld?.result?.data?.hello}</div>
+        </>
+      )}
+      {helloWorld.error && <ErrorMessage error={helloWorld.error} />}
     </div>
   )
 }

@@ -15,7 +15,7 @@ export default function ErrorMessage({ error }) {
         border: '7px solid #DA0000',
         borderRadius: '10px',
         backgroundColor: '--#EADDDD',
-        padding: '--0 20px',
+        padding: 'l',
         width: '100%',
         maxWidth: '500px',
         position: 'relative',
