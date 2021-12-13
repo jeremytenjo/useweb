@@ -5,6 +5,6 @@ import * as functions from 'firebase-functions'
 //
 export const helloWorld = functions.https.onCall((data, context) => {
   return {
-    hello: 'hello my name is',
+    hello: `hello my name is ${data}`,
   }
 })
