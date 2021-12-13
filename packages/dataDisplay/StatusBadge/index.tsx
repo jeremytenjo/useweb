@@ -1,5 +1,5 @@
-import Box from '../Box/build/types'
-import Text from '../Text/build/types'
+import Box from '../Box/src/index'
+import Text from '../Text/src/index'
 
 import { defaultProps } from './props'
 import * as styles from './styles'

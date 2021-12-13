@@ -1,6 +1,6 @@
 import B from '../../../storybook/variationBlock/index'
 import Button from '../../../input/Button/build'
-import Overlay from '../build/types'
+import Overlay from '../src/index'
 
 export default () => {
   const [show, setshow] = useState(null)

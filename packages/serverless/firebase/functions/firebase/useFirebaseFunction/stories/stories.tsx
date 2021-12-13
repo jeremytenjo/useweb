@@ -6,6 +6,7 @@ import { FirebaseProvider } from '@useweb/use-firebase'
 import useFirebaseFunction from '../src'
 import ErrorMessage from '../../../../../../dataDisplay/ErrorMessage'
 import Donut from '../../../../../../feedback/progress/Donut'
+import TestFirebaseFunction from '../../../../../../dataDisplay/TestFirebaseFunction'
 
 import firebaseConfig from '../../../../../../../firebase/firebase.config'
 

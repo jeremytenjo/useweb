@@ -1,7 +1,7 @@
 import Box from '@useweb/box'
 import { useState, Fragment } from 'react'
 
-import Text from '../../../../dataDisplay/Text/build/types'
+import Text from '../../../../dataDisplay/Text/src/index'
 import Drawer from '../../../../feedback/drawer'
 import { defaultProps, propTypes } from '../../props'
 import Animation from '../../../../utils/Animation/Animate/src'

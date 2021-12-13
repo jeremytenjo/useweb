@@ -1,7 +1,7 @@
 import toBoolean from '../../../utils/string/toBoolean'
 import IconCloseMaterial from '../../../dataDisplay/Icon/library/IconCloseMaterial/index'
 import Animation from '../../../utils/Animation/Animate/src'
-import Text from '../../../dataDisplay/Text/build/types'
+import Text from '../../../dataDisplay/Text/src/index'
 
 import { defaultProps } from './props'
 import { useEffect, useRef, useState } from 'react'

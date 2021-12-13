@@ -4,7 +4,7 @@ import Image from '../../../media/images/Image/src'
 import { defaultProps, propTypes } from './props'
 import { Wrapper, InfoContainer, TypographyWrapper, Label } from './styles'
 
-const Text = lazy(() => import(/* webpackChunkName: 'Text' */ '../../Text/build/types'))
+const Text = lazy(() => import(/* webpackChunkName: 'Text' */ '../../Text/src/index'))
 const Animation = lazy(
   () =>
     import(/* webpackChunkName: 'Animation' */ '../../../utils/Animation/Animate/src'),

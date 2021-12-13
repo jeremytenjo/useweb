@@ -1,16 +1,16 @@
 import { useState } from 'react'
 
-import useFirebaseFunction from '../../utils/cloud/functions/firebase/useFirebaseFunction'
-import Button1 from '../../input/Button/styles/1'
-import Text from '../Text/src'
-import Box from '../Box/src'
-import Code from '../Code'
-import FadeInOut from '../../utils/Animation/FadeInOut'
-import ErrorMessage from '../ErrorMessage'
-import JSONInput from '../../input/JSONInput'
-import Donut from '../../feedback/progress/Donut'
+import useFirebaseFunction from '../firebase/useFirebaseFunction/src/index'
+import Button1 from '../../../../input/Button/styles/1'
+import Text from '../../../../dataDisplay/Text/src'
+import Box from '../../../../dataDisplay/Box/src'
+import Code from '../../../../dataDisplay/Code'
+import FadeInOut from '../../../../utils/Animation/FadeInOut'
+import ErrorMessage from '../../../../dataDisplay/ErrorMessage'
+import JSONInput from '../../../../input/JSONInput'
+import Donut from '../../../../feedback/progress/Donut'
 
-export default function TestFirebaseCloudFunction({
+export default function TestFirebaseFunction({
   functionName = '',
   cloudFunctionsLocalPort = 5002,
   defaultData = {},

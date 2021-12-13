@@ -1,7 +1,7 @@
 import { V, B } from '../../../../storybook/ui'
 import Icon from '../../../../dataDisplay/Icon/library/IconAppleLogo/index'
 import Button from '../../../Button/styles/1'
-import Text from '../../../../dataDisplay/Text/build/types'
+import Text from '../../../../dataDisplay/Text/src/index'
 import Select3 from '../styles/3'
 
 const data = [
