@@ -27,7 +27,7 @@ export default function useUpdate(
     onUpdate = () => null,
     onUpdateError = () => null,
     onUpdateLoading = () => null,
-  }: Options,
+  }: Options = {},
 ) {
   const fetcher = async ({
     id: dataId,

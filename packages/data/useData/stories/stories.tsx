@@ -73,6 +73,21 @@ const Template = (args) => {
       <p>Result:</p>
       <br />
       {latestMovies.get.data && <p>{JSON.stringify(latestMovies.get.data)}</p>}
+
+      <br />
+      <OtherComponent />
+    </div>
+  )
+}
+
+const OtherComponent = () => {
+  const latestMovies = useData({ id: 'latestMovies' })
+
+  return (
+    <div>
+      <p>Other Component:</p>
+      <br />
+      {latestMovies.get.data && <p>{JSON.stringify(latestMovies.get.data)}</p>}
     </div>
   )
 }

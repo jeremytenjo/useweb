@@ -26,7 +26,7 @@ export default function useCreate(
     onCreate = () => null,
     onCreateError = () => null,
     onCreateLoading = () => null,
-  }: Options,
+  }: Options = {},
 ) {
   const fetcher = async ({ value: createdItem }: ExecProps): Promise<Creator> => {
     const latestData = arrayDB.add(allData, { data: createdItem })

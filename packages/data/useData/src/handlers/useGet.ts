@@ -26,10 +26,15 @@ export type Options = {
 
 export default function useGet(
   { id, defaultData = [] }: HandlerPayloadType,
-  { fetcher, onGet = () => null, onGetError = () => null, localStorageOptions }: Options,
+  {
+    fetcher,
+    onGet = () => null,
+    onGetError = () => null,
+    localStorageOptions,
+  }: Options = {},
 ) {
   const getStore: any = useGetStore()
-  const [getData, setGetData] = useState(false)
+  const [fetchData, setShouldFetch] = useState(false)
 
   const collectionWasFetched = useMemo(() => {
     const wasCollectionFetched = getStore.fetchedCollections.some(
@@ -54,7 +59,7 @@ export default function useGet(
     },
   })
 
-  const swrKey = () => (fetcher && getData ? id : null)
+  const swrKey = () => (fetcher && fetchData ? id : null)
 
   // https://swr.vercel.app/docs/options
   const swr = useSWRImmutable(swrKey, fetcher, {
@@ -97,7 +102,7 @@ export default function useGet(
   }
 
   const exec = () => {
-    setGetData(true)
+    setShouldFetch(true)
   }
 
   const fetching = !swr.data && !swr.error

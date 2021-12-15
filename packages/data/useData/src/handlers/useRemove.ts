@@ -26,7 +26,7 @@ export default function useRemove(
     onRemove = () => null,
     onRemoveError = () => null,
     onRemoveLoading = () => null,
-  }: Options,
+  }: Options = {},
 ) {
   const fetcher = async ({ id: removedItemId }: ExecProps): Promise<Remover> => {
     const latestData = arrayDB.remove(data, {
