@@ -21,13 +21,12 @@ export type Options = {
   fetcher?: () => any[] | Promise<any>
   onGet?: (result: any) => void
   onGetError?: (error: any) => void
-  onGetLoading?: (loading: boolean) => void
   localStorageOptions?: LocalStorageOptionsTypes
 }
 
 export default function useGet(
   { id, defaultData = [] }: HandlerPayloadType,
-  options?: Options,
+  { fetcher, onGet = () => null, onGetError = () => null, localStorageOptions }: Options,
 ) {
   const getStore: any = useGetStore()
   const [getData, setGetData] = useState(false)
@@ -48,17 +47,17 @@ export default function useGet(
   }
 
   const localStorageData = useLocalStorage(id, {
-    localStorageOptions: options.localStorageOptions,
+    localStorageOptions: localStorageOptions,
     onGet: (result) => {
       updateFetchedCollections()
-      options.onGet(result)
+      onGet(result)
     },
   })
 
-  const swrKey = () => (options.fetcher && getData ? id : null)
+  const swrKey = () => (fetcher && getData ? id : null)
 
   // https://swr.vercel.app/docs/options
-  const swr = useSWRImmutable(swrKey, options?.fetcher, {
+  const swr = useSWRImmutable(swrKey, fetcher, {
     onSuccess: (data) => {
       const updatedFetchedCollections = arrayDB.add(getStore.fetchedCollections, {
         data: { id },
@@ -66,10 +65,10 @@ export default function useGet(
 
       getStore.setFetchedCollections(updatedFetchedCollections)
       localStorageData.update(data)
-      options.onGet(data)
+      onGet(data)
     },
     onError: (error) => {
-      options.onGetError(error)
+      onGetError(error)
     },
   })
 

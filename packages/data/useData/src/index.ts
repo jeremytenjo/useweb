@@ -13,35 +13,19 @@ export type HandlerPayloadType = {
 type Options = {
   id: string
   defaultData?: any
-} & GetOptions &
-  CreateOptions &
-  RemoveOptions &
-  UpdateOptions
+  get?: GetOptions
+  create?: CreateOptions
+  remove?: RemoveOptions
+  udpate?: UpdateOptions
+}
 
 export default function useData({
   id,
   defaultData,
-
-  fetcher,
-  onGet = () => null,
-  onGetError = () => null,
-  onGetLoading = () => null,
-  localStorageOptions,
-
-  creator,
-  onCreate = () => null,
-  onCreateError = () => null,
-  onCreateLoading = () => null,
-
-  remover,
-  onRemove = () => null,
-  onRemoveError = () => null,
-  onRemoveLoading = () => null,
-
-  updater,
-  onUpdate = () => null,
-  onUpdateError = () => null,
-  onUpdateLoading = () => null,
+  get: getOptions,
+  create: createOptions,
+  udpate: udpateOptions,
+  remove: removeOptions,
 }: Options) {
   const handlerPayload: HandlerPayloadType = {
     id,
@@ -50,37 +34,14 @@ export default function useData({
     data: [],
   }
 
-  const get = useGet(handlerPayload, {
-    fetcher,
-    onGet,
-    onGetError,
-    onGetLoading,
-    localStorageOptions: localStorageOptions,
-  })
+  const get = useGet(handlerPayload, getOptions)
 
   handlerPayload.updateData = get.update
   handlerPayload.data = get.data
 
-  const create = useCreate(handlerPayload, {
-    creator,
-    onCreate,
-    onCreateError,
-    onCreateLoading,
-  })
-
-  const update = useUpdate(handlerPayload, {
-    updater,
-    onUpdate,
-    onUpdateError,
-    onUpdateLoading,
-  })
-
-  const remove = useRemove(handlerPayload, {
-    remover,
-    onRemove,
-    onRemoveError,
-    onRemoveLoading,
-  })
+  const create = useCreate(handlerPayload, createOptions)
+  const update = useUpdate(handlerPayload, udpateOptions)
+  const remove = useRemove(handlerPayload, removeOptions)
 
   return {
     get,

@@ -22,7 +22,12 @@ export type Options = {
 
 export default function useUpdate(
   { data: allData = [], updateData }: HandlerPayloadType,
-  options?: Options,
+  {
+    updater,
+    onUpdate = () => null,
+    onUpdateError = () => null,
+    onUpdateLoading = () => null,
+  }: Options,
 ) {
   const fetcher = async ({
     id: dataId,
@@ -35,7 +40,7 @@ export default function useUpdate(
 
     const returnData = { updatedItem, latestData }
 
-    await options.updater(returnData)
+    await updater(returnData)
 
     return returnData
   }
@@ -43,13 +48,13 @@ export default function useUpdate(
   const update = useAsync(fetcher, {
     onResult: (result) => {
       updateData(result.latestData)
-      options.onUpdate(result)
+      onUpdate(result)
     },
     onLoading: (loading) => {
-      options.onUpdateLoading(loading)
+      onUpdateLoading(loading)
     },
     onError: (error) => {
-      options.onUpdateError(error)
+      onUpdateError(error)
     },
   })
 

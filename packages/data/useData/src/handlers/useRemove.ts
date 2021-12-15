@@ -21,7 +21,12 @@ export type Options = {
 
 export default function useRemove(
   { data = [], updateData }: HandlerPayloadType,
-  options?: Options,
+  {
+    remover,
+    onRemove = () => null,
+    onRemoveError = () => null,
+    onRemoveLoading = () => null,
+  }: Options,
 ) {
   const fetcher = async ({ id: removedItemId }: ExecProps): Promise<Remover> => {
     const latestData = arrayDB.remove(data, {
@@ -36,13 +41,13 @@ export default function useRemove(
   const remove = useAsync(fetcher, {
     onResult: (result) => {
       updateData(result.latestData)
-      options.onRemove(result)
+      onRemove(result)
     },
     onError: (error) => {
-      options.onRemoveError(error)
+      onRemoveError(error)
     },
     onLoading: (loading) => {
-      options.onRemoveLoading(loading)
+      onRemoveLoading(loading)
     },
   })
 

@@ -42,10 +42,10 @@ const remover = async ({ removedItem, latestData }) => {
 const Template = (args) => {
   const latestMovies = useData({
     id: 'latestMovies',
-    fetcher,
-    creator,
-    updater,
-    remover,
+    get: { fetcher },
+    create: { creator },
+    udpate: { updater },
+    remove: { remover },
   })
 
   return (

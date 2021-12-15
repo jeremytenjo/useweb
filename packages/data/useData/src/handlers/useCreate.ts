@@ -21,13 +21,18 @@ export type Options = {
 
 export default function useCreate(
   { updateData, data: allData = [] }: HandlerPayloadType,
-  options: Options,
+  {
+    creator,
+    onCreate = () => null,
+    onCreateError = () => null,
+    onCreateLoading = () => null,
+  }: Options,
 ) {
   const fetcher = async ({ value: createdItem }: ExecProps): Promise<Creator> => {
     const latestData = arrayDB.add(allData, { data: createdItem })
     const returnData = { createdItem, latestData }
 
-    await options.creator(returnData)
+    await creator(returnData)
 
     return returnData
   }
@@ -35,13 +40,13 @@ export default function useCreate(
   const create = useAsync(fetcher, {
     onResult: (result) => {
       updateData(result.latestData)
-      options.onCreate(result)
+      onCreate(result)
     },
     onError: (error) => {
-      options.onCreateError(error)
+      onCreateError(error)
     },
     onLoading: (loading) => {
-      options.onCreateLoading(loading)
+      onCreateLoading(loading)
     },
   })
 
