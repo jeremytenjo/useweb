@@ -3,7 +3,16 @@ const validate = (item, options = { validate: 'item' }) => {
 }
 
 export default {
-  add: (array = [], { data, insertMethod = 'push' }) => {
+  add: (
+    array: object[] = [],
+    {
+      data,
+      insertMethod = 'push',
+    }: {
+      data: any[]
+      insertMethod?: 'push' | 'unshift'
+    },
+  ) => {
     validate(data)
 
     const newData = array.slice()
@@ -12,7 +21,18 @@ export default {
     return newData
   },
 
-  update: (array = [], { data, id, idKey = 'id' }) => {
+  update: (
+    array: object[] = [],
+    {
+      data,
+      id,
+      idKey = 'id',
+    }: {
+      data: object
+      id: string | number
+      idKey?: string
+    },
+  ) => {
     validate(data)
     validate(id, { validate: 'id' })
     const newData = array.slice()
@@ -22,7 +42,16 @@ export default {
     return newData
   },
 
-  remove: (array = [], { id, idKey = 'id' }) => {
+  remove: (
+    array: object[] = [],
+    {
+      id,
+      idKey = 'id',
+    }: {
+      id: string | number
+      idKey?: string
+    },
+  ) => {
     validate(id, { validate: 'id' })
     let newData = array.slice()
     newData = newData.filter((item) => item[idKey] !== id)
