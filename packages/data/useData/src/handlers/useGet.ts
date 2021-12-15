@@ -41,7 +41,7 @@ export default function useGet(
 
   const updateFetchedCollections = () => {
     const updatedFetchedCollections = arrayDB.add(getStore.fetchedCollections, {
-      data: { id: id },
+      data: { id },
     })
 
     getStore.setFetchedCollections(updatedFetchedCollections)
@@ -61,7 +61,7 @@ export default function useGet(
   const swr = useSWRImmutable(swrKey, options?.fetcher, {
     onSuccess: (data) => {
       const updatedFetchedCollections = arrayDB.add(getStore.fetchedCollections, {
-        data: { id: id },
+        data: { id },
       })
 
       getStore.setFetchedCollections(updatedFetchedCollections)

@@ -3,7 +3,7 @@ const validate = (item, options = { validate: 'item' }) => {
 }
 
 export type AddTypes = {
-  data: any[]
+  data: object
   insertMethod?: 'push' | 'unshift'
 }
 
