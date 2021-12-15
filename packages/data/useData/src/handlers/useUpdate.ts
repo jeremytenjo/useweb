@@ -1,6 +1,5 @@
 import useAsync from '@useweb/use-async'
-import arrayDB from '@useweb/array-db'
-
+import arrayDB, { type UpdateTypes } from '@useweb/array-db'
 import type { HandlerPayloadType } from '..'
 
 type Updater = {
@@ -18,6 +17,7 @@ export type Options = {
   onUpdate?: (result: any) => void
   onUpdateError?: (error: any) => void
   onUpdateLoading?: (loading: boolean) => void
+  idKey?: UpdateTypes['idKey']
 }
 
 export default function useUpdate(
@@ -27,6 +27,7 @@ export default function useUpdate(
     onUpdate = () => null,
     onUpdateError = () => null,
     onUpdateLoading = () => null,
+    idKey,
   }: Options = {},
 ) {
   const fetcher = async ({
@@ -36,6 +37,7 @@ export default function useUpdate(
     const latestData = arrayDB.update(allData, {
       data: updatedItem,
       id: dataId,
+      idKey,
     })
 
     const returnData = { updatedItem, latestData }

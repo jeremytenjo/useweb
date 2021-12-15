@@ -1,5 +1,5 @@
 import useAsync from '@useweb/use-async'
-import arrayDB from '@useweb/array-db'
+import arrayDB, { type RemoveTypes } from '@useweb/array-db'
 
 import type { HandlerPayloadType } from '..'
 
@@ -17,6 +17,7 @@ export type Options = {
   onRemove?: (result: any) => void
   onRemoveError?: (error: any) => void
   onRemoveLoading?: (loading: boolean) => void
+  idKey?: RemoveTypes['idKey']
 }
 
 export default function useRemove(
@@ -26,11 +27,13 @@ export default function useRemove(
     onRemove = () => null,
     onRemoveError = () => null,
     onRemoveLoading = () => null,
+    idKey,
   }: Options = {},
 ) {
   const fetcher = async ({ id: removedItemId }: ExecProps): Promise<Remover> => {
     const latestData = arrayDB.remove(data, {
       id: removedItemId,
+      idKey,
     })
 
     const returnData = { removedItemId, latestData }
