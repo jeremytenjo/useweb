@@ -1,5 +1,6 @@
 import useAsync from '@useweb/use-async'
-import arrayDB, { type AddTypes } from '@useweb/array-db'
+import arrayDB from '@useweb/array-db'
+import type { AddTypes } from '@useweb/array-db'
 
 import type { HandlerPayloadType } from '..'
 
@@ -12,7 +13,7 @@ type ExecProps = {
   value: object
 }
 
-export type Options = {
+export type CreateOptions = {
   creator?: (data: Creator) => any
   onCreate?: (result: any) => void
   onCreateError?: (error: any) => void
@@ -28,7 +29,7 @@ export default function useCreate(
     onCreateError = () => null,
     onCreateLoading = () => null,
     insertMethod,
-  }: Options = {},
+  }: CreateOptions = {},
 ) {
   const fetcher = async ({ value: createdItem }: ExecProps): Promise<Creator> => {
     const latestData = arrayDB.add(allData, { data: createdItem, insertMethod })

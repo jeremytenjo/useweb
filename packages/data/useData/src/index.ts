@@ -1,7 +1,11 @@
-import useGet, { type Options as GetOptions } from './handlers/useGet'
-import useCreate, { type Options as CreateOptions } from './handlers/useCreate'
-import useRemove, { type Options as RemoveOptions } from './handlers/useRemove'
-import useUpdate, { type Options as UpdateOptions } from './handlers/useUpdate'
+import useGet from './handlers/useGet'
+import type { GetOptions } from './handlers/useGet'
+import useCreate from './handlers/useCreate'
+import type { CreateOptions } from './handlers/useCreate'
+import useUpdate from './handlers/useUpdate'
+import type { UpdateOptions } from './handlers/useUpdate'
+import useRemove from './handlers/useRemove'
+import type { RemoveOptions } from './handlers/useRemove'
 
 export type HandlerPayloadType = {
   id: string

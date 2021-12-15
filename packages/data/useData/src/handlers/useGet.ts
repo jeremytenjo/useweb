@@ -17,7 +17,7 @@ const useGetStore = create<Types>((set) => ({
   setFetchedCollections: (newValue) => set(() => ({ fetchedCollections: newValue })),
 }))
 
-export type Options = {
+export type GetOptions = {
   fetcher?: () => any[] | Promise<any>
   onGet?: (result: any) => void
   onGetError?: (error: any) => void
@@ -31,7 +31,7 @@ export default function useGet(
     onGet = () => null,
     onGetError = () => null,
     localStorageOptions,
-  }: Options = {},
+  }: GetOptions = {},
 ) {
   const getStore: any = useGetStore()
   const [fetchData, setShouldFetch] = useState(false)

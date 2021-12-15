@@ -1,5 +1,6 @@
 import useAsync from '@useweb/use-async'
-import arrayDB, { type UpdateTypes } from '@useweb/array-db'
+import arrayDB from '@useweb/array-db'
+import type { UpdateTypes } from '@useweb/array-db'
 import type { HandlerPayloadType } from '..'
 
 type Updater = {
@@ -12,7 +13,7 @@ type ExecProps = {
   value: object
 }
 
-export type Options = {
+export type UpdateOptions = {
   updater?: (data: Updater) => any
   onUpdate?: (result: any) => void
   onUpdateError?: (error: any) => void
@@ -28,7 +29,7 @@ export default function useUpdate(
     onUpdateError = () => null,
     onUpdateLoading = () => null,
     idKey,
-  }: Options = {},
+  }: UpdateOptions = {},
 ) {
   const fetcher = async ({
     id: dataId,
