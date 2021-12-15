@@ -1,9 +1,9 @@
 {
   "name": "@useweb/array-db",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
-  "types": "./src/index/index.d.ts",
+  "types": "./build/types/index.d.ts",
   "files": [
     "build"
   ],

@@ -3,7 +3,7 @@
   "version": "0.0.6",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
-  "types": "./src/index/index.d.ts",
+  "types": "./build/types/index.d.ts",
   "files": [
     "build"
   ],

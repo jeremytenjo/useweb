@@ -2,37 +2,32 @@ const validate = (item, options = { validate: 'item' }) => {
   if (!item) throw new Error(`${options.validate} prop required`)
 }
 
-export default {
-  add: (
-    array: object[] = [],
-    {
-      data,
-      insertMethod = 'push',
-    }: {
-      data: any[]
-      insertMethod?: 'push' | 'unshift'
-    },
-  ) => {
-    validate(data)
+export type AddTypes = {
+  data: any[]
+  insertMethod?: 'push' | 'unshift'
+}
 
+export type UpdateTypes = {
+  data: object
+  id: string | number
+  idKey?: string
+}
+
+export type RemoveTypes = {
+  id: string | number
+  idKey?: string
+}
+
+export default {
+  add: (array: object[] = [], { data, insertMethod = 'push' }: AddTypes) => {
+    validate(data)
     const newData = array.slice()
     newData[insertMethod](data)
 
     return newData
   },
 
-  update: (
-    array: object[] = [],
-    {
-      data,
-      id,
-      idKey = 'id',
-    }: {
-      data: object
-      id: string | number
-      idKey?: string
-    },
-  ) => {
+  update: (array: object[] = [], { data, id, idKey = 'id' }: UpdateTypes) => {
     validate(data)
     validate(id, { validate: 'id' })
     const newData = array.slice()
@@ -42,16 +37,7 @@ export default {
     return newData
   },
 
-  remove: (
-    array: object[] = [],
-    {
-      id,
-      idKey = 'id',
-    }: {
-      id: string | number
-      idKey?: string
-    },
-  ) => {
+  remove: (array: object[] = [], { id, idKey = 'id' }: RemoveTypes) => {
     validate(id, { validate: 'id' })
     let newData = array.slice()
     newData = newData.filter((item) => item[idKey] !== id)

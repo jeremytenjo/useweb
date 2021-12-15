@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
-  "types": "./src/index/index.d.ts",
+  "types": "./build/types/index.d.ts",
   "files": [
     "build"
   ],
@@ -21,7 +21,7 @@
     "zustand": "^3.6.6"
   },
   "devDependencies": {
-    "@useweb/array-db": "^0.1.0",
+    "@useweb/array-db": "^0.2.1",
     "@useweb/compiler": "latest",
     "@useweb/use-async": "^0.3.3",
     "@useweb/use-local-storage": "^1.1.0",

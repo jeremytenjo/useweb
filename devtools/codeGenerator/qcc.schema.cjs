@@ -6,7 +6,7 @@ const packageJsonCommon = `
   "version": "1.0.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
-  "types": "./src/index/index.d.ts",
+  "types": "./build/types/index.d.ts",
   "files": [
     "build"
   ],
