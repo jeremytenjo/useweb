@@ -35,6 +35,8 @@ export default function useRemove(
 
     const returnData = { removedItemId, latestData }
 
+    await remover(returnData)
+
     return returnData
   }
 
