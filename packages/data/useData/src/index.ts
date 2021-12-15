@@ -16,7 +16,7 @@ type Options = {
   get?: GetOptions
   create?: CreateOptions
   remove?: RemoveOptions
-  udpate?: UpdateOptions
+  update?: UpdateOptions
 }
 
 export default function useData({
@@ -24,7 +24,7 @@ export default function useData({
   defaultData,
   get: getOptions,
   create: createOptions,
-  udpate: udpateOptions,
+  update: updateOptions,
   remove: removeOptions,
 }: Options) {
   const handlerPayload: HandlerPayloadType = {
@@ -40,7 +40,7 @@ export default function useData({
   handlerPayload.data = get.data
 
   const create = useCreate(handlerPayload, createOptions)
-  const update = useUpdate(handlerPayload, udpateOptions)
+  const update = useUpdate(handlerPayload, updateOptions)
   const remove = useRemove(handlerPayload, removeOptions)
 
   return {

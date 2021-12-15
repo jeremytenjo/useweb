@@ -44,7 +44,7 @@ const Template = (args) => {
     id: 'latestMovies',
     get: { fetcher },
     create: { creator },
-    udpate: { updater },
+    update: { updater },
     remove: { remover },
   })
 
