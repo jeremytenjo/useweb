@@ -52,7 +52,7 @@ export default function useGet(
   }
 
   const localStorageData = useLocalStorage(id, {
-    localStorageOptions: localStorageOptions,
+    localStorageOptions,
     onGet: (result) => {
       updateFetchedCollections()
       onGet(result)
