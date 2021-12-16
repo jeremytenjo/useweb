@@ -29,7 +29,7 @@ export default function useFirebaseFunction({ name, fetchOptions = {} }: Props) 
 
     let data = await fetch(url, {
       method: 'post',
-      body: JSON.stringify(options.data || {}),
+      body: JSON.stringify(options?.data || {}),
       ...fetchOptions,
     })
 
