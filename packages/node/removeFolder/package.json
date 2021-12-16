@@ -14,6 +14,6 @@
     "deploy": "npm run build && npm publish --access public"
   },
   "devDependencies": {
-    "@useweb/compiler": "latest"
+    "@useweb/compiler": "^1.3.0"
   }
 }
