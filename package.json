@@ -19,7 +19,7 @@
     "build": "node --loader ts-node/esm ./scripts/buildApp/run.ts",
     "lerna:link": "lerna link",
     "lerna:install-deps": "lerna exec npm i --no-bail",
-    "lerna:minor-update": "lerna exec npm i && npm version minor && npm publish",
+    "lerna:minor-update": "lerna exec 'npm i && npm version minor && npm publish' --no-bail",
     "deploy": "node --loader ts-node/esm ./scripts/deploy/run.ts",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
     "lint": "eslint ./ --fix"
