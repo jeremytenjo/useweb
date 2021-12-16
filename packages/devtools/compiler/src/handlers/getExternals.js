@@ -2,8 +2,8 @@
  * Gets externals from package.json peerDependencies
  */
 module.exports = function getExternals({ packageJson }) {
-  if (!packageJson.peerDependencies) return undefined
+  if (!packageJson.peerDependencies) return []
 
-  const external = Object.keys(packageJson.peerDependencies)
-  return external
+  const externals = Object.keys(packageJson.peerDependencies)
+  return externals
 }
