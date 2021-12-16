@@ -22,6 +22,7 @@ export type GetOptions = {
   onGet?: (result: any) => void
   onGetError?: (error: any) => void
   localStorageOptions?: LocalStorageOptionsTypes
+  autoExec?: boolean
 }
 
 export default function useGet(
@@ -31,6 +32,7 @@ export default function useGet(
     onGet = () => null,
     onGetError = () => null,
     localStorageOptions,
+    autoExec,
   }: GetOptions = {},
 ) {
   const getStore: any = useGetStore()
@@ -59,7 +61,7 @@ export default function useGet(
     },
   })
 
-  const swrKey = () => (fetcher && fetchData ? id : null)
+  const swrKey = () => (autoExec || fetchData ? id : null)
 
   // https://swr.vercel.app/docs/options
   const swr = useSWRImmutable(swrKey, fetcher, {
