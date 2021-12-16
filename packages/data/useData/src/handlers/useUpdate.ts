@@ -24,7 +24,7 @@ export type UpdateOptions = {
 export default function useUpdate(
   { data: allData = [], updateData }: HandlerPayloadType,
   {
-    updater,
+    updater = () => null,
     onUpdate = () => null,
     onUpdateError = () => null,
     onUpdateLoading = () => null,

@@ -24,7 +24,7 @@ export type RemoveOptions = {
 export default function useRemove(
   { data = [], updateData }: HandlerPayloadType,
   {
-    remover,
+    remover = () => null,
     onRemove = () => null,
     onRemoveError = () => null,
     onRemoveLoading = () => null,

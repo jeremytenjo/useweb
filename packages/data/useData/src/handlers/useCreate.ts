@@ -24,7 +24,7 @@ export type CreateOptions = {
 export default function useCreate(
   { updateData, data: allData = [] }: HandlerPayloadType,
   {
-    creator,
+    creator = () => null,
     onCreate = () => null,
     onCreateError = () => null,
     onCreateLoading = () => null,

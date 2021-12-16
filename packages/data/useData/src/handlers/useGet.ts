@@ -28,7 +28,7 @@ export type GetOptions = {
 export default function useGet(
   { id, defaultData = [] }: HandlerPayloadType,
   {
-    fetcher,
+    fetcher = () => null,
     onGet = () => null,
     onGetError = () => null,
     localStorageOptions,
@@ -61,7 +61,7 @@ export default function useGet(
     },
   })
 
-  const swrKey = () => (autoExec || fetchData ? id : null)
+  const swrKey = () => (autoExec || fetchData ? `_${id}` : null)
 
   // https://swr.vercel.app/docs/options
   const swr = useSWRImmutable(swrKey, fetcher, {
