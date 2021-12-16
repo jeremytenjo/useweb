@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-firebase",
-  "version": "4.1.1",
+  "version": "6.0.1",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -14,13 +14,12 @@
   },
   "peerDependencies": {
     "react": "^17.0.0",
-    "@useweb/use-local-storage": "^1.1.0",
+    "@useweb/use-local-storage": "^1.1.1",
     "firebase": "^9.6.0"
   },
   "devDependencies": {
     "@useweb/compiler": "latest",
-    "@useweb/use-firebase-messaging": "^1.0.3",
-    "@useweb/use-local-storage": "^1.1.0",
+    "@useweb/use-local-storage": "^1.1.1",
     "firebase": "^9.6.0"
   }
 }

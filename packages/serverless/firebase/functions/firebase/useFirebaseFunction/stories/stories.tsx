@@ -28,7 +28,12 @@ export default {
 
 const Template = (args) => {
   return (
-    <FirebaseProvider firebaseApp={firebaseApp} functions={functions}>
+    <FirebaseProvider
+      firebaseConfig={firebaseConfig}
+      firebaseApp={firebaseApp}
+      envIsDev={process.env.NODE_ENV === 'development'}
+      functions={functions}
+    >
       {args.children}
     </FirebaseProvider>
   )
@@ -39,7 +44,17 @@ const Examp = () => {
 
   return (
     <div>
-      <button onClick={() => helloWorld.exec('jeremy')}>Execute</button>
+      <button
+        onClick={() =>
+          helloWorld.exec({
+            data: {
+              name: 'jeremy',
+            },
+          })
+        }
+      >
+        Execute
+      </button>
       <br />
       <br />
       <p>Result:</p>

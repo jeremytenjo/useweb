@@ -1,16 +1,27 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
-import type { MessagingProps } from '@useweb/use-firebase-messaging'
+
+type FirebaseConfig = {
+  apiKey?: string
+  authDomain?: string
+  projectId?: string
+  storageBucket?: string
+  messagingSenderId?: string
+  appId?: string
+  measurementId?: string
+}
 
 type Props = {
   firebaseApp: any
+  firebaseConfig: FirebaseConfig
+  envIsDev: boolean
   children: any
   db?: any
   auth?: any
   localStorageOptions?: LocalStorageOptionsTypes
   messaging?: any
-  messagingOptions?: MessagingProps
+  messagingOptions?: any
   analytics?: any
   analyticsOptions?: any
   functions?: any
@@ -19,12 +30,14 @@ type Props = {
 
 type Return = {
   firebaseApp: any
+  firebaseConfig: FirebaseConfig
+  envIsDev: boolean
   auth: any
   db: any
   user: any
   localStorageOptions: LocalStorageOptionsTypes
   messaging: any
-  messagingOptions?: MessagingProps
+  messagingOptions?: any
   analytics?: any
   analyticsOptions?: any
   functions?: any
@@ -35,6 +48,8 @@ const FirebaseContext = createContext<Return>(null)
 
 export const FirebaseProvider = ({
   firebaseApp,
+  firebaseConfig,
+  envIsDev,
   auth,
   db,
   children,
@@ -67,6 +82,8 @@ export const FirebaseProvider = ({
     <FirebaseContext.Provider
       value={{
         firebaseApp,
+        firebaseConfig,
+        envIsDev,
         auth,
         db,
         user,
