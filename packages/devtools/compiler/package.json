@@ -1,6 +1,6 @@
 {
   "name": "@useweb/compiler",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "files": [

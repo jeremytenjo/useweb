@@ -26,7 +26,7 @@
     bundle: true,
     minify: true,
     format,
-    target: ['esnext'],
+    target: ['es2019'],
     watch: args.watch,
     external: require('./handlers/getExternals')(payload),
   })

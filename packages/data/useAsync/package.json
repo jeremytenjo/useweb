@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-async",
-  "version": "0.3.6",
+  "version": "0.3.10",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
