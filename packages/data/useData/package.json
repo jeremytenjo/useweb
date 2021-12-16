@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -14,8 +14,8 @@
   },
   "peerDependencies": {
     "react": "^17.0.0",
-    "@useweb/array-db": "0.0.1",
-    "@useweb/use-async": "^0.3.2",
+    "@useweb/array-db": "0.2.2",
+    "@useweb/use-async": "^0.3.3",
     "@useweb/use-local-storage": "^1.1.0",
     "swr": "^1.1.0",
     "zustand": "^3.6.6"
