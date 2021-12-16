@@ -61,7 +61,7 @@ const Examp = () => {
       <br />
 
       {helloWorld.loading && <Donut />}
-      {helloWorld.result && <div>{helloWorld?.result?.data?.hello}</div>}
+      {helloWorld.result && <div>{helloWorld?.result?.hello}</div>}
       {helloWorld.error && <ErrorMessage error={helloWorld.error} />}
     </div>
   )

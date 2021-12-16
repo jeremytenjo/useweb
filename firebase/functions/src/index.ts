@@ -6,9 +6,7 @@ import * as functions from 'firebase-functions'
 export const helloWorld = functions.https.onRequest((req, res) => {
   const data = JSON.parse(req.body)
 
-  res.json(
-    JSON.stringify({
-      hello: `hello my name is ${data.name}`,
-    }),
-  )
+  res.json({
+    hello: `hello my name is ${data.name}`,
+  })
 })
