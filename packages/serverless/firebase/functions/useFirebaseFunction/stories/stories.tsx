@@ -4,11 +4,11 @@ import { getFunctions } from 'firebase/functions'
 import { Meta } from '@storybook/react'
 import { FirebaseProvider } from '@useweb/use-firebase'
 import useFirebaseFunction from '../src'
-import ErrorMessage from '../../../../../../dataDisplay/ErrorMessage'
-import Donut from '../../../../../../feedback/progress/Donut'
-import TestFirebaseFunction from '../../../../../../dataDisplay/TestFirebaseFunction'
+import ErrorMessage from '../../../../../dataDisplay/ErrorMessage'
+import Donut from '../../../../../feedback/progress/Donut'
+import TestFirebaseFunction from '../../TestFirebaseFunction'
 
-import firebaseConfig from '../../../../../../../firebase/firebase.config'
+import firebaseConfig from '../../../../../../firebase/firebase.config'
 
 import Docs from './docs.mdx'
 
@@ -16,7 +16,7 @@ const firebaseApp = initializeApp(firebaseConfig)
 const functions = getFunctions()
 
 export default {
-  title: 'packages/Serverless/firebase/functions/useFirebaseFunction',
+  title: 'packages/Serverless/Firebase/Functions/useFirebaseFunction',
   args: {},
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {

@@ -10,7 +10,7 @@ module.exports = [
   '../../packages/feedback/Modal/stories/stories.tsx',
   '../../packages/serverless/firebase/auth/useFirebaseAuth/node_modules/@useweb/use-firebase/stories/stories.tsx',
   '../../packages/serverless/firebase/auth/useFirebaseAuth/stories/stories.tsx',
-  '../../packages/serverless/firebase/functions/firebase/useFirebaseFunction/stories/stories.tsx',
+  '../../packages/serverless/firebase/functions/useFirebaseFunction/stories/stories.tsx',
   '../../packages/serverless/firebase/messaging/useFirebaseMessaging/stories/stories.tsx',
   '../../packages/serverless/firebase/useFirebase/stories/stories.tsx',
 ]

@@ -14,7 +14,7 @@ const firebaseApp = initializeApp(firebaseConfig)
 const messaging = getMessaging()
 
 export default {
-  title: 'packages/Serverless/firebase/messaging/useFirebaseMessaging',
+  title: 'packages/Serverless/Firebase/Messaging/useFirebaseMessaging',
   args: {},
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
