@@ -19,7 +19,7 @@
     "build": "node --loader ts-node/esm ./scripts/buildApp/run.ts",
     "lerna:link": "lerna link",
     "lerna:update-compiler": "lerna exec 'npm i @useweb/compiler@latest' --no-bail",
-    "lerna:install-deps": "lerna exec 'rm -rf package-lock.json' --no-bail",
+    "lerna:install-deps": "lerna exec 'rm -rf package-lock.json && npm i' --no-bail",
     "lerna:minor-update": "lerna exec 'npm i && npm version minor && npm publish' --no-bail",
     "deploy": "node --loader ts-node/esm ./scripts/deploy/run.ts",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
