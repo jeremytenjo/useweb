@@ -1,6 +1,12 @@
 # useFirebaseAuth
 
-#### Usage
+## Install
+
+```sh
+npm i @useweb/use-firebase-auth @useweb/use-firebase
+```
+
+## Usage
 
 Create `useAuth.js`
 
