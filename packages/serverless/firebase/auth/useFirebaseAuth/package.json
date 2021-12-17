@@ -19,6 +19,7 @@
     "@useweb/compiler": "latest"
   },
   "dependencies": {
+    "@useweb/use-async": "^0.4.0",
     "@useweb/use-firebase": "^7.0.0"
   }
 }
