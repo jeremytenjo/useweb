@@ -11,7 +11,7 @@ type Props = {
   dbEmulatorPort?: number
 }
 
-export default function startFirebaseEmulator({
+export default function startFirebaseEmulators({
   enable,
   auth,
   db,

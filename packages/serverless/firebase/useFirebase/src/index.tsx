@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { onAuthStateChanged } from 'firebase/auth'
 import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
+import startFirebaseEmulators from './handlers/startFirebaseEmulators/startFirebaseEmulators'
 
 type FirebaseConfig = {
   apiKey?: string
@@ -62,6 +63,15 @@ export const FirebaseProvider = ({
   functionsOptions,
 }: Props) => {
   const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    startFirebaseEmulators({
+      auth,
+      db,
+      functions,
+      enable: envIsDev,
+    })
+  }, [envIsDev])
 
   useEffect(() => {
     if (auth) {
