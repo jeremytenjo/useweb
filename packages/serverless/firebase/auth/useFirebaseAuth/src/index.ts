@@ -21,6 +21,11 @@ type Props = {
   onSignInError?: (error?: any) => any
 }
 
+/**
+ * [Docs](https://useweb.dev/?path=/docs/packages-serverless-firebase-auth-usefirebaseauth--example)
+ *
+ * [Firebase Auth docs](https://firebase.google.com/docs/auth/web/start)
+ */
 export default function useFirebaseAuth({
   signInFetcher,
   onSignIn = () => null,

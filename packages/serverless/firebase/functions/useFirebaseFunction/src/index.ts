@@ -11,10 +11,14 @@ type FetchProps = {
 }
 
 /**
- * @example
- * const helloWorld = useFirebaseFunction({name: 'helloWorld'})
+ * [Docs](https://useweb.dev/?path=/docs/packages-serverless-firebase-functions-usefirebasefunction--example)
+ *
+ * [Firebase Functions docs](https://firebase.google.com/docs/functions/get-startedt)
  *
  * [Fetch Options](https://developer.mozilla.org/en-US/docs/Web/API/fetch#parameters)
+ *
+ * @example
+ * const helloWorld = useFirebaseFunction({name: 'helloWorld'})
  *
  */
 export default function useFirebaseFunction({ name, fetchOptions = {} }: Props) {
