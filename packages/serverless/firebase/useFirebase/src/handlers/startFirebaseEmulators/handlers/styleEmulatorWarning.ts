@@ -57,6 +57,8 @@ export default function styleEmulatorWarning() {
 
   setTimeout(() => {
     const emulatorAlert = document.querySelector('.firebase-emulator-warning')
-    emulatorAlert.remove()
+    if (emulatorAlert) {
+      emulatorAlert.remove()
+    }
   }, 350)
 }
