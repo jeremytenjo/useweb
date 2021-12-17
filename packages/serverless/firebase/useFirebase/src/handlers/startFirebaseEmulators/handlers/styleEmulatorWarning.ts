@@ -1,20 +1,14 @@
 export default function styleEmulatorWarning() {
-  setTimeout(() => {
-    const emulatorAlert = document.querySelector('.firebase-emulator-warning')
+  const firebaseEmulatorEl = document.createElement('div')
 
-    if (emulatorAlert) {
-      emulatorAlert.innerHTML = ''
-      emulatorAlert.style.border = 'none'
-      emulatorAlert.style.width = 'fit-content'
-      emulatorAlert.style.height = 'fit-content'
-      emulatorAlert.style.left = '60px'
-      emulatorAlert.style.bottom = '5px'
-      const firebaseDiv = document.createElement('div')
-      firebaseDiv.setAttribute(
-        'title',
-        'Running in emulator mode. Do not use with production credentials.',
-      )
-      firebaseDiv.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" title='Running in emulator mode.' fill="none" viewBox="0 0 30 40">
+  firebaseEmulatorEl.setAttribute(
+    'title',
+    'Running firebase emulators. Do not use production credentials.',
+  )
+  firebaseEmulatorEl.style.position = 'fixed'
+  firebaseEmulatorEl.style.bottom = '10px'
+  firebaseEmulatorEl.style.left = '10px'
+  firebaseEmulatorEl.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" title='Running in emulator mode.' fill="none" viewBox="0 0 30 40">
       <g clip-path="url(#clip0)">
         <path fill="#8801FF" d="M0 32.248l.242-.339 11.44-21.706.024-.23L6.663.5c-.423-.793-1.612-.592-1.75.296L0 32.248z"/>
         <path fill="#8801FF" d="M.145 31.99l.182-.357 11.32-21.479L6.617.643C6.2-.142 5.137.058 5 .937L.145 31.99z"/>
@@ -58,7 +52,11 @@ export default function styleEmulatorWarning() {
       </defs>
     </svg>
     `
-      emulatorAlert.append(firebaseDiv)
-    }
+
+  document.body.appendChild(firebaseEmulatorEl)
+
+  setTimeout(() => {
+    const emulatorAlert = document.querySelector('.firebase-emulator-warning')
+    emulatorAlert.remove()
   }, 350)
 }
