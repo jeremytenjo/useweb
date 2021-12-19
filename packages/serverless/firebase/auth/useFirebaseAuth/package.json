@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-firebase-auth",
-  "version": "1.1.0",
+  "version": "1.1.6",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -20,6 +20,6 @@
   },
   "dependencies": {
     "@useweb/use-async": "^1.0.0",
-    "@useweb/use-firebase": "^7.0.0"
+    "@useweb/use-firebase": "^7.0.1"
   }
 }
