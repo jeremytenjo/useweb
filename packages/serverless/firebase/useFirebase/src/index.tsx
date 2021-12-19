@@ -2,6 +2,11 @@ import React, { createContext, useContext, useEffect } from 'react'
 import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
 import startFirebaseEmulators from './handlers/startFirebaseEmulators/startFirebaseEmulators'
 
+export type AuthOptions = {
+  testUserEmail: string
+  testUserPassword: string
+}
+
 type FirebaseConfig = {
   apiKey?: string
   authDomain?: string
@@ -19,6 +24,7 @@ type Props = {
   children: any
   db?: any
   auth?: any
+  authOptions?: AuthOptions
   localStorageOptions?: LocalStorageOptionsTypes
   messaging?: any
   messagingOptions?: any
@@ -33,6 +39,7 @@ type Return = {
   firebaseConfig: FirebaseConfig
   envIsDev: boolean
   auth: any
+  authOptions: any
   db: any
   localStorageOptions: LocalStorageOptionsTypes
   messaging: any
@@ -50,6 +57,7 @@ export const FirebaseProvider = ({
   firebaseConfig,
   envIsDev,
   auth,
+  authOptions,
   db,
   children,
   localStorageOptions,
@@ -63,6 +71,7 @@ export const FirebaseProvider = ({
   useEffect(() => {
     startFirebaseEmulators({
       auth,
+      authOptions,
       db,
       functions,
       enable: envIsDev,
@@ -84,6 +93,7 @@ export const FirebaseProvider = ({
         analyticsOptions,
         functions,
         functionsOptions,
+        authOptions,
       }}
     >
       {children}

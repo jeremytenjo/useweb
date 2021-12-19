@@ -2,9 +2,12 @@ import styleEmulatorWarning from './handlers/styleEmulatorWarning'
 import startAuthEmulator from './handlers/startAuthEmulator'
 import startFirestoreEmulator from './handlers/startFirestoreEmulator'
 
+import type { AuthOptions } from '../../'
+
 type Props = {
   enable: boolean
   auth?: any
+  authOptions?: AuthOptions
   db?: any
   functions?: any
   authEmulatorPort?: number
@@ -14,6 +17,7 @@ type Props = {
 export default function startFirebaseEmulators({
   enable,
   auth,
+  authOptions,
   db,
   functions,
   authEmulatorPort = 9005,
@@ -22,7 +26,7 @@ export default function startFirebaseEmulators({
   const enabled = enable && (!!auth || !!db || !!functions)
   if (!enabled) return
 
-  auth && startAuthEmulator({ auth, authEmulatorPort })
+  auth && startAuthEmulator({ auth, authEmulatorPort, ...authOptions })
   db && startFirestoreEmulator({ db, dbEmulatorPort })
   styleEmulatorWarning()
 }

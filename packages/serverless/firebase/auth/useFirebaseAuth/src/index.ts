@@ -6,17 +6,11 @@ import useAsync from '@useweb/use-async'
 type Types = {
   user: any
   setUser: (newValue: any) => void
-
-  signInFetcher: any
-  setSignInFetcher: (newValue: any) => void
 }
 
 const useAuthStore = create<Types>((set) => ({
   user: null,
   setUser: (newValue) => set(() => ({ user: newValue })),
-
-  signInFetcher: () => null,
-  setSignInFetcher: (newValue) => set(() => ({ signInFetcher: newValue })),
 }))
 
 type Props = {
@@ -44,10 +38,6 @@ export default function useFirebaseAuth(
   const authStore = useAuthStore()
 
   useEffect(() => {
-    signInFetcher && authStore.setSignInFetcher(signInFetcher)
-  }, [])
-
-  useEffect(() => {
     if (auth) {
       const cleanOnAuthStateChanged = onAuthStateChanged(auth, (user) => {
         if (user) authStore.setUser(user)
@@ -63,7 +53,7 @@ export default function useFirebaseAuth(
     }
   }, [])
 
-  const signIn = useAsync(authStore.signInFetcher, {
+  const signIn = useAsync(signInFetcher, {
     onResult: (result) => {
       onSignIn(result)
     },
