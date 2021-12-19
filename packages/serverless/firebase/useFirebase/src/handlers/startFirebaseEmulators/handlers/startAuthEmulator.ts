@@ -1,9 +1,4 @@
-import {
-  connectAuthEmulator,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-} from 'firebase/auth'
+import { connectAuthEmulator, signInWithEmailAndPassword } from 'firebase/auth'
 
 export default function startAuthEmulator({
   auth,
@@ -20,15 +15,5 @@ export default function startAuthEmulator({
     return
   }
 
-  onAuthStateChanged(auth, (user) => {
-    if (!user) {
-      createUserWithEmailAndPassword(auth, testUserEmail, testUserPassword)
-        .then(() => {
-          signInWithEmailAndPassword(auth, testUserEmail, testUserPassword)
-        })
-        .catch(() => {
-          signInWithEmailAndPassword(auth, testUserEmail, testUserPassword)
-        })
-    }
-  })
+  signInWithEmailAndPassword(auth, testUserEmail, testUserPassword)
 }
