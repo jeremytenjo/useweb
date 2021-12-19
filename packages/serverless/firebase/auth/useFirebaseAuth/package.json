@@ -16,9 +16,11 @@
     "react": "^17.0.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "latest"
+    "@useweb/compiler": "latest",
+    "firebase": "^9.6.0"
   },
   "dependencies": {
-    "@useweb/use-async": "^1.0.0"
+    "@useweb/use-async": "^1.0.0",
+    "firebase": "^9.6.0"
   }
 }
