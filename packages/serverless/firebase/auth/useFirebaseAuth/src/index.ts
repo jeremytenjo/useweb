@@ -44,8 +44,8 @@ export default function useFirebaseAuth(
   const authStore = useAuthStore()
 
   useEffect(() => {
-    authStore.setSignInFetcher(signInFetcher)
-  }, [signInFetcher])
+    signInFetcher && authStore.setSignInFetcher(signInFetcher)
+  }, [])
 
   useEffect(() => {
     if (auth) {
