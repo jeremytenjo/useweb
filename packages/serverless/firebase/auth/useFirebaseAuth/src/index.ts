@@ -21,7 +21,7 @@ const useAuthStore = create<Types>((set) => ({
 
 type Props = {
   auth: any
-  signInFetcher?: () => any
+  signInFetcher: () => any
   onSignIn?: (result?: any) => any
   onSignInLoading?: (loading?: boolean) => any
   onSignInError?: (error?: any) => any
@@ -39,7 +39,7 @@ export default function useFirebaseAuth(
     onSignIn = () => null,
     onSignInLoading = () => null,
     onSignInError = () => null,
-  }: Props = { auth: null },
+  }: Props = { auth: null, signInFetcher: null },
 ) {
   const authStore = useAuthStore()
 
