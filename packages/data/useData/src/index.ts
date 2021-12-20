@@ -14,7 +14,7 @@ export type HandlerPayloadType = {
   updateData: (newData: any) => void
 }
 
-type Options = {
+export type Props = {
   id: string
   defaultData?: any
   get?: GetOptions
@@ -30,7 +30,7 @@ export default function useData({
   create: createOptions,
   update: updateOptions,
   remove: removeOptions,
-}: Options) {
+}: Props) {
   const handlerPayload: HandlerPayloadType = {
     id,
     defaultData,
