@@ -61,7 +61,7 @@ export default function useGet(
     },
   })
 
-  const swrKey = () => (autoExec || fetchData ? `_${id}` : null)
+  const swrKey = () => (autoExec || (fetchData && id) ? `_${id}` : null)
 
   // https://swr.vercel.app/docs/options
   const swr = useSWRImmutable(swrKey, fetcher, {
