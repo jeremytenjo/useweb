@@ -1,4 +1,5 @@
 import useAsync from '@useweb/use-async'
+import type { Return as UseAsyncReturn } from '@useweb/use-async'
 import arrayDB from '@useweb/array-db'
 import type { AddTypes } from '@useweb/array-db'
 
@@ -21,6 +22,8 @@ export type CreateOptions = {
   insertMethod?: AddTypes['insertMethod']
 }
 
+export type CreateReturn = UseAsyncReturn
+
 export default function useCreate(
   { updateData, data: allData = [] }: HandlerPayloadType,
   {
@@ -30,7 +33,7 @@ export default function useCreate(
     onCreateLoading = () => null,
     insertMethod,
   }: CreateOptions = {},
-) {
+): CreateReturn {
   const fetcher = async ({ value: createdItem }: ExecProps): Promise<Creator> => {
     const latestData = arrayDB.add(allData, { data: createdItem, insertMethod })
     const returnData = { createdItem, latestData }

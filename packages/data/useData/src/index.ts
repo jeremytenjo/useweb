@@ -1,11 +1,11 @@
 import useGet from './handlers/useGet'
 import type { GetOptions, GetReturn } from './handlers/useGet'
 import useCreate from './handlers/useCreate'
-import type { CreateOptions } from './handlers/useCreate'
+import type { CreateOptions, CreateReturn } from './handlers/useCreate'
 import useUpdate from './handlers/useUpdate'
-import type { UpdateOptions } from './handlers/useUpdate'
+import type { UpdateOptions, UpdateReturn } from './handlers/useUpdate'
 import useRemove from './handlers/useRemove'
-import type { RemoveOptions } from './handlers/useRemove'
+import type { RemoveOptions, RemoveReturn } from './handlers/useRemove'
 
 export type HandlerPayloadType = {
   id: string
@@ -25,6 +25,9 @@ export type Props = {
 
 export type Return = {
   get: GetReturn
+  create: CreateReturn
+  update: UpdateReturn
+  remove: RemoveReturn
 }
 
 export default function useData({
@@ -34,7 +37,7 @@ export default function useData({
   create: createOptions,
   update: updateOptions,
   remove: removeOptions,
-}: Props) {
+}: Props): Return {
   const handlerPayload: HandlerPayloadType = {
     id,
     defaultData,
