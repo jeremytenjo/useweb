@@ -7,7 +7,7 @@ export type Options = {
   onLoading?: (loading: boolean) => void
 }
 
-type Return = {
+export type Return = {
   loading: boolean
   error: any
   result: any

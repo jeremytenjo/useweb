@@ -1,5 +1,5 @@
 import useGet from './handlers/useGet'
-import type { GetOptions } from './handlers/useGet'
+import type { GetOptions, GetReturn } from './handlers/useGet'
 import useCreate from './handlers/useCreate'
 import type { CreateOptions } from './handlers/useCreate'
 import useUpdate from './handlers/useUpdate'
@@ -21,6 +21,10 @@ export type Props = {
   create?: CreateOptions
   remove?: RemoveOptions
   update?: UpdateOptions
+}
+
+export type Return = {
+  get: GetReturn
 }
 
 export default function useData({

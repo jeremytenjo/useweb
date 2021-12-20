@@ -25,6 +25,15 @@ export type GetOptions = {
   autoExec?: boolean
 }
 
+export type GetReturn = {
+  data: any
+  fetching: boolean
+  isFetched: boolean
+  error: Error
+  exec: () => void
+  update: (newData: any) => void
+}
+
 export default function useGet(
   { id, defaultData = [] }: HandlerPayloadType,
   {
@@ -34,7 +43,7 @@ export default function useGet(
     localStorageOptions,
     autoExec,
   }: GetOptions = {},
-) {
+): GetReturn {
   const getStore: any = useGetStore()
   const [fetchData, setShouldFetch] = useState(false)
 
