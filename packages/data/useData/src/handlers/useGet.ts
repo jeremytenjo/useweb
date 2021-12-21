@@ -35,7 +35,7 @@ export type GetReturn = {
 }
 
 export default function useGet(
-  { id, defaultData = [] }: HandlerPayloadType,
+  { id, defaultData = [], onChange }: HandlerPayloadType,
   {
     fetcher = () => null,
     onGet = () => null,
@@ -67,6 +67,7 @@ export default function useGet(
     onGet: (result) => {
       updateFetchedCollections()
       onGet(result)
+      onChange(result)
     },
   })
 

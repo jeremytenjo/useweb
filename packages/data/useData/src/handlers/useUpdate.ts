@@ -25,7 +25,7 @@ export type UpdateOptions = {
 export type UpdateReturn = UseAsyncReturn
 
 export default function useUpdate(
-  { data: allData = [], updateData }: HandlerPayloadType,
+  { data: allData = [], updateData, onChange }: HandlerPayloadType,
   {
     updater = () => null,
     onUpdate = () => null,
@@ -55,6 +55,7 @@ export default function useUpdate(
     onResult: (result) => {
       updateData(result.latestData)
       onUpdate(result)
+      onChange(result.latestData)
     },
     onLoading: (loading) => {
       onUpdateLoading(loading)

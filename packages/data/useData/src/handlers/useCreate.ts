@@ -25,7 +25,7 @@ export type CreateOptions = {
 export type CreateReturn = UseAsyncReturn
 
 export default function useCreate(
-  { updateData, data: allData = [] }: HandlerPayloadType,
+  { updateData, data: allData = [], onChange }: HandlerPayloadType,
   {
     creator = () => null,
     onCreate = () => null,
@@ -47,6 +47,7 @@ export default function useCreate(
     onResult: (result) => {
       updateData(result.latestData)
       onCreate(result)
+      onChange(result.latestData)
     },
     onError: (error) => {
       onCreateError(error)

@@ -25,7 +25,7 @@ export type RemoveOptions = {
 export type RemoveReturn = UseAsyncReturn
 
 export default function useRemove(
-  { data = [], updateData }: HandlerPayloadType,
+  { data = [], updateData, onChange }: HandlerPayloadType,
   {
     remover = () => null,
     onRemove = () => null,
@@ -51,6 +51,7 @@ export default function useRemove(
     onResult: (result) => {
       updateData(result.latestData)
       onRemove(result)
+      onChange(result.latestData)
     },
     onError: (error) => {
       onRemoveError(error)

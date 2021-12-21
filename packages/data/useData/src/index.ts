@@ -12,11 +12,13 @@ export type HandlerPayloadType = {
   defaultData: any
   data: any
   updateData: (newData: any) => void
+  onChange?: (latestData: any) => any
 }
 
 export type Props = {
   id: string
   defaultData?: any
+  onChange?: (latestData: any) => any
   get?: GetOptions
   create?: CreateOptions
   remove?: RemoveOptions
@@ -33,6 +35,7 @@ export type Return = {
 export default function useData({
   id,
   defaultData,
+  onChange = () => null,
   get: getOptions,
   create: createOptions,
   update: updateOptions,
@@ -42,6 +45,7 @@ export default function useData({
     id,
     defaultData,
     updateData: () => null,
+    onChange,
     data: [],
   }
 
