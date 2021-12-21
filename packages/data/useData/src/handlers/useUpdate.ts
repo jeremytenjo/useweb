@@ -1,7 +1,6 @@
 import useAsync from '@useweb/use-async'
 import type { Return as UseAsyncReturn } from '@useweb/use-async'
 import arrayDB from '@useweb/array-db'
-import type { UpdateTypes } from '@useweb/array-db'
 import type { HandlerPayloadType } from '..'
 
 type Updater = {
@@ -19,7 +18,7 @@ export type UpdateOptions = {
   onUpdate?: (result: any) => void
   onUpdateError?: (error: any) => void
   onUpdateLoading?: (loading: boolean) => void
-  idKey?: UpdateTypes['idKey']
+  idKey?: string
 }
 
 export type UpdateReturn = UseAsyncReturn

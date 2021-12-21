@@ -1,7 +1,6 @@
 import useAsync from '@useweb/use-async'
 import type { Return as UseAsyncReturn } from '@useweb/use-async'
 import arrayDB from '@useweb/array-db'
-import type { RemoveTypes } from '@useweb/array-db'
 
 import type { HandlerPayloadType } from '..'
 
@@ -19,7 +18,7 @@ export type RemoveOptions = {
   onRemove?: (result: any) => void
   onRemoveError?: (error: any) => void
   onRemoveLoading?: (loading: boolean) => void
-  idKey?: RemoveTypes['idKey']
+  idKey?: string
 }
 
 export type RemoveReturn = UseAsyncReturn

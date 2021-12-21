@@ -1,7 +1,6 @@
 import useAsync from '@useweb/use-async'
 import type { Return as UseAsyncReturn } from '@useweb/use-async'
 import arrayDB from '@useweb/array-db'
-import type { AddTypes } from '@useweb/array-db'
 
 import type { HandlerPayloadType } from '..'
 
@@ -19,7 +18,7 @@ export type CreateOptions = {
   onCreate?: (result: any) => void
   onCreateError?: (error: any) => void
   onCreateLoading?: (loading: boolean) => void
-  insertMethod?: AddTypes['insertMethod']
+  insertMethod?: 'push' | 'unshift'
 }
 
 export type CreateReturn = UseAsyncReturn
