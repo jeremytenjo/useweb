@@ -17,10 +17,10 @@ const defaultConfig: ConfigProps = {
 }
 
 type Props = {
+  show: boolean
   name?: 'blinking' | 'centerOut' | 'outmostIn' | 'showHide'
   el?: any
   config?: ConfigProps
-  show?: string
   children?: any
   style?: object
 }
