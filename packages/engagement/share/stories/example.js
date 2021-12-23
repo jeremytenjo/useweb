@@ -1,4 +1,4 @@
-import share from '../..'
+import share from '../src'
 
 const ShareMockData = {
   title: 'My awesome post!',
