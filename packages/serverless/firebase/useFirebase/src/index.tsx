@@ -5,6 +5,11 @@ import startFirebaseEmulators from './handlers/startFirebaseEmulators/startFireb
 export type AuthOptions = {
   testUserEmail: string
   testUserPassword: string
+  authEmulatorPort?: number
+}
+
+export type DBOptions = {
+  dbEmulatorPort?: number
 }
 
 type FirebaseConfig = {
@@ -23,6 +28,7 @@ type Props = {
   envIsDev: boolean
   children: any
   db?: any
+  dbOptions?: DBOptions
   auth?: any
   authOptions?: AuthOptions
   localStorageOptions?: LocalStorageOptionsTypes
@@ -59,6 +65,7 @@ export const FirebaseProvider = ({
   auth,
   authOptions,
   db,
+  dbOptions,
   children,
   localStorageOptions,
   messaging,
@@ -73,6 +80,7 @@ export const FirebaseProvider = ({
       auth,
       authOptions,
       db,
+      dbOptions,
       functions,
       enable: envIsDev,
     })
