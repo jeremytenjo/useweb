@@ -1,7 +1,6 @@
 import React, { forwardRef, useEffect, useRef } from 'react'
 import pullToRefreshMod from 'mobile-pull-to-refresh'
 import ptrAnimatesMaterial from 'mobile-pull-to-refresh/dist/styles/material/animates'
-import './index.css'
 
 import vibrate from './utils/vibrate'
 

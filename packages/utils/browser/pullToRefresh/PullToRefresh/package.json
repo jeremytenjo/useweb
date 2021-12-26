@@ -1,11 +1,12 @@
 {
   "name": "@useweb/pull-to-refresh",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
   "files": [
-    "build"
+    "build",
+    "public"
   ],
   "scripts": {
     "build": "node ./node_modules/@useweb/compiler/build",
