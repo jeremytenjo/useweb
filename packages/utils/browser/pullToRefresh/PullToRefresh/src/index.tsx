@@ -1,13 +1,20 @@
-import React, { forwardRef, useEffect } from 'react'
+import React, { forwardRef, useEffect, useRef } from 'react'
 import pullToRefreshMod from 'mobile-pull-to-refresh'
 import ptrAnimatesMaterial from 'mobile-pull-to-refresh/dist/styles/material/animates'
-import 'mobile-pull-to-refresh/dist/styles/material/style.css'
+import './index.css'
 
 import vibrate from './utils/vibrate'
 
-// <PullToRefresh onRefresh={onPullToRefresh} ref={ref} />
-const PullToRefresh = (
-  { onRefresh = () => null, color = 'blue', containerSelector },
+type Props = {
+  color?: string
+  containerSelector?: string
+  children?: any
+  onPullToRefresh: () => any
+}
+
+// <PullToRefresh onPullToRefresh={onPullToRefresh} ref={ref} />
+const PullToRefreshFun = (
+  { onPullToRefresh = () => null, color = 'blue', containerSelector }: Props,
   ref,
 ) => {
   const containerClassName = 'pull_to_refresh_container'
@@ -37,7 +44,7 @@ const PullToRefresh = (
       refresh() {
         return new Promise((resolve) => {
           vibrate(3)
-          onRefresh()
+          onPullToRefresh()
           resolve(null)
         })
       },
@@ -93,4 +100,15 @@ const PullToRefresh = (
   )
 }
 
-export default forwardRef(PullToRefresh)
+const PullToRefreshWrapper = forwardRef(PullToRefreshFun)
+
+export default function PullToRefresh(props: Props) {
+  const ref = useRef(null)
+
+  return (
+    <div ref={ref} style={{ position: 'relative', width: '100%', minHeight: '100vh' }}>
+      <PullToRefreshWrapper {...props} ref={ref} />
+      {props.children}
+    </div>
+  )
+}
