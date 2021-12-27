@@ -3,7 +3,7 @@
 }
 
 .pull-to-refresh-material__control {
-  position: absolute;
+  position: fixed;
   top: -50px;
   left: 50%;
   -webkit-transform: translate3d(-50%, 0, 0);
