@@ -31,6 +31,7 @@ export type GetReturn = {
   isFetched: boolean
   error: Error
   exec: () => void
+  reExec: () => void
   update: (newData: any) => void
 }
 
@@ -117,6 +118,10 @@ export default function useGet(
     setShouldFetch(true)
   }
 
+  const reExec = () => {
+    swr.mutate(id)
+  }
+
   const fetching = !swr.data && !swr.error
   const data = getReturnData()
   const error = swr.error
@@ -124,6 +129,7 @@ export default function useGet(
 
   return {
     exec,
+    reExec,
     data,
     fetching,
     isFetched,
