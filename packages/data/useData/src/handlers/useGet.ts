@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
-import { useSWRConfig } from 'swr'
-import useSWRImmutable from 'swr/immutable'
+import useSWR, { useSWRConfig } from 'swr'
 import create from 'zustand'
 import arrayDB from '@useweb/array-db'
 import useLocalStorage from '@useweb/use-local-storage'
@@ -78,7 +77,7 @@ export default function useGet(
   const swrKey = () => (autoExec || (fetchData && id) ? `_${id}` : null)
 
   // https://swr.vercel.app/docs/options
-  const swr = useSWRImmutable(swrKey, fetcher, {
+  const swr = useSWR(swrKey, fetcher, {
     onSuccess: (data) => {
       const updatedFetchedCollections = arrayDB.add(getStore.fetchedCollections, {
         data: { id },
@@ -91,6 +90,9 @@ export default function useGet(
     onError: (error) => {
       onGetError(error)
     },
+    revalidateIfStale: false,
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false,
   })
 
   const update = (newData) => {
@@ -117,15 +119,16 @@ export default function useGet(
     return defaultData
   }
 
+  const fetching = !swr.data && !swr.error
+
   const exec = () => {
-    setShouldFetch(true)
+    !fetching && setShouldFetch(true)
   }
 
   const reExec = () => {
-    globalMutate(swrKey())
+    !fetching && globalMutate(swrKey())
   }
 
-  const fetching = !swr.data && !swr.error
   const data = getReturnData()
   const error = swr.error
   const isFetched = collectionWasFetched
