@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { useSWRConfig } from 'swr'
 import useSWRImmutable from 'swr/immutable'
 import create from 'zustand'
 import arrayDB from '@useweb/array-db'
@@ -45,6 +46,8 @@ export default function useGet(
     autoExec,
   }: GetOptions = {},
 ): GetReturn {
+  // https://swr.vercel.app/docs/mutation
+  const { mutate: globalMutate } = useSWRConfig()
   const getStore: any = useGetStore()
   const [fetchData, setShouldFetch] = useState(false)
 
@@ -119,7 +122,7 @@ export default function useGet(
   }
 
   const reExec = () => {
-    swr.mutate(id)
+    globalMutate(swrKey())
   }
 
   const fetching = !swr.data && !swr.error
