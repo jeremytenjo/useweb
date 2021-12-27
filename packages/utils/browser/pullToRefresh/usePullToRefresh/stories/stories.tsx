@@ -2,12 +2,12 @@ import React from 'react'
 import { Meta } from '@storybook/react'
 
 import Docs from './docs'
-import PullToRefresh from '../src'
+import useOnPullToRefresh from '../src'
 
 import '../public/styles.css'
 
 export default {
-  title: 'packages/Dom/PullToRefresh',
+  title: 'packages/Dom/usePullToRefresh',
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
     docs: {
@@ -17,13 +17,11 @@ export default {
 } as Meta
 
 const Template = (args) => {
-  const onPullToRefresh = () => {
-    console.log('HERE!')
-  }
+  useOnPullToRefresh(() => {
+    console.log('refreshed')
+  })
 
-  return (
-    <PullToRefresh onPullToRefresh={onPullToRefresh}>Pull to refresh me</PullToRefresh>
-  )
+  return <div>Pull to refresh me</div>
 }
 
 export const Example = Template.bind({})

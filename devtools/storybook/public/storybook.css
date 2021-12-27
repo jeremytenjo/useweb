@@ -216,6 +216,8 @@ label {
 
   --color-error: #fe4848;
   --color-errorforeground: white;
+
+  --pull-refresh-spinner-color: #00b4cd;
 }
 
 :root {

@@ -12,5 +12,5 @@ module.exports = [
   '../../packages/serverless/firebase/functions/useFirebaseFunction/stories/stories.tsx',
   '../../packages/serverless/firebase/messaging/useFirebaseMessaging/stories/stories.tsx',
   '../../packages/serverless/firebase/useFirebase/stories/stories.tsx',
-  '../../packages/utils/browser/pullToRefresh/PullToRefresh/stories/stories.tsx',
+  '../../packages/utils/browser/pullToRefresh/usePullToRefresh/stories/stories.tsx',
 ]
