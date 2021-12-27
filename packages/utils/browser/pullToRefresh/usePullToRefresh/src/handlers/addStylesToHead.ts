@@ -1,11 +1,12 @@
+import addScriptToHead from '../../../../addScriptToHead'
+
 import { isRefreshElementAdded } from './createRefreshElement'
 
 export default function addStylesToHead() {
   if (!isRefreshElementAdded()) {
-    document.head.insertAdjacentHTML(
-      'beforeend',
+    addScriptToHead(
       `<style>
-      
+
       .pull-to-refresh-material {
         position: relative;
       }
