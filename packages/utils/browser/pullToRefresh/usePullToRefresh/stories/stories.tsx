@@ -4,8 +4,6 @@ import { Meta } from '@storybook/react'
 import Docs from './docs'
 import useOnPullToRefresh from '../src'
 
-import '../public/styles.css'
-
 export default {
   title: 'packages/Dom/usePullToRefresh',
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
