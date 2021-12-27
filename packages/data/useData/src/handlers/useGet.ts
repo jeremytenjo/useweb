@@ -86,6 +86,7 @@ export default function useGet(
       getStore.setFetchedCollections(updatedFetchedCollections)
       localStorageData.update(data)
       onGet(data)
+      onChange(data)
     },
     onError: (error) => {
       onGetError(error)
