@@ -29,9 +29,12 @@ export default function usePullToRefresh(
       prevent: { attr: 'overscrollBehaviorY', value: 'contain' },
       allow: { attr: 'overscrollBehaviorY', value: 'auto' },
     }
+    const minHeight = '100vh'
 
     bodyElement.style[scrollArrControls[action].attr] = scrollArrControls[action].value
     htmlElement.style[scrollArrControls[action].attr] = scrollArrControls[action].value
+    bodyElement.style.minHeight = minHeight
+    htmlElement.style.minHeight = minHeight
   }
 
   const isSupported = () =>
