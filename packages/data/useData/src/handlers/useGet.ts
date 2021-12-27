@@ -119,16 +119,15 @@ export default function useGet(
     return defaultData
   }
 
-  const fetching = !swr.data && !swr.error
-
   const exec = () => {
-    !fetching && setShouldFetch(true)
+    setShouldFetch(true)
   }
 
   const reExec = () => {
-    !fetching && globalMutate(swrKey())
+    globalMutate(swrKey())
   }
 
+  const fetching = !swr.data && !swr.error
   const data = getReturnData()
   const error = swr.error
   const isFetched = collectionWasFetched
