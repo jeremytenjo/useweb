@@ -10,7 +10,7 @@ type Options = {
 }
 
 /**
- * Add `import '@useweb/pull-to-refresh/public/styles.css'` to root of app. Change spinner color with `--pull-refresh-spinner-color` css variable
+ * Add `import '@useweb/pull-to-refresh/public/styles.css'` to root of app. Change spinner color with `--use-pull-to-refresh-spinner-color` css variable
  *
  * @example
  * useOnPullToRefresh(() => {
@@ -19,7 +19,7 @@ type Options = {
  */
 export default function usePullToRefresh(
   onPullToRefresh: () => any = () => null,
-  { color = 'var(--pull-refresh-spinner-color, black)' }: Options = {},
+  { color = 'var(--use-pull-to-refresh-spinner-color, black)' }: Options = {},
 ) {
   const bodyElement = document.body
   const htmlElement = document.getElementsByTagName('html')[0]
