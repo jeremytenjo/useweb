@@ -8,6 +8,6 @@ export default async function runStorybookStartCli({ noManagerCache }: Props) {
   const noManagerCacheArg = noManagerCache ? '--no-manager-cache' : ''
 
   shell(
-    `start-storybook -c ./devtools/storybook -p 6007 --quiet --ci --modern ${noManagerCacheArg}`,
+    `start-storybook -c ./devtools/storybook -p 7000 --quiet --ci --modern ${noManagerCacheArg}`,
   )
 }
