@@ -18,7 +18,7 @@ const useGetStore = create<Types>((set) => ({
 }))
 
 export type GetOptions = {
-  fetcher?: () => any[] | Promise<any>
+  fetcher?: () => any[] | Promise<any[]>
   onGet?: (result: any) => void
   onGetError?: (error: any) => void
   localStorageOptions?: LocalStorageOptionsTypes
