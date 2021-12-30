@@ -1,4 +1,5 @@
 import useAsync from '@useweb/use-async'
+import { Object } from 'ts-toolbelt'
 import type { Return as UseAsyncReturn } from '@useweb/use-async'
 import arrayDB from '@useweb/array-db'
 
@@ -9,7 +10,7 @@ type Remover = {
   latestData: object[]
 }
 
-type ExecProps = {
+export type ExecProps = {
   id: string | number
 }
 
@@ -21,7 +22,11 @@ export type RemoveOptions = {
   idKey?: string
 }
 
-export type RemoveReturn = UseAsyncReturn
+export type RemoveReturn = Object.P.Update<
+  UseAsyncReturn,
+  ['exec'],
+  (props: ExecProps) => any
+>
 
 export default function useRemove(
   { data = [], updateData, onChange }: HandlerPayloadType,
@@ -60,10 +65,5 @@ export default function useRemove(
     },
   })
 
-  // Need this to add types to exec
-  const exec = (props: ExecProps) => {
-    remove.exec(props)
-  }
-
-  return { ...remove, exec }
+  return remove
 }

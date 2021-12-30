@@ -1,3 +1,4 @@
+import { Object } from 'ts-toolbelt'
 import useAsync from '@useweb/use-async'
 import type { Return as UseAsyncReturn } from '@useweb/use-async'
 import arrayDB from '@useweb/array-db'
@@ -8,7 +9,7 @@ type Updater = {
   latestData: object[]
 }
 
-type ExecProps = {
+export type ExecProps = {
   id: string | number
   value: object
 }
@@ -21,7 +22,11 @@ export type UpdateOptions = {
   idKey?: string
 }
 
-export type UpdateReturn = UseAsyncReturn
+export type UpdateReturn = Object.P.Update<
+  UseAsyncReturn,
+  ['exec'],
+  (props: ExecProps) => any
+>
 
 export default function useUpdate(
   { data: allData = [], updateData, onChange }: HandlerPayloadType,
@@ -64,10 +69,5 @@ export default function useUpdate(
     },
   })
 
-  // Need this to add types to exec
-  const exec = (props: ExecProps) => {
-    update.exec(props)
-  }
-
-  return { ...update, exec }
+  return update
 }
