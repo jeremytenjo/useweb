@@ -72,8 +72,10 @@ export default function useGet(
     },
   })
 
+  const swrKey = () => (id ? `_${id}` : null)
+
   // https://swr.vercel.app/docs/options
-  const swr = useSWR(id, fetcher, {
+  const swr = useSWR(swrKey(), fetcher, {
     onSuccess: (data) => {
       const updatedFetchedCollections = arrayDB.add(getStore.fetchedCollections, {
         data: { id },
@@ -117,7 +119,7 @@ export default function useGet(
   }
 
   const exec = () => {
-    globalMutate(id)
+    globalMutate(swrKey())
   }
 
   const fetching = !swr.data && !swr.error
