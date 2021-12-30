@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import useSWR, { useSWRConfig } from 'swr'
 import create from 'zustand'
 import arrayDB from '@useweb/array-db'
@@ -22,7 +22,6 @@ export type GetOptions = {
   onGet?: (result: any) => void
   onGetError?: (error: any) => void
   localStorageOptions?: LocalStorageOptionsTypes
-  autoExec?: boolean
   disableLocalStorage?: boolean
 }
 
@@ -32,7 +31,6 @@ export type GetReturn = {
   isFetched: boolean
   error: Error
   exec: () => void
-  reExec: () => void
   update: (newData: any) => void
 }
 
@@ -43,14 +41,12 @@ export default function useGet(
     onGet = () => null,
     onGetError = () => null,
     localStorageOptions,
-    autoExec,
     disableLocalStorage,
   }: GetOptions = {},
 ): GetReturn {
   // https://swr.vercel.app/docs/mutation
   const { mutate: globalMutate } = useSWRConfig()
   const getStore: any = useGetStore()
-  const [fetchData, setShouldFetch] = useState(false)
 
   const collectionWasFetched = useMemo(() => {
     const wasCollectionFetched = getStore.fetchedCollections.some(
@@ -76,10 +72,8 @@ export default function useGet(
     },
   })
 
-  const swrKey = () => (autoExec || (fetchData && id) ? `_${id}` : null)
-
   // https://swr.vercel.app/docs/options
-  const swr = useSWR(swrKey, fetcher, {
+  const swr = useSWR(id, fetcher, {
     onSuccess: (data) => {
       const updatedFetchedCollections = arrayDB.add(getStore.fetchedCollections, {
         data: { id },
@@ -98,10 +92,10 @@ export default function useGet(
     revalidateOnReconnect: false,
   })
 
-  const update = (newData) => {
+  const update = (newData = []) => {
     !disableLocalStorage && localStorageData.update(newData)
 
-    if (swrKey()) {
+    if (id) {
       swr.mutate(newData, false)
     }
   }
@@ -123,11 +117,7 @@ export default function useGet(
   }
 
   const exec = () => {
-    setShouldFetch(true)
-  }
-
-  const reExec = () => {
-    globalMutate(swrKey())
+    globalMutate(id)
   }
 
   const fetching = !swr.data && !swr.error
@@ -137,7 +127,6 @@ export default function useGet(
 
   return {
     exec,
-    reExec,
     data,
     fetching,
     isFetched,
