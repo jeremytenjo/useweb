@@ -41,7 +41,7 @@ export default function useFirebaseAuth(
     if (auth) {
       const cleanOnAuthStateChanged = onAuthStateChanged(auth, (user) => {
         if (user) authStore.setUser(user)
-        else if (user !== null) {
+        else {
           authStore.setUser(false)
         }
       })
