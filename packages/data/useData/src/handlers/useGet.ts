@@ -1,21 +1,9 @@
 import { useMemo } from 'react'
 import useSWR, { useSWRConfig } from 'swr'
-import create from 'zustand'
-import arrayDB from '@useweb/array-db'
 import useLocalStorage from '@useweb/use-local-storage'
 import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
 
 import type { HandlerPayloadType } from '..'
-
-type Types = {
-  fetchedCollections: any[]
-  setFetchedCollections: (newValue: any) => void
-}
-
-const useGetStore = create<Types>((set) => ({
-  fetchedCollections: [],
-  setFetchedCollections: (newValue) => set(() => ({ fetchedCollections: newValue })),
-}))
 
 export type GetOptions = {
   fetcher?: () => any[] | Promise<any[]>
@@ -28,12 +16,11 @@ export type GetOptions = {
 export type GetReturn = {
   data: any
   fetching: boolean
+  emptyData: boolean
   error: Error
   exec: () => void
   update: (newData: any) => void
 }
-
-// TODO add `getReturnedEmptyData` return prop that shows when fetchers return empty data
 
 export default function useGet(
   { id, defaultData = [], onChange }: HandlerPayloadType,
@@ -47,30 +34,11 @@ export default function useGet(
 ): GetReturn {
   // https://swr.vercel.app/docs/mutation
   const { mutate: globalMutate, cache } = useSWRConfig()
-  const getStore: any = useGetStore()
-
-  console.log(cache)
-
-  const collectionWasFetched = useMemo(() => {
-    const wasCollectionFetched = getStore.fetchedCollections.some(
-      (fetchedCollection) => fetchedCollection.id === id,
-    )
-    return wasCollectionFetched
-  }, [id, getStore.fetchedCollections])
-
-  const updateFetchedCollections = () => {
-    const updatedFetchedCollections = arrayDB.add(getStore.fetchedCollections, {
-      data: { id },
-    })
-
-    getStore.setFetchedCollections(updatedFetchedCollections)
-  }
 
   // Local storage
   const localStorageData = useLocalStorage(id, {
     localStorageOptions,
     onGet: (result) => {
-      updateFetchedCollections()
       onGet(result)
       onChange(result)
     },
@@ -82,11 +50,6 @@ export default function useGet(
   // https://swr.vercel.app/docs/options
   const swr = useSWR(swrKey(), fetcher, {
     onSuccess: (data) => {
-      const updatedFetchedCollections = arrayDB.add(getStore.fetchedCollections, {
-        data: { id },
-      })
-
-      getStore.setFetchedCollections(updatedFetchedCollections)
       !disableLocalStorage && localStorageData.update(data)
       onGet(data)
       onChange(data)
@@ -124,10 +87,28 @@ export default function useGet(
     globalMutate(swrKey())
   }
 
-  // Return Props
+  const getEmptyData = () => {
+    // check if fetcher returns empty data
+    let emptyData = false
+    const fetched = cache.get(swrKey())
+
+    if (fetched) {
+      emptyData =
+        fetched.length === 0 &&
+        (!disableLocalStorage ? localStorageData?.data?.length === 0 : true)
+    }
+
+    return emptyData
+  }
+
+  // Return values
   const fetching = !swr.data && !swr.error
-  const data = getReturnData()
+  const data = useMemo(
+    () => getReturnData(),
+    [swr.data, localStorageData.data, defaultData],
+  )
   const error = swr.error
+  const emptyData = useMemo(() => getEmptyData(), [cache.get(swrKey())])
 
   return {
     exec,
@@ -135,5 +116,6 @@ export default function useGet(
     fetching,
     error,
     update,
+    emptyData,
   }
 }
