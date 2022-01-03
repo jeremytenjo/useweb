@@ -10,7 +10,7 @@ export type GetOptions = {
   onGet?: (result: any) => void
   onGetError?: (error: any) => void
   localStorageOptions?: LocalStorageOptionsTypes
-  disableLocalStorage?: boolean
+  enableLocalStorage?: boolean
 }
 
 export type GetReturn = {
@@ -29,7 +29,7 @@ export default function useGet(
     onGet = () => null,
     onGetError = () => null,
     localStorageOptions,
-    disableLocalStorage,
+    enableLocalStorage = true,
   }: GetOptions = {},
 ): GetReturn {
   // https://swr.vercel.app/docs/mutation
@@ -50,7 +50,7 @@ export default function useGet(
   // https://swr.vercel.app/docs/options
   const swr = useSWR(swrKey(), fetcher, {
     onSuccess: (data) => {
-      !disableLocalStorage && localStorageData.update(data)
+      enableLocalStorage && localStorageData.update(data)
       onGet(data)
       onChange(data)
     },
@@ -64,7 +64,7 @@ export default function useGet(
 
   // Functions
   const update = (newData = []) => {
-    !disableLocalStorage && localStorageData.update(newData)
+    enableLocalStorage && localStorageData.update(newData)
 
     if (id) {
       swr.mutate(newData, false)
@@ -76,7 +76,7 @@ export default function useGet(
       return swr.data
     }
 
-    if (localStorageData.data) {
+    if (localStorageData.data && enableLocalStorage) {
       return localStorageData.data
     }
 
@@ -95,7 +95,7 @@ export default function useGet(
     if (fetched) {
       dataIsEmpty =
         fetched.length === 0 &&
-        (!disableLocalStorage ? localStorageData?.data?.length === 0 : true)
+        (enableLocalStorage ? localStorageData?.data?.length === 0 : true)
     }
 
     return dataIsEmpty
