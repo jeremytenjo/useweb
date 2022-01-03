@@ -46,8 +46,10 @@ export default function useGet(
   }: GetOptions = {},
 ): GetReturn {
   // https://swr.vercel.app/docs/mutation
-  const { mutate: globalMutate } = useSWRConfig()
+  const { mutate: globalMutate, cache } = useSWRConfig()
   const getStore: any = useGetStore()
+
+  console.log(cache)
 
   const collectionWasFetched = useMemo(() => {
     const wasCollectionFetched = getStore.fetchedCollections.some(
@@ -107,15 +109,11 @@ export default function useGet(
   }
 
   const getReturnData = () => {
-    if (!swr.data && !collectionWasFetched && localStorageData.data) {
-      return localStorageData.data
-    }
-
     if (swr.data) {
       return swr.data
     }
 
-    if (!swr.data && !!localStorageData?.data?.length) {
+    if (localStorageData.data) {
       return localStorageData.data
     }
 
