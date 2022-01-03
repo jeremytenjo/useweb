@@ -90,11 +90,11 @@ export default function useGet(
   const getDatsIsEmpty = () => {
     // check if fetcher returns empty data
     let dataIsEmpty = false
-    const fetched = cache.get(swrKey())
+    const swrKeyData = cache.get(swrKey())
 
-    if (fetched) {
+    if (swrKeyData) {
       dataIsEmpty =
-        fetched.length === 0 &&
+        swrKeyData.length === 0 &&
         (enableLocalStorage ? localStorageData?.data?.length === 0 : true)
     }
 
