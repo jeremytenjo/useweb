@@ -39,7 +39,7 @@ const remover = async ({ removedItem, latestData }) => {
   // make database call here
 }
 
-const Template = (args) => {
+const useLatestMovies = () => {
   const latestMovies = useData({
     id: 'latestMovies',
     get: { fetcher },
@@ -47,6 +47,12 @@ const Template = (args) => {
     update: { updater },
     remove: { remover },
   })
+
+  return latestMovies
+}
+
+const Template = (args) => {
+  const latestMovies = useLatestMovies()
 
   return (
     <div>
@@ -81,7 +87,7 @@ const Template = (args) => {
 }
 
 const OtherComponent = () => {
-  const latestMovies = useData({ id: 'latestMovies' })
+  const latestMovies = useLatestMovies()
 
   return (
     <div>
