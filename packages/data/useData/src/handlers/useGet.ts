@@ -16,7 +16,7 @@ export type GetOptions = {
 export type GetReturn = {
   data: any
   fetching: boolean
-  emptyData: boolean
+  hasEmptyData: boolean
   error: Error
   exec: () => void
   update: (newData: any) => void
@@ -87,18 +87,18 @@ export default function useGet(
     globalMutate(swrKey())
   }
 
-  const getEmptyData = () => {
+  const getHasEmptyData = () => {
     // check if fetcher returns empty data
-    let emptyData = false
+    let hasEmptyData = false
     const fetched = cache.get(swrKey())
 
     if (fetched) {
-      emptyData =
+      hasEmptyData =
         fetched.length === 0 &&
         (!disableLocalStorage ? localStorageData?.data?.length === 0 : true)
     }
 
-    return emptyData
+    return hasEmptyData
   }
 
   // Return values
@@ -108,7 +108,7 @@ export default function useGet(
     [swr.data, localStorageData.data, defaultData],
   )
   const error = swr.error
-  const emptyData = useMemo(() => getEmptyData(), [cache.get(swrKey())])
+  const hasEmptyData = useMemo(() => getHasEmptyData(), [cache.get(swrKey())])
 
   return {
     exec,
@@ -116,6 +116,6 @@ export default function useGet(
     fetching,
     error,
     update,
-    emptyData,
+    hasEmptyData,
   }
 }
