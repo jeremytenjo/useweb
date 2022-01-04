@@ -6,7 +6,7 @@ import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
 import type { HandlerPayloadType } from '..'
 
 export type GetOptions = {
-  fetcher?: () => any[] | Promise<any[]>
+  fetcher?: (payload?: any) => any[] | Promise<any[]>
   onGet?: (result: any) => void
   onGetError?: (error: any) => void
   localStorageOptions?: LocalStorageOptionsTypes
