@@ -1,9 +1,13 @@
 import useFirebase from '@useweb/use-firebase'
 import useAsync from '@useweb/use-async'
+import type { Options as UseAsyncProps } from '@useweb/use-async'
 
 export type Props = {
   name: string
   fetchOptions?: RequestInit
+  onResult?: UseAsyncProps['onResult']
+  onLoading?: UseAsyncProps['onLoading']
+  onError?: UseAsyncProps['onError']
 }
 
 type FetchProps = {
@@ -21,7 +25,13 @@ type FetchProps = {
  * const helloWorld = useFirebaseFunction({name: 'helloWorld'})
  *
  */
-export default function useFirebaseFunction({ name, fetchOptions = {} }: Props) {
+export default function useFirebaseFunction({
+  name,
+  fetchOptions = {},
+  onResult = () => null,
+  onError = () => null,
+  onLoading = () => null,
+}: Props) {
   const firebase = useFirebase()
 
   const fetcher = async (options?: FetchProps) => {
@@ -42,7 +52,11 @@ export default function useFirebaseFunction({ name, fetchOptions = {} }: Props) 
     return data
   }
 
-  const cloudFunction = useAsync(fetcher)
+  const cloudFunction = useAsync(fetcher, {
+    onResult,
+    onError,
+    onLoading,
+  })
 
   const exec = (options?: FetchProps) => {
     cloudFunction.exec(options)
