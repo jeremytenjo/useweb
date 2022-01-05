@@ -97,3 +97,13 @@ self.addEventListener('notificationclick', (event) => {
 })
 
 ```
+
+5. You need a `FCM Registration Token` to send cloud messages to.
+
+```js
+const messaging = useFirebaseMessaging({
+  onFcmRegistrationToken: (fcmRegistrationToken) => {
+    console.log(fcmRegistrationToken)
+  },
+})
+```
