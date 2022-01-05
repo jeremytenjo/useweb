@@ -27,6 +27,7 @@ export default {
 const Template = (args) => {
   const vapidKey =
     'BN00LZftcTdyP4TYvFRnfWe_jjfTOSc-9rUFEOf2VxnxGlf_IP6bbPvFJLbBB9QZzixT4MHQK5QFM_1NTt_frsE'
+
   return (
     <FirebaseProvider
       firebaseConfig={firebaseConfig}

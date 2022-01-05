@@ -22,12 +22,12 @@ export type Return = {
 }
 
 export default function useFirebaseMessaging({
-  vapidKey,
+  vapidKey: defaultVapidKey,
   forceSupport: defaultForceSupport,
   serviceWorkerFileName: defaultServiceWorkerFileName = '/firebase-messaging-sw.js',
   onMessage: defaultOnMessage = () => null,
   onError: defaultOnError = () => null,
-}: MessagingProps): Return {
+}: MessagingProps = {}): Return {
   const onMessageRemoveListenerRef = useRef(null)
   const firebase = useFirebase()
 
@@ -36,6 +36,7 @@ export default function useFirebaseMessaging({
     firebase?.messagingOptions?.serviceWorkerFileName || defaultServiceWorkerFileName
   const onMessage = firebase?.messagingOptions?.onMessage || defaultOnMessage
   const onError = firebase?.messagingOptions?.onError || defaultOnError
+  const vapidKey = firebase?.messagingOptions?.vapidKey || defaultVapidKey
 
   const isProductionApp = isProduction()
 
