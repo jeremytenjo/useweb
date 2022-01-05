@@ -72,7 +72,9 @@ export default function useFirebaseMessaging({
   }
 
   const registerServiceWorker = async () => {
-    if (forceSupport || isProductionApp) {
+    if (!firebase.messaging) {
+      throw new Error('Missing `messaging` key in `FirebaseProvider` (firebase.tsx)')
+    } else if (forceSupport || isProductionApp) {
       try {
         await navigator.serviceWorker.register(serviceWorkerFileName)
       } catch (error) {
@@ -95,7 +97,7 @@ export default function useFirebaseMessaging({
       const token = await getToken(firebase.messaging, { vapidKey })
 
       if (token) {
-        registerServiceWorker()
+        await registerServiceWorker()
         setFcmRegistrationToken(token)
         onMessageRemoveListenerRef.current = messagingOnMessage(
           firebase.messaging,
