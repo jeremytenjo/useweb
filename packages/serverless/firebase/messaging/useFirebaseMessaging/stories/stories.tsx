@@ -2,7 +2,7 @@ import React from 'react'
 import { initializeApp } from 'firebase/app'
 import { getMessaging } from 'firebase/messaging'
 import { Meta } from '@storybook/react'
-import { FirebaseProvider } from '@useweb/use-firebase'
+import { FirebaseProvider } from '../../../useFirebase/src/index'
 
 import firebaseConfig from '../../../../../../firebase/firebase.config'
 
@@ -29,9 +29,11 @@ const Template = (args) => {
     'BN00LZftcTdyP4TYvFRnfWe_jjfTOSc-9rUFEOf2VxnxGlf_IP6bbPvFJLbBB9QZzixT4MHQK5QFM_1NTt_frsE'
   return (
     <FirebaseProvider
+      firebaseConfig={firebaseConfig}
       firebaseApp={firebaseApp}
       messaging={messaging}
       messagingOptions={{ vapidKey }}
+      envIsDev
     >
       {args.children}
     </FirebaseProvider>
