@@ -10,6 +10,7 @@ export type MessagingProps = {
   serviceWorkerFileName?: string
   onMessage?: (payload: any) => any
   onError?: (error: any) => any
+  onFcmRegistrationToken?: (fcmRegistrationToken: string) => any
 }
 
 export type Return = {
@@ -27,6 +28,7 @@ export default function useFirebaseMessaging({
   serviceWorkerFileName: defaultServiceWorkerFileName = '/firebase-messaging-sw.js',
   onMessage: defaultOnMessage = () => null,
   onError: defaultOnError = () => null,
+  onFcmRegistrationToken = () => null,
 }: MessagingProps = {}): Return {
   const onMessageRemoveListenerRef = useRef(null)
   const firebase = useFirebase()
@@ -95,6 +97,7 @@ export default function useFirebaseMessaging({
           firebase.messaging,
           onMessage,
         )
+        onFcmRegistrationToken(token)
       }
     } catch (error) {
       setError(error)
