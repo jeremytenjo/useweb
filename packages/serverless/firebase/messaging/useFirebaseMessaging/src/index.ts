@@ -71,9 +71,13 @@ export default function useFirebaseMessaging({
     return forceSupport || result
   }
 
-  const registerServiceWorker = () => {
+  const registerServiceWorker = async () => {
     if (forceSupport || isProductionApp) {
-      navigator.serviceWorker.register(serviceWorkerFileName)
+      try {
+        await navigator.serviceWorker.register(serviceWorkerFileName)
+      } catch (error) {
+        console.log(`Faild registering ${serviceWorkerFileName}`, error)
+      }
     }
   }
 
