@@ -30,7 +30,7 @@ export default function startFirebaseEmulators({
   const enabled = enable && (!!auth || !!db || !!functions)
   if (!enabled) return
 
-  const authEmulatorPort = dbOptions?.dbEmulatorPort
+  const authEmulatorPort = authOptions?.authEmulatorPort
   const dbEmulatorPort = dbOptions?.dbEmulatorPort
 
   auth && startAuthEmulator({ auth, authEmulatorPort, ...authOptions })
