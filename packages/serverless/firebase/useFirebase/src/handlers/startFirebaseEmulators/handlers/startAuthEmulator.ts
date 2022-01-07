@@ -2,18 +2,14 @@ import { connectAuthEmulator, signInWithEmailAndPassword } from 'firebase/auth'
 
 export default function startAuthEmulator({
   auth,
-  authEmulatorPort,
-  testUserEmail,
-  testUserPassword,
+  authEmulatorPort = 9005,
+  testUserEmail = 'user@example.com',
+  testUserPassword = 'secretPassword',
 }) {
-  connectAuthEmulator(auth, `http://localhost:${authEmulatorPort}`)
-
-  if (!testUserEmail || !testUserPassword) {
-    console.log(
-      'Missing testUserEmail and testUserPassword in Firebase provider authOptions',
-    )
-    return
+  if (!auth) {
+    throw new Error('Missing `auth` key in `FirebaseProvider`')
   }
 
+  connectAuthEmulator(auth, `http://localhost:${authEmulatorPort}`)
   signInWithEmailAndPassword(auth, testUserEmail, testUserPassword)
 }
