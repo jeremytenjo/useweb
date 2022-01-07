@@ -19,6 +19,7 @@ type Props = {
   onSignIn?: (result?: any) => any
   onSignInLoading?: (loading?: boolean) => any
   onSignInError?: (error?: any) => any
+  onSignOut?: () => any
 }
 
 /**
@@ -33,6 +34,7 @@ export default function useFirebaseAuth(
     onSignIn = () => null,
     onSignInLoading = () => null,
     onSignInError = () => null,
+    onSignOut = () => null,
   }: Props = { auth: null, signInFetcher: null },
 ) {
   const authStore = useAuthStore()
@@ -67,6 +69,7 @@ export default function useFirebaseAuth(
   const signOut = async () => {
     if (authStore.user) {
       await signOutFromFirebase(auth)
+      onSignInError()
     }
   }
 
