@@ -102,7 +102,7 @@ export default function useGet(
   }
 
   // Return values
-  const fetching = (!swr.data && !swr.error) || swr.isValidating
+  const fetching = !swr.data && !swr.error
   const data = useMemo(
     () => getReturnData(),
     [swr.data, localStorageData.data, defaultData],
