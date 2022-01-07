@@ -11,23 +11,27 @@ type Props = {
   db?: any
   dbOptions: DBOptions
   functions?: any
-  authEmulatorPort?: number
-  dbEmulatorPort?: number
 }
 
 export default function startFirebaseEmulators({
   enable,
   auth,
-  authOptions,
+  authOptions = {
+    authEmulatorPort: 9005,
+    testUserEmail: 'user@example.com',
+    testUserPassword: 'secretPassword',
+  },
   db,
-  dbOptions,
+  dbOptions = {
+    dbEmulatorPort: 9003,
+  },
   functions,
 }: Props) {
   const enabled = enable && (!!auth || !!db || !!functions)
   if (!enabled) return
 
-  const authEmulatorPort = authOptions.authEmulatorPort || 9005
-  const dbEmulatorPort = dbOptions.dbEmulatorPort || 9003
+  const authEmulatorPort = dbOptions?.dbEmulatorPort
+  const dbEmulatorPort = dbOptions?.dbEmulatorPort
 
   auth && startAuthEmulator({ auth, authEmulatorPort, ...authOptions })
   db && startFirestoreEmulator({ db, dbEmulatorPort })
