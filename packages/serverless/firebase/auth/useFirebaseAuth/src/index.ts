@@ -69,7 +69,7 @@ export default function useFirebaseAuth(
   const signOut = async () => {
     if (authStore.user) {
       await signOutFromFirebase(auth)
-      onSignInError()
+      onSignOut()
     }
   }
 
