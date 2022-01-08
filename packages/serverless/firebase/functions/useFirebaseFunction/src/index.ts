@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import useFirebase from '@useweb/use-firebase'
 import useAsync from '@useweb/use-async'
 import type { Options as UseAsyncProps } from '@useweb/use-async'
@@ -33,21 +34,27 @@ export default function useFirebaseFunction({
   onLoading = () => null,
 }: Props) {
   const firebase = useFirebase()
+  const error = useRef()
 
   const fetcher = async (options?: FetchProps) => {
+    error.current = undefined
     const port = firebase?.functionsOptions?.port || 5002
     const region = firebase?.functionsOptions?.region || 'us-central1'
     const url = firebase.envIsDev
       ? `http://localhost:${port}/${firebase.firebaseConfig.projectId}/${region}/${name}`
       : `https://${region}-${firebase.firebaseConfig.projectId}.cloudfunctions.net/${name}`
 
-    let data = await fetch(url, {
+    let data: any = await fetch(url, {
       method: 'post',
       body: JSON.stringify(options?.data || {}),
       ...fetchOptions,
     })
 
     data = await data.json()
+
+    if (data?.error) {
+      error.current = data.error
+    }
 
     return data
   }
@@ -62,5 +69,5 @@ export default function useFirebaseFunction({
     cloudFunction.exec(options)
   }
 
-  return { ...cloudFunction, fetcher, exec }
+  return { ...cloudFunction, fetcher, exec, error: error.current }
 }
