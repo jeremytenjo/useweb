@@ -69,5 +69,5 @@ export default function useFirebaseFunction({
     cloudFunction.exec(options)
   }
 
-  return { ...cloudFunction, fetcher, exec, error: error.current }
+  return { ...cloudFunction, fetcher, exec, error: error.current || cloudFunction.error }
 }
