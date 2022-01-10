@@ -107,3 +107,24 @@ const messaging = useFirebaseMessaging({
   },
 })
 ```
+
+6. Send message from nodejs function/app
+
+````js
+        const message = {
+          data: {
+            title: `New episodes aired recently!`,
+            image: `/images/logo/assets/logo.png`,
+            icon: `/images/logo/assets/logo.png`,
+            body,
+            actions: JSON.stringify(actions),
+          },
+          tokens: registrationTokensToSendMessage,
+        }
+
+        functions.logger.info('FCM Message', message)
+
+        // https://firebase.google.com/docs/cloud-messaging/send-message#send-messages-to-multiple-devices
+        const response = await messaging.sendMulticast(message)
+        ```
+````
