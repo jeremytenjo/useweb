@@ -54,6 +54,7 @@ export default function useFirebaseFunction({
 
     if (data?.error) {
       error.current = data.error
+      throw new Error(data.error)
     }
 
     return data
