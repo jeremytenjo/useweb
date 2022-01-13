@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import useFirebase from '@useweb/use-firebase'
 import useAsync from '@useweb/use-async'
 import type { Options as UseAsyncProps } from '@useweb/use-async'
@@ -34,10 +33,8 @@ export default function useFirebaseFunction({
   onLoading = () => null,
 }: Props) {
   const firebase = useFirebase()
-  const error = useRef()
 
   const fetcher = async (options?: FetchProps) => {
-    error.current = undefined
     const port = firebase?.functionsOptions?.port || 5002
     const region = firebase?.functionsOptions?.region || 'us-central1'
     const url = firebase.envIsDev
@@ -53,7 +50,6 @@ export default function useFirebaseFunction({
     data = await data.json()
 
     if (data?.error) {
-      error.current = data.error
       throw new Error(data.error)
     }
 
@@ -70,5 +66,5 @@ export default function useFirebaseFunction({
     cloudFunction.exec(options)
   }
 
-  return { ...cloudFunction, fetcher, exec, error: error.current || cloudFunction.error }
+  return { ...cloudFunction, fetcher, exec }
 }
