@@ -49,9 +49,7 @@ export default function useFirebaseFunction({
 
     data = await data.json()
 
-    if (data?.error) {
-      throw new Error(data.error)
-    }
+    if (data?.error) throw new Error(data.error)
 
     return data
   }
