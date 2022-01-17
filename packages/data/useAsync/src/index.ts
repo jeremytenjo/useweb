@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from 'react'
 
 export type Props = {
-  fetcher: (result: any) => void
+  fn: (result: any) => void
   autoExec?: boolean
   defaultData?: any
   onResult?: (result: any) => void
@@ -19,11 +19,11 @@ export type Return = {
 /**
  * @example
  * const promise = useAsync({
- * fetcher
+ * fn
  * })
  */
 export default function useAsync({
-  fetcher,
+  fn,
   autoExec,
   defaultData,
   onResult,
@@ -43,7 +43,7 @@ export default function useAsync({
         onLoading && onLoading(true)
         setResult(defaultData)
         setError(null)
-        const res = await fetcher(payload)
+        const res = await fn(payload)
         setResult(res)
         onResult && onResult(res)
         return res
@@ -55,7 +55,7 @@ export default function useAsync({
         onLoading && onLoading(false)
       }
     },
-    [fetcher],
+    [fn],
   )
 
   useEffect(() => {
