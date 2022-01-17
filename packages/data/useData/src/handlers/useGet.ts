@@ -1,9 +1,18 @@
 import { useMemo } from 'react'
 import useSWR, { useSWRConfig } from 'swr'
 import useLocalStorage from '@useweb/use-local-storage'
-import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
 
 import type { HandlerPayloadType } from '..'
+
+type GetterType = { key: string }
+type SetterType = { key: string; data: any }
+type RemoveType = { key: string }
+
+export type LocalStorageOptionsTypes = {
+  getterFunction?: (options: GetterType) => any
+  setterFunction?: (options: SetterType) => void
+  removeFunction?: (options: RemoveType) => void
+}
 
 export type GetOptions = {
   fetcher?: (payload?: any) => any[] | Promise<any[]>
