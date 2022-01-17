@@ -1,7 +1,9 @@
 import { useState, useCallback, useEffect } from 'react'
 
-export type Options = {
+export type Props = {
+  fetcher: (result: any) => void
   autoExec?: boolean
+  defaultData?: any
   onResult?: (result: any) => void
   onError?: (error: any) => void
   onLoading?: (loading: boolean) => void
@@ -16,14 +18,20 @@ export type Return = {
 
 /**
  * @example
- * const promise = useAsync(fetcher)
+ * const promise = useAsync({
+ * fetcher
+ * })
  */
-export default function useAsync(
-  fetcher: (result: any) => void,
-  options?: Options,
-): Return {
+export default function useAsync({
+  fetcher,
+  autoExec,
+  defaultData,
+  onResult,
+  onError,
+  onLoading,
+}: Props): Return {
+  const [result, setResult] = useState(defaultData)
   const [loading, setLoading] = useState(null)
-  const [result, setResult] = useState(null)
   const [error, setError] = useState(null)
 
   const exec = useCallback(
@@ -32,27 +40,27 @@ export default function useAsync(
 
       try {
         setLoading(true)
-        options?.onLoading && options?.onLoading(true)
-        setResult(null)
+        onLoading && onLoading(true)
+        setResult(defaultData)
         setError(null)
         const res = await fetcher(payload)
         setResult(res)
-        options?.onResult && options?.onResult(res)
+        onResult && onResult(res)
         return res
       } catch (error) {
         setError(error)
-        options?.onError && options?.onError(error)
+        onError && onError(error)
       } finally {
         setLoading(false)
-        options?.onLoading && options?.onLoading(false)
+        onLoading && onLoading(false)
       }
     },
     [fetcher],
   )
 
   useEffect(() => {
-    if (options?.autoExec) exec()
-  }, [exec, options?.autoExec])
+    if (autoExec) exec()
+  }, [exec, autoExec])
 
   return { loading, error, result, exec }
 }
