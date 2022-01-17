@@ -5,9 +5,14 @@ import create from 'zustand'
 import arrayDB from '@useweb/array-db'
 import useFirebase from '@useweb/use-firebase'
 import useLocalStorage from '@useweb/use-local-storage'
-import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
 
 import type { HandlerPayloadType } from '..'
+
+export type LocalStorageOptionsTypes = {
+  getterFunction?: (options: { key: string }) => any
+  setterFunction?: (options: { key: string; data: any }) => void
+  removeFunction?: (options: { key: string }) => void
+}
 
 type Types = {
   fetchedCollections: any[]

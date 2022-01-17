@@ -1,10 +1,15 @@
 import useFirebase from '@useweb/use-firebase'
-import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
 
 import useGet from './handlers/useGet'
 import useCreate from './handlers/useCreate'
 import useRemove from './handlers/useRemove'
 import useUpdate from './handlers/useUpdate'
+
+export type LocalStorageOptionsTypes = {
+  getterFunction?: (options: { key: string }) => any
+  setterFunction?: (options: { key: string; data: any }) => void
+  removeFunction?: (options: { key: string }) => void
+}
 
 export type HandlerPayloadType = {
   userId: string

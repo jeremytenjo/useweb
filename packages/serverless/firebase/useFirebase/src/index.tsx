@@ -1,6 +1,11 @@
 import React, { createContext, useContext, useEffect } from 'react'
-import type { LocalStorageOptionsTypes } from '@useweb/use-local-storage'
 import startFirebaseEmulators from './handlers/startFirebaseEmulators/startFirebaseEmulators'
+
+export type LocalStorageOptionsTypes = {
+  getterFunction?: (options: { key: string }) => any
+  setterFunction?: (options: { key: string; data: any }) => void
+  removeFunction?: (options: { key: string }) => void
+}
 
 export type AuthOptions = {
   testUserEmail: string

@@ -4,14 +4,10 @@ import useLocalStorage from '@useweb/use-local-storage'
 
 import type { HandlerPayloadType } from '..'
 
-type GetterType = { key: string }
-type SetterType = { key: string; data: any }
-type RemoveType = { key: string }
-
 export type LocalStorageOptionsTypes = {
-  getterFunction?: (options: GetterType) => any
-  setterFunction?: (options: SetterType) => void
-  removeFunction?: (options: RemoveType) => void
+  getterFunction?: (options: { key: string }) => any
+  setterFunction?: (options: { key: string; data: any }) => void
+  removeFunction?: (options: { key: string }) => void
 }
 
 export type GetOptions = {
