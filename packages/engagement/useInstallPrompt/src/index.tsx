@@ -55,6 +55,12 @@ type Return = {
   isNotInstalled: boolean
 }
 
+/**
+ * @example
+ * const installPrompt = useInstallPrompt()
+ * ...
+ * installPrompt.prompt()
+ */
 const useInstallPrompt = () => useContext<Return>(UseInstallPromptContext)
 
 export default useInstallPrompt
