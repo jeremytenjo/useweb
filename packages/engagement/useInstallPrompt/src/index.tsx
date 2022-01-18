@@ -7,7 +7,7 @@ type Props = {
   children: JSX.Element
 }
 
-export const UseInstallPromptProvider = ({ children }: Props) => {
+export const UseInstallPromptProvider = ({ children = null }: Props) => {
   const [isNotInstalledRef, setIsNotInstalled] = useState(null)
   const deferredPromptRef = useRef(null)
   const isNotInstalled = isNotInstalledRef === null ? false : isNotInstalledRef

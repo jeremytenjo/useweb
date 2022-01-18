@@ -1,6 +1,6 @@
 import useFirebase from '@useweb/use-firebase'
 import useAsync from '@useweb/use-async'
-import type { Options as UseAsyncProps } from '@useweb/use-async'
+import type { Props as UseAsyncProps } from '@useweb/use-async'
 
 export type Props = {
   name: string
@@ -54,7 +54,8 @@ export default function useFirebaseFunction({
     return data
   }
 
-  const cloudFunction = useAsync(fetcher, {
+  const cloudFunction = useAsync({
+    fn: fetcher,
     onResult,
     onError,
     onLoading,
