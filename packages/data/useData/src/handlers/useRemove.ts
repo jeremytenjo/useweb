@@ -51,7 +51,8 @@ export default function useRemove(
     return returnData
   }
 
-  const remove = useAsync(fetcher, {
+  const remove = useAsync({
+    fn: fetcher,
     onResult: (result) => {
       updateData(result.latestData)
       onRemove(result)

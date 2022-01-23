@@ -6,6 +6,7 @@ import useUpdate from './handlers/useUpdate'
 import type { UpdateOptions, UpdateReturn } from './handlers/useUpdate'
 import useRemove from './handlers/useRemove'
 import type { RemoveOptions, RemoveReturn } from './handlers/useRemove'
+export { default as prefetch } from './helpers/prefetch/prefetch'
 
 export type HandlerPayloadType = {
   id: string

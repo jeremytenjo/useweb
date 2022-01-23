@@ -47,7 +47,8 @@ export default function useCreate(
     return returnData
   }
 
-  const create = useAsync(fetcher, {
+  const create = useAsync({
+    fn: fetcher,
     onResult: (result) => {
       updateData(result.latestData)
       onCreate(result)

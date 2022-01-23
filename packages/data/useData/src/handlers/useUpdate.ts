@@ -55,7 +55,8 @@ export default function useUpdate(
     return returnData
   }
 
-  const update = useAsync(fetcher, {
+  const update = useAsync({
+    fn: fetcher,
     onResult: (result) => {
       updateData(result.latestData)
       onUpdate(result)
