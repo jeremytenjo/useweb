@@ -3,6 +3,7 @@ import useSWR, { useSWRConfig } from 'swr'
 import useLocalStorage from '@useweb/use-local-storage'
 
 import type { HandlerPayloadType } from '..'
+import formatKey from '../utils/formatKey'
 
 export type LocalStorageOptionsTypes = {
   getterFunction?: (options: { key: string }) => any
@@ -50,7 +51,7 @@ export default function useGet(
   })
 
   // SWR
-  const swrKey = () => (id ? `_${id}` : null)
+  const swrKey = () => (id ? formatKey(id) : null)
 
   // https://swr.vercel.app/docs/options
   const swr = useSWR(swrKey(), fetcher, {
