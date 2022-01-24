@@ -40,20 +40,21 @@ export default function useGet(
     enableLocalStorage = true,
   }: GetOptions = {},
 ): GetReturn {
+  // SWR
+  const swrKey = (prefix: string = '') =>
+    getOnMount && id ? formatKey(prefix + id) : null
+
   // https://swr.vercel.app/docs/mutation
   const { mutate: globalMutate, cache } = useSWRConfig()
 
   // Local storage
-  const localStorageData = useLocalStorage(id, {
+  const localStorageData = useLocalStorage(swrKey('_localStorage'), {
     localStorageOptions,
     onGet: (result) => {
       onGet(result)
       onChange(result)
     },
   })
-
-  // SWR
-  const swrKey = () => (getOnMount && id ? formatKey(id) : null)
 
   // https://swr.vercel.app/docs/options
   const swr = useSWR(swrKey(), fetcher, {
