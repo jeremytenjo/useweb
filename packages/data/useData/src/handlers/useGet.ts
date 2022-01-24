@@ -15,6 +15,7 @@ export type GetOptions = {
   fetcher?: (payload?: any) => any[] | Promise<any[]>
   onGet?: (result: any) => void
   onGetError?: (error: any) => void
+  getOnMount?: boolean
   localStorageOptions?: LocalStorageOptionsTypes
   enableLocalStorage?: boolean
 }
@@ -34,6 +35,7 @@ export default function useGet(
     fetcher = () => null,
     onGet = () => null,
     onGetError = () => null,
+    getOnMount = true,
     localStorageOptions,
     enableLocalStorage = true,
   }: GetOptions = {},
@@ -51,7 +53,7 @@ export default function useGet(
   })
 
   // SWR
-  const swrKey = () => (id ? formatKey(id) : null)
+  const swrKey = () => (getOnMount && id ? formatKey(id) : null)
 
   // https://swr.vercel.app/docs/options
   const swr = useSWR(swrKey(), fetcher, {
@@ -82,7 +84,7 @@ export default function useGet(
       return swr.data
     }
 
-    if (localStorageData.data && enableLocalStorage) {
+    if (localStorageData.data && enableLocalStorage && getOnMount) {
       return localStorageData.data
     }
 

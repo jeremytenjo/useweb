@@ -1,4 +1,3 @@
-export * from 'swr'
 import useGet from './handlers/useGet'
 import type { GetOptions, GetReturn } from './handlers/useGet'
 import useCreate from './handlers/useCreate'
