@@ -5,6 +5,7 @@ export default function styleEmulatorWarning() {
     'title',
     'Running firebase emulators. Do not use production credentials.',
   )
+  firebaseEmulatorEl.setAttribute('id', 'firebase-emulator-warning')
   firebaseEmulatorEl.style.position = 'fixed'
   firebaseEmulatorEl.style.bottom = '10px'
   firebaseEmulatorEl.style.left = '10px'
