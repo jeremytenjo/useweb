@@ -4,7 +4,7 @@ import startFirestoreEmulator from './handlers/startFirestoreEmulator'
 
 import type { AuthOptions, DBOptions } from '../../'
 
-type Props = {
+type StartFirebaseEmulatorsProps = {
   enable: boolean
   auth?: any
   authOptions?: AuthOptions
@@ -26,7 +26,7 @@ export default function startFirebaseEmulators({
     dbEmulatorPort: 9003,
   },
   functions,
-}: Props) {
+}: StartFirebaseEmulatorsProps) {
   const enabled = enable && (!!auth || !!db || !!functions)
   if (!enabled) return
 

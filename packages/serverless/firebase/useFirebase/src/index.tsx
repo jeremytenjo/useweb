@@ -27,7 +27,7 @@ type FirebaseConfig = {
   measurementId?: string
 }
 
-type Props = {
+type FirebaseProviderProps = {
   firebaseApp: any
   firebaseConfig: FirebaseConfig
   envIsDev: boolean
@@ -79,7 +79,7 @@ export const FirebaseProvider = ({
   analyticsOptions,
   functions,
   functionsOptions,
-}: Props) => {
+}: FirebaseProviderProps) => {
   useEffect(() => {
     startFirebaseEmulators({
       auth,
