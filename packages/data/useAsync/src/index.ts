@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 
-export type Props = {
+export type UseAsyncProps = {
   fn: (result: any) => void
   autoExec?: boolean
   defaultData?: any
@@ -9,7 +9,7 @@ export type Props = {
   onLoading?: (loading: boolean) => void
 }
 
-export type Return = {
+export type UseAsyncReturn = {
   loading: boolean
   error: any
   result: any
@@ -29,7 +29,7 @@ export default function useAsync({
   onResult,
   onError,
   onLoading,
-}: Props): Return {
+}: UseAsyncProps): UseAsyncReturn {
   const [result, setResult] = useState(defaultData)
   const [loading, setLoading] = useState(null)
   const [error, setError] = useState(null)
