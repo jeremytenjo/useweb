@@ -13,7 +13,7 @@ const useAuthStore = create<Types>((set) => ({
   setUser: (newValue) => set(() => ({ user: newValue })),
 }))
 
-type UseFirebaseAuthProps = {
+export type UseFirebaseAuthProps = {
   auth: any
   signInFetcher: () => any
   onSignIn?: (result?: any) => any
