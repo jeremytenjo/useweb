@@ -16,7 +16,7 @@ export type HandlerPayloadType = {
   onChange?: (latestData: any) => any
 }
 
-export type Props = {
+export type UseDataProps = {
   id: string
   defaultData?: any
   onChange?: (latestData: any) => any
@@ -26,7 +26,7 @@ export type Props = {
   update?: UpdateOptions
 }
 
-export type Return = {
+export type UseDataReturn = {
   get: GetReturn
   create: CreateReturn
   update: UpdateReturn
@@ -41,7 +41,7 @@ export default function useData({
   create: createOptions,
   update: updateOptions,
   remove: removeOptions,
-}: Props): Return {
+}: UseDataProps): UseDataReturn {
   const handlerPayload: HandlerPayloadType = {
     id,
     defaultData,
