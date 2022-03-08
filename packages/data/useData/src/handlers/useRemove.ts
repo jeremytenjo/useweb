@@ -5,7 +5,7 @@ import arrayDB from '@useweb/array-db'
 
 import type { HandlerPayloadType } from '..'
 
-type Remover = {
+type RemoverReturn = {
   removedItemId: ExecProps['id']
   latestData: object[]
 }
@@ -38,7 +38,7 @@ export default function useRemove(
     idKey,
   }: RemoveOptions = {},
 ): RemoveReturn {
-  const fetcher = async ({ id: removedItemId }: ExecProps): Promise<Remover> => {
+  const fetcher = async ({ id: removedItemId }: ExecProps): Promise<RemoverReturn> => {
     const latestData = arrayDB.remove(data, {
       id: removedItemId,
       idKey,

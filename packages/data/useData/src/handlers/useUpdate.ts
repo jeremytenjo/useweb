@@ -5,13 +5,13 @@ import arrayDB from '@useweb/array-db'
 import type { HandlerPayloadType } from '..'
 
 type Updater = {
-  updatedItem: object
+  updatedItem: any
   latestData: object[]
 }
 
 export type ExecProps = {
   id: string | number
-  value: object
+  value: any
 }
 
 export type UpdateOptions = {
