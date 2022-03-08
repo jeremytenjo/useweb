@@ -13,13 +13,14 @@ const useAuthStore = create<Types>((set) => ({
   setUser: (newValue) => set(() => ({ user: newValue })),
 }))
 
-type Props = {
+type UseFirebaseAuthProps = {
   auth: any
   signInFetcher: () => any
   onSignIn?: (result?: any) => any
   onSignInLoading?: (loading?: boolean) => any
   onSignInError?: (error?: any) => any
   onSignOut?: () => any
+  onAuthChange?: (authState: any) => any
 }
 
 /**
@@ -35,13 +36,15 @@ export default function useFirebaseAuth(
     onSignInLoading = () => null,
     onSignInError = () => null,
     onSignOut = () => null,
-  }: Props = { auth: null, signInFetcher: null },
+    onAuthChange = () => null,
+  }: UseFirebaseAuthProps = { auth: null, signInFetcher: null },
 ) {
   const authStore = useAuthStore()
 
   useEffect(() => {
     if (auth) {
       const cleanOnAuthStateChanged = onAuthStateChanged(auth, (user) => {
+        onAuthChange(user)
         if (user) authStore.setUser(user)
         else {
           authStore.setUser(false)
