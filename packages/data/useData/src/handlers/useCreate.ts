@@ -6,7 +6,7 @@ import arrayDB from '@useweb/array-db'
 import type { HandlerPayloadType } from '..'
 
 type Creator = {
-  createdItem: object
+  createdItem: any
   latestData: object[]
 }
 
