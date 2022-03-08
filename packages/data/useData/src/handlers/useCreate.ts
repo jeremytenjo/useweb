@@ -6,12 +6,22 @@ import arrayDB from '@useweb/array-db'
 import type { HandlerPayloadType } from '..'
 
 type Creator = {
-  createdItem: any
+  value: {
+    [key: string]: any
+  }
+  latestData: object[]
+  newItem?: any
+}
+
+type CreatorReturn = {
+  createdItem: {
+    [key: string]: any
+  }
   latestData: object[]
 }
 
 export type ExecProps = {
-  value: object
+  value: Creator['value']
 }
 
 export type CreateOptions = {
@@ -31,18 +41,23 @@ export type CreateReturn = Object.P.Update<
 export default function useCreate(
   { updateData, data: allData = [], onChange }: HandlerPayloadType,
   {
-    creator = () => null,
+    creator,
     onCreate = () => null,
     onCreateError = () => null,
     onCreateLoading = () => null,
     insertMethod,
   }: CreateOptions = {},
 ): CreateReturn {
-  const fetcher = async ({ value: createdItem }: ExecProps): Promise<Creator> => {
+  const fetcher = async ({ value }: ExecProps): Promise<CreatorReturn> => {
+    let createdItem = value
+
+    if (creator) {
+      const { newItem } = await creator({ value, latestData: allData })
+      createdItem = newItem
+    }
+
     const latestData = arrayDB.add(allData, { data: createdItem, insertMethod })
     const returnData = { createdItem, latestData }
-
-    await creator(returnData)
 
     return returnData
   }
