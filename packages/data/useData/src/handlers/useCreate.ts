@@ -52,6 +52,7 @@ export default function useCreate(
     let createdItem = value
 
     if (creator) {
+      // creator returns new item with id set by database
       const { newItem } = await creator({ value, latestData: allData })
       createdItem = newItem
     }
