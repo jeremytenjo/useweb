@@ -71,6 +71,7 @@ export default function useGet(
     revalidateIfStale: false,
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
+    shouldRetryOnError: false,
   })
 
   // Functions
