@@ -11,6 +11,7 @@ export { default as prefetch } from './helpers/prefetch/prefetch'
 export type HandlerPayloadType = {
   id: string
   defaultData: any
+  localStorageDefaultId: string
   data: any
   updateData: (newData: any) => void
   onChange?: (latestData: any) => any
@@ -18,6 +19,7 @@ export type HandlerPayloadType = {
 
 export type UseDataProps = {
   id: string
+  localStorageDefaultId: string
   defaultData?: any
   onChange?: (latestData: any) => any
   get?: GetOptions
@@ -35,6 +37,7 @@ export type UseDataReturn = {
 
 export default function useData({
   id,
+  localStorageDefaultId,
   defaultData,
   onChange = () => null,
   get: getOptions,
@@ -44,6 +47,7 @@ export default function useData({
 }: UseDataProps): UseDataReturn {
   const handlerPayload: HandlerPayloadType = {
     id,
+    localStorageDefaultId,
     defaultData,
     updateData: () => null,
     onChange,

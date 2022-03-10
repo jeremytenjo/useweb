@@ -30,7 +30,7 @@ export type GetReturn = {
 }
 
 export default function useGet(
-  { id, defaultData = [], onChange }: HandlerPayloadType,
+  { id, localStorageDefaultId, defaultData = [], onChange }: HandlerPayloadType,
   {
     fetcher = () => null,
     onGet = () => null,
@@ -44,11 +44,13 @@ export default function useGet(
   const swrKey = (prefix: string = '') =>
     getOnMount && id ? formatKey(prefix + id) : null
 
+  const localStorageKey = () => formatKey('localStorage' + localStorageDefaultId)
+
   // https://swr.vercel.app/docs/mutation
   const { mutate: globalMutate, cache } = useSWRConfig()
 
   // Local storage
-  const localStorageData = useLocalStorage(swrKey('_localStorage'), {
+  const localStorageData = useLocalStorage(localStorageKey(), {
     localStorageOptions,
     onGet: (result) => {
       onGet(result)
