@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-data",
-  "version": "8.0.0",
+  "version": "8.0.2",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
