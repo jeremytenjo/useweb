@@ -19,6 +19,7 @@
   await removeBuildFolder()
   await generateTypes(packageDir, entryPointFile)
 
+  // https://esbuild.github.io/api/
   esbuild.build({
     entryPoints: [entryPoint],
     outfile,
