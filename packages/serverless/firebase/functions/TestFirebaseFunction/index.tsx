@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import useFirebaseFunction from '../firebase/useFirebaseFunction/src/index'
+import useFirebaseFunction from '../useFirebaseFunction/src'
 import Button1 from '../../../../input/Button/styles/1'
 import Text from '../../../../dataDisplay/Text/src'
 import Box from '../../../../dataDisplay/Box/src'
@@ -12,14 +12,15 @@ import Donut from '../../../../feedback/progress/Donut'
 
 export default function TestFirebaseFunction({
   functionName = '',
-  cloudFunctionsLocalPort = 5002,
   defaultData = {},
   styles = {},
 }) {
   const [jsonData, setJsonData] = useState(defaultData)
-  const cloudFunction = useFirebaseFunction(functionName, {
-    data: jsonData,
-    cloudFunctionsLocalPort,
+  const cloudFunction = useFirebaseFunction({
+    name: functionName,
+    fetchOptions: {
+      body: JSON.stringify(jsonData),
+    },
   })
 
   return (
