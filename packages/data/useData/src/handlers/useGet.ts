@@ -13,6 +13,7 @@ export type LocalStorageOptionsTypes = {
 
 export type GetOptions = {
   fetcher?: (payload?: any) => any[] | Promise<any[]>
+  fetcherPayload?: any
   onGet?: (result: any) => void
   onGetError?: (error: any) => void
   getOnMount?: boolean
@@ -33,6 +34,7 @@ export default function useGet(
   { id, localStorageDefaultId, defaultData = [], onChange }: HandlerPayloadType,
   {
     fetcher = () => null,
+    fetcherPayload = {},
     onGet = () => null,
     onGetError = () => null,
     getOnMount = true,
@@ -59,7 +61,7 @@ export default function useGet(
   })
 
   // https://swr.vercel.app/docs/options
-  const swr = useSWR(swrKey(), fetcher, {
+  const swr = useSWR(swrKey(), async () => await fetcher(fetcherPayload), {
     onSuccess: (data) => {
       enableLocalStorage && localStorageData.update(data)
       onGet(data)
