@@ -1,5 +1,29 @@
 import { useEffect, useRef, useState } from 'react'
 
+export type UseFetchProps = {
+  url?: string
+  method?: 'get' | 'post' | 'HEAD'
+  headers?: ResponseInit['headers']
+  fetchOnMount?: boolean
+}
+
+type RequestProps = {
+  body?: any
+  headers?: UseFetchProps['headers']
+  mode?: any
+  url?: UseFetchProps['url']
+  method?: UseFetchProps['method']
+  credentials?: any
+}
+
+export type UseFetchReturn = {
+  fetching: boolean
+  request: (RequestProps?: any) => any
+  error: any
+  response: any
+  abort: (params?: any) => any
+}
+
 export default function useFetch({
   url: defaultUrl,
   method: defaultMethod = 'get',
@@ -8,7 +32,7 @@ export default function useFetch({
     'Content-Type': 'application/json',
   },
   fetchOnMount,
-} = {}) {
+}: UseFetchProps = {}) {
   const aborController = useRef(null)
   const [fetching, setFetching] = useState(false)
   const [error, setError] = useState(null)
@@ -28,7 +52,7 @@ export default function useFetch({
     }
   }, [])
 
-  const request = async (params = {}) => {
+  const request = async (params: RequestProps = {}) => {
     const { current: isFetching } = fetchingRef
     if (isFetching) return null
     setError(null)
