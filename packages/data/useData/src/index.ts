@@ -12,6 +12,7 @@ export type HandlerPayloadType = {
   id: string
   defaultData: any
   localStorageDefaultId: string
+  onlyLocalStorage: boolean
   data: any
   updateData: (newData: any) => void
   onChange?: (latestData: any) => any
@@ -21,6 +22,7 @@ export type UseDataProps = {
   id: string
   localStorageDefaultId: string
   defaultData?: any
+  onlyLocalStorage?: boolean
   onChange?: (latestData: any) => any
   get?: GetOptions
   create?: CreateOptions
@@ -40,6 +42,7 @@ export default function useData({
   localStorageDefaultId,
   defaultData,
   onChange = () => null,
+  onlyLocalStorage,
   get: getOptions,
   create: createOptions,
   update: updateOptions,
@@ -51,6 +54,7 @@ export default function useData({
     defaultData,
     updateData: () => null,
     onChange,
+    onlyLocalStorage,
     data: [],
   }
 
