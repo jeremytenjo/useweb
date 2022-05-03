@@ -92,10 +92,6 @@ export default function useGet(
   }
 
   const getReturnData = () => {
-    if (onlyLocalStorage) {
-      return localStorageData.data
-    }
-
     if (swr.data) {
       return swr.data
     }
