@@ -2,6 +2,7 @@ import { Object } from 'ts-toolbelt'
 import useAsync from '@useweb/use-async'
 import type { UseAsyncReturn } from '@useweb/use-async'
 import arrayDB from '@useweb/array-db'
+import type { AddTypes } from '@useweb/array-db'
 
 import type { HandlerPayloadType } from '..'
 
@@ -30,6 +31,7 @@ export type CreateOptions = {
   onCreateError?: (error: any) => void
   onCreateLoading?: (loading: boolean) => void
   insertMethod?: 'push' | 'unshift'
+  ifExists?: AddTypes['ifExists']
 }
 
 export type CreateReturn = Object.P.Update<
@@ -46,6 +48,7 @@ export default function useCreate(
     onCreateError = () => null,
     onCreateLoading = () => null,
     insertMethod,
+    ifExists,
   }: CreateOptions = {},
 ): CreateReturn {
   const fetcher = async ({ value }: ExecProps): Promise<CreatorReturn> => {
@@ -57,7 +60,7 @@ export default function useCreate(
       createdItem = newItem
     }
 
-    const latestData = arrayDB.add(allData, { data: createdItem, insertMethod })
+    const latestData = arrayDB.add(allData, { data: createdItem, insertMethod, ifExists })
     const returnData = { createdItem, latestData }
 
     return returnData

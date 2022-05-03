@@ -7,14 +7,16 @@ export type UseFetchProps = {
   fetchOnMount?: boolean
 }
 
-type RequestProps = {
-  body?: any
-  headers?: UseFetchProps['headers']
-  mode?: any
-  url?: UseFetchProps['url']
-  method?: UseFetchProps['method']
-  credentials?: any
-}
+type RequestProps =
+  | {
+      body?: any
+      headers?: UseFetchProps['headers']
+      mode?: any
+      url?: UseFetchProps['url']
+      method?: UseFetchProps['method']
+      credentials?: any
+    }
+  | undefined
 
 export type UseFetchReturn = {
   fetching: boolean

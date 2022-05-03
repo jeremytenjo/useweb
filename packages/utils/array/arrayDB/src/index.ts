@@ -3,8 +3,9 @@ const validate = (item, options = { validate: 'item' }) => {
 }
 
 export type AddTypes = {
-  data: object
+  data: any
   insertMethod?: 'push' | 'unshift'
+  ifExists?: 'add' | 'replace' | 'remove'
 }
 
 export type UpdateTypes = {
@@ -19,10 +20,29 @@ export type RemoveTypes = {
 }
 
 export default {
-  add: (array: object[] = [], { data, insertMethod = 'push' }: AddTypes) => {
+  add: (
+    array: object[] = [],
+    { data, insertMethod = 'push', ifExists = 'replace' }: AddTypes,
+  ) => {
     validate(data)
-    const newData = array.slice()
-    newData[insertMethod](data)
+    let newData = array.slice() as any
+    const exists = newData.some((cItem) => cItem.id === data.id)
+
+    if (!exists) {
+      newData[insertMethod](data)
+    } else {
+      if (ifExists === 'replace') {
+        newData = newData.map((item) => (item.id === data.id ? data : item))
+      }
+
+      if (ifExists === 'remove') {
+        newData = newData.filter((item) => item.id !== data.id)
+      }
+
+      if (ifExists === 'add') {
+        newData[insertMethod](data)
+      }
+    }
 
     return newData
   },
