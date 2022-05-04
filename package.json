@@ -37,7 +37,6 @@
     "dotenv-parse-variables": "^2.0.0",
     "eslint": "^7.26.0",
     "eslint-plugin-babel": "^5.3.1",
-    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",

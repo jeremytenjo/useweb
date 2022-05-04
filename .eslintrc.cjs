@@ -4,7 +4,6 @@ module.exports = {
     commonjs: true,
     node: true,
     jest: true,
-    'cypress/globals': true,
     es6: true,
   },
   ignorePatterns: [
@@ -16,7 +15,7 @@ module.exports = {
     '_wapp',
     'build',
   ],
-  plugins: ['react', 'react-hooks', 'import', 'jest', 'cypress', 'jsx-a11y'],
+  plugins: ['react', 'react-hooks', 'import', 'jest', 'jsx-a11y'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
