@@ -15,7 +15,7 @@ export type ExecProps = {
 }
 
 export type RemoveOptions = {
-  remover?: (data?: any) => any
+  remover?: (data?: RemoverReturn) => any
   onRemove?: (result: any) => void
   onRemoveError?: (error: any) => void
   onRemoveLoading?: (loading: boolean) => void

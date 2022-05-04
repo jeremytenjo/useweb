@@ -26,7 +26,7 @@ export type ExecProps = {
 }
 
 export type CreateOptions = {
-  creator?: (data: Creator) => any
+  creator?: (data: Creator) => { newItem: Creator['newItem'] }
   onCreate?: (result: any) => void
   onCreateError?: (error: any) => void
   onCreateLoading?: (loading: boolean) => void
