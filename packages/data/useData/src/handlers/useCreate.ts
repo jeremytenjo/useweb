@@ -1,8 +1,6 @@
 import { Object } from 'ts-toolbelt'
-import useAsync from '@useweb/use-async'
-import type { UseAsyncReturn } from '@useweb/use-async'
-import arrayDB from '@useweb/array-db'
-import type { AddTypes } from '@useweb/array-db'
+import useAsync, { type UseAsyncReturn } from '@useweb/use-async'
+import arrayDB, { type AddTypes } from '@useweb/array-db'
 
 import type { HandlerPayloadType } from '..'
 

@@ -16,7 +16,7 @@
     "react": "^17.0.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "latest",
+    "@useweb/compiler": "^1.4.0",
     "mobile-pull-to-refresh": "^0.2.2"
   }
 }
