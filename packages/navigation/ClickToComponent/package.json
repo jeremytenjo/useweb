@@ -1,0 +1,28 @@
+{
+  "name": "@useweb/click-to-component",
+  "version": "1.0.5",
+  "main": "./build/index.js",
+  "author": "Jeremy Tenjo",
+  "types": "./build/types/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "node ./node_modules/@useweb/compiler/build --target esnext",
+    "build:watch": "node ./node_modules/@useweb/compiler/build --watch",
+    "deploy": "npm run build && npm publish --access public"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.6",
+    "@types/react-reconciler": "^0.26.6",
+    "@useweb/compiler": "^1.5.0"
+  },
+  "dependencies": {
+    "@floating-ui/react-dom-interactions": "^0.3.1",
+    "htm": "^3.1.0",
+    "react-merge-refs": "^1.1.0"
+  }
+}

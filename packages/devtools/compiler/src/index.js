@@ -15,6 +15,7 @@
   const { entryPoint, entryPointFile } = await getEntryPoint(packageDir)
   const outfile = path.join(packageDir, 'build', 'index.js')
   const format = args.format || 'cjs'
+  const target = args.target || 'es2019'
 
   await removeBuildFolder()
   await generateTypes(packageDir, entryPointFile)
@@ -27,7 +28,7 @@
     bundle: true,
     minify: true,
     format,
-    target: ['es2019'],
+    target: [target],
     watch: args.watch,
     external: require('./handlers/getExternals')(payload),
   })

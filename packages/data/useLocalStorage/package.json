@@ -17,7 +17,7 @@
     "swr": "^1.1.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "^1.4.0",
+    "@useweb/compiler": "^1.5.0",
     "swr": "^1.1.0"
   }
 }
