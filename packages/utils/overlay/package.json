@@ -13,7 +13,7 @@
     "deploy": "npm run build && npm publish --access public"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
+    "react": "^18.0.0",
     "@useweb/animate": "^1.0.3",
     "@useweb/box": "^1.1.0",
     "@useweb/prevent-body-scroll": "^1.0.0",

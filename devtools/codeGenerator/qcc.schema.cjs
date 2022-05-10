@@ -16,7 +16,7 @@ const packageJsonCommon = `
     "deploy": "npm run build && npm publish --access public"
   },
   "peerDependencies": {
-    "react": "^17.0.0"
+    "react": "^18.0.0"
   },
   "devDependencies": {
     "@useweb/compiler": "latest"
