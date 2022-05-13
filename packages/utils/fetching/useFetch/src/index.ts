@@ -7,7 +7,7 @@ export type UseFetchProps = {
   fetchOnMount?: boolean
 }
 
-type RequestProps =
+export type RequestProps =
   | {
       body?: any
       headers?: UseFetchProps['headers']
