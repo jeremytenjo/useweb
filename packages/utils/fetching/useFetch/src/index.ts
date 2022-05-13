@@ -5,6 +5,8 @@ export type UseFetchProps = {
   method?: 'get' | 'post' | 'HEAD'
   headers?: ResponseInit['headers']
   fetchOnMount?: boolean
+  onResponse?: (responseData?: any) => any
+  onError?: (error?: any) => any
 }
 
 export type RequestProps =
@@ -34,6 +36,8 @@ export default function useFetch({
     'Content-Type': 'application/json',
   },
   fetchOnMount,
+  onResponse,
+  onError,
 }: UseFetchProps = {}) {
   const aborController = useRef(null)
   const [fetching, setFetching] = useState(false)
@@ -92,8 +96,11 @@ export default function useFetch({
       if (res.error) throw res.error
 
       setResponse(res)
+      onResponse && onResponse(res)
       return res
     } catch (error) {
+      onError && onError(error)
+
       if (error.name === 'AbortError') {
         setResponse(false)
         return { aborted: true }
