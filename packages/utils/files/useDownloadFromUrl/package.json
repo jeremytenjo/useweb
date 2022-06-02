@@ -1,6 +1,6 @@
 {
-  "name": "@useweb/use-async",
-  "version": "3.2.0",
+  "name": "@useweb/use-download-from-url",
+  "version": "1.0.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -16,6 +16,10 @@
     "react": "^18.0.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "^1.5.0"
+    "@useweb/compiler": "latest"
+  },
+  "dependencies": {
+    "@useweb/use-async": "^3.2.0",
+    "js-file-downloader": "^1.1.24"
   }
 }
