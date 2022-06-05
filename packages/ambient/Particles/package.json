@@ -19,7 +19,6 @@
     "@useweb/compiler": "^1.5.0"
   },
   "dependencies": {
-    "react-particles-js": "^3.6.0",
-    "tsparticles": "^1.37.3"
+    "react-tsparticles": "^2.0.6"
   }
 }
