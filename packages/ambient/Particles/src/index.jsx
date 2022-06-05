@@ -1,5 +1,5 @@
 import React from 'react'
-import ParticlesLib from 'react-particles-js'
+import ParticlesLib from 'react-tsparticles'
 
 import { defaultProps, propTypes } from './props'
 
