@@ -18,7 +18,7 @@ export default function Button({
   beforeIcon,
   afterIcon,
   size,
-  type = 'button',
+  type = 'button' as 'button' | 'submit' | 'reset',
   ...rest
 }) {
   const isLoading = typeof loading !== 'string' ? loading : false

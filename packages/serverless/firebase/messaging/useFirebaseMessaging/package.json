@@ -14,11 +14,11 @@
   },
   "peerDependencies": {
     "react": "^18.0.0",
-    "@useweb/use-firebase": "^6.0.0"
+    "@useweb/use-firebase": "^8.0.0"
   },
   "devDependencies": {
     "@useweb/compiler": "^1.5.0",
-    "@useweb/use-firebase": "^6.0.0",
+    "@useweb/use-firebase": "^8.0.0",
     "firebase": "^9.6.0"
   }
 }
