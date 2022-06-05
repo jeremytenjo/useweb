@@ -17,6 +17,7 @@
     "functions:serve": "firebase emulators:start --only functions",
     "functions:deploy": "firebase deploy --only functions",
     "build": "node --loader ts-node/esm ./scripts/buildApp/run.ts",
+    "lerna:build": "lerna exec 'npm run build'",
     "lerna:link": "lerna link",
     "lerna:update-compiler": "lerna exec 'npm i @useweb/compiler@latest' --no-bail",
     "lerna:install-deps": "lerna exec 'rm -rf package-lock.json && npm i' --no-bail",
