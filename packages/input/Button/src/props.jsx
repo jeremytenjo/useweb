@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, func, bool, object, oneOfType, node } from 'prop-types'
+import { string, func, bool, object, oneOfType, node, oneOf } from 'prop-types'
 import Dots from '@useweb/progress-dots'
 
 export const defaultProps = {
@@ -42,4 +42,5 @@ export const propTypes = {
   loading: oneOfType([bool, string]),
   isInput: bool,
   inputProps: object,
+  type: oneOf(["button", "submit", "reset"])
 }
