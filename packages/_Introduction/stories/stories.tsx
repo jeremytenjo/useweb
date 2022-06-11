@@ -2,6 +2,7 @@ import React from 'react'
 import { Meta } from '@storybook/react'
 
 import Text from '../../dataDisplay/Text/src'
+import Link from '../../navigation/Link/src'
 
 export default {
   title: 'Introduction',
@@ -25,6 +26,7 @@ const Template = () => {
           marginBottom: '40px',
         }}
       />
+
       <Text
         text='@useweb'
         tag='h1'
@@ -32,7 +34,18 @@ const Template = () => {
           mb: 2,
         }}
       />
-      <Text text='A library of utilities, React components and hooks.' tag='p' />
+
+      <Text
+        text='A library of utilities, React components and hooks.'
+        tag='p'
+        sx={{
+          mb: 2,
+        }}
+      />
+
+      <Link href='https://github.com/jeremytenjo/useweb' newTab>
+        Github
+      </Link>
     </div>
   )
 }
