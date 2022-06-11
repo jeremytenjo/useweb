@@ -2,9 +2,10 @@ import React, { createContext, useContext } from 'react'
 import CssBaseline from '@mui/material/CssBaseline'
 import {
   ThemeProvider as MuiThemeProvider,
-  createTheme as createMuiTheme,
   ThemeOptions as MuiThemeOptions,
 } from '@mui/material/styles'
+
+import createThemeFunction from './createTheme'
 
 type ThemeProviderProps = {
   children: any
@@ -58,7 +59,4 @@ const useTheme = () => useContext<ThemeProviderReturn>(ThemeContext)
 export default useTheme
 
 // user creates theme and passes it to ThemeProvider
-export const createTheme = (themeData: MuiThemeOptions) => {
-  const createdTheme = createMuiTheme(themeData)
-  return createdTheme
-}
+export const createTheme = createThemeFunction
