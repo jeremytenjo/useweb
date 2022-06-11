@@ -3,7 +3,7 @@ import React from 'react'
 import getSocialMediaNameFromUrl from '../getSocialMediaNameFromUrl'
 
 export default {
-  title: 'SocialMedia/utils/getSocialMediaNameFromUrl',
+  title: 'SocialMedia/getSocialMediaNameFromUrl',
   argTypes: {
     url: {
       defaultValue: 'https://www.youtube.com/watch?v=uANXG6qI7rE&ab_channel=ZFHFootball',
