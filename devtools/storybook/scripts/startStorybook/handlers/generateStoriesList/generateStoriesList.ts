@@ -6,9 +6,9 @@ import { PayloadTypes } from '../../startStorybook'
 
 export default async function generateStoriesList(payload: PayloadTypes) {
   const storiesWithFullPaths = await glob(
-    `${process.cwd()}/packages/**/stories/stories.@(tsx|mdx)`,
+    `${process.cwd()}/packages/**/stories/*stories.@(tsx|ts)`,
     {
-      ignore: 'node_modules',
+      ignore: '**/node_modules',
     },
   )
   const stories = storiesWithFullPaths.map((storyFullPath) => {

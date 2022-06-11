@@ -1,5 +1,7 @@
+import React from 'react'
+
 import sortArray from '../index'
-import B from '../../../../../storybook/variationBlock/index'
+import B from '../../../../../storybook/variationBlock'
 
 import mockData from './mockData'
 

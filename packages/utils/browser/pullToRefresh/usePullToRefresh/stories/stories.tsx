@@ -1,8 +1,9 @@
 import React from 'react'
 import { Meta } from '@storybook/react'
 
-import Docs from './docs'
 import useOnPullToRefresh from '../src'
+
+import Docs from './docs'
 
 export default {
   title: 'packages/Dom/usePullToRefresh',

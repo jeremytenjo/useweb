@@ -1,4 +1,5 @@
-import { storiesOf } from '@storybook/react'
+// import { storiesOf } from '@storybook/react'
+import React from 'react'
 
 import BrowserRouter from '../../BrowserRouter'
 import useAuth from '../../../../authentication/useAuth'
@@ -8,6 +9,7 @@ import AuthRoute from '..'
 
 import Store from './store'
 
+export default {}
 const PublicPage = () => <div data-cy='page-public'>Public Page</div>
 const PrivatePage1 = () => <div data-cy='page-private1'>Private Page 1</div>
 const PrivatePage2 = () => <div data-cy='page-private2'>Private Page 2</div>
@@ -86,4 +88,4 @@ const Story = () => (
   </BrowserRouter>
 )
 
-storiesOf('Lib/Navigation/Routing/Route', module).add('AuthRoute', () => <Story />)
+// storiesOf('Lib/Navigation/Routing/Route', module).add('AuthRoute', () => <Story />)

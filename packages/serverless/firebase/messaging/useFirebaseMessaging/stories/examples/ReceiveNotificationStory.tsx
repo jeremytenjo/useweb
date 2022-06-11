@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import CopyToClipboard from '../../../../../../input/CopyToClipboard/index'
 import Donut from '../../../../../../feedback/progress/Donut/index'
@@ -11,7 +11,7 @@ import Button from '../../../../../../input/Button/styles/1'
 import useFirebaseMessaging from '../../src'
 
 export default function ReceiveNotificationStory() {
-  const [message, setMessage] = useState(null)
+  const [message, setMessage] = useState<any>(null)
 
   const messaging = useFirebaseMessaging({
     onMessage: (payload) => {
@@ -21,7 +21,11 @@ export default function ReceiveNotificationStory() {
 
   useEffect(() => {
     if (message) {
-      showNotification(message.notification)
+      showNotification({
+        body: message.notification,
+        title: 'asdf',
+        icon: 'asdfadf',
+      })
     }
   }, [message])
 

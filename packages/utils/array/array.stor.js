@@ -1,4 +1,4 @@
-import { storiesOf } from '@storybook/react'
+// import { storiesOf } from '@storybook/react'
 
 import filter from './functions/array.func'
 
@@ -9,6 +9,6 @@ const ArrayofStrings = () => {
   return <>Result: {result}</>
 }
 
-storiesOf('Lib/utils/Array/Filter', module).add('Array of Strings', () => (
-  <ArrayofStrings />
-))
+// storiesOf('Lib/utils/Array/Filter', module).add('Array of Strings', () => (
+//   <ArrayofStrings />
+// ))

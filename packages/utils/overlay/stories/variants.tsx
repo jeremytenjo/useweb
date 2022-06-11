@@ -1,9 +1,11 @@
+import React, { useState } from 'react'
+
 import B from '../../../storybook/variationBlock/index'
 import Button from '../../../input/Button/build'
 import Overlay from '../src/index'
 
 export default () => {
-  const [show, setshow] = useState(null)
+  const [show, setshow] = useState<any>(null)
   return (
     <B title='default' noBackground>
       <Button

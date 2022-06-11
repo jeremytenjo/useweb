@@ -1,8 +1,8 @@
+import type { AuthOptions, DBOptions } from '../../'
+
 import styleEmulatorWarning from './handlers/styleEmulatorWarning'
 import startAuthEmulator from './handlers/startAuthEmulator'
 import startFirestoreEmulator from './handlers/startFirestoreEmulator'
-
-import type { AuthOptions, DBOptions } from '../../'
 
 type StartFirebaseEmulatorsProps = {
   enable: boolean

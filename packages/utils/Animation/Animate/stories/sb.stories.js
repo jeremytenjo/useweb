@@ -1,9 +1,10 @@
-import { storiesOf } from '@storybook/react'
+// import { storiesOf } from '@storybook/react'
 
 import { B } from '../../../storybook/ui'
 
 import Example from './variants'
 
+export default {}
 const variationsReq = require.context('../presets', true, /.js$/)
 const animationTypesPaths = variationsReq.keys()
 
@@ -20,6 +21,6 @@ const Variations = () => {
   })
 }
 
-storiesOf('Lib/Animation/Web Animations API', module).add('variations', () => (
-  <Variations />
-))
+// storiesOf('Lib/Animation/Web Animations API', module).add('variations', () => (
+//   <Variations />
+// ))

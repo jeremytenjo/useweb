@@ -1,11 +1,13 @@
-import { storiesOf } from '@storybook/react'
+import React from 'react'
 
+// import { storiesOf } from '@storybook/react'
 import testImage from '../../../../storybook/testImages/test2.jpg'
 import testImageBase64 from '../../../../storybook/testImages/testImag-base64'
 import testImage2 from '../../../../storybook/testImages/test2.jpg'
 import B from '../../../../storybook/variationBlock/index'
 import Image from '../index'
 
+export default {}
 const Variations = () => (
   <>
     <B title='default'>
@@ -37,4 +39,4 @@ const Variations = () => (
   </>
 )
 
-storiesOf('Lib/Media/Image', module).add('variations', () => <Variations />)
+// storiesOf('Lib/Media/Image', module).add('variations', () => <Variations />)

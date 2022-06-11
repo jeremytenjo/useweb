@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect } from 'react'
+
 import startFirebaseEmulators from './handlers/startFirebaseEmulators/startFirebaseEmulators'
 
 export type LocalStorageOptionsTypes = {

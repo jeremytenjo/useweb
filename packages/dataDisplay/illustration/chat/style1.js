@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Illustration from '../index'
 
 const ChatIllustration = () => (

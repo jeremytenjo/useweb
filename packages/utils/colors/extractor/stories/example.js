@@ -1,4 +1,5 @@
-import Box from '@useweb/box/'
+import React, { useEffect, useState } from 'react'
+import Box from '@useweb/box'
 
 import FileUpload from '../../../../media/files/fileInput'
 import Image from '../../../../media/images/Image/'
@@ -50,4 +51,4 @@ const ColorExtractorExample = () => {
   )
 }
 
-export default memo(ColorExtractorExample)
+export default ColorExtractorExample

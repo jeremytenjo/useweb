@@ -3,11 +3,11 @@ import { initializeApp } from 'firebase/app'
 import { getFunctions } from 'firebase/functions'
 import { Meta } from '@storybook/react'
 import { FirebaseProvider } from '@useweb/use-firebase'
+
 import useFirebaseFunction from '../src'
 import ErrorMessage from '../../../../../dataDisplay/ErrorMessage'
 import Donut from '../../../../../feedback/progress/Donut'
 import TestFirebaseFunction from '../../TestFirebaseFunction'
-
 import firebaseConfig from '../../../../../../firebase/firebase.config'
 
 import Docs from './docs.mdx'

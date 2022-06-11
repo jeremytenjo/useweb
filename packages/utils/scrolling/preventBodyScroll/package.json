@@ -16,7 +16,7 @@
     "react": "^18.0.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "^1.3.0"
+    "@useweb/compiler": "^1.5.0"
   },
   "dependencies": {
     "@useweb/dom": "^1.0.0"

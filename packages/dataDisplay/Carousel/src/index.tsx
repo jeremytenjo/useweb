@@ -4,7 +4,6 @@ import Box from '@useweb/box'
 import useKeyPress from '@useweb/use-key-press'
 
 import IconArrow from './IconArrow'
-
 import * as styles from './styles'
 
 type Props = {

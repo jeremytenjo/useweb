@@ -1,3 +1,5 @@
+import React, { Fragment, useEffect, useState } from 'react'
+
 import B from '../variationBlock'
 
 import { Wrapper, titleStyle } from './styles'

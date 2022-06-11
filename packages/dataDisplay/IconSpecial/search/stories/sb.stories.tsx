@@ -1,10 +1,10 @@
-import { storiesOf } from '@storybook/react'
+// import { storiesOf } from '@storybook/react'
 
-import B from '../../../../../storybook/variationBlock/index'
 import SearchIcon from '../index'
 
+export default {}
 const Variations = () => (
-  <B
+  <div
     style={{
       backgroundColor: 'black',
       display: 'flex',
@@ -17,7 +17,7 @@ const Variations = () => (
       closeIcon='close/feather'
       onSubmit={(value) => console.log(value)}
     />
-  </B>
+  </div>
 )
 
-storiesOf('Lib/Data Display/Icon/Special', module).add('Search', () => <Variations />)
+// storiesOf('Lib/Data Display/Icon/Special', module).add('Search', () => <Variations />)

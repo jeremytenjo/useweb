@@ -49,8 +49,7 @@ export default function useGet(
   }: GetOptions = {},
 ): GetReturn {
   // SWR
-  const swrKey = (prefix: string = '') =>
-    getOnMount && id ? formatKey(prefix + id) : null
+  const swrKey = (prefix = '') => (getOnMount && id ? formatKey(prefix + id) : null)
 
   const localStorageKey = () => formatKey('localStorage' + localStorageDefaultId)
 

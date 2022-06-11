@@ -8,9 +8,7 @@ export function getDisplayNameForInstance(instance) {
   switch (tag) {
     case 0: // FunctionComponent
     case 1: // ClassComponent
-      return (
-        elementType.displayName || elementType.name || 'Anonymous Component'
-      )
+      return elementType.displayName || elementType.name || 'Anonymous Component'
 
     case 5: // HostComponent:
       return elementType

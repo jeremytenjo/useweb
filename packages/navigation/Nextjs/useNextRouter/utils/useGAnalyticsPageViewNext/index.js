@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 import firebaseAnalytics from '../../../../../analytics/index'
 import useNextRouter from '../..'
 

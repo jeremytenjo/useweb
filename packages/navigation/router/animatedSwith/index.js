@@ -1,3 +1,5 @@
+import React, { memo } from 'react'
+
 import { defaultProps, propTypes } from './props'
 
 const AnimatedComponent = () => {

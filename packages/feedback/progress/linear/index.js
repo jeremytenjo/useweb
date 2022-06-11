@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { defaultProps, propTypes } from './linear.props'
 import { Wrapper } from './linear.styles'
 
@@ -10,4 +12,4 @@ const Linear = ({ color }) => (
 Linear.defaultProps = defaultProps
 Linear.propTypes = propTypes
 
-export default memo(Linear)
+export default Linear

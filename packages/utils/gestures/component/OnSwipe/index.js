@@ -1,3 +1,5 @@
+import React, { useRef } from 'react'
+
 import onSwipeFunction from '../../onSwipe'
 
 export default function OnSwipe({

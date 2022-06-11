@@ -1,7 +1,8 @@
 import React from 'react'
 
-import Docs from './docs'
 import useData from '../src'
+
+import Docs from './docs'
 
 export default {
   title: 'packages/Data/useData',

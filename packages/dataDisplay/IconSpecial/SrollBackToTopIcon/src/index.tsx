@@ -3,7 +3,6 @@ import useEventListener from '@useweb/use-event-listener'
 import Animate from '@useweb/animate'
 
 import IconArrowFeather from './IconArrowFeather'
-
 import { iconStyles } from './styles'
 
 export default function ScrollBackToTopIcon({

@@ -1,7 +1,8 @@
+import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Button from '@useweb/button'
 
 import useFirebaseFunction from '../../../../functions/useFirebaseFunction/src/index'
-import Button from '../../../../../../input/Button/styles/1'
 import useToast from '../../../../../../feedback/useToast'
 import ErrorMessage from '../../../../../../dataDisplay/ErrorMessage'
 

@@ -1,4 +1,4 @@
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
+import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 
 import { defaultProps, propTypes } from './props'
 

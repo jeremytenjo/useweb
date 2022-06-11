@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import Box from '@useweb/box'
 
 import Text from '../../dataDisplay/Text'
@@ -90,4 +91,4 @@ const Countdown = ({
 Countdown.defaultProps = defaultProps
 Countdown.propTypes = propTypes
 
-export default memo(Countdown)
+export default Countdown

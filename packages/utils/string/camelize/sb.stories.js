@@ -4,6 +4,6 @@ export default {
   title: 'Lib/utils/string/camelize',
 }
 
-export const example = () => {
+export const Example = () => {
   return camelize('hello-you')
 }

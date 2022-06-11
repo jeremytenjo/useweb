@@ -16,7 +16,7 @@
     "react": "^18.0.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "latest"
+    "@useweb/compiler": "^1.5.0"
   },
   "dependencies": {
     "@useweb/use-async": "^3.2.0",

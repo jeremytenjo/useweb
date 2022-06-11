@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Wrapper, Title, Content } from './styles'
 
 const VariationBlock = ({
@@ -10,6 +12,7 @@ const VariationBlock = ({
   background,
   titleColor = 'var(--color-primaryLighter)',
   color = 'white',
+  noBackground,
 }) => {
   return (
     <Wrapper style={style}>

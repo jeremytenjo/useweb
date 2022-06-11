@@ -1,19 +1,9 @@
-import React, { memo, forwardRef } from 'react'
+import React from 'react'
+import MuiBox, { type BoxProps as MuiBoxProps } from '@mui/material/Box'
 
-import { BoxWrapper } from './styles'
 
-const Box = ({ children, name, styles = {}, ...rest }, ref) => {
-  return (
-    <BoxWrapper
-      ref={ref}
-      styles={{ display: 'grid', ...styles }}
-      data-box-name={name}
-      data-cy={name}
-      {...rest}
-    >
-      {children}
-    </BoxWrapper>
-  )
+export type BoxProps = MuiBoxProps & {}
+
+export default function Box(props: BoxProps) {
+  return <MuiBox {...props} />
 }
-
-export default memo(forwardRef(Box))

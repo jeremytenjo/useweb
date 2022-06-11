@@ -1,3 +1,5 @@
+import React, { useRef, useState } from 'react'
+
 import Animation from '../src'
 
 const Example = ({ type }) => {

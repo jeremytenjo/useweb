@@ -1,9 +1,11 @@
-import { storiesOf } from '@storybook/react'
+import React from 'react'
+// import { storiesOf } from '@storybook/react'
 
 import Store from '../sm.store'
 import One from '../one'
 import Two from '../two'
 
+export default {}
 const App = () => {
   return (
     <Store>
@@ -15,4 +17,4 @@ const App = () => {
   )
 }
 
-storiesOf('Lib/utils/State-Management/React', module).add('Context API', () => <App />)
+// storiesOf('Lib/utils/State-Management/React', module).add('Context API', () => <App />)

@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { defaultProps } from './props'
 import useData from './useData'
 import Ui from './Ui'

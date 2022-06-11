@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 import useFirebaseFunction from '../useFirebaseFunction/src'
 import Button1 from '../../../../input/Button/styles/1'

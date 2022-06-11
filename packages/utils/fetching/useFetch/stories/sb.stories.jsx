@@ -1,8 +1,10 @@
-import { storiesOf } from '@storybook/react'
+import React from 'react'
+// import { storiesOf } from '@storybook/react'
 
 import B from '../../../../storybook/variationBlock/index'
 import useFetch from '../src/index'
 
+export default {}
 const GET = () => {
   const url = 'http://dummy.restapiexample.com/api/v1/employees'
   const { request, response, fetching, error } = useFetch({
@@ -89,4 +91,4 @@ const Variations = () => (
   </>
 )
 
-storiesOf('Lib/utils/Fetching/useFetch', module).add('variations', () => <Variations />)
+// storiesOf('Lib/utils/Fetching/useFetch', module).add('variations', () => <Variations />)

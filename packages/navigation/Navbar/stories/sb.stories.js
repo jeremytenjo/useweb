@@ -1,4 +1,5 @@
-import { storiesOf } from '@storybook/react'
+import React from 'react'
+// import { storiesOf } from '@storybook/react'
 
 import BrowserRouter from '../../router/BrowserRouter'
 import useNavigate from '../../router/useNavigate'
@@ -9,6 +10,7 @@ import Bar from '../index'
 import data from './navBar.links'
 import data2 from './navBar.links2'
 
+export default {}
 const testFileInput = (file) => console.log(file)
 
 const Examples = () => {
@@ -58,4 +60,4 @@ const Variations = () => {
   )
 }
 
-storiesOf('Lib/Navigation/NavBar', module).add('Example', () => <Variations />)
+// storiesOf('Lib/Navigation/NavBar', module).add('Example', () => <Variations />)

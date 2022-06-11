@@ -1,3 +1,5 @@
+import React from 'react'
+
 import useUploads from './Data/uploads.state'
 
 export default () => {

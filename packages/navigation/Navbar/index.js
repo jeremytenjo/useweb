@@ -1,3 +1,5 @@
+import React from 'react'
+
 import List from '../../dataDisplay/List'
 import Avatar from '../../dataDisplay/Avatar'
 import SearchIcon from '../../dataDisplay/Icon/special/search/index'
@@ -112,4 +114,4 @@ const NavBar = ({ data, onInput, onSearchSubmit, router, styles }) => {
 NavBar.defaultProps = defaultProps
 NavBar.propTypes = propTypes
 
-export default memo(NavBar)
+export default NavBar

@@ -1,3 +1,5 @@
+import React, { createContext, useContext } from 'react'
+
 import { Window } from '../../browser'
 
 export const IsOnlineContext = createContext(null)

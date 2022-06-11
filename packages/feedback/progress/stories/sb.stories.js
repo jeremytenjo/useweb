@@ -1,10 +1,12 @@
-import { storiesOf } from '@storybook/react'
+import React from 'react'
+// import { storiesOf } from '@storybook/react'
 
 import B from '../../../storybook/variationBlock/index'
 import Linear from '../linear'
 import Donut from '../Donut'
 import Dots from '../dots'
 
+export default {}
 const Variations = () => {
   return (
     <>
@@ -21,4 +23,4 @@ const Variations = () => {
   )
 }
 
-storiesOf('Lib/Feedback/Progress', module).add('Spinners', () => <Variations />)
+// storiesOf('Lib/Feedback/Progress', module).add('Spinners', () => <Variations />)

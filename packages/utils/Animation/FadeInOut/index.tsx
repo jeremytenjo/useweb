@@ -1,3 +1,4 @@
+import React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 export default function FadeInOut({ children, show = null, style = {} }) {

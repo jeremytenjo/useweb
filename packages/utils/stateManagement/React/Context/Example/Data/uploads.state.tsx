@@ -1,20 +1,21 @@
+import React, { createContext, useState } from 'react'
+
 import _uploadsRead from '../../Actions/Read/context.read.index'
 import _uploadsUpdate from '../../Actions/Update/context.update.index'
 import _uploadsCreate from '../../Actions/Create/context.create.index'
 import _uploadsDelete from '../../Actions/Delete/context.delete.index'
 
-export const UploadsContext = createContext(null)
-
+export const UploadsContext = createContext(false)
 export const UploadsProvider = ({ children }) => {
   // State
   const [uploads, setUploads] = useState([{ id: 1, name: 'person 1' }])
-  const [creating, setCreating] = useState(null)
-  const [reading, setReading] = useState(null)
-  const [updating, setUpdating] = useState(null)
-  const [deleting, setDeleting] = useState(null)
-  const [initialFetchUploads, setinitialFetchUploads] = useState(null)
+  const [creating, setCreating] = useState(false)
+  const [reading, setReading] = useState(false)
+  const [updating, setUpdating] = useState(false)
+  const [deleting, setDeleting] = useState(false)
+  const [initialFetchUploads, setinitialFetchUploads] = useState(false)
   const [lastVisibleDoc] = useState('')
-  const [hasFetchedAll] = useState(null)
+  const [hasFetchedAll] = useState(false)
 
   // Functions
   const initialFetch = () => {
@@ -36,11 +37,11 @@ export const UploadsProvider = ({ children }) => {
       }),
     )
     setCreating(false)
-    setCreating(null)
+    setCreating(false)
   }
 
   // Read
-  const uploadsRead = async ({ id }) => {
+  const uploadsRead = async ({ id } = { id: false }) => {
     setReading(true)
     const initialUploads = !initialFetchUploads ? [] : uploads
     setUploads(

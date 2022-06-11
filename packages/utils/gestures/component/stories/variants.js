@@ -1,3 +1,5 @@
+import React, { useState } from 'react'
+
 import OnSwipe from '../OnSwipe'
 
 const Variants = () => {
@@ -18,4 +20,4 @@ const Variants = () => {
   )
 }
 
-export default memo(Variants)
+export default Variants

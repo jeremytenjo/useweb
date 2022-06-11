@@ -1,3 +1,5 @@
+import React from 'react'
+
 export default ({ func, testValue }) => {
   const subTitileStyles = {
     color: '#dcdcdc',

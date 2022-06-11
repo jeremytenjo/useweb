@@ -1,8 +1,11 @@
-import { storiesOf } from '@storybook/react'
+// import { storiesOf } from '@storybook/react'
+
+import React, { useEffect, useState } from 'react'
 
 import B from '../../../storybook/variationBlock/index'
 import List from '../../List/index'
 
+export default {}
 const illustrationsReq = require.context('./', true, /.js$/)
 const illustrationsPaths = illustrationsReq.keys()
 
@@ -37,6 +40,6 @@ const Illustrations = () => {
   return <List>{vars}</List>
 }
 
-storiesOf('Lib/Data Display/Illustrations', module).add('collection', () => (
-  <Illustrations />
-))
+// storiesOf('Lib/Data Display/Illustrations', module).add('collection', () => (
+//   <Illustrations />
+// ))

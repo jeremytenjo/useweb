@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react'
 import getDaysInMonth from 'date-fns/getDaysInMonth'
 import isSameDay from 'date-fns/isSameDay'
 
@@ -116,4 +117,4 @@ const Calendar = ({ onDateSelect, yearRange, events }) => {
 Calendar.defaultProps = defaultProps
 Calendar.propTypes = propTypes
 
-export default memo(Calendar)
+export default Calendar

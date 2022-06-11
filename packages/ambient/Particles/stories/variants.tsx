@@ -1,4 +1,5 @@
 import { memo } from 'react'
+
 import Particles from '../build'
 
 const ParticlesStory = () => {

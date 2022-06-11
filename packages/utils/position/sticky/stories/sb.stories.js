@@ -1,9 +1,11 @@
-import { storiesOf } from '@storybook/react'
+import React from 'react'
+// import { storiesOf } from '@storybook/react'
 
 import B from '../../../../storybook/variationBlock/index'
 import Tabs from '../../../../navigation/tabs/styles/1'
 import sticky from '../index'
 
+export default {}
 const DataTabs = [
   { label: 'Photos', link: '/profile/photos' },
   { label: 'Favourites', link: '/profile/favourites' },
@@ -33,4 +35,4 @@ const Variations = () => (
   </B>
 )
 
-storiesOf('Lib/utils/Position/Sticky', module).add('variations', () => <Variations />)
+// storiesOf('Lib/utils/Position/Sticky', module).add('variations', () => <Variations />)

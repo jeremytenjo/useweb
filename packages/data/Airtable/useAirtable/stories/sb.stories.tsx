@@ -1,6 +1,7 @@
 import useAirtable from '../index'
 import TestDataHookDashboard from '../../../../dataDisplay/TestDataHookDashboard/index'
 
+export default {}
 const projectId = 'appNRsEx9kiYMQxrI'
 const tableId = 'Links'
 

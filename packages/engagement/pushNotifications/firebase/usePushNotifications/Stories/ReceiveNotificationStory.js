@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react'
+
 import usePushNotifications, { PushNotificationsProvider } from '..'
 import CopyToClipboard from '../../../../../input/CopyToClipboard'
 import Donut from '../../../../../feedback/progress/Donut'

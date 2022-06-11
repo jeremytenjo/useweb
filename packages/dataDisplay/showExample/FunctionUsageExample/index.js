@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Code from '../../Code'
 import Button from '../../../input/Button/styles/1'
 

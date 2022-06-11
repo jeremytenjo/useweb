@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 export default ({ mediaQuery = 'max-width: 768px' }) => {
   const [matches, setmatches] = useState(null)
 

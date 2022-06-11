@@ -2,12 +2,11 @@ import React from 'react'
 import { initializeApp } from 'firebase/app'
 import { getMessaging } from 'firebase/messaging'
 import { Meta } from '@storybook/react'
-import { FirebaseProvider } from '../../../useFirebase/src/index'
 
+import { FirebaseProvider } from '../../../useFirebase/src/index'
 import firebaseConfig from '../../../../../../firebase/firebase.config'
 
 import ReceiveNotificationStory from './examples/ReceiveNotificationStory'
-
 import Docs from './docs.mdx'
 
 const firebaseApp = initializeApp(firebaseConfig)
