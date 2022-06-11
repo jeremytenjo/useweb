@@ -4,7 +4,7 @@ import {
   ThemeOptions as MuiThemeOptions,
 } from '@mui/material/styles'
 
-type ComponentProps = {
+export type ComponentProps = {
   defaultProps?: any
   styleOverrides?: any
   variants?: any[]

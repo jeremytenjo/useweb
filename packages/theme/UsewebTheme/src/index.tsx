@@ -5,7 +5,9 @@ import {
   ThemeOptions as MuiThemeOptions,
 } from '@mui/material/styles'
 
-import createThemeFunction from './createTheme'
+import createThemeFunction, {type ComponentProps} from './createTheme'
+
+export type ComponentDefaultsProps = ComponentProps
 
 type ThemeProviderProps = {
   children: any
