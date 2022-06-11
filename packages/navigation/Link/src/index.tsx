@@ -1,36 +1,49 @@
-import React, { memo } from 'react'
-import Box from '@useweb/box'
+import React from 'react'
+import Box from '@mui/material/Box'
 
-import * as localStyles from './styles'
-
-type Props = {
+export type LinkProps = {
+  href: any
   children: any
-  href: string
-  title?: string
-  target?: string
-  rel?: string
-  styles?: object
+  newTab?: boolean
+  sx?: any
+  onClick?: any
 }
 
-const Link = ({
-  children,
-  styles = {},
-  title,
-  target = '_blank',
-  rel = 'noopener noreferrer',
-  ...rest
-}: Props) => {
-  return (
-    <Box
-      styles={{ ...localStyles.wrapper, ...styles }}
-      target={target}
-      rel={rel}
-      {...rest}
-      as='a'
-    >
-      {children}
-    </Box>
-  )
+/**
+ * [Docs](https://react-location.tanstack.com/docs/api#link)
+ * @example
+ * <link href='/' />
+ */
+export default function Link(props: LinkProps) {
+  return <LinkContent content={props.children} sx={props.sx} {...props} />
 }
 
-export default memo(Link)
+const LinkContent = React.forwardRef(
+  ({ onClick, href, content, sx, newTab }: any, ref) => {
+    const newTabProps = newTab
+      ? {
+          rel: 'noopener',
+          target: '_blank',
+        }
+      : {}
+
+    return (
+      <Box
+        component='a'
+        href={href}
+        onClick={onClick}
+        ref={ref}
+        sx={{
+          textDecoration: 'none',
+          '&:active': {
+            color: 'currentColor',
+          },
+          ...sx,
+        }}
+        {...newTabProps}
+      >
+        {content}
+      </Box>
+    )
+  },
+)

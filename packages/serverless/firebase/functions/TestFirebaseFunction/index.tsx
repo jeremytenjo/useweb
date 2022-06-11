@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import useFirebaseFunction from '../useFirebaseFunction/src'
-import Button1 from '../../../../input/Button/styles/1'
+import Button1 from '../../../../input/Button/src'
 import Text from '../../../../dataDisplay/Text/src'
 import Box from '../../../../dataDisplay/Box/src'
 import Code from '../../../../dataDisplay/Code'

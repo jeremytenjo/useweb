@@ -1,7 +1,7 @@
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
-import CopyButton from '../../input/Button/special/CopyButton'
+import CopyButton from '../../input/CopyButton'
 import Box from '../Box/src'
 
 import * as styles from './styles'

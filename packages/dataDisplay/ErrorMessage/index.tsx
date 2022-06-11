@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 import Box from '../Box/src'
 import Link from '../../navigation/Link/src'
@@ -34,7 +34,7 @@ export default function ErrorMessage({ error }) {
 
           <Link
             href={`https://www.google.com/search?q=${error.toString()}`}
-            styles={{ position: 'absolute', right: '--0', top: '--0' }}
+            sx={{ position: 'absolute', right: '0', top: '0' }}
           >
             <GoogleIcon />
           </Link>

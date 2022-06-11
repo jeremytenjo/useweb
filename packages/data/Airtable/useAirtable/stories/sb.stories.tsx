@@ -1,7 +1,8 @@
+import React from 'react'
+
 import useAirtable from '../index'
 import TestDataHookDashboard from '../../../../dataDisplay/TestDataHookDashboard/index'
 
-export default {}
 const projectId = 'appNRsEx9kiYMQxrI'
 const tableId = 'Links'
 
@@ -66,3 +67,8 @@ export function CreateARecord() {
 //     data: 'rec6puGsfY7VaeNNd',
 //   })
 // }
+
+export default {
+  name: 'packages/airtable',
+  component: <div>hello</div>,
+}

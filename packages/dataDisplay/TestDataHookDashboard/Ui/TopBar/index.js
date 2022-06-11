@@ -1,5 +1,7 @@
+import React from 'react'
+
 import StatusBadge from '../../../StatusBadge'
-import RefreshButton from '../../../../input/Button/special/RefreshButton'
+import RefreshButton from '../../../../input/RefreshButton'
 import Box from '../../../Box'
 
 import * as styles from './styles'

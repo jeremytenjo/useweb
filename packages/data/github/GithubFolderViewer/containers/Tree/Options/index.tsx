@@ -1,6 +1,5 @@
-import Box from '@useweb/box'
-
-import Button from '../../../../../../input/Button/styles/1'
+import Box from '../../../../../../dataDisplay/Box/src'
+import Button from '../../../../../../input/Button/src'
 // import IconGithub from '../../../../../../dataDisplay/Icon/library/IconGithub1'
 import useGithubFolderViewerProps from '../../../DataProvider/useGithubFolderViewerProps'
 

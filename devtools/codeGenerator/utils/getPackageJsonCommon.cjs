@@ -1,4 +1,5 @@
 module.exports = function getPackageJsonCommon({ peerDependencies = [] }) {
+  const devDependenciesString = getDevDependencies({ peerDependencies })
   const peerDependenciesString = peerDependencies.join(',\n')
 
   return `
@@ -18,6 +19,16 @@ module.exports = function getPackageJsonCommon({ peerDependencies = [] }) {
     ${peerDependenciesString}
   },
   "devDependencies": {
-    "@useweb/compiler": "latest"
+    "@useweb/compiler": "latest",
+    ${devDependenciesString}
   }`
+}
+
+const getDevDependencies = ({ peerDependencies }) => {
+  const devDependencies = peerDependencies.filter(
+    (pd) => !pd.includes('"react"') || !pd.includes('"react-dom"'),
+  )
+  const devDependenciesString = devDependencies.join(',\n')
+
+  return devDependenciesString
 }

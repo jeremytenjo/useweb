@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-extra-semi
-(async () => {
+;(async () => {
   const path = require('path')
   const esbuild = require('esbuild')
 

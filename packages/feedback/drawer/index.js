@@ -1,6 +1,25 @@
+import React, { useEffect } from 'react'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
+import { func, bool, oneOf, object } from 'prop-types'
 
-import { defaultProps, propTypes } from './props'
+const defaultProps = {
+  disableSwipeToOpen: true,
+  position: 'left',
+  open: null,
+  PaperProps: {
+    bottom: { style: { borderRadius: '20px 20px 0 0' } },
+    top: { style: { borderRadius: '0 0 20px 20px' } },
+  },
+  onClose: () => null,
+}
+
+const propTypes = {
+  disableSwipeToOpen: bool,
+  position: oneOf(['left', 'top', 'right', 'bottom']),
+  open: bool,
+  onClose: func,
+  PaperProps: object,
+}
 
 const Drawer = ({
   open,
@@ -42,4 +61,4 @@ const Drawer = ({
 Drawer.defaultProps = defaultProps
 Drawer.propTypes = propTypes
 
-export default memo(Drawer)
+export default Drawer

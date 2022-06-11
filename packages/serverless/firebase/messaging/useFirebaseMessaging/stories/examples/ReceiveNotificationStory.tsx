@@ -7,7 +7,7 @@ import Text from '../../../../../../dataDisplay/Text/src/index'
 import showNotification from '../../../../../../feedback/notification/showNotification'
 import ErrorMessage from '../../../../../../dataDisplay/ErrorMessage'
 import ShareButton from '../../../../../../dataDisplay/IconSpecial/ShareButton'
-import Button from '../../../../../../input/Button/styles/1'
+import Button from '../../../../../../input/Button/src'
 import useFirebaseMessaging from '../../src'
 
 export default function ReceiveNotificationStory() {

@@ -2,7 +2,7 @@ import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 import useFirebaseFunction from '../../../../../utils/cloud/functions/firebase/useFirebaseFunction'
-import Button from '../../../../../input/Button/styles/1'
+import Button from '../../../../../input/Button/src'
 import useToast from '../../../../../feedback/useToast'
 import useOnTrue from '../../../../../utils/hooks/useOnTrue'
 import ErrorMessage from '../../../../../dataDisplay/ErrorMessage'

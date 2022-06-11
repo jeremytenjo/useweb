@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Code from '../../Code'
-import Button from '../../../input/Button/styles/1'
+import Button from '../../../input/Button/src'
 
 /**
  * @example 
