@@ -5,7 +5,7 @@ import Docs from './docs'
 import { ClickToComponent } from './component'
 
 export default {
-  title: 'packages/namethisfolder/ClickToComponent',
+  title: 'Navigation/Components/ClickToComponent',
   component: ClickToComponent,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {

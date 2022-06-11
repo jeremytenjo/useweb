@@ -4,7 +4,6 @@
  */
 
 module.exports = [
-  '../../packages/data/Airtable/useAirtable/stories/sb.stories.tsx',
   '../../packages/data/CrawlSite/crawl/stories/sb.stories.tsx',
   '../../packages/data/useData/stories/stories.tsx',
   '../../packages/dataDisplay/Carousel/stories/stories.tsx',

@@ -2,7 +2,8 @@ const docsTemplate = () => {
   return {
     path: ({ name }) => `stories/${name}.docs.tsx`,
     template: ({ name, helpers }) => {
-      return `import {
+      return `import React from 'react'
+      import {
         Title,
         Description,
         Primary,

@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import Airtable from 'airtable'
 
 import useAsync from '../../useAsync'
@@ -14,7 +15,13 @@ export default function useAirtable(
   { method = 'select', data: initialData, apiKey, onSubmitSuccess = () => null } = {},
 ) {
   const fetchNextPageRef = useRef(null)
+
   const airtableApiKey = process.env.AIRTABLE_API_KEY || apiKey
+
+  if (!airtableApiKey) {
+    return 'An API key is required to connect to Airtable'
+  }
+
   const base = new Airtable({ apiKey: airtableApiKey }).base(baseId)(table)
 
   const fetcher = (data = initialData) =>
