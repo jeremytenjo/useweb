@@ -3,7 +3,7 @@ import IconCameraFeatherStroke from '../library/IconCameraFeather/index'
 import { B } from '../../../storybook/ui'
 
 export default {
-  title: 'Lib/Data Display/Icon',
+  title: 'Data Display/Icon',
   component: IconBellFeather,
 }
 

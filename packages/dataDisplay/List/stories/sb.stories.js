@@ -1,3 +1,6 @@
+/* eslint-disable storybook/prefer-pascal-case */
+import React from 'react'
+
 import Image from '../../../media/images/Image'
 import B from '../../../storybook/variationBlock/index'
 import List from '../index'
@@ -101,7 +104,7 @@ const Variations = () => (
 )
 
 export default {
-  title: 'Lib/Data Display/List',
+  title: 'Data Display/List',
 }
 
 export const variations = () => <Variations />
