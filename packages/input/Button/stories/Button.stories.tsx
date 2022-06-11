@@ -2,11 +2,11 @@
 import React from "react";
 
 import { Button, type ButtonProps } from "./component";
-
 import Docs from "./Button.docs";
 
 const defaultArgs: ButtonProps = {
   name: "Button",
+  children: <>Button</>
 };
 
 export default {
