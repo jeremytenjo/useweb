@@ -1,7 +1,7 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from "react";
 
-import { UsewebTheme, type UsewebThemeProps } from "./component";
+import { type UsewebThemeProps } from "./component";
 import Docs from "./UsewebTheme.docs";
 
 const defaultArgs: UsewebThemeProps = {
@@ -9,7 +9,7 @@ const defaultArgs: UsewebThemeProps = {
 };
 
 export default {
-  title: "UsewebTheme",
+  title: "Theme/UsewebTheme",
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
@@ -19,7 +19,7 @@ export default {
   },
 };
 
-const Template = (args) => {
+const Template = () => {
   return (
     <>
     UsewebTheme
