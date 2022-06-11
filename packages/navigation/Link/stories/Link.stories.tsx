@@ -2,15 +2,16 @@
 import React from "react";
 
 import { Link, type LinkProps } from "./component";
-
 import Docs from "./Link.docs";
 
 const defaultArgs: LinkProps = {
-  name: "Link",
+  href: "#",
+  children: 'link',
+  newTab: true
 };
 
 export default {
-  title: "lib/components/Link",
+  title: "Navigation/Components/Link",
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {

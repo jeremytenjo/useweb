@@ -5,7 +5,7 @@ import useData from '../src'
 import Docs from './docs'
 
 export default {
-  title: 'packages/Data/useData',
+  title: 'Data/Hooks/useData',
   args: {
     show: null,
   },

@@ -33,13 +33,13 @@ const getStoryTemplate = ({ name, type = 'component', helpers }) => {
   return `//https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from 'react'
 
-import { ${name}, type ${propsName} } from './component'
 ${
   isFunction
     ? `import AsyncTester from '../../lib/components/data/AsyncTester/AsyncTester'`
     : ''
 }
 
+import { ${name}, type ${propsName} } from './component'
 import Docs from './${name}.docs'
 
 const defaultArgs: ${propsName} = {
@@ -47,7 +47,7 @@ const defaultArgs: ${propsName} = {
 }
 
 export default {
-  title: 'lib/components/${name}',
+  title: '${name}',
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {

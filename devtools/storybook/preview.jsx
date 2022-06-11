@@ -1,3 +1,7 @@
+import React from 'react'
+
+import ClickToComponent from '../../packages/navigation/ClickToComponent/src/ClickToComponent'
+
 const isProd = process.env.NODE_ENV === 'production'
 
 export const parameters = {
@@ -12,3 +16,14 @@ export const parameters = {
     'storybook/docs/panel': { index: isProd ? -1 : 1 },
   },
 }
+
+export const decorators = [
+  (Story) => {
+    return (
+      <>
+        <ClickToComponent />
+        <Story />
+      </>
+    )
+  },
+]

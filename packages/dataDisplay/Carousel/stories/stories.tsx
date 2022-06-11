@@ -10,7 +10,7 @@ import stubs from './stubs'
 const { simple, simple2 } = stubs
 
 export default {
-  title: 'packages/Data Display/Carousel',
+  title: 'Data Display/Components/Carousel',
   component: Carousel,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {

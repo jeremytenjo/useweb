@@ -16,7 +16,7 @@ const firebaseApp = initializeApp(firebaseConfig)
 const functions = getFunctions()
 
 export default {
-  title: 'packages/Serverless/Firebase/Functions/useFirebaseFunction',
+  title: 'Serverless/Firebase/Functions/useFirebaseFunction',
   args: {},
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
