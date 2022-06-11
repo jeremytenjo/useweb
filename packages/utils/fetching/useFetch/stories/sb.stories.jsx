@@ -91,6 +91,6 @@ const Variations = () => (
 )
 
 export default {
-  name: 'Fetching/Hooks/useFetch',
+  name: 'Fetching/useFetch',
   component: Variations,
 }

@@ -4,7 +4,7 @@ import B from '../../../storybook/variationBlock/index'
 import Drawer from '..'
 
 export default {
-  title: 'Feedback/Components/Drawer',
+  title: 'Feedback/Drawer',
   component: Drawer,
 }
 

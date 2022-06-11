@@ -11,7 +11,7 @@ const defaultArgs: LinkProps = {
 };
 
 export default {
-  title: "Navigation/Components/Link",
+  title: "Navigation/Link",
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
