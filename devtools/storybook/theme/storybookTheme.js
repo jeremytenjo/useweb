@@ -1,7 +1,7 @@
 // https://storybook.js.org/docs/react/configure/theming
 import { create } from '@storybook/theming'
 
-import colors from './storybookColors'
+import colors from './tokens/colors'
 
 export default function storybookTheme() {
   const { primary } = colors

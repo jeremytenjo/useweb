@@ -2,6 +2,8 @@ import React from 'react'
 
 import ClickToComponent from '../../packages/navigation/ClickToComponent/src/ClickToComponent'
 
+import UsewebTheme from './theme/usewebTheme'
+
 const isProd = process.env.NODE_ENV === 'production'
 
 export const parameters = {
@@ -22,7 +24,10 @@ export const decorators = [
     return (
       <>
         <ClickToComponent />
-        <Story />
+
+        <UsewebTheme>
+          <Story />
+        </UsewebTheme>
       </>
     )
   },
