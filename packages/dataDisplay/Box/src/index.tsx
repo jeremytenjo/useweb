@@ -1,7 +1,12 @@
 import React from 'react'
 import MuiBox, { type BoxProps as MuiBoxProps } from '@mui/material/Box'
 
-export type BoxProps = MuiBoxProps 
+export type BoxProps = MuiBoxProps & {
+  href?: string 
+  required?: boolean
+  type?: HTMLInputElement['type']
+}
+
 
 /**
  * [API](https://mui.com/material-ui/api/button/)
