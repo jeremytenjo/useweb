@@ -6,7 +6,6 @@ import B from '../../../../../storybook/variationBlock/index'
 import List from '../../../../../dataDisplay/List'
 
 // Test Data
-export default {}
 const dataSet2 = ['block', 'block', 'block', 'block', 'block', 'block', 'block']
 const itemComponent = ({ item }) => <p>{item}</p>
 
@@ -29,6 +28,7 @@ const Variations = () => {
   )
 }
 
-// storiesOf('Lib/utils/Event Listeners/Scroll', module).add('Variations', () => (
-//   <Variations />
-// ))
+export default {
+  name: 'DOM/Utilities/EventListeners/Scroll',
+  component: Variations,
+}

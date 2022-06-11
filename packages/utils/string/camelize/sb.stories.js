@@ -1,7 +1,7 @@
 import camelize from './index'
 
 export default {
-  title: 'Lib/utils/string/camelize',
+  title: 'String/Utilities/camelize',
 }
 
 export const Example = () => {
