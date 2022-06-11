@@ -1,47 +1,23 @@
-import React from 'react'
-import styled from 'styled-components'
-import system from '@useweb/style-system'
+import React, { type ReactNode } from 'react'
+import Typography, { type TypographyProps } from '@mui/material/Typography'
 
-const defineTag = (tag, variant) => {
-  switch (variant) {
-    case 'body1':
-    case 'body2':
-      return 'p'
-    default:
-      return tag
-  }
-}
-
-const El = styled.span`
-  ${system}
-`
-type Props = {
-  tag?: string
-  variant?: string
-  styles?: object
-  onClick?: any
-  text?: string
-  className?: string
-}
+export type TextProps = {
+  text: string | ReactNode
+  tag?: any
+} & TypographyProps
 
 /**
- * @example
- * <Text text='hello' />
+ * [Docs](https://material-ui.com/api/typography/)
  */
 export default function Text({
-  tag,
-  variant,
-  styles = {},
-  onClick,
-  text = '',
-  className = '',
-}: Props) {
-  const classN = `typography-${variant} ${className}`
-  const Tag = defineTag(tag, variant)
-
+  text,
+  tag = 'p',
+  variant = 'body1',
+  ...props
+}: TextProps) {
   return (
-    <El as={Tag} styles={styles} className={classN} onClick={onClick}>
-      {text}
-    </El>
+    <Typography component={tag} variant={variant} {...props}>
+      {text as any}
+    </Typography>
   )
 }
