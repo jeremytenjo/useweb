@@ -1,6 +1,6 @@
 {
   "name": "@useweb/box",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -15,6 +15,7 @@
   "peerDependencies": {
     "@mui/material": "^5.0.0",
     "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "@useweb/compiler": "^1.5.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1"

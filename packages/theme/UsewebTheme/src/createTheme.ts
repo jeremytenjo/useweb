@@ -41,7 +41,8 @@ export type ComponentsProps = {
   CssBaseline?: ComponentProps
   Button?: ComponentProps
   Dialog?: ComponentProps
+  Box?: ComponentProps
 }
 
 // List of component that use @mui/material/* internally
-const muiComponents = ['CssBaseline', 'Button', 'Dialog']
+const muiComponents = ['CssBaseline', 'Button', 'Dialog', 'Box']
