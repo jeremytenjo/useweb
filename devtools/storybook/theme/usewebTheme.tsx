@@ -33,5 +33,5 @@ const theme = createTheme({
 })
 
 export default function UsewebTheme({ children }) {
-  return <ThemeProvider theme={theme}>asd{children}</ThemeProvider>
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }
