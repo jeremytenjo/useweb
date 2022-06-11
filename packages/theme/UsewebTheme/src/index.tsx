@@ -5,10 +5,11 @@ import {
   ThemeOptions as MuiThemeOptions,
 } from '@mui/material/styles'
 
-import createThemeFunction, {type ComponentProps, type CreateThemeProps as CreateThemePropsD} from './createTheme'
+import createThemeFunction, {type ComponentProps, type CreateThemeProps as CreateThemePropsD, type ComponentsProps as ComponentsPropsD} from './createTheme'
 
 export type ComponentDefaultsProps = ComponentProps
 export type CreateThemeProps = CreateThemePropsD
+export type ComponentsProps = ComponentsPropsD
 
 type ThemeProviderProps = {
   children: any
@@ -62,4 +63,4 @@ const useTheme = () => useContext<ThemeProviderReturn>(ThemeContext)
 export default useTheme
 
 // user creates theme and passes it to ThemeProvider
-export const createTheme = (props: CreateThemeProps) => createThemeFunction(props)
+export const createTheme = createThemeFunction

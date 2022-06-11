@@ -37,7 +37,7 @@ const getComponents = ({ themeComponents = {} as ComponentsProps }) => {
 }
 
 // Component list
-type ComponentsProps = {
+export type ComponentsProps = {
   CssBaseline?: ComponentProps
   Button?: ComponentProps
   Dialog?: ComponentProps
