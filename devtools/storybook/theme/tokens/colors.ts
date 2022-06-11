@@ -1,6 +1,6 @@
 const colors: any = {
   primary: {
-    main: '#5D59FF',
+    main: '#00B4CD',
   },
   gradient: {
     primary: 'linear-gradient(83.6deg, #5D59FF 8.71%, #9076FF 98.37%)',
