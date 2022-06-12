@@ -51,7 +51,7 @@ export type ComponentsProps = {
   Modal?: ComponentProps
 }
 
-// List of component that use @mui/material/* internally
+// List of component that export @mui/material/* internally
 const muiComponents = [
   'CssBaseline',
   'Button',
