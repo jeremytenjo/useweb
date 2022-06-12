@@ -1,18 +1,15 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from "react";
 
-import { List, type ListProps } from "./component";
-import Docs from "./List.docs";
+import { Form, type FormProps } from "./component";
+import Docs from "./Form.docs";
 
-const defaultArgs: ListProps = {
-  ListItemComponent: ()=><p />,
-  data: [
-    <p key='1'>hello</p>
-  ]
+const defaultArgs: FormProps = {
+  name: "Form",
 };
 
 export default {
-  title: "Data Display/List",
+  title: "Form",
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
@@ -25,7 +22,7 @@ export default {
 const Template = (args) => {
   return (
     <>
-      <List {...args} />
+      <Form {...args} />
     </>
   );
 };
@@ -36,7 +33,7 @@ export const Default = {
   },
 };
 
-// const variantArgs: ListProps = {
+// const variantArgs: FormProps = {
 //  name: 'World',
 // }
 
