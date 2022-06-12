@@ -51,6 +51,8 @@ export type ComponentsProps = {
   Alert?: ComponentProps
   LinearProgress?: ComponentProps
   Modal?: ComponentProps
+  MenuItem?: ComponentProps
+  Select?: ComponentProps
 }
 
 // List of component that export @mui/material/* internally
@@ -63,4 +65,6 @@ const muiComponents = [
   'Alert',
   'LinearProgress',
   'Modal',
+  'MenuItem',
+  'Select',
 ]

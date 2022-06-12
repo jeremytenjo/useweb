@@ -1,12 +1,14 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from 'react'
+import Form from '@useweb/form'
+import Button from '@mui/material/Button'
 
 import { Select, type SelectProps } from './component'
 import Docs from './Select.docs'
 
 const defaultArgs: SelectProps = {
   name: 'select',
-  label: 'season',
+  label: 'Season',
   options: [
     {
       label: 'Season 1',
@@ -31,9 +33,16 @@ export default {
 }
 
 const Template = (args) => {
+  const onSubmit = (values) => {
+    console.log(values)
+  }
+
   return (
     <>
-      <Select {...args} />
+      <Form onSubmit={onSubmit} sx={{ display: 'grid', gap: 2 }}>
+        <Select {...args} />
+        <Button type='submit'>Submit</Button>
+      </Form>
     </>
   )
 }
