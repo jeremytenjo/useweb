@@ -21,13 +21,7 @@ const template = {
       path: () => 'package.json',
       template: ({ name, helpers: { changeCase } }) => {
         const packageJsonCommon = getPackageJsonCommon({
-          peerDependencies: [
-            '"react": "^18.0.0"',
-            '"react-dom": "^18.0.0"',
-            '"@mui/material": "^5.0.0"',
-            '"@emotion/react": "^11.0.0"',
-            '"@emotion/styled": "^11.0.0"',
-          ],
+          addMuiPeerDeps: true,
         })
 
         return `{

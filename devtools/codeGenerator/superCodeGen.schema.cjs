@@ -59,5 +59,6 @@ exports.old = [
 // https://marketplace.visualstudio.com/items?itemName=tenjojeremy.super-code-generator
 
 const componentPackage = require('./templates/componentPackage.cjs')
+const muiComponentPackage = require('./templates/muiComponent.cjs')
 
-module.exports = [componentPackage.template]
+module.exports = [componentPackage.template, muiComponentPackage.template]

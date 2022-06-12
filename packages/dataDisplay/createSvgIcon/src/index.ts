@@ -1,3 +1,3 @@
-import createSvgIcon from '@mui/material/utils/createSvgIcon'
+// DONT USE, ads 100kbs to build
 
-export default createSvgIcon
+export { createSvgIcon as default } from '@mui/material'

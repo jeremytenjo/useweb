@@ -1,6 +1,15 @@
-module.exports = function getPackageJsonCommon({ peerDependencies = [] }) {
-  const devDependenciesString = getDevDependencies({ peerDependencies })
-  const peerDependenciesString = peerDependencies.join(',\n')
+module.exports = function getPackageJsonCommon({
+  peerDependencies = [],
+  addMuiPeerDeps,
+}) {
+  let peerDeps = peerDependencies
+
+  if (addMuiPeerDeps) {
+    peerDeps = [...peerDeps, ...muiPeerDeps]
+  }
+
+  const devDependenciesString = getDevDependencies({ peerDependencies: peerDeps })
+  const peerDependenciesString = peerDeps.join(',\n')
 
   return `
   "version": "1.0.0",
@@ -32,3 +41,11 @@ const getDevDependencies = ({ peerDependencies }) => {
 
   return devDependenciesString
 }
+
+const muiPeerDeps = [
+  '"react": "^18.0.0"',
+  '"react-dom": "^18.0.0"',
+  '"@mui/material": "^5.0.0"',
+  '"@emotion/react": "^11.0.0"',
+  '"@emotion/styled": "^11.0.0"',
+]
