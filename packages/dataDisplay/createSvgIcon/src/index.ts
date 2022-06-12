@@ -1,1 +1,1 @@
-export { createSvgIcon } from '@mui/material'
+export { createSvgIcon as default } from '@mui/material'
