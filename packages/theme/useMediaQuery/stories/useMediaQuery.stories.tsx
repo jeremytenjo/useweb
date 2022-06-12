@@ -4,7 +4,7 @@ import useEventListener from '@useweb/use-event-listener'
 import  {useMediaQuery, type UseMediaQueryProps } from './component'
 
 export default {
-  title: 'Lib/components/useMediaQuery',
+  title: 'Theme/useMediaQuery',
 }
 
 const Template = (args) => {
@@ -28,6 +28,7 @@ const Template = (args) => {
       lg,
       xl,
     }
+    
     return (
       <div key={b}>
         <span>

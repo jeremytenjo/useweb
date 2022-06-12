@@ -12,6 +12,8 @@ module.exports = [
   '../../packages/feedback/Alert/stories/Alert.stories.tsx',
   '../../packages/feedback/Dialog/stories/Dialog.stories.tsx',
   '../../packages/feedback/drawer/stories/sb.stories.tsx',
+  '../../packages/feedback/Modal/stories/Modal.stories.tsx',
+  '../../packages/feedback/Progress/LinearProgress/stories/LinearProgress.stories.tsx',
   '../../packages/feedback/Snackbar/stories/Snackbar.stories.tsx',
   '../../packages/input/Button/stories/Button.stories.tsx',
   '../../packages/input/IconButton/stories/IconButton.stories.tsx',
@@ -22,6 +24,7 @@ module.exports = [
   '../../packages/serverless/firebase/messaging/useFirebaseMessaging/stories/stories.tsx',
   '../../packages/serverless/firebase/useFirebase/stories/stories.tsx',
   '../../packages/socialMedia/EmbedSocial/utils/stories/sb.stories.tsx',
+  '../../packages/theme/useMediaQuery/stories/useMediaQuery.stories.tsx',
   '../../packages/theme/UsewebTheme/stories/UsewebTheme.stories.tsx',
   '../../packages/utils/browser/pullToRefresh/usePullToRefresh/stories/stories.tsx',
 ]

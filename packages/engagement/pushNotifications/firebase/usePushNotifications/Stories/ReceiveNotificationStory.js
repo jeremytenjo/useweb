@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import usePushNotifications, { PushNotificationsProvider } from '..'
 import CopyToClipboard from '../../../../../input/CopyToClipboard'
-import Donut from '../../../../../feedback/progress/Donut'
+import Donut from '../../../../../feedback/Progress/Donut'
 import Code from '../../../../../dataDisplay/Code'
 import Text from '../../../../../dataDisplay/Text'
 import showNotification from '../../../../../feedback/notification/showNotification'

@@ -1,5 +1,5 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
-import React from "react";
+import React, { useState } from "react";
 
 import { Modal, type ModalProps } from "./component";
 import Docs from "./Modal.docs";
@@ -9,7 +9,7 @@ const defaultArgs: ModalProps = {
 };
 
 export default {
-  title: "Modal",
+  title: "Feedback/Modal",
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
@@ -20,9 +20,15 @@ export default {
 };
 
 const Template = (args) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
-      <Modal {...args} />
+    <button onClick={()=>setOpen(s=>!s)}>Toggle</button>
+
+      <Modal  {...args} open={open} onClose={()=>setOpen(false)} >
+        Modal
+      </Modal>
     </>
   );
 };

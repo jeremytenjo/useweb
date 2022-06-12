@@ -1,5 +1,5 @@
 import FileTree from '../../../../../dataDisplay/FileTree'
-import Donut from '../../../../../feedback/progress/Donut'
+import Donut from '../../../../../feedback/Progress/Donut'
 import useGithubFolderViewerProps from '../../DataProvider/useGithubFolderViewerProps'
 import useGithubFolderViewerData from '../../DataProvider/useGithubFolderViewerData'
 

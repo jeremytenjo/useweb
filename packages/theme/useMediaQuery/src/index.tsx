@@ -1,18 +1,17 @@
-import React from "react";
-import MuiuseMediaQuery, {
-  type UseMediaQueryProps as MuiUseMediaQueryProps,
-} from "@mui/material/useMediaQuery";
+import { useTheme } from '@mui/material/styles'
+import useMediaQueryMui from '@mui/material/useMediaQuery'
 
-export type UseMediaQueryProps = MuiUseMediaQueryProps;
-
+export type UseMediaQueryProps = {
+  type?: 'up' | 'down' | 'only' | 'not' | 'between'
+  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+}
 /**
- * [API](https://mui.com/material-ui/api/useMediaQuery/)
- *
- * [Demo](https://mui.com/material-ui/react-useMediaQuery/)
- *
  * @example
- * <useMediaQuery open={open} onClose={closeuseMediaQuery}>Hello</useMediaQuery>
+ * const isDesktop = useMediaQuery({ size: 'lg' })
  */
-export default function useMediaQuery(props: UseMediaQueryProps) {
-  return <MuiuseMediaQuery {...props} />;
+export default function useMediaQuery({ type = 'up', size = 'sm' }: UseMediaQueryProps) {
+  const theme = useTheme()
+  const matches = useMediaQueryMui(theme.breakpoints[type](size, null as any))
+
+  return { matches, breakpoints: theme.breakpoints }
 }

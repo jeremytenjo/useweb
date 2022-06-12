@@ -8,7 +8,7 @@ import Code from '../../../../dataDisplay/Code'
 import FadeInOut from '../../../../utils/Animation/FadeInOut'
 import ErrorMessage from '../../../../dataDisplay/ErrorMessage'
 import JSONInput from '../../../../input/JSONInput'
-import Donut from '../../../../feedback/progress/Donut'
+import Donut from '../../../../feedback/Progress/Donut'
 
 export default function TestFirebaseFunction({
   functionName = '',

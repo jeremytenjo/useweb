@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import CopyToClipboard from '../../../../../../input/CopyToClipboard/index'
-import Donut from '../../../../../../feedback/progress/Donut/index'
+import Donut from '../../../../../../feedback/Progress/Donut/index'
 import Code from '../../../../../../dataDisplay/Code/index'
 import Text from '../../../../../../dataDisplay/Text/src/index'
 import showNotification from '../../../../../../feedback/notification/showNotification'

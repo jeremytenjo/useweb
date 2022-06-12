@@ -10,7 +10,7 @@ const defaultArgs: LinearProgressProps = {
 };
 
 export default {
-  title: "LinearProgress",
+  title: "Feedback/Progress/LinearProgress",
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {

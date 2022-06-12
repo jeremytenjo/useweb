@@ -1,5 +1,5 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
-import React from "react";
+import React, { useState } from "react";
 
 import { Dialog, type DialogProps } from "./component";
 import Docs from "./Dialog.docs";
@@ -20,9 +20,15 @@ export default {
 };
 
 const Template = (args) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
-      <Dialog {...args} />
+    <button onClick={()=>setOpen(s=>!s)}>Toggle</button>
+
+      <Dialog  {...args} open={open} onClose={()=>setOpen(false)} >
+        Dialog
+      </Dialog>
     </>
   );
 };
