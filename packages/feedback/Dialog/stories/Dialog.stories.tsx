@@ -5,11 +5,11 @@ import { Dialog, type DialogProps } from "./component";
 import Docs from "./Dialog.docs";
 
 const defaultArgs: DialogProps = {
-  name: "Dialog",
+  open: false
 };
 
 export default {
-  title: "Dialog",
+  title: "Feedback/Dialog",
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
