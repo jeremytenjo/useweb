@@ -1,6 +1,7 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from 'react'
 import TextField from '@useweb/textfield'
+import Select from '@useweb/select'
 
 import { Form } from './component'
 import Docs from './Form.docs'
@@ -16,7 +17,7 @@ export default {
   },
 }
 
-const Template = (args) => {
+const Template = () => {
   const onSubmit = (values) => {
     console.log(values)
   }
@@ -31,7 +32,7 @@ const Template = (args) => {
     <>
       <Form onSubmit={onSubmit}>
         <TextField name='test-textfield' />
-        {/* <Select label='Season' name='selected_season' options={options} /> */}
+        <Select label='Season' name='selected_season' options={options} />
       </Form>
     </>
   )
