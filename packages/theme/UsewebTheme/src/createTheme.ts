@@ -3,10 +3,13 @@ import {
   createTheme as createMuiTheme,
   ThemeOptions as MuiThemeOptions,
 } from '@mui/material/styles'
+import { type BoxProps } from '@mui/material/Box'
 
 export type ComponentProps = {
   defaultProps?: any
-  styleOverrides?: any
+  styleOverrides?: {
+    root?: BoxProps['sx']
+  }
   variants?: any[]
 }
 
