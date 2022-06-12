@@ -45,6 +45,7 @@ export type ComponentsProps = {
   IconButton?: ComponentProps
   Alert?: ComponentProps
   LinearProgress?: ComponentProps
+  Modal?: ComponentProps
 }
 
 // List of component that use @mui/material/* internally
@@ -56,4 +57,5 @@ const muiComponents = [
   'IconButton',
   'Alert',
   'LinearProgress',
+  'Modal',
 ]
