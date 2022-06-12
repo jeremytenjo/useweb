@@ -1,4 +1,5 @@
 const getPackagejson = require('../utils/getPackageJsonCommon.cjs')
+const getReadme = require('../utils/getReadme.cjs')
 
 const story = require('./story.cjs')
 
@@ -38,6 +39,7 @@ const files = [
     },
   },
   ...story.componentStoryFiles,
+  ...getReadme(),
 ]
 
 const template = {

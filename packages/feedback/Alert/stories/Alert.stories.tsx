@@ -5,7 +5,6 @@ import { Alert, type AlertProps } from "./component";
 import Docs from "./Alert.docs";
 
 const defaultArgs: AlertProps = {
-  name: "Alert",
   children: <>Alert</>
 };
 

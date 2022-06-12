@@ -1,6 +1,6 @@
 {
   "name": "@useweb/button",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",

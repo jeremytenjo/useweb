@@ -1,6 +1,7 @@
 const shell = require('child_process')
 
 const getPackageJsonCommon = require('../utils/getPackageJsonCommon.cjs')
+const getReadme = require('../utils/getReadme.cjs')
 
 const component = require('./component.cjs')
 const story = require('./story.cjs')
@@ -30,6 +31,7 @@ const template = {
     }`
       },
     },
+    ...getReadme(),
   ],
 }
 
