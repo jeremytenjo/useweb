@@ -39,7 +39,7 @@ const files = [
     },
   },
   ...story.componentStoryFiles,
-  ...getReadme(),
+  getReadme(),
 ]
 
 const template = {

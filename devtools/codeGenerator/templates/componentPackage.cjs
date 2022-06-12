@@ -31,7 +31,7 @@ const template = {
     }`
       },
     },
-    ...getReadme(),
+    getReadme(),
   ],
 }
 
