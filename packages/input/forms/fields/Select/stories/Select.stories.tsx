@@ -5,11 +5,22 @@ import { Select, type SelectProps } from './component'
 import Docs from './Select.docs'
 
 const defaultArgs: SelectProps = {
-  name: 'Select',
+  name: 'select',
+  label: 'season',
+  options: [
+    {
+      label: 'Season 1',
+      value: 1,
+    },
+    {
+      label: 'Season 2',
+      value: 2,
+    },
+  ],
 }
 
 export default {
-  title: 'Select',
+  title: 'Input/forms/fields/Select',
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {

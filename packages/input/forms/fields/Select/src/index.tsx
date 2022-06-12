@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import Button, { type ButtonProps } from '@mui/material/Button'
 
-type Props = {
+export type SelectProps = {
   name: string
   label: string
   register?: any
@@ -26,12 +26,12 @@ export default function Select({
   defaultValue = 1,
   register = () => null,
   sx = {},
-  color = '#e7e7e7',
+  color = '#715d5d',
   onChange,
   buttonProps = { name: 'Select button' },
   value: parentValue,
   endIcon,
-}: Props) {
+}: SelectProps) {
   const [value, setValue] = useState(parentValue || defaultValue)
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export default function Select({
         }}
         variant='outlined'
         size='medium'
-        endIcon={<EndIcon sx={{ stroke: color, transform: 'translateY(7px)' }} />}
+        endIcon={<EndIcon sx={{ stroke: color, transform: 'translateY(-3px)' }} />}
         {...buttonProps}
       >
         {label}
@@ -93,7 +93,7 @@ export default function Select({
 
 const defaultEndIcon = (props) => {
   return (
-    <Box {...props}>
+    <Box {...props} name='Form_Select_EndIcon'>
       <svg
         width='11'
         height='7'

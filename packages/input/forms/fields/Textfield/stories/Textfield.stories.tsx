@@ -10,7 +10,7 @@ const defaultArgs: TextfieldProps = {
 }
 
 export default {
-  title: 'Input/Forms/Textfield',
+  title: 'Input/Forms/fields/Textfield',
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
