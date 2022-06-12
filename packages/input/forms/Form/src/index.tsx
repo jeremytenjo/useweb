@@ -37,6 +37,8 @@ const FormElement = forwardRef(
   ({ children, onSubmit, sx, resetOnSubmission }: FormProps, ref) => {
     const { handleSubmit, register, reset } = useFormContext()
 
+    console.log(register)
+
     const handleSumbit = (props) => {
       resetOnSubmission && reset()
       onSubmit(props)

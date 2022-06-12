@@ -17,6 +17,7 @@ module.exports = [
   '../../packages/feedback/Progress/LinearProgress/stories/LinearProgress.stories.tsx',
   '../../packages/feedback/Snackbar/stories/Snackbar.stories.tsx',
   '../../packages/input/Button/stories/Button.stories.tsx',
+  '../../packages/input/forms/fields/Select/stories/Select.stories.tsx',
   '../../packages/input/forms/fields/Textfield/stories/Textfield.stories.tsx',
   '../../packages/input/forms/Form/stories/Form.stories.tsx',
   '../../packages/input/IconButton/stories/IconButton.stories.tsx',
