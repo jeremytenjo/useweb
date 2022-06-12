@@ -1,1 +1,3 @@
-export { createSvgIcon as default } from '@mui/material'
+import createSvgIcon from '@mui/material/utils/createSvgIcon'
+
+export default createSvgIcon
