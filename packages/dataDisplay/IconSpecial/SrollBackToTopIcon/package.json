@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@useweb/animate": "^1.0.3",
-    "@useweb/compiler": "^1.5.0",
+    "@useweb/compiler": "^1.6.0",
     "@useweb/icon": "0.0.1",
     "@useweb/use-event-listener": "^1.0.0"
   }

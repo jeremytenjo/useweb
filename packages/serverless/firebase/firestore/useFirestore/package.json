@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@useweb/array-db": "0.0.1",
-    "@useweb/compiler": "^1.5.0",
+    "@useweb/compiler": "^1.6.0",
     "@useweb/use-async": "^1.1.0",
     "@useweb/use-firebase": "^2.3.0",
     "@useweb/use-local-storage": "^2.0.0",

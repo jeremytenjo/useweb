@@ -24,7 +24,7 @@
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.0.0",
-    "@useweb/compiler": "^1.5.0",
+    "@useweb/compiler": "^1.6.0",
     "@useweb/decamelize": "^1.0.0",
     "@useweb/remove-duplicates-from-array": "^1.0.0",
     "react-json-editor-ajrm": "^2.5.13"

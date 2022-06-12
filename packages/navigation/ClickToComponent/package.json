@@ -18,7 +18,7 @@
   "devDependencies": {
     "@types/react": "^18.0.6",
     "@types/react-reconciler": "^0.26.6",
-    "@useweb/compiler": "^1.5.0"
+    "@useweb/compiler": "^1.6.0"
   },
   "dependencies": {
     "@floating-ui/react-dom-interactions": "^0.3.1",
