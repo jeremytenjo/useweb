@@ -26,6 +26,7 @@
     "@mui/material": "^5.0.0",
     "@useweb/compiler": "^1.6.0",
     "@useweb/select": "^1.0.1",
+    "@useweb/text": "^2.0.0",
     "@useweb/textfield": "^1.1.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
