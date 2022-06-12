@@ -5,7 +5,11 @@ import {
   ThemeOptions as MuiThemeOptions,
 } from '@mui/material/styles'
 
-import createThemeFunction, {type ComponentProps, type CreateThemeProps as CreateThemePropsD, type ComponentsProps as ComponentsPropsD} from './createTheme'
+import createThemeFunction, {
+  type ComponentProps,
+  type CreateThemeProps as CreateThemePropsD,
+  type ComponentsProps as ComponentsPropsD,
+} from './createTheme'
 
 export type ComponentDefaultsProps = ComponentProps
 export type CreateThemeProps = CreateThemePropsD

@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
 import MuiLinearProgress, {
   type LinearProgressProps as MuiLinearProgressProps,
-} from "@mui/material/LinearProgress";
+} from '@mui/material/LinearProgress'
 
-export type LinearProgressProps = MuiLinearProgressProps;
+export type LinearProgressProps = MuiLinearProgressProps
 
 /**
  * [API](https://mui.com/material-ui/api/linear-progress/)
@@ -14,5 +14,5 @@ export type LinearProgressProps = MuiLinearProgressProps;
  * <LinearProgress open={open} onClose={closeLinearProgress}>Hello</LinearProgress>
  */
 export default function LinearProgress(props: LinearProgressProps) {
-  return <MuiLinearProgress {...props} />;
+  return <MuiLinearProgress {...props} />
 }

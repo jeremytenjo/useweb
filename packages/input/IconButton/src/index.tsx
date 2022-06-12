@@ -1,5 +1,7 @@
 import React from 'react'
-import MuiIconButton, { type IconButtonProps as MuiIconButtonProps } from '@mui/material/IconButton'
+import MuiIconButton, {
+  type IconButtonProps as MuiIconButtonProps,
+} from '@mui/material/IconButton'
 
 export type IconButtonProps = MuiIconButtonProps & {
   name: string
@@ -7,10 +9,10 @@ export type IconButtonProps = MuiIconButtonProps & {
 
 /**
  * [API](https://mui.com/material-ui/api/button/)
- * 
+ *
  * [Demo](https://mui.com/material-ui/react-button/)
- * 
- * @example 
+ *
+ * @example
  * <IconButton>Hello</IconButton>
  */
 export default function IconButton(props: IconButtonProps) {

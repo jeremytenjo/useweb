@@ -1,15 +1,15 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from 'react'
 
-import { LinearProgress, type LinearProgressProps } from './component'
-import Docs from './LinearProgress.docs'
+import { Select, type SelectProps } from './component'
+import Docs from './Select.docs'
 
-const defaultArgs: LinearProgressProps = {
-  sx: { width: '100%', mb: 2 },
+const defaultArgs: SelectProps = {
+  name: 'Select',
 }
 
 export default {
-  title: 'Feedback/Progress/LinearProgress',
+  title: 'Select',
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
@@ -22,7 +22,7 @@ export default {
 const Template = (args) => {
   return (
     <>
-      <LinearProgress {...args} />
+      <Select {...args} />
     </>
   )
 }
@@ -33,7 +33,7 @@ export const Default = {
   },
 }
 
-// const variantArgs: LinearProgressProps = {
+// const variantArgs: SelectProps = {
 //  name: 'World',
 // }
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import useEventListener from '@useweb/use-event-listener'
 
-import  {useMediaQuery, type UseMediaQueryProps } from './component'
+import { useMediaQuery, type UseMediaQueryProps } from './component'
 
 export default {
   title: 'Theme/useMediaQuery',
@@ -28,7 +28,7 @@ const Template = (args) => {
       lg,
       xl,
     }
-    
+
     return (
       <div key={b}>
         <span>

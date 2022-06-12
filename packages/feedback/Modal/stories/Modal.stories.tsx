@@ -1,15 +1,15 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
-import { Modal, type ModalProps } from "./component";
-import Docs from "./Modal.docs";
+import { Modal, type ModalProps } from './component'
+import Docs from './Modal.docs'
 
 const defaultArgs: ModalProps = {
   open: true,
-};
+}
 
 export default {
-  title: "Feedback/Modal",
+  title: 'Feedback/Modal',
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
@@ -17,27 +17,27 @@ export default {
       page: Docs,
     },
   },
-};
+}
 
 const Template = (args) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   return (
     <>
-    <button onClick={()=>setOpen(s=>!s)}>Toggle</button>
+      <button onClick={() => setOpen((s) => !s)}>Toggle</button>
 
-      <Modal  {...args} open={open} onClose={()=>setOpen(false)} >
+      <Modal {...args} open={open} onClose={() => setOpen(false)}>
         Modal
       </Modal>
     </>
-  );
-};
+  )
+}
 
 export const Default = {
   render: (args) => {
-    return <Template {...args} />;
+    return <Template {...args} />
   },
-};
+}
 
 // const variantArgs: ModalProps = {
 //  name: 'World',

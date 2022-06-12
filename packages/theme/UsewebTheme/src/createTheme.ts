@@ -7,9 +7,11 @@ import { type BoxProps } from '@mui/material/Box'
 
 export type ComponentProps = {
   defaultProps?: any
-  styleOverrides?: {
-    root?: BoxProps['sx']
-  } | string
+  styleOverrides?:
+    | {
+        root?: BoxProps['sx']
+      }
+    | string
   variants?: any[]
 }
 

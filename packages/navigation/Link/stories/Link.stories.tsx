@@ -1,17 +1,17 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
-import React from "react";
+import React from 'react'
 
-import { Link, type LinkProps } from "./component";
-import Docs from "./Link.docs";
+import { Link, type LinkProps } from './component'
+import Docs from './Link.docs'
 
 const defaultArgs: LinkProps = {
-  href: "#",
+  href: '#',
   children: 'link',
-  newTab: true
-};
+  newTab: true,
+}
 
 export default {
-  title: "Navigation/Link",
+  title: 'Navigation/Link',
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
@@ -19,21 +19,21 @@ export default {
       page: Docs,
     },
   },
-};
+}
 
 const Template = (args) => {
   return (
     <>
       <Link {...args} />
     </>
-  );
-};
+  )
+}
 
 export const Default = {
   render: (args) => {
-    return <Template {...args} />;
+    return <Template {...args} />
   },
-};
+}
 
 // const variantArgs: LinkProps = {
 //  name: 'World',

@@ -7,10 +7,10 @@ export type ButtonProps = MuiButtonProps & {
 
 /**
  * [API](https://mui.com/material-ui/api/button/)
- * 
+ *
  * [Demo](https://mui.com/material-ui/react-button/)
- * 
- * @example 
+ *
+ * @example
  * <Button>Hello</Button>
  */
 export default function Button(props: ButtonProps) {

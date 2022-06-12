@@ -7,7 +7,7 @@ type Return = {
   show: (props: ShowProps) => any
   hide: () => any
 }
- 
+
 type ShowProps = {
   message: any
   autoHideDuration?: number
