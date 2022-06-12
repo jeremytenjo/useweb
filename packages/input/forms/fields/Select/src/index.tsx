@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Box from '@useweb/box'
-import Button, { type ButtonProps } from '@useweb/button'
-
-import IconChevron from '../../../../icons/IconChevron'
-import colors from '../../../../../../theme/tokens/colors'
+import Box from '@mui/material/Box'
+import Button, { type ButtonProps } from '@mui/material/Button'
 
 type Props = {
   name: string
@@ -19,6 +16,7 @@ type Props = {
   onChange?: (value: any) => any
   buttonProps?: ButtonProps
   value?: any
+  endIcon?: any
 }
 
 export default function Select({
@@ -28,10 +26,11 @@ export default function Select({
   defaultValue = 1,
   register = () => null,
   sx = {},
-  color = colors.grey.light,
+  color = '#e7e7e7',
   onChange,
   buttonProps = { name: 'Select button' },
   value: parentValue,
+  endIcon,
 }: Props) {
   const [value, setValue] = useState(parentValue || defaultValue)
 
@@ -45,6 +44,8 @@ export default function Select({
     onChange && onChange(value)
   }
 
+  const EndIcon = endIcon || defaultEndIcon
+
   return (
     <Box sx={{ width: '100%', position: 'relative', height: '37px' }}>
       <Button
@@ -57,7 +58,7 @@ export default function Select({
         }}
         variant='outlined'
         size='medium'
-        endIcon={<IconChevron sx={{ stroke: color, transform: 'translateY(7px)' }} />}
+        endIcon={<EndIcon sx={{ stroke: color, transform: 'translateY(7px)' }} />}
         {...buttonProps}
       >
         {label}
@@ -86,6 +87,27 @@ export default function Select({
           </option>
         ))}
       </Box>
+    </Box>
+  )
+}
+
+const defaultEndIcon = (props) => {
+  return (
+    <Box {...props}>
+      <svg
+        width='11'
+        height='7'
+        viewBox='0 0 11 7'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          d='M1.25 1.375L5.5 5.625L9.75 1.375'
+          strokeWidth='1.41667'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        />
+      </svg>
     </Box>
   )
 }
