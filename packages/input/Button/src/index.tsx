@@ -1,7 +1,9 @@
 import React from 'react'
 import MuiButton, { type ButtonProps as MuiButtonProps } from '@mui/material/Button'
 
-export type ButtonProps = MuiButtonProps 
+export type ButtonProps = MuiButtonProps & {
+  name: string
+}
 
 /**
  * [API](https://mui.com/material-ui/api/button/)
