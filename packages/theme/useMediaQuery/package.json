@@ -1,5 +1,5 @@
 {
-  "name": "@useweb/use-event-listener",
+  "name": "@useweb/use-media-query",
   "version": "1.0.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
@@ -13,9 +13,18 @@
     "deploy": "npm run build && npm publish --access public"
   },
   "peerDependencies": {
-    "react": "^18.0.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@mui/material": "^5.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "^1.5.0"
+    "@useweb/compiler": "latest",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@mui/material": "^5.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0"
   }
 }
