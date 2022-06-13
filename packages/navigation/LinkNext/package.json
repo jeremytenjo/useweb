@@ -1,6 +1,6 @@
 {
-  "name": "@useweb/theme",
-  "version": "2.10.0",
+  "name": "@useweb/link-next",
+  "version": "1.0.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -18,15 +18,15 @@
     "@mui/material": "^5.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "ts-toolbelt": "^9.6.0"
+    "next": "^12.0.0"
   },
   "devDependencies": {
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0",
-    "@useweb/compiler": "^1.6.0",
+    "@useweb/compiler": "latest",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "ts-toolbelt": "^9.6.0"
+    "next": "^12.0.0"
   }
 }
