@@ -32,6 +32,7 @@ export default function TextField({
   resetIcon,
 }: TextfieldProps) {
   const inputRef = useRef<any>(null)
+
   const {
     register,
     watch,

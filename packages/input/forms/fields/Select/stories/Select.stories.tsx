@@ -7,7 +7,7 @@ import { Select, type SelectProps } from './component'
 import Docs from './Select.docs'
 
 const defaultArgs: SelectProps = {
-  name: 'select',
+  name: 'season',
   label: 'Season',
   options: [
     {

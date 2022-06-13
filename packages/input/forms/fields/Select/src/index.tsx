@@ -23,12 +23,12 @@ export default function Select({
   sx = {},
   onChange: hookOnChange,
 }: SelectProps) {
-  const { control } = useFormContext()
+  const formContext = useFormContext()
 
   return (
     <Controller
       name={name}
-      control={control}
+      control={formContext.control}
       defaultValue={defaultValue}
       render={({ field: { onChange, value, ref } }) => (
         <MuiSelect
