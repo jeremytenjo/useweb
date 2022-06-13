@@ -53,6 +53,7 @@ export type ComponentsProps = {
   Modal?: ComponentProps
   MenuItem?: ComponentProps
   Select?: ComponentProps
+  Textfield?: ComponentProps
 }
 
 // List of component that export @mui/material/* internally
@@ -67,4 +68,5 @@ const muiComponents = [
   'Modal',
   'MenuItem',
   'Select',
+  'Textfield',
 ]
