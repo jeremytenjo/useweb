@@ -1,6 +1,6 @@
 {
   "name": "@useweb/select",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -17,7 +17,8 @@
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-hook-form": "^7.0.0"
   },
   "devDependencies": {
     "@emotion/react": "^11.0.0",
@@ -26,6 +27,7 @@
     "@useweb/compiler": "latest",
     "@useweb/form": "^1.0.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-hook-form": "^7.0.0"
   }
 }
