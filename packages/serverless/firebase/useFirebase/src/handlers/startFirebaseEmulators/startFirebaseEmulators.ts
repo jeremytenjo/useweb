@@ -9,7 +9,7 @@ type StartFirebaseEmulatorsProps = {
   auth?: any
   authOptions?: AuthOptions
   db?: any
-  dbOptions: DBOptions
+  dbOptions?: DBOptions
   functions?: any
 }
 

@@ -53,7 +53,7 @@ type Return = {
   auth: any
   authOptions: any
   db: any
-  localStorageOptions: LocalStorageOptionsTypes
+  localStorageOptions?: LocalStorageOptionsTypes
   messaging: any
   messagingOptions?: any
   analytics?: any
@@ -62,7 +62,7 @@ type Return = {
   functionsOptions?: any
 }
 
-const FirebaseContext = createContext<Return>(null)
+const FirebaseContext = createContext<Return>(null as any)
 
 export const FirebaseProvider = ({
   firebaseApp,
