@@ -16,7 +16,6 @@
     "typescript": "^4.7.3"
   },
   "dependencies": {
-    "@useweb/compiler": "2.0.0",
     "command-line-args": "^5.2.0",
     "concurrently": "^6.4.0",
     "esbuild": "^0.14.38",
