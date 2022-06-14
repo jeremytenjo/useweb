@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-extra-semi
-(async () => {
+;(async () => {
   const path = require('path')
   const esbuild = require('esbuild')
 
@@ -14,7 +14,7 @@
   const payload = { packageJson }
   const { entryPoint, entryPointFile } = await getEntryPoint(packageDir)
   const outfile = path.join(packageDir, 'build', 'index.js')
-  const format = args.format || 'cjs'
+  const format = args.format || 'esm'
   const target = args.target || 'es2019'
 
   await removeBuildFolder()
