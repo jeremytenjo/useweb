@@ -24,7 +24,7 @@
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0",
-    "@useweb/compiler": "^1.6.0",
+    "@useweb/compiler": "2.0.0",
     "@useweb/select": "^1.0.1",
     "@useweb/text": "^2.0.0",
     "@useweb/textfield": "^1.1.0",
