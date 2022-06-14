@@ -3,12 +3,12 @@ import { onAuthStateChanged, signOut as signOutFromFirebase } from 'firebase/aut
 import create from 'zustand'
 import useAsync from '@useweb/use-async'
 
-type Types = {
+type StoreTypes = {
   user: any
   setUser: (newValue: any) => void
 }
 
-const useAuthStore = create<Types>((set) => ({
+const useAuthStore = create<StoreTypes>((set) => ({
   user: null,
   setUser: (newValue) => set(() => ({ user: newValue })),
 }))
@@ -37,7 +37,7 @@ export default function useFirebaseAuth(
     onSignInError = () => null,
     onSignOut = () => null,
     onAuthChange = () => null,
-  }: UseFirebaseAuthProps = { auth: null, signInFetcher: null },
+  }: UseFirebaseAuthProps = { auth: null, signInFetcher: () => undefined },
 ) {
   const authStore = useAuthStore()
 
@@ -57,7 +57,8 @@ export default function useFirebaseAuth(
     }
   }, [])
 
-  const signIn = useAsync(signInFetcher, {
+  const signIn = useAsync({
+    fn: signInFetcher,
     onResult: (result) => {
       onSignIn(result)
     },

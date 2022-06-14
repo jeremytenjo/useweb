@@ -31,7 +31,7 @@ export default function useAsync({
   onLoading,
 }: UseAsyncProps): UseAsyncReturn {
   const [result, setResult] = useState(defaultData)
-  const [loading, setLoading] = useState(null)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
   const exec = useCallback(

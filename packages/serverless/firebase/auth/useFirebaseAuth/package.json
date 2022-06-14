@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-firebase-auth",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -14,14 +14,16 @@
   },
   "peerDependencies": {
     "firebase": "^9.6.0",
-    "react": "^18.0.0"
+    "react": "^18.0.0",
+    "zustand": "^3.7.1"
   },
   "devDependencies": {
     "@useweb/compiler": "^1.6.0",
     "firebase": "^9.6.0",
-    "zustand": "^3.7.1"
+    "zustand": "^3.7.1",
+    "@useweb/use-async": "^3.2.0"
   },
   "dependencies": {
-    "@useweb/use-async": "^1.1.0"
+    "@useweb/use-async": "^3.2.0"
   }
 }
