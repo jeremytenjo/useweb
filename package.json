@@ -19,7 +19,7 @@
     "functions:deploy": "firebase deploy --only functions",
     "lerna:build": "lerna exec 'npm run build'",
     "lerna:update-compiler": "lerna exec 'npm i @useweb/compiler@latest' --no-bail",
-    "lerna:install-deps": "lerna exec 'rm -rf node_modules && rm -rf package-lock.json && npm i' --no-bail",
+    "lerna:hard-install-deps": "lerna exec 'rm -rf node_modules && rm -rf package-lock.json && npm i' --no-bail",
     "lerna:soft-install-deps": "lerna exec 'npm i' --no-bail",
     "lerna:minor-update": "lerna exec 'npm i && npm version minor && npm run deploy' --no-bail",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
