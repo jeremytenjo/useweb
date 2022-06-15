@@ -8,6 +8,9 @@ module.exports = function getCommandLineArgs() {
     { name: 'node', type: Boolean },
     { name: 'format', type: String, options: ['esm', 'cjs'] },
     { name: 'target', type: String },
+    { name: 'packageDir', type: String },
+    { name: 'packageJsonPath', type: String },
+    { name: 'outputPath', type: String },
   ]
   const commandLineArgs = require('command-line-args')
   const options = commandLineArgs(optionDefinitions)

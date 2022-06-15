@@ -8,17 +8,19 @@
   const generateTypes = require('./handlers/generateTypes')
   const removeBuildFolder = require('./handlers/removeBuildFolder')
 
-  const packageDir = process.cwd()
-  const packageJson = require(path.join(packageDir, 'package.json'))
+  const packageDir = args.packageDir || process.cwd()
+  const packageJson = require(args.packageJsonPath ||
+    path.join(packageDir, 'package.json'))
 
   const payload = { packageJson }
   const { entryPoint, entryPointFile } = await getEntryPoint(packageDir)
-  const outfile = path.join(packageDir, 'build', 'index.js')
+  const outputPath = args.outputPath || packageDir
+  const outfile = path.join(outputPath, 'build', 'index.js')
   const format = args.format || 'esm'
   const target = args.target || 'es2019'
 
   await removeBuildFolder()
-  await generateTypes(packageDir, entryPointFile)
+  await generateTypes({ outputPath, entryPointFile })
 
   // https://esbuild.github.io/api/
   esbuild.build({
