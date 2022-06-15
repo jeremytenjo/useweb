@@ -6,6 +6,8 @@ import Docs from './Modal.docs'
 
 const defaultArgs: ModalProps = {
   open: true,
+  onClose: null,
+  children: 'Modal',
 }
 
 export default {
@@ -26,9 +28,7 @@ const Template = (args) => {
     <>
       <button onClick={() => setOpen((s) => !s)}>Toggle</button>
 
-      <Modal {...args} open={open} onClose={() => setOpen(false)}>
-        Modal
-      </Modal>
+      <Modal {...args} open={open} onClose={() => setOpen(false)} />
     </>
   )
 }
