@@ -1,0 +1,27 @@
+{
+  "name": "@useweb/ui",
+  "version": "0.1.0",
+  "description": "UI components to speed up app development",
+  "main": "index.js",
+  "type": "module",
+  "author": "Jeremy Tenjo",
+  "license": "ISC",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "build": "node --loader ts-node/esm ./scripts/buildUiPackage/run.ts"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@mui/material": "^5.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@mui/material": "^5.0.0",
+    "@useweb/compiler": "2.0.0",
+    "ts-node": "^10.8.1"
+  }
+}
