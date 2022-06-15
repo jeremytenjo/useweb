@@ -3,9 +3,9 @@ import prettier from 'prettier'
 
 import prettierConfig from '../../../devtools/prettier/prettierConfig.cjs'
 
-const addTimestamp = (fileContent) => {
+const addTimestamp = (fileContent: string) => {
   const fileContentWithTimestamp = `
-  /**
+ /**
  * DON'T EDIT THIS FILE
  * This file is auto generated
  */
