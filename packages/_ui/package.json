@@ -8,7 +8,8 @@
   "license": "ISC",
   "types": "./build/index.d.ts",
   "scripts": {
-    "build": "node  --experimental-json-modules --loader ts-node/esm ./scripts/buildUiPackage/run.ts"
+    "build": "node  --experimental-json-modules --loader ts-node/esm ./scripts/buildUiPackage/run.ts",
+    "deploy": "npm run build && npm publish --access public"
   },
   "peerDependencies": {
     "@emotion/react": "^11.0.0",
