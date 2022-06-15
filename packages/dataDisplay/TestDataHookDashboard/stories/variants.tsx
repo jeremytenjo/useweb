@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { B, V } from '../../../storybook/ui'
+import { B, V } from '../../../sb/ui'
 import TestDataHookDashboard from '..'
 
 import schema, { schemaFail } from './schema'

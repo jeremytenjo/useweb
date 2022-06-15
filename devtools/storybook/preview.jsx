@@ -17,6 +17,11 @@ export const parameters = {
   previewTabs: {
     'storybook/docs/panel': { index: isProd ? -1 : 1 },
   },
+  options: {
+    storySort: {
+      order: ['Introduction', '*'],
+    },
+  },
 }
 
 export const decorators = [

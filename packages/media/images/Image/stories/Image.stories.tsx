@@ -1,13 +1,13 @@
 import React from 'react'
 
-import testImage from '../../../../storybook/testImages/test2.jpg'
-import testImageBase64 from '../../../../storybook/testImages/testImag-base64'
-import testImage2 from '../../../../storybook/testImages/test2.jpg'
-import B from '../../../../storybook/variationBlock/index'
+import testImage from '../../../../sb/testImages/test2.jpg'
+import testImageBase64 from '../../../../sb/testImages/testImag-base64'
+import testImage2 from '../../../../sb/testImages/test2.jpg'
+import B from '../../../../sb/variationBlock/index'
 import Image from '../src/index'
 
 export default {
-  name: 'Dates/DatePicker',
+  title: 'Dates/DatePicker',
 }
 
 const Variations = () => (

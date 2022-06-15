@@ -1,6 +1,6 @@
 import React from 'react'
 
-import B from '../../../storybook/variationBlock/index'
+import B from '../../../sb/variationBlock/index'
 import stubs from '../stubs'
 import Calendar from '..'
 

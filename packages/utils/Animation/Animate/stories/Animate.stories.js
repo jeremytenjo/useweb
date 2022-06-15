@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { B } from '../../../storybook/ui'
+import { B } from '../../../sb/ui'
 
 import Example from './variants'
 

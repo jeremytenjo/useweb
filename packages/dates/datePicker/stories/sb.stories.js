@@ -1,10 +1,10 @@
 import React from 'react'
 
-import B from '../../../storybook/variationBlock/index'
+import B from '../../../sb/variationBlock/index'
 import DatePicker from '../index'
 
 export default {
-  name: 'Dates/DatePicker',
+  title: 'Dates/DatePicker',
 }
 
 const Variations = () => (

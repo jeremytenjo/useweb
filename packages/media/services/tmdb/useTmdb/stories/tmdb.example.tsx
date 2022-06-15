@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import B from '../../../../../storybook/variationBlock/index'
+import B from '../../../../../sb/variationBlock/index'
 import Image from '../../../../images/Image/src/index'
 import Text from '../../../../../_ui/src/dataDisplay/Text/src'
 import useTmdb from '..'

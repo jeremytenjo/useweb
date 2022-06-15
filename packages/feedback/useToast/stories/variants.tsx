@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { V, B } from '../../../storybook/ui'
+import { V, B } from '../../../sb/ui'
 import useToast, { ToastProvider } from '..'
 
 const Wrapper = styled.div`

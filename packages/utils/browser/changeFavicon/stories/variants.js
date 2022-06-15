@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { B } from '../../../../storybook/ui'
+import { B } from '../../../../sb/ui'
 import Button from '../../../../input/Button/src'
 import changeFavicon from '..'
 

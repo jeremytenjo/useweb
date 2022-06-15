@@ -1,6 +1,6 @@
 import React from 'react'
 
-import B from '../../../../storybook/variationBlock'
+import B from '../../../../sb/variationBlock'
 import Share from '..'
 
 export default {

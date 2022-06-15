@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import firebase from 'firebase/app'
 
-import { B } from '../../../../../storybook/ui'
+import { B } from '../../../../../sb/ui'
 import TestDataHookDashboard from '../../../../../dataDisplay/TestDataHookDashboard'
 import useRest from '../../..'
 

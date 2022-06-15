@@ -1,6 +1,6 @@
 import React from 'react'
 
-import B from '../../../../storybook/variationBlock/index'
+import B from '../../../../sb/variationBlock/index'
 import Form from '../../../../_ui/src/input/forms/Form/src'
 import FileInput from '..'
 
