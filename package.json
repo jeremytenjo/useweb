@@ -23,7 +23,8 @@
     "lerna:soft-install-deps": "lerna exec 'npm i' --no-bail",
     "lerna:minor-update": "lerna exec 'npm i && npm version minor && npm run deploy' --no-bail",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
-    "tests:lint": "eslint ./ --fix"
+    "tests:lint": "eslint ./ --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@storybook/addon-actions": "^6.5.8",
@@ -60,6 +61,7 @@
     "framer-motion": "^5.4.4",
     "fs-extra": "^10.0.0",
     "glob": "^7.2.0",
+    "husky": "^8.0.1",
     "prettier": "^2.6.2",
     "ts-node": "^10.4.0",
     "typescript": "^4.7.3"
