@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import monthData from '../utils/monthList'
-import Icon from '../../dataDisplay/Icon/build'
+import Icon from '../../dataDisplay/Icon/src'
 
 import { defaultProps, propTypes } from './props'
 import { Wrapper } from './styles'

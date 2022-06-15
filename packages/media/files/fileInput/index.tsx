@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 
 import toBoolean from '../../../utils/string/toBoolean'
 import Text from '../../../_ui/src/dataDisplay/Text/src'
-import Animation from '../../../utils/Animation/Animate/build'
+import Animation from '../../../utils/Animation/Animate/src'
 import useFileReader from '../fileReader/useFileReader'
 
 import { defaultProps, propTypes } from './props'

@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import Airtable from 'airtable'
 
-import useAsync from '../../useAsync/build/types'
+import useAsync from '../../useAsync/src'
 
 import getSingle from './handlers/getSingle'
 import getMultiple from './handlers/getMultiple'
