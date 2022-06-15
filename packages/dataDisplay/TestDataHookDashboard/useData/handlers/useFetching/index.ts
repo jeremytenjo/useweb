@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import useAsync from '../../../../../data/useAsync/build/types'
+import useAsync from '../../../../../data/useAsync/src'
 
 export default function useFetching({ props }) {
   const fetcherRes = useAsync({ fn: props.fetcher, autoExec: props.fetcher })
