@@ -1,8 +1,9 @@
 import createFile from '../../../../../node/createFile'
+import { type PayloadProps } from '../../buildUiPackage'
 
-export type CreatePackageJsonProps = { name: string }
+export type CreatePackageJsonProps = { payload: PayloadProps }
 
-export default async function createPackageJson({ name }: CreatePackageJsonProps) {
+export default async function createPackageJson({ payload }: CreatePackageJsonProps) {
   const data = 'hi'
 
   return data
