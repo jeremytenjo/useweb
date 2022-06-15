@@ -6,7 +6,11 @@ import flattenObject from '@useweb/flatten-object'
 import Swatch from './Swatch/Swatch'
 import * as styles from './styles'
 
-export default function Palette({ colors = {} }) {
+export type PaletteProps = {
+  colors: any
+}
+
+export default function Palette({ colors = {} }: PaletteProps) {
   const flattenObj = flattenObject(colors)
   const colorsArray = objectToArray(flattenObj) || []
 

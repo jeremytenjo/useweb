@@ -5,7 +5,11 @@ import { Palette, type PaletteProps } from './component'
 import Docs from './Palette.docs'
 
 const defaultArgs: PaletteProps = {
-  name: 'Theme/Design System/Palette',
+  colors: {
+    primary: {
+      main: '#32ee90',
+    },
+  },
 }
 
 export default {
