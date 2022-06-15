@@ -1,12 +1,12 @@
 {
   "name": "@useweb/ui-dev",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "UI components to speed up app development",
   "main": "index.js",
   "type": "module",
   "author": "Jeremy Tenjo",
   "license": "ISC",
-  "types": "./build/index.d.ts",
+  "types": "index.d.ts",
   "private": "true",
   "scripts": {
     "build": "node  --experimental-json-modules --loader ts-node/esm ./scripts/buildUiPackage/run.ts",

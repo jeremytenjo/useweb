@@ -1,7 +1,7 @@
 import path from 'path'
 
 import glob from '../../../../../../packages/node/glob/index.js'
-import createFile from '../../../../../../packages/node/createFile/index.js'
+import createFile from '../../../../../../packages/node/createFile/createFile.js'
 import { PayloadTypes } from '../../startStorybook'
 
 export default async function generateStoriesList(payload: PayloadTypes) {
