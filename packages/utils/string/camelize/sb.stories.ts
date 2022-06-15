@@ -1,4 +1,4 @@
-import camelize from './index'
+import camelize from './index.cjs'
 
 export default {
   title: 'String/Utilities/camelize',

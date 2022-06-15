@@ -113,4 +113,4 @@ const Chat = ({
 Chat.defaultProps = defaultProps
 Chat.propTypes = propTypes
 
-export default memo(Chat)
+export default Chat

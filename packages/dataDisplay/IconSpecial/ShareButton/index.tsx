@@ -1,3 +1,5 @@
+import React from 'react'
+
 import IconShare1 from '../../Icon/library/IconShare1'
 import share, { shareIsSupported } from '../../../engagement/share'
 import type { Props as ShareProps } from '../../../engagement/share'
@@ -11,19 +13,19 @@ type Props = {
 
 export default function ShareButton({
   data,
-  onShare = () => null,
+  onShare = () => false,
   onError = () => null,
   children,
   ...rest
 }: Props) {
   const handleShare = async () => {
-    const { error, success } = await share(data)
+    const { error, success } = await share(data as any)
 
     if (success) onShare(true)
     if (error) onError(error)
   }
 
-  return shareIsSupported ? (
+  return !!shareIsSupported ? (
     children ? (
       <div onClick={handleShare}>{children}</div>
     ) : (

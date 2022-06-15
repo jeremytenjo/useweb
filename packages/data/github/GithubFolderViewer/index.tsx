@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Styles from './styles'
 import DataProvider from './DataProvider'
 import Tree from './containers/Tree'

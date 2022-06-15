@@ -13,7 +13,7 @@ export default async (_userId, _savePath, _payload) => {
 
     return resultsDocs
   } else {
-    throw new Error(`Parameters with false need a value ${(savePath, payload)}`)
+    throw new Error(`Parameters with false need a value ${savePath} ${payload}`)
   }
 }
 
@@ -26,7 +26,7 @@ const one = (savePath, file) => {
 
     upleadedFile.on(
       'state_changed',
-      () => {},
+      () => null,
       (error) => {
         reject(error.code)
       },

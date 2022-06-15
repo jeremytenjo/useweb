@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { CopyToClipboard as ReactCopyToClipboard } from 'react-copy-to-clipboard'
 
 import Tooltip from '../../dataDisplay/Tooltip'

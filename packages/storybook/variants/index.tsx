@@ -10,9 +10,9 @@ export default ({
   Variants,
   dir,
   type = 'styles/',
-  getSpecTestValue,
-  onlyBase,
-  noBase,
+  getSpecTestValue = false,
+  onlyBase = false,
+  noBase = false,
 }) => {
   const [Components, setComponents] = useState(null)
   const stylesPath = styles?.keys()

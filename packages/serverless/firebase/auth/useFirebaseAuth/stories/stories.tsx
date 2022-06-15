@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Docs from './docs.mdx'
 
 export default {
@@ -10,7 +12,7 @@ export default {
   },
 }
 
-const Template = (args) => {
+const Template = () => {
   return <div>example</div>
 }
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import JSONEditor from 'react-json-editor-ajrm'
 import locale from 'react-json-editor-ajrm/locale/en'
 

@@ -7,7 +7,7 @@ import Response from './Response'
 
 export default function Ui(data) {
   return (
-    <Box styles={{ gridGap: 'm' }}>
+    <Box sx={{ gridGap: 'm' }}>
       <TopBar {...data} />
       <Response {...data} />
     </Box>

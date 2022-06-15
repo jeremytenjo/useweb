@@ -3,7 +3,7 @@ import ParticlesLib from 'react-tsparticles'
 
 import { defaultProps, propTypes } from './props'
 
-const Particles = ({ color, params, ...rest }) => (
+const Particles = ({ color = 'green', params = {}, ...rest }) => (
   <ParticlesLib
     params={{
       particles: {

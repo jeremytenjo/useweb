@@ -13,7 +13,7 @@ export default {
   },
 } as Meta
 
-const Template = (args) => {
+const Template = () => {
   return <div>add example </div>
 }
 

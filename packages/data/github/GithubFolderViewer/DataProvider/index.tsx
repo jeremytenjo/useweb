@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { UseGithubFolderViewerDataProvider } from './useGithubFolderViewerData'
 import { UseGithubFolderViewerPropsProvider } from './useGithubFolderViewerProps'
 

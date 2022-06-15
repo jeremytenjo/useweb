@@ -312,7 +312,6 @@ export const ContextMenu = React.forwardRef(
               })}
               data-click-to-component-contextmenu
               onClose=${function handleClose() {
-                // @ts-ignore Property 'returnValue' does not exist on type 'HTMLElement'(2339)
                 onClose(refs.floating.current.returnValue)
                 setOpen(false)
               }}

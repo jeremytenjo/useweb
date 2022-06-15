@@ -31,7 +31,7 @@ const Drawer = ({
   // testProp = true,
 }) => {
   useEffect(() => {
-    open !== null && toggleDrawer(position, true)
+    open !== null && toggleDrawer()
   }, [open])
 
   const toggleDrawer = () => (event) => {
@@ -51,7 +51,7 @@ const Drawer = ({
       anchor={position}
       open={!!open}
       onClose={onClose}
-      onOpen={() => toggleDrawer(position, true)}
+      onOpen={() => toggleDrawer()}
     >
       {children}
     </SwipeableDrawer>

@@ -21,7 +21,7 @@ export default function Response({ fetch, validation }) {
   return (
     !fetch.loading &&
     !fetch.validating && (
-      <Box styles={{ gridGap: 's' }}>
+      <Box sx={{ gridGap: 's' }}>
         {validationCode && <Code code={validationCode} />}
         {fetchCode && <Code code={fetchCode} stringify language='json' />}
       </Box>

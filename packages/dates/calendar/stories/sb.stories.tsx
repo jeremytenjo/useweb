@@ -2,7 +2,7 @@ import React from 'react'
 
 import B from '../../../storybook/variationBlock/index'
 import stubs from '../stubs'
-import Calendar from '../'
+import Calendar from '..'
 
 export default {
   name: 'Datas/Calendar',

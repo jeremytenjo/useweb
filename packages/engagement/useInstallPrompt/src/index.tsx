@@ -4,6 +4,7 @@ import useEventListener from '@useweb/use-event-listener'
 export const UseInstallPromptContext = createContext(null)
 
 type Props = {
+  // eslint-disable-next-line no-undef
   children: JSX.Element
 }
 

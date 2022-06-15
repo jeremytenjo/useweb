@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { B, V } from '../../../storybook/ui'
 import TestDataHookDashboard from '..'
 
@@ -5,13 +7,13 @@ import schema, { schemaFail } from './schema'
 
 const successFunc = async () => {
   let result = await fetch('https://launchlibrary.net/1.2/launch/next/1')
-  result = result.json()
+  result = await result.json()
   return result
 }
 
 const errorFunc = async () => {
   let result = await fetch('http://swapi.co/api/people/1')
-  result = result.json()
+  result = await result.json()
   return result
 }
 

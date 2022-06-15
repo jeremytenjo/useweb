@@ -1,3 +1,4 @@
+import React from 'react'
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 import Code from '../../../../../dataDisplay/Code'

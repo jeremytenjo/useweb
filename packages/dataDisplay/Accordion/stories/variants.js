@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { B, V } from '../../../storybook/ui'
 import Text from '../../Text'
 

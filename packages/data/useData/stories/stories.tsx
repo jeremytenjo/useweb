@@ -28,16 +28,25 @@ const fetcher = async () => {
   return data
 }
 
-const creator = async ({ createdItem, latestData }) => {
+const creator: any = async ({ createdItem, latestData }) => {
   // make database call here
+  console.log(createdItem, latestData)
+  return {
+    newItem: '',
+    createdItem: '',
+  }
 }
 
 const updater = async ({ updatedItem, latestData }) => {
   // make database call here
+  console.log(updatedItem, latestData)
+  return ''
 }
 
-const remover = async ({ removedItem, latestData }) => {
+const remover = ({ removedItem, latestData }) => {
   // make database call here
+  console.log(removedItem, latestData)
+  return { removedItem, latestData }
 }
 
 const useLatestMovies = () => {
@@ -52,7 +61,7 @@ const useLatestMovies = () => {
   return latestMovies
 }
 
-const Template = (args) => {
+const Template = () => {
   const latestMovies = useLatestMovies()
 
   return (

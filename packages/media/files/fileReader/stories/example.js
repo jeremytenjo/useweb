@@ -19,7 +19,7 @@ const ColorExtractorExample = () => {
   }
 
   return (
-    <Box styles={{ width: 'fit-content', gridGap: 'm' }}>
+    <Box sx={{ width: 'fit-content', gridGap: 'm' }}>
       <input ref={inputRef} type='file' onChange={handleInput} />
 
       <Image src={img} />

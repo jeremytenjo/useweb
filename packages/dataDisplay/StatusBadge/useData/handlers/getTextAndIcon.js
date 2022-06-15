@@ -1,3 +1,5 @@
+import React from 'react'
+
 import IconLoading from '../../../Icon/library/IconLoadingFeather'
 import IconCheckmark from '../../../Icon/library/IconCheckmarkFeather'
 import IconClose from '../../../Icon/library/IconCloseFilled'

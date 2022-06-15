@@ -1,3 +1,5 @@
+import React from 'react'
+
 import FileTree from '../../../../../dataDisplay/FileTree'
 import Donut from '../../../../../feedback/Progress/Donut'
 import useGithubFolderViewerProps from '../../DataProvider/useGithubFolderViewerProps'
@@ -9,6 +11,7 @@ import Styles from './styles'
 export default function Tree() {
   const props = useGithubFolderViewerProps()
   const data = useGithubFolderViewerData()
+
   let filtered = data.storyFiles.sort((a, b) => (a.name < b.name ? -1 : 1))
   filtered = filtered.sort((file) => (file.type === 'directory' ? -1 : 0))
 

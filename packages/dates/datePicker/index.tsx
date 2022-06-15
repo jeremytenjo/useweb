@@ -64,7 +64,6 @@ const DatePicker = ({ arrowColor, onSelect, color, type, yearRange, arrowName })
       <Icon name={arrowName} color={arrowColor} onClick={handlePrev} />
 
       {data.length > 0 && (
-        // eslint-disable-next-line jsx-a11y/no-onchange
         <select ref={selectRef} onChange={handleOnSelect} value={selectedValue}>
           {data.map((item) => (
             <option key={item} value={item}>

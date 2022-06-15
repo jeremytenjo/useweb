@@ -29,12 +29,12 @@ const ColorExtractorExample = () => {
   }
 
   return (
-    <Box styles={{ width: 'fit-content', gridGap: 'm' }}>
+    <Box sx={{ width: 'fit-content', gridGap: 'm' }}>
       <FileUpload onInput={handleInput} />
 
       <Image src={img} />
 
-      <Box styles={{ gridGap: 'm', gridAutoFlow: 'column' }}>
+      <Box sx={{ gridGap: 'm', gridAutoFlow: 'column' }}>
         {Object.entries(colors).map((item) => {
           const [title, value] = item
           return (

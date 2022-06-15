@@ -1,5 +1,7 @@
-import Box from '../../../../../../dataDisplay/Box/src'
-import Button from '../../../../../../input/Button/src'
+import React from 'react'
+
+import Box from '../../../../../../_ui/src/dataDisplay/Box/src'
+import Button from '../../../../../../_ui/src/input/Button/src'
 // import IconGithub from '../../../../../../dataDisplay/Icon/library/IconGithub1'
 import useGithubFolderViewerProps from '../../../DataProvider/useGithubFolderViewerProps'
 
@@ -8,7 +10,7 @@ export default function Options() {
 
   return (
     <Box
-      styles={{
+      sx={{
         gridAutoFlow: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -23,7 +25,7 @@ export default function Options() {
           rel='noreferrer'
           title='Open in github'
         >
-          'IconGithub size='22px'
+          Options Github yeh
         </a>
       )}
     </Box>

@@ -1,3 +1,4 @@
+import React from 'react'
 import { node, bool } from 'prop-types'
 
 import Chevron from '../Icon/library/IconChevron1'

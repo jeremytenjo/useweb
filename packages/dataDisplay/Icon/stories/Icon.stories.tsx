@@ -1,3 +1,5 @@
+import React from 'react'
+
 import IconBellFeather from '../library/IconBellFeather/index'
 import IconCameraFeatherStroke from '../library/IconCameraFeather/index'
 import { B } from '../../../storybook/ui'

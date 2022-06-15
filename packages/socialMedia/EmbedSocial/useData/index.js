@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+
 import getSocialNameFromUrl from './handlers/getSocialNameFromUrl'
 
 export default function useData(props) {

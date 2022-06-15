@@ -82,7 +82,7 @@ const Countdown = ({
   useTimeout({ seconds, callback: handleTimeLeft, reseter: timeLeft })
 
   return (
-    <Box styles={{ ...styles.wrapper, ...wrapperStyles }}>
+    <Box sx={{ ...styles.wrapper, ...wrapperStyles }}>
       {timerComponents && timerComponents.length && timerComponents}
     </Box>
   )

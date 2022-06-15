@@ -1,3 +1,5 @@
+import React from 'react'
+
 import CopyToClipboard from '../CopyToClipboard'
 
 export const defaultProps = {

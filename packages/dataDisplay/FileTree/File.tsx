@@ -1,12 +1,13 @@
+import React from 'react'
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload'
 
-import Box from '../Box/src/index'
+import Box from '../../_ui/src/dataDisplay/Box/src'
 import downloadString from '../../utils/files/browser/downloadString'
 
-export default function File({ file, name, content, onFileSelected = () => null }) {
+export default function File({ file, name, content, onFileSelected = (d) => d }) {
   return (
     <Box
-      styles={{
+      sx={{
         gridAutoFlow: 'column',
         gridGap: 'm',
         alignItems: 'center',
@@ -19,7 +20,7 @@ export default function File({ file, name, content, onFileSelected = () => null 
         style={{ cursor: 'pointer' }}
         onClick={() => onFileSelected(file)}
         onKeyPress={(e) => e.key === 'Enter' && onFileSelected(file)}
-        tabIndex='0'
+        tabIndex={0}
       >
         {name}
       </div>

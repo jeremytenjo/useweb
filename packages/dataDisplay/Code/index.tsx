@@ -15,7 +15,7 @@ import * as styles from './styles'
 export default function Code({
   code,
   language = 'javascript',
-  stringify,
+  stringify = false,
   style = atomOneLight,
   tooltipPlacement = 'left',
   ...rest

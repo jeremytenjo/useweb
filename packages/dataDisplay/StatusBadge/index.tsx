@@ -16,7 +16,7 @@ export default function StatusBadge(props) {
 
   return (
     <Box
-      styles={{
+      sx={{
         ...styles.wrapper,
         backgroundColor: `--${data.backgroundColor}`,
       }}

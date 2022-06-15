@@ -1,8 +1,10 @@
+import React, { useRef, useState, useEffect } from 'react'
+
 import * as S from './styles'
 import { defaultProps, propTypes } from './props'
 
 const Accordion = ({ title, icon, children, defaultOpen }) => {
-  const contentRef = useRef(null)
+  const contentRef = useRef<any>(null)
   const [open, setOpen] = useState(defaultOpen)
 
   const handleTopBarClick = () => setOpen(!open)
@@ -35,4 +37,4 @@ const Accordion = ({ title, icon, children, defaultOpen }) => {
 Accordion.defaultProps = defaultProps
 Accordion.propTypes = propTypes
 
-export default memo(Accordion)
+export default Accordion

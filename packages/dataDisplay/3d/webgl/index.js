@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { defaultProps, propTypes } from './props'
 
 const Webgl = () => {
@@ -7,4 +9,4 @@ const Webgl = () => {
 Webgl.defaultProps = defaultProps
 Webgl.propTypes = propTypes
 
-export default memo(Webgl)
+export default Webgl

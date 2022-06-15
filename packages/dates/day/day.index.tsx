@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { defaultProps, propTypes } from './day.props'
 import { Wrapper, DayCon, StatusCon } from './day.styles'
 
@@ -60,4 +62,4 @@ const Day = ({
 Day.defaultProps = defaultProps
 Day.propTypes = propTypes
 
-export default memo(Day)
+export default Day

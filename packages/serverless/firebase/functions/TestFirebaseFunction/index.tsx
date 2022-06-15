@@ -24,7 +24,7 @@ export default function TestFirebaseFunction({
   })
 
   return (
-    <Box styles={{ padding: 'm', ...styles }}>
+    <Box sx={{ padding: 'm', ...styles }}>
       <Text
         text={`Running function: ${functionName}`}
         styles={{ marginBottom: 'm', textAlign: 'center' }}
@@ -40,7 +40,7 @@ export default function TestFirebaseFunction({
         <Box name='payload' styles={{ alignContent: 'start' }}>
           <Text text={`Payload: (Editable)`} styles={{ marginBottom: 'm' }} />
 
-          <Box styles={{ marginBottom: 'm' }}>
+          <Box sx={{ marginBottom: 'm' }}>
             <JSONInput
               id='a_unique_id'
               placeholder={defaultData}

@@ -1,3 +1,7 @@
+import React from 'react'
+import { motion } from 'framer-motion'
+import PropTypes from 'prop-types'
+
 import { defaultProps } from './props'
 
 export default function AnimateHeight({ isOpen, children, className }) {
