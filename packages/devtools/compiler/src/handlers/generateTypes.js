@@ -9,9 +9,6 @@ module.exports = async function generateTypes(packageDir, entryPointFile) {
   const packageSrcDir = path.join(packageDir, 'src')
   const outputPath = path.join(packageDir, 'build', 'types')
 
-  // const srcDirLengh = await getDeepestFolderLength(packageSrcDir)
-  // const srcDirLengArray = Array.from(Array(srcDirLengh).keys())
-  // const inlcudePath = srcDirLengArray.reduce((accumulator) => `${accumulator}/**`, '/**')
   // https://www.typescriptlang.org/tsconfig#include
   const include = path.join(packageSrcDir, 'index.*')
 
