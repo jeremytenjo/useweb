@@ -1,7 +1,7 @@
 import React from 'react'
 import Box, { type BoxProps } from '@mui/material/Box'
 import Backdrop from '@mui/material/Backdrop'
-import Modal from '@mui/material/Modal'
+import MuiModal from '@mui/material/Modal'
 import Fade from '@mui/material/Fade'
 
 export type ModalProps = {
@@ -11,9 +11,9 @@ export type ModalProps = {
   sx?: BoxProps['sx']
 }
 
-export default function MyModal({ open, onClose, children, sx = {} }: ModalProps) {
+export default function Modal({ open, onClose, children, sx = {} }: ModalProps) {
   return (
-    <Modal
+    <MuiModal
       aria-labelledby='transition-modal-title'
       aria-describedby='transition-modal-description'
       open={open}
@@ -50,6 +50,6 @@ export default function MyModal({ open, onClose, children, sx = {} }: ModalProps
           {children}
         </Box>
       </Fade>
-    </Modal>
+    </MuiModal>
   )
 }
