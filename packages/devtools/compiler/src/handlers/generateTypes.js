@@ -6,7 +6,7 @@ module.exports = async function generateTypes({ outputPath, entryPointFile }) {
   if (entryPointFile !== 'index.ts' && entryPointFile !== 'index.tsx') return null
 
   const packageSrcDir = path.join(outputPath, 'src')
-  const outputPath = path.join(outputPath, 'build', 'types')
+  const typesOutputPath = path.join(outputPath, 'build', 'types')
 
   // https://www.typescriptlang.org/tsconfig#include
   const include = path.join(packageSrcDir, 'index.*')
@@ -28,7 +28,7 @@ module.exports = async function generateTypes({ outputPath, entryPointFile }) {
     skipLibCheck: true,
     types: ['node'],
     declaration: true,
-    declarationDir: outputPath,
+    declarationDir: typesOutputPath,
     emitDeclarationOnly: true,
     noEmit: false,
   }

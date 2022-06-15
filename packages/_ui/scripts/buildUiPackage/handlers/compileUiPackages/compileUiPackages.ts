@@ -18,6 +18,7 @@ export default async function compileUiPackages({ uiPackagesPaths }) {
         outputPath,
         packageDir,
       })
+
       await shell(`node ./node_modules/@useweb/compiler/build`)
     }),
   )
