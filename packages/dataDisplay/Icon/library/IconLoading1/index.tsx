@@ -3,6 +3,8 @@
  * This file is auto generated
  */
 
+import React from 'react'
+
 /* eslint-disable react/no-unknown-property */
 import Icon from '../../src'
 

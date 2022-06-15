@@ -4,6 +4,7 @@ import type { UseAsyncProps } from '@useweb/use-async'
 
 export type Props = {
   name: string
+  // eslint-disable-next-line no-undef
   fetchOptions?: RequestInit
   onResult?: UseAsyncProps['onResult']
   onLoading?: UseAsyncProps['onLoading']

@@ -1,3 +1,5 @@
+import React, { useEffect, useRef, useState } from 'react'
+
 import monthData from '../utils/monthList'
 import Icon from '../../dataDisplay/Icon/build'
 
@@ -21,7 +23,7 @@ const DatePicker = ({ arrowColor, onSelect, color, type, yearRange, arrowName })
   }, [])
 
   const calcYearRange = () => {
-    const years = []
+    const years: any[] = []
     for (let i = 0; i < yearRange; i++) {
       years.push(Math.abs(i + 1 - currentYear).toString())
     }
@@ -85,4 +87,4 @@ const DatePicker = ({ arrowColor, onSelect, color, type, yearRange, arrowName })
 DatePicker.defaultProps = defaultProps
 DatePicker.propTypes = propTypes
 
-export default memo(DatePicker)
+export default DatePicker

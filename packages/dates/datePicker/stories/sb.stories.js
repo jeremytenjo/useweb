@@ -1,11 +1,12 @@
-// import { storiesOf } from '@storybook/react'
-
 import React from 'react'
 
 import B from '../../../storybook/variationBlock/index'
 import DatePicker from '../index'
 
-export default {}
+export default {
+  name: 'Dates/DatePicker',
+}
+
 const Variations = () => (
   <>
     <B title='Date Picker - Month' background>
@@ -17,4 +18,16 @@ const Variations = () => (
   </>
 )
 
-// storiesOf('Lib/Dates/Date Picker', module).add('variations', () => <Variations />)
+const Template = (args) => {
+  return (
+    <>
+      <Variations {...args} />
+    </>
+  )
+}
+
+export const Default = {
+  render: (args) => {
+    return <Template {...args} />
+  },
+}

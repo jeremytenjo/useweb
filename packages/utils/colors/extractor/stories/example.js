@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Box from '@useweb/box'
+import Box from '@mui/material/Box'
 
 import FileUpload from '../../../../media/files/fileInput'
 import Image from '../../../../media/images/Image/'

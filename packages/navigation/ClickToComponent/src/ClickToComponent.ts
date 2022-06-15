@@ -102,12 +102,10 @@ export default function ClickToComponent({ editor = 'vscode' }) {
   )
 
   const onKeyUp = React.useCallback(
-    function handleKeyUp(
-      /**
-       * @type {KeyboardEvent}
-       */
-      _,
-    ) {
+    function handleKeyUp() {
+    /**
+     * @type {KeyboardEvent}
+     */
       switch (state) {
         case State.HOVER:
           setState(State.IDLE)

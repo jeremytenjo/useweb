@@ -1,10 +1,21 @@
-// import { storiesOf } from '@storybook/react'
-
-export default {}
-import markdown from '../../README.md'
+import React from 'react'
 
 import ShareExample from './example'
 
-// storiesOf('Lib/Engagement/share', module).add('default', () => <ShareExample />, {
-//   notes: { markdown },
-// })
+export default {
+  name: 'Engagement/DatePicker',
+}
+
+const Template = (args) => {
+  return (
+    <>
+      <ShareExample {...args} />
+    </>
+  )
+}
+
+export const Default = {
+  render: (args) => {
+    return <Template {...args} />
+  },
+}

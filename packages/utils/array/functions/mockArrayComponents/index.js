@@ -1,3 +1,5 @@
+import React, { Fragment } from 'react'
+
 // returns multple components. helps not to have to add multiple children eg poster/stories.in grid variant
 const mockArrayComponents = (Component, amount = 3) => {
   const length = Array.from(Array(amount).keys())

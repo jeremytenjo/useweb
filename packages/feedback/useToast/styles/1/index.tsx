@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 import IconCheckmark1 from '../../../../dataDisplay/Icon/library/IconCheckmark1/index'

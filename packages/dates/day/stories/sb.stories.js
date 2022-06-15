@@ -1,11 +1,12 @@
-// import { storiesOf } from '@storybook/react'
-
 import React from 'react'
 
 import B from '../../../storybook/variationBlock/index'
 import Day from '../day.index'
 
-export default {}
+export default {
+  title: 'Dates/Day',
+}
+
 const Variations = () => (
   <>
     <B title='Default'>
@@ -30,4 +31,16 @@ const Variations = () => (
   </>
 )
 
-// storiesOf('Lib/Dates/Day', module).add('Variations', () => <Variations />)
+const Template = (args) => {
+  return (
+    <>
+      <Variations {...args} />
+    </>
+  )
+}
+
+export const Default = {
+  render: (args) => {
+    return <Template {...args} />
+  },
+}

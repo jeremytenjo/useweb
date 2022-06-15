@@ -15,7 +15,7 @@ export default {
   },
 } as Meta
 
-const Template = (args) => {
+const Template = () => {
   return (
     <>
       <ClickToComponent />

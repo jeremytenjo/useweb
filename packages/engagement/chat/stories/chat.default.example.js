@@ -1,4 +1,4 @@
-// Vendors
+import React, { useState } from 'react'
 
 import Chat from '../'
 

@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Lottie from '../..'
 
 export default (props) => (

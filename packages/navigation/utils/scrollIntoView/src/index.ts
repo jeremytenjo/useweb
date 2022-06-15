@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 type Props = {
   selector: string
   behavior?: ScrollBehavior

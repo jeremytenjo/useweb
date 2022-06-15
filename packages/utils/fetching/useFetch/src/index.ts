@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 export type UseFetchProps = {
   url?: string
   method?: 'get' | 'post' | 'HEAD'
+  // eslint-disable-next-line no-undef
   headers?: ResponseInit['headers']
   fetchOnMount?: boolean
   onResponse?: (responseData?: any) => any

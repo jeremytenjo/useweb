@@ -1,4 +1,3 @@
-import React from 'react'
 import firebase from 'firebase/app'
 import 'firebase/storage'
 
@@ -35,5 +34,7 @@ const one = async (userId, payload) => {
 }
 
 const mulitple = () => {
-  return new Promise(async () => {})
+  return new Promise(async () => {
+    return ''
+  })
 }

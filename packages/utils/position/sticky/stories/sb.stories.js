@@ -1,9 +1,13 @@
 import React from 'react'
-// import { storiesOf } from '@storybook/react'
 
 import B from '../../../../storybook/variationBlock/index'
 import Tabs from '../../../../navigation/tabs/styles/1'
 import sticky from '../index'
+
+export default {
+  name: 'Misc/Position/Utilities/Sticky',
+  component: Variations,
+}
 
 const DataTabs = [
   { label: 'Photos', link: '/profile/photos' },
@@ -34,7 +38,16 @@ const Variations = () => (
   </B>
 )
 
-export default {
-  name: 'Position/Utilities/Sticky',
-  component: Variations,
+const Template = (args) => {
+  return (
+    <>
+      <Variations {...args} />
+    </>
+  )
+}
+
+export const Default = {
+  render: (args) => {
+    return <Template {...args} />
+  },
 }

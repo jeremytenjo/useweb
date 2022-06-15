@@ -11,7 +11,6 @@ export function getSourceForInstance({ _debugSource }) {
 
   const {
     // It _does_ exist!
-    // @ts-ignore Property 'columnNumber' does not exist on type 'Source'(2339)
     columnNumber = 1,
     fileName,
     lineNumber = 1,

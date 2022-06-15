@@ -1,4 +1,5 @@
-import Box from '@useweb/box'
+import React, { useRef, useState } from 'react'
+import Box from '@mui/material/Box'
 
 import Image from '../../../images/Image'
 import fileReader from '..'
@@ -26,4 +27,4 @@ const ColorExtractorExample = () => {
   )
 }
 
-export default memo(ColorExtractorExample)
+export default ColorExtractorExample

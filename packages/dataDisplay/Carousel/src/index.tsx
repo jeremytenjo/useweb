@@ -18,7 +18,7 @@ type Props = {
 export default function Carousel({
   children,
   wrapperStyles = {},
-  infinite = null,
+  infinite = false,
   index = 0,
   setIndex,
   iconColor = 'white',

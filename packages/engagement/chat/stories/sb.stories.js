@@ -1,9 +1,12 @@
-import { storiesOf } from '@storybook/react'
+import React from 'react'
 
 import B from '../../../storybook/variationBlock/index'
 
-import markdown from './README.md'
 import Default from './chat.default.example'
+
+export default {
+  title: 'Engagement/Chat',
+}
 
 const Variations = () => (
   <B title='Default'>
@@ -11,6 +14,16 @@ const Variations = () => (
   </B>
 )
 
-storiesOf('Lib/Engagement/Chat', module).add('default', () => <Variations />, {
-  notes: { markdown },
-})
+const Template = (args) => {
+  return (
+    <>
+      <Variations {...args} />
+    </>
+  )
+}
+
+export const Default = {
+  render: (args) => {
+    return <Template {...args} />
+  },
+}
