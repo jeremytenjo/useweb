@@ -1,4 +1,4 @@
-import useTheme from '@mui/material/styles/useTheme'
+import useTheme from '@mui/system/useTheme'
 import useMediaQueryMui from '@mui/material/useMediaQuery'
 
 export type UseMediaQueryProps = {
