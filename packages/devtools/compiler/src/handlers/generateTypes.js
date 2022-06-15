@@ -1,7 +1,6 @@
 const path = require('path')
 
 const runCLI = require('../utils/runCLI')
-// const getDeepestFolderLength = require('../utils/getDeepestFolderLength')
 
 module.exports = async function generateTypes(packageDir, entryPointFile) {
   if (entryPointFile !== 'index.ts' && entryPointFile !== 'index.tsx') return null
