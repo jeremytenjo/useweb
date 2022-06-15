@@ -60,5 +60,10 @@ exports.old = [
 
 const componentPackage = require('./templates/componentPackage.cjs')
 const muiComponentPackage = require('./templates/muiComponent.cjs')
+const functions = require('./templates/function.cjs')
 
-module.exports = [componentPackage.template, muiComponentPackage.template]
+module.exports = [
+  componentPackage.template,
+  functions.template,
+  muiComponentPackage.template,
+]

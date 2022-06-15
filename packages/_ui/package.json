@@ -1,5 +1,5 @@
 {
-  "name": "@useweb/ui",
+  "name": "@useweb/ui-dev",
   "version": "0.1.0",
   "description": "UI components to speed up app development",
   "main": "index.js",
@@ -7,9 +7,10 @@
   "author": "Jeremy Tenjo",
   "license": "ISC",
   "types": "./build/index.d.ts",
+  "private": "true",
   "scripts": {
     "build": "node  --experimental-json-modules --loader ts-node/esm ./scripts/buildUiPackage/run.ts",
-    "deploy": "npm run build && npm publish --access public"
+    "deploy": "npm run build && cd build && npm publish --access public"
   },
   "peerDependencies": {
     "@emotion/react": "^11.0.0",

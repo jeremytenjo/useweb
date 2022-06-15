@@ -14,4 +14,7 @@ export default async function buildUiPackage() {
   // create build index.d.ts with packages types similar to MUI
   console.log('')
   console.log(chalk.cyan('Packages compiled successfully!'))
+  console.log('')
+
+  // Create package.json file in build folder
 }
