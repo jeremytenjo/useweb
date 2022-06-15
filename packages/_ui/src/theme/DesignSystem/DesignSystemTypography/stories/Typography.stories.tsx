@@ -3,9 +3,10 @@ import React from 'react'
 
 import { Typography, type TypographyProps } from './component'
 import Docs from './Typography.docs'
+import * as Typo from './typography'
 
 const defaultArgs: TypographyProps = {
-  name: 'Typography',
+  variantNames: Typo.variantNames,
 }
 
 export default {
