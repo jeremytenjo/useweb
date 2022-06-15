@@ -1,5 +1,7 @@
+import React from 'react'
+
 import Code from '../../../Code'
-import Box from '../../../Box'
+import Box from '../../../../_ui/src/dataDisplay/Box/src'
 
 export default function Response({ fetch, validation }) {
   let fetchCode = ''

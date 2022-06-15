@@ -1,8 +1,8 @@
 import React from 'react'
 import { Meta } from '@storybook/react'
 
-import Text from '../../dataDisplay/Text/src'
-import Link from '../../navigation/Link/src'
+import Text from '../../_ui/src/dataDisplay/Text/src'
+import Link from '../../_ui/src/navigation/Link/src'
 
 export default {
   title: 'Introduction',

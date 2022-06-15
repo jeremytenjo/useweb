@@ -1,8 +1,9 @@
+import React from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 import CopyButton from '../../input/CopyButton'
-import Box from '../Box/src'
+import Box from '../../_ui/src/dataDisplay/Box/src'
 
 import * as styles from './styles'
 
@@ -22,12 +23,12 @@ export default function Code({
   const syntax = stringify ? JSON.stringify(code, null, 1) : code
 
   return (
-    <Box styles={styles.wrapper} className='dataDisplay_Code'>
+    <Box sx={styles.wrapper} className='dataDisplay_Code'>
       <SyntaxHighlighter language={language} style={style} {...rest}>
         {syntax}
       </SyntaxHighlighter>
 
-      <Box styles={styles.icon}>
+      <Box sx={styles.icon}>
         <CopyButton text={syntax} tooltipOptions={{ placement: tooltipPlacement }} />
       </Box>
     </Box>

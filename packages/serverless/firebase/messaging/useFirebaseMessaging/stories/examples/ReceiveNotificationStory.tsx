@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 import CopyToClipboard from '../../../../../../input/CopyToClipboard/index'
 import Donut from '../../../../../../feedback/Progress/Donut/index'
 import Code from '../../../../../../dataDisplay/Code/index'
-import Text from '../../../../../../dataDisplay/Text/src/index'
+import Text from '../../../../../../_ui/src/dataDisplay/Text/src'
 import showNotification from '../../../../../../feedback/notification/showNotification'
 import ErrorMessage from '../../../../../../dataDisplay/ErrorMessage'
 import ShareButton from '../../../../../../dataDisplay/IconSpecial/ShareButton'
-import Button from '../../../../../../input/Button/src'
+import Button from '../../../../../../_ui/src/input/Button/src'
 import useFirebaseMessaging from '../../src'
 
 export default function ReceiveNotificationStory() {
@@ -34,7 +34,7 @@ export default function ReceiveNotificationStory() {
       {!messaging.isSupported() && (
         <Text
           text='Push notifications are not supported in the current device'
-          styles={{ color: 'red' }}
+          sx={{ color: 'red' }}
         />
       )}
 
@@ -75,7 +75,7 @@ export default function ReceiveNotificationStory() {
                 url: messaging.fcmRegistrationToken,
               }}
             >
-              <Button text='Share FCM Registration Token' />
+              <Button name='share'>Share FCM Registration Token</Button>
             </ShareButton>
           </div>
 

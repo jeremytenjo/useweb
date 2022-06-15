@@ -1,8 +1,9 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from 'react'
 import Button from '@mui/material/Button'
-import TextField from '@useweb/textfield'
-import Select from '@useweb/select'
+
+import TextField from '../../fields/Textfield/src'
+import Select from '../../fields/Select/src'
 
 import { Form } from './component'
 import Docs from './Form.docs'

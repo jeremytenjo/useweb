@@ -1,6 +1,7 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from 'react'
-import Form from '@useweb/form'
+
+import Form from '../../../Form/src'
 
 import { Textfield, type TextfieldProps } from './component'
 import Docs from './Textfield.docs'

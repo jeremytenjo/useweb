@@ -1,12 +1,14 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from 'react'
 
+import IconEx from '../../../../../dataDisplay/Icon/library/IconGithub1'
+
 import { IconButton, type IconButtonProps } from './component'
 import Docs from './IconButton.docs'
 
 const defaultArgs: IconButtonProps = {
   name: 'IconButton',
-  children: <>IconButton</>,
+  children: <IconEx color='black' />,
 }
 
 export default {

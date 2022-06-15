@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Icon from '../../dataDisplay/Icon/library/IconRefreshFilled'
-import Text from '../../dataDisplay/Text/src'
+import Text from '../../_ui/src/dataDisplay/Text/src'
 import useKeyPress from '../../feedback/useKeyPress/src'
 
 import Styles from './styles'

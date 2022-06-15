@@ -1,15 +1,15 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
-import React from "react";
+import React from 'react'
 
-import { Palette, type PaletteProps } from "./component";
-import Docs from "./Palette.docs";
+import { Palette, type PaletteProps } from './component'
+import Docs from './Palette.docs'
 
 const defaultArgs: PaletteProps = {
-  name: "Palette",
-};
+  name: 'Theme/Design System/Palette',
+}
 
 export default {
-  title: "Palette",
+  title: 'Theme/Design System/Palette',
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
@@ -17,21 +17,21 @@ export default {
       page: Docs,
     },
   },
-};
+}
 
 const Template = (args) => {
   return (
     <>
       <Palette {...args} />
     </>
-  );
-};
+  )
+}
 
 export const Default = {
   render: (args) => {
-    return <Template {...args} />;
+    return <Template {...args} />
   },
-};
+}
 
 // const variantArgs: PaletteProps = {
 //  name: 'World',

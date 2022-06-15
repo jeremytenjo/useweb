@@ -1,7 +1,8 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from 'react'
-import Form from '@useweb/form'
 import Button from '@mui/material/Button'
+
+import Form from '../../../Form/src'
 
 import { Select, type SelectProps } from './component'
 import Docs from './Select.docs'

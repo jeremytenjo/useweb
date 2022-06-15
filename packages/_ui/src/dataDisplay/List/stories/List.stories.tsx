@@ -5,8 +5,8 @@ import { List, type ListProps } from './component'
 import Docs from './List.docs'
 
 const defaultArgs: ListProps = {
-  ListItemComponent: () => <p />,
-  data: [<p key='1'>hello</p>],
+  ListItemComponent: () => <p>hola</p>,
+  data: [<p key='1'>hola</p>, <p key='2'>hola</p>],
 }
 
 export default {

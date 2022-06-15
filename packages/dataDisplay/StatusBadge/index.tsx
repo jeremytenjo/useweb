@@ -1,5 +1,7 @@
-import Box from '../Box/src/index'
-import Text from '../Text/src/index'
+import React from 'react'
+
+import Box from '../../_ui/src/dataDisplay/Box/src'
+import Text from '../../_ui/src/dataDisplay/Text/src'
 
 import { defaultProps } from './props'
 import * as styles from './styles'

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
-import Box from '../Box/src'
-import Link from '../../navigation/Link/src'
+import Box from '../../_ui/src/dataDisplay/Box/src'
+import Link from '../../_ui/src/navigation/Link/src'
 import GoogleIcon from '../Icon/library/IconGoogleLogo'
 
 export default function ErrorMessage({ error }) {

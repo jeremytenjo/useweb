@@ -2,7 +2,7 @@ import React from 'react'
 
 import StatusBadge from '../../../StatusBadge'
 import RefreshButton from '../../../../input/RefreshButton'
-import Box from '../../../Box'
+import Box from '../../../../_ui/src/dataDisplay/Box/src'
 
 import * as styles from './styles'
 

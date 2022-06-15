@@ -1,15 +1,15 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
-import React from "react";
+import React from 'react'
 
-import { FetchingUi, type FetchingUiProps } from "./component";
-import Docs from "./FetchingUi.docs";
+import { FetchingUi, type FetchingUiProps } from './component'
+import Docs from './FetchingUi.docs'
 
 const defaultArgs: FetchingUiProps = {
-  name: "FetchingUi",
-};
+  name: 'Data Display/FetchingUi',
+}
 
 export default {
-  title: "FetchingUi",
+  title: 'Data Display/FetchingUi',
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
@@ -17,21 +17,21 @@ export default {
       page: Docs,
     },
   },
-};
+}
 
 const Template = (args) => {
   return (
     <>
       <FetchingUi {...args} />
     </>
-  );
-};
+  )
+}
 
 export const Default = {
   render: (args) => {
-    return <Template {...args} />;
+    return <Template {...args} />
   },
-};
+}
 
 // const variantArgs: FetchingUiProps = {
 //  name: 'World',

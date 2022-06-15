@@ -1,15 +1,15 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
-import React from "react";
+import React from 'react'
 
-import { AsyncTester, type AsyncTesterProps } from "./component";
-import Docs from "./AsyncTester.docs";
+import { AsyncTester, type AsyncTesterProps } from './component'
+import Docs from './AsyncTester.docs'
 
 const defaultArgs: AsyncTesterProps = {
-  name: "AsyncTester",
-};
+  fn: () => 'this is the result',
+}
 
 export default {
-  title: "AsyncTester",
+  title: 'Data/AsyncTester',
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
@@ -17,21 +17,21 @@ export default {
       page: Docs,
     },
   },
-};
+}
 
 const Template = (args) => {
   return (
     <>
       <AsyncTester {...args} />
     </>
-  );
-};
+  )
+}
 
 export const Default = {
   render: (args) => {
-    return <Template {...args} />;
+    return <Template {...args} />
   },
-};
+}
 
 // const variantArgs: AsyncTesterProps = {
 //  name: 'World',

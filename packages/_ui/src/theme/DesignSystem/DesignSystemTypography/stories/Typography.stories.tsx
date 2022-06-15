@@ -1,15 +1,15 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
-import React from "react";
+import React from 'react'
 
-import { Typography, type TypographyProps } from "./component";
-import Docs from "./Typography.docs";
+import { Typography, type TypographyProps } from './component'
+import Docs from './Typography.docs'
 
 const defaultArgs: TypographyProps = {
-  name: "Typography",
-};
+  name: 'Typography',
+}
 
 export default {
-  title: "Typography",
+  title: 'Theme/Design System/Typography',
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
@@ -17,21 +17,21 @@ export default {
       page: Docs,
     },
   },
-};
+}
 
 const Template = (args) => {
   return (
     <>
       <Typography {...args} />
     </>
-  );
-};
+  )
+}
 
 export const Default = {
   render: (args) => {
-    return <Template {...args} />;
+    return <Template {...args} />
   },
-};
+}
 
 // const variantArgs: TypographyProps = {
 //  name: 'World',
