@@ -2,22 +2,25 @@ import path from 'path'
 
 import shell from '../../../../../node/shell/index.js'
 
-export default function compileUiPackages({ uiPackagesPaths }) {
-  uiPackagesPaths.forEach((uiPackage: string) => {
-    const uiPackageDir = process.cwd()
-    const uiPackagePackageJsonPath = path.join(uiPackageDir, 'package.json')
-    const packageName = getPackageName(uiPackage)
-    const outputPath = path.join(uiPackageDir, 'build', packageName)
-    const packageDir = getPackageDir(uiPackage)
+export default async function compileUiPackages({ uiPackagesPaths }) {
+  await Promise.all(
+    uiPackagesPaths.map(async (uiPackage: string) => {
+      const uiPackageDir = process.cwd()
+      const uiPackagePackageJsonPath = path.join(uiPackageDir, 'package.json')
+      const packageName = getPackageName(uiPackage)
+      const outputPath = path.join(uiPackageDir, 'build', packageName)
+      const packageDir = getPackageDir(uiPackage)
 
-    console.log({
-      uiPackageDir,
-      uiPackagePackageJsonPath,
-      packageName,
-      outputPath,
-      packageDir,
-    })
-  })
+      console.log({
+        uiPackageDir,
+        uiPackagePackageJsonPath,
+        packageName,
+        outputPath,
+        packageDir,
+      })
+      await shell(`node ./node_modules/@useweb/compiler/build`)
+    }),
+  )
 }
 
 const getPackageName = (packagePath) => {
