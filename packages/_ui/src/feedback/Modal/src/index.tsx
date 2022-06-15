@@ -4,7 +4,7 @@ import Backdrop from '@mui/material/Backdrop'
 import Modal from '@mui/material/Modal'
 import Fade from '@mui/material/Fade'
 
-type ModalProp = {
+export type ModalProp = {
   open: boolean
   onClose: any
   children: any
