@@ -4,7 +4,7 @@ import B from '../../../../storybook/variationBlock'
 import Share from '..'
 
 export default {
-  name: 'Data Display/Icon/Special/Share',
+  title: 'Data Display/Icon/Special/Share',
 }
 
 const ShareComp = () => (

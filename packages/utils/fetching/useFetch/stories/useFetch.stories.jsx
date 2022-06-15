@@ -4,7 +4,7 @@ import B from '../../../../storybook/variationBlock/index'
 import useFetch from '../src/index'
 
 export default {
-  name: 'Data/useFetch',
+  title: 'Data/useFetch',
 }
 
 const GET = () => {

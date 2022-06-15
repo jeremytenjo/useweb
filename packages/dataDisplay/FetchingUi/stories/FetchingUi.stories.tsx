@@ -5,7 +5,7 @@ import { FetchingUi, type FetchingUiProps } from './component'
 import Docs from './FetchingUi.docs'
 
 const defaultArgs: FetchingUiProps = {
-  name: 'Data Display/FetchingUi',
+  title: 'Data Display/FetchingUi',
 }
 
 export default {

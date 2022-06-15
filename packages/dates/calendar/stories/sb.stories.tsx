@@ -5,7 +5,7 @@ import stubs from '../stubs'
 import Calendar from '..'
 
 export default {
-  name: 'Datas/Calendar',
+  title: 'Datas/Calendar',
 }
 const Variations = () => (
   <B title='Default' background>
