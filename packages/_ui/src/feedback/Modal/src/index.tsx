@@ -4,14 +4,14 @@ import Backdrop from '@mui/material/Backdrop'
 import Modal from '@mui/material/Modal'
 import Fade from '@mui/material/Fade'
 
-export type ModalProp = {
+export type ModalProps = {
   open: boolean
   onClose: any
   children: any
   sx?: BoxProps['sx']
 }
 
-export default function MyModal({ open, onClose, children, sx = {} }: ModalProp) {
+export default function MyModal({ open, onClose, children, sx = {} }: ModalProps) {
   return (
     <Modal
       aria-labelledby='transition-modal-title'
