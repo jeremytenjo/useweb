@@ -3,7 +3,7 @@ import path from 'path'
 import shell from '../../../../../node/shell/index.js'
 
 export default async function compileUiPackages({ uiPackagesPaths }) {
-  await Promise.all(
+  return await Promise.all(
     uiPackagesPaths.map(async (uiPackage: string) => {
       const uiPackageDir = process.cwd()
       const uiPackagePackageJsonPath = path.join(uiPackageDir, 'package.json')

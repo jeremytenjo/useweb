@@ -11,7 +11,9 @@ import concurrently from 'concurrently'
 export default async function shell(commands: string | string[]) {
   const _commands = typeof commands === 'string' ? [commands] : commands
 
-  await concurrently(_commands, {
+  const { result } = await concurrently(_commands, {
     prefix: 'none',
   })
+
+  await result
 }
