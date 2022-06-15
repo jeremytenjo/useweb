@@ -12,7 +12,7 @@ export default async function compileUiPackages({ uiPackagesPaths }) {
       const outputPath = path.join(uiPackageDir, 'build', packageName)
 
       await shell(
-        `node ./node_modules/@useweb/compiler/build --packageDir ${packageDir} --outputPath ${outputPath} --packageJsonPath ${uiPackagePackageJsonPath}`,
+        `node ./node_modules/@useweb/compiler/build --packageDir ${packageDir} --outputPath ${outputPath} --packageJsonPath ${uiPackagePackageJsonPath} --dontOutputInBuildFolder`,
       )
     }),
   )
