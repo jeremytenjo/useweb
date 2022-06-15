@@ -27,10 +27,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^6.5.8",
-    "@storybook/addon-essentials": "^6.5.8",
-    "@storybook/addon-links": "^6.5.8",
-    "@storybook/react": "^6.5.8",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/react": "^6.5.9",
     "@tippyjs/react": "^4.2.6",
     "airtable": "^0.11.4",
     "firebase-admin": "^9.8.0",
