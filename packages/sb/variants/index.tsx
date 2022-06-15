@@ -1,21 +1,24 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-import B from '../variationBlock'
+// import B from '../variationBlock'
 
-import { Wrapper, titleStyle } from './styles'
-import FunctionVariationComponent from './utils/functionVariationComponent'
+import { Wrapper } from './styles'
+// import { Wrapper, titleStyle } from './styles'
+// import FunctionVariationComponent from './utils/functionVariationComponent'
 
-export default function SbVariants({
-  styles,
-  Variants,
-  dir,
-  type = 'styles/',
-  getSpecTestValue = false,
-  onlyBase = false,
-  noBase = false,
-}) {
+export default function SbVariants(
+  {
+    // styles,
+    // Variants,
+    // dir,
+    // type = 'styles/',
+    // getSpecTestValue = false,
+    // onlyBase = false,
+    // noBase = false,
+  },
+) {
   const [Components, setComponents] = useState(null)
-  const stylesPath = styles?.keys()
+  // const stylesPath = styles?.keys()
 
   useEffect(() => {
     getComponents()
