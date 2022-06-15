@@ -21,7 +21,7 @@
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0",
-    "@useweb/compiler": "^2.3.0",
+    "@useweb/compiler": "^2.3.1",
     "ts-node": "^10.8.1"
   }
 }

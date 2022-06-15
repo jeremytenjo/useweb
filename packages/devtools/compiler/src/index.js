@@ -20,7 +20,7 @@
   const target = args.target || 'es2019'
 
   await removeBuildFolder()
-  await generateTypes({ outputPath, entryPointFile })
+  await generateTypes({ outputPath, entryPointFile, packageDir })
 
   // https://esbuild.github.io/api/
   esbuild.build({

@@ -8,16 +8,8 @@ export default async function compileUiPackages({ uiPackagesPaths }) {
       const uiPackageDir = process.cwd()
       const uiPackagePackageJsonPath = path.join(uiPackageDir, 'package.json')
       const packageName = getPackageName(uiPackage)
-      const outputPath = path.join(uiPackageDir, 'build', packageName)
       const packageDir = getPackageDir(uiPackage)
-
-      console.log({
-        uiPackageDir,
-        uiPackagePackageJsonPath,
-        packageName,
-        outputPath,
-        packageDir,
-      })
+      const outputPath = path.join(uiPackageDir, 'build', packageName)
 
       await shell(
         `node ./node_modules/@useweb/compiler/build --packageDir ${packageDir} --outputPath ${outputPath} --packageJsonPath ${uiPackagePackageJsonPath}`,
