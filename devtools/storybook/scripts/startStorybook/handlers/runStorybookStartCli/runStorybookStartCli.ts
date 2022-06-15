@@ -1,4 +1,4 @@
-import shell from '../../../../../../packages/node/shell/index.js'
+import shell from '../../../../../../packages/node/shell/shell.js'
 
 type Props = {
   noManagerCache?: boolean

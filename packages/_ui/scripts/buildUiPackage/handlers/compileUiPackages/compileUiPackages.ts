@@ -1,7 +1,7 @@
 import path from 'path'
 
 import { type PayloadProps } from '../../buildUiPackage'
-import shell from '../../../../../node/shell/index.js'
+import shell from '../../../../../node/shell/shell.js'
 
 export default async function compileUiPackages({
   uiPackagesPaths,

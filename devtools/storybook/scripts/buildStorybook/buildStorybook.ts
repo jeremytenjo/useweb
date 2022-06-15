@@ -1,6 +1,6 @@
 import path from 'path'
 
-import shell from '../../../../packages/node/shell/index.js'
+import shell from '../../../../packages/node/shell/shell.js'
 import removeFolder from '../../../../packages/devtools/compiler/src/utils/removeFolder.js'
 
 export default async function buildStorybook() {

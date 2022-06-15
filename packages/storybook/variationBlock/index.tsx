@@ -5,14 +5,13 @@ import { Wrapper, Title, Content } from './styles'
 const VariationBlock = ({
   children,
   title,
-  style,
-  contentStyle,
-  titleStyle,
-  containerId,
-  background,
+  style = {},
+  contentStyle = {},
+  titleStyle = {},
+  containerId = '',
+  background = [],
   titleColor = 'var(--color-primaryLighter)',
   color = 'white',
-  noBackground,
 }) => {
   return (
     <Wrapper style={style}>

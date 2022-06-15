@@ -1,6 +1,6 @@
 import path from 'path'
 
-import glob from '../../../../../../packages/node/glob/index.js'
+import glob from '../../../../../../packages/node/glob/glob.js'
 import createFile from '../../../../../../packages/node/createFile/createFile.js'
 import { PayloadTypes } from '../../startStorybook'
 
