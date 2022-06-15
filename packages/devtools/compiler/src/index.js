@@ -19,9 +19,16 @@
   const outfile = path.join(outputPath, outputBuildFolder, 'index.js')
   const format = args.format || 'esm'
   const target = args.target || 'es2019'
+  const typesOutputDir = args.typesOutputDir || 'types'
 
   await removeBuildFolder()
-  await generateTypes({ outputPath, entryPointFile, packageDir, outputBuildFolder })
+  await generateTypes({
+    outputPath,
+    entryPointFile,
+    packageDir,
+    outputBuildFolder,
+    typesOutputDir,
+  })
 
   // https://esbuild.github.io/api/
   esbuild.build({

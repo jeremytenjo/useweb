@@ -11,14 +11,13 @@ export default async function createPackageJson({ payload }: CreatePackageJsonPr
 
   const buildPackageJsonOverride = {
     name: '@useweb/ui',
-    private: 'false',
-    scripts: {},
-    devDependencies: {},
   } as any
 
   const buildPackageJson = { ...rootPackageJson, ...buildPackageJsonOverride }
 
   delete buildPackageJson.private
+  delete buildPackageJson.scripts
+  delete buildPackageJson.devDependencies
 
   const pacakgeJsonContent = JSON.stringify(buildPackageJson, null, 2)
 

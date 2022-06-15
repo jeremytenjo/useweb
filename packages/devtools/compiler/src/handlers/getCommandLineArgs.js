@@ -12,6 +12,7 @@ module.exports = function getCommandLineArgs() {
     { name: 'packageJsonPath', type: String },
     { name: 'outputPath', type: String },
     { name: 'dontOutputInBuildFolder', type: Boolean },
+    { name: 'typesOutputDir', type: String },
   ]
   const commandLineArgs = require('command-line-args')
   const options = commandLineArgs(optionDefinitions)
