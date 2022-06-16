@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import useEventListener from '@useweb/use-event-listener'
+
+import useEventListener from '../../../../../utils/browser/useEventListener/src'
 
 import { useMediaQuery, type UseMediaQueryProps } from './component'
 
