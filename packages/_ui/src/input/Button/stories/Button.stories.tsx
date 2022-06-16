@@ -24,6 +24,7 @@ const Template = (args) => {
   return (
     <>
       <Button {...args} />
+      hello
     </>
   )
 }
