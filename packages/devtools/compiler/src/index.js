@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-extra-semi
-(async () => {
+;(async () => {
   const path = require('path')
   const esbuild = require('esbuild')
 
@@ -28,6 +28,7 @@
     packageDir,
     outputBuildFolder,
     typesOutputDir,
+    indexDtsDirPathFallback: args.indexDtsDirPathFallback,
   })
 
   // https://esbuild.github.io/api/

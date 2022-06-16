@@ -2,12 +2,15 @@ const path = require('path')
 
 const runCLI = require('../utils/runCLI')
 
+const ensureDtsFile = require('./ensureDtsFile')
+
 module.exports = async function generateTypes({
   outputPath,
   entryPointFile,
   packageDir,
   outputBuildFolder,
   typesOutputDir,
+  indexDtsDirPathFallback,
 }) {
   if (entryPointFile !== 'index.ts' && entryPointFile !== 'index.tsx') return null
 
@@ -40,4 +43,5 @@ module.exports = async function generateTypes({
   }
 
   await runCLI(`tsc ${include}`, tscArgs)
+  await ensureDtsFile({ typesOutputPath, indexDtsDirPathFallback })
 }

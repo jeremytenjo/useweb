@@ -1,6 +1,6 @@
 {
   "name": "@useweb/ui-dev",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "UI components to speed up app development",
   "main": "index.js",
   "type": "module",
@@ -30,7 +30,7 @@
     "@emotion/styled": "^11.0.0",
     "@mui/system": "^5.0.0",
     "@mui/material": "^5.0.0",
-    "@useweb/compiler": "^2.5.0",
+    "@useweb/compiler": "^2.6.0",
     "@useweb/flatten-object": "^1.0.1",
     "@useweb/object-to-array": "^1.0.0",
     "@useweb/use-event-listener": "^1.0.0",

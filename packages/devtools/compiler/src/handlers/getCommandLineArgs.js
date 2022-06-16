@@ -13,6 +13,7 @@ module.exports = function getCommandLineArgs() {
     { name: 'outputPath', type: String },
     { name: 'dontOutputInBuildFolder', type: Boolean },
     { name: 'typesOutputDir', type: String },
+    { name: 'indexDtsDirPathFallback', type: String },
   ]
   const commandLineArgs = require('command-line-args')
   const options = commandLineArgs(optionDefinitions)

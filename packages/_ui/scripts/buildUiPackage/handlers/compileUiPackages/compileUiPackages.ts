@@ -14,9 +14,10 @@ export default async function compileUiPackages({
       const packageName = getPackageName(uiPackage)
       const packageDir = getPackageDir(uiPackage)
       const outputPath = path.join(payload.buildFolder, packageName)
+      const indexDtsDirPathFallback = path.join(packageName, 'src')
 
       await shell(
-        `node ./node_modules/@useweb/compiler/build --packageDir ${packageDir} --outputPath ${outputPath} --packageJsonPath ${uiPackagePackageJsonPath} --dontOutputInBuildFolder --typesOutputDir '/'`,
+        `node ./node_modules/@useweb/compiler/build --packageDir ${packageDir} --outputPath ${outputPath} --packageJsonPath ${uiPackagePackageJsonPath} --dontOutputInBuildFolder --typesOutputDir '/' --indexDtsDirPathFallback ${indexDtsDirPathFallback}`,
       )
     }),
   )
