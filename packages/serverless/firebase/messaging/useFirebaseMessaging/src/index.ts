@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import useFirebase from '@useweb/use-firebase'
-import { getToken, onMessage as messagingOnMessage } from 'firebase/messaging'
+import {
+  getToken,
+  onMessage as messagingOnMessage,
+  isSupported,
+} from 'firebase/messaging'
+
+import useAsync from '../../../../../data/useAsync/src'
 
 const isProduction = () => process.env.NODE_ENV === 'production'
 
@@ -14,7 +20,7 @@ export type MessagingProps = {
 }
 
 export type Return = {
-  isSupported: () => boolean
+  isSupported: () => Promise<boolean>
   init: () => void
   fcmRegistrationToken: string
   initializing: boolean
@@ -30,8 +36,13 @@ export default function useFirebaseMessaging({
   onError: defaultOnError = () => null,
   onFcmRegistrationToken = () => null,
 }: MessagingProps = {}): Return {
-  const onMessageRemoveListenerRef = useRef(null)
+  const onMessageRemoveListenerRef = useRef<any>(null)
   const firebase = useFirebase()
+  const isSupportedRes = useAsync({
+    fn: isSupported,
+    autoExec: true,
+    onResult: () => console.warn('Firebase messaging is not supported in this device.'),
+  })
 
   const forceSupport = firebase?.messagingOptions?.forceSupport || defaultForceSupport
   const serviceWorkerFileName =
@@ -42,34 +53,15 @@ export default function useFirebaseMessaging({
 
   const isProductionApp = isProduction()
 
-  const [fcmRegistrationToken, setFcmRegistrationToken] = useState(null)
-  const [initializing, setInitializing] = useState(null)
-  const [error, setError] = useState(null)
+  const [fcmRegistrationToken, setFcmRegistrationToken] = useState<any>(null)
+  const [initializing, setInitializing] = useState<any>(null)
+  const [error, setError] = useState<any>(null)
 
   useEffect(() => {
     return () => {
       onMessageRemoveListenerRef.current && onMessageRemoveListenerRef.current()
     }
   }, [])
-
-  const isSupported = () => {
-    const result =
-      'Notification' in window &&
-      'serviceWorker' in navigator &&
-      'PushManager' in window &&
-      isProductionApp
-
-    if (!result && !forceSupport) {
-      console.log('Push notifications are not supported on the current device', {
-        Notification: 'Notification' in window,
-        serviceWorker: 'serviceWorker' in navigator,
-        PushManager: 'PushManager' in window,
-        isProductionApp,
-      })
-    }
-
-    return forceSupport || result
-  }
 
   const registerServiceWorker = async () => {
     if (!firebase.messaging) {
@@ -84,7 +76,7 @@ export default function useFirebaseMessaging({
   }
 
   const init = async () => {
-    if (isSupported() && !fcmRegistrationToken) {
+    if (isSupportedRes.result && !fcmRegistrationToken) {
       startNotificationListener()
     }
   }
@@ -113,7 +105,7 @@ export default function useFirebaseMessaging({
     }
   }
 
-  const isReadyToUse = isSupported() && !initializing && fcmRegistrationToken
+  const isReadyToUse = isSupportedRes.result && !initializing && fcmRegistrationToken
 
   return {
     isSupported,
