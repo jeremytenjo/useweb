@@ -5,7 +5,8 @@ import shell from '../../packages/node/shell/shell.js'
 
 export default async function deployApp() {
   await buildApp()
-  await shell('git commit -m "built storybook" -a && git push')
+  await shell('git commit -m "built storybook" -a')
+  await shell('git push')
 
   console.clear()
   console.log('')
