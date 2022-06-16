@@ -12,6 +12,7 @@
     "dev:with-firebase-functions": "concurrently 'npm run dev' 'npm run functions:build:watch' 'npm run functions:serve'",
     "dev:refresh-storiesList": "node --loader ts-node/esm ./scripts/dev/run.ts --refresh-stories-list",
     "build": "node --loader ts-node/esm ./scripts/buildApp/run.ts",
+    "deploy": "node --loader ts-node/esm ./scripts/deploy/run.ts",
     "functions:dev": "concurrently 'npm run functions:build:watch' 'npm run functions:serve'",
     "functions:build": "node --loader ts-node/esm firebase/functions/scripts/buildFunctions/run.js",
     "functions:build:watch": "node --loader ts-node/esm firebase/functions/scripts/buildFunctions/run.js --watch",
