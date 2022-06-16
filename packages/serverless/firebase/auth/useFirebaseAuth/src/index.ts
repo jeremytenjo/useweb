@@ -24,7 +24,7 @@ export type UseFirebaseAuthProps = {
 }
 
 /**
- * [Docs](https://useweb.vercel.app/?path=/docs/packages-serverless-firebase-auth-usefirebaseauth--example)
+ * [Docs](https://useweb.vercel.dev/?path=/docs/packages-serverless-firebase-auth-usefirebaseauth--example)
  *
  * [Firebase Auth docs](https://firebase.google.com/docs/auth/web/start)
  */
