@@ -18,7 +18,7 @@ module.exports = async function ensureDtsFile({
     if (!indexDtsDirPathFallback) {
       console.log('')
       console.log(
-        `index.d.ts for ${typesOutputPath} not created because it is nested, provide a indexDtsDirPathFallback using --indexDtsDirPathFallback`,
+        `WARN index.d.ts for ${typesOutputPath} not created because it is nested, provide a indexDtsDirPathFallback using --indexDtsDirPathFallback`,
       )
       console.log('')
       return process.exit(1)
