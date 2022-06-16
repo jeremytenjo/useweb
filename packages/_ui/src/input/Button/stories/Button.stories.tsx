@@ -25,7 +25,7 @@ const Template = (args) => {
     <>
       <Button {...args} />
       <iframe
-        src='https://useweb.dev/?path=/story/packages-feedback-modal--example&full=1&shortcuts=false&singleStory=true'
+        src='https://useweb.vercel.app/?path=/story/packages-feedback-modal--example&full=1&shortcuts=false&singleStory=true'
         width='800'
         height='260'
       ></iframe>

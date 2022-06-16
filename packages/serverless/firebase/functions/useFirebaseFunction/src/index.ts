@@ -16,7 +16,7 @@ type FetchProps = {
 }
 
 /**
- * [Docs](https://useweb.dev/?path=/docs/packages-serverless-firebase-functions-usefirebasefunction--example)
+ * [Docs](https://useweb.vercel.app/?path=/docs/packages-serverless-firebase-functions-usefirebasefunction--example)
  *
  * [Firebase Functions docs](https://firebase.google.com/docs/functions/get-startedt)
  *
