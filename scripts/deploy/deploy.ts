@@ -8,7 +8,6 @@ export default async function deployApp() {
   await shell('git commit -m "built storybook" -a')
   await shell('git push')
 
-  console.clear()
   console.log('')
   console.log(chalk.cyan('Storybook deployed successfully!'))
 }
