@@ -1,9 +1,0 @@
-/*!
- * Image Compressor v1.1.4
- * https://xkeshi.github.io/image-compressor
- *
- * Copyright 2017-present Chen Fengyuan
- * Released under the MIT license
- *
- * Date: 2018-06-20T07:28:41.051Z
- */
