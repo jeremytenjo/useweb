@@ -5,7 +5,7 @@ module.exports = {
     node: true,
     es6: true,
   },
-  ignorePatterns: ['node_modules', 'build', '.env'],
+  ignorePatterns: ['node_modules', 'build', '.env', 'storybookBuild'],
   plugins: ['react', 'react-hooks', 'import'],
   extends: [
     'plugin:react/recommended',
