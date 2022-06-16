@@ -8,7 +8,7 @@
     "indexes": "firebase/firestore.indexes.json"
   },
   "hosting": {
-    "public": "devtools/storybook/build",
+    "public": "devtools/storybook/storybookBuild",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   },
   "storage": {
