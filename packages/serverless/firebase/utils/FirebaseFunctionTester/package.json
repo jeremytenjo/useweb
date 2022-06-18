@@ -1,6 +1,6 @@
 {
   "name": "@useweb/firebase-function-tester",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -8,7 +8,7 @@
     "build"
   ],
   "scripts": {
-    "build": "node ./node_modules/@useweb/compiler/build",
+    "build": "node ./node_modules/@useweb/compiler/build --format cjs",
     "build:watch": "node ./node_modules/@useweb/compiler/build --watch",
     "deploy": "npm run build && npm publish --access public"
   },
@@ -16,18 +16,20 @@
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0",
+    "@useweb/use-firebase-function": "^3.3.0",
+    "@useweb/use-firebase": "^8.3.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "@useweb/use-firebase-function": "^3.3.0"
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0",
     "@useweb/compiler": "latest",
+    "@useweb/use-firebase-function": "^3.3.0",
+    "@useweb/use-firebase": "^8.3.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "@useweb/use-firebase-function": "^3.3.0"
+    "react-dom": "^18.0.0"
   },
   "dependencies": {
     "@useweb/fetching-ui": "^5.2.0"

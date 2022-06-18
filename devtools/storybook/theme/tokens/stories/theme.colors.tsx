@@ -1,8 +1,8 @@
 import React from 'react'
+import Palette from '@useweb/ui/DesignSystemPalette'
 
 import colors from '../colors'
-import Swatches from '../../../lib/components/designSystem/Swatches/Swatches'
 
 export default function ColorsStories() {
-  return <Swatches colors={colors} />
+  return <Palette colors={colors} />
 }
