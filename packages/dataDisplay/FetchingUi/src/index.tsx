@@ -5,7 +5,7 @@ import LinearProgress from '@mui/material/LinearProgress'
 
 import ReactJson from './ReactJson/ReactJson'
 
-type FetchingUiProps = {
+export type FetchingUiProps = {
   onClick: any
   loading: any
   error: any
