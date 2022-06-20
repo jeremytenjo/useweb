@@ -2,6 +2,7 @@ import useGet, { type GetOptions, type GetReturn } from './handlers/useGet'
 import useCreate, { type CreateOptions, type CreateReturn } from './handlers/useCreate'
 import useUpdate, { type UpdateOptions, type UpdateReturn } from './handlers/useUpdate'
 import useRemove, { type RemoveOptions, type RemoveReturn } from './handlers/useRemove'
+
 export { default as prefetch } from './helpers/prefetch/prefetch'
 
 export type HandlerPayloadType = {
