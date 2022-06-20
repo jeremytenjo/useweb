@@ -1,6 +1,6 @@
 import React from 'react'
 import FetchingUi from '@useweb/fetching-ui'
-import useFirebaseFunction from '@useweb/use-firebase/useFirebaseFunction'
+import useFirebaseFunction from '@useweb/firebase/useFirebaseFunction'
 
 export type FirebaseFunctionTesterProps = { functionName: string; payload?: any }
 

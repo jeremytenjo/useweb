@@ -1,9 +1,11 @@
 {
   "name": "@useweb/firebase-builder",
-  "version": "2.0.0",
+  "version": "2.0.4",
   "author": "Jeremy Tenjo",
   "type": "module",
   "private": true,
+  "main": "./useFirebase/index.js",
+  "types": "./useFirebase/index.d.ts",
   "scripts": {
     "build": "node  --experimental-json-modules --loader ts-node/esm ./scripts/buildServices/run.ts",
     "deploy": "npm run build && cd build && npm publish --access public"

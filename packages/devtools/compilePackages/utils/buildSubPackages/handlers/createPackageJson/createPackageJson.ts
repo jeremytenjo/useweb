@@ -16,8 +16,8 @@ export default async function createPackageJson({ payload }: CreatePackageJsonPr
     name: payload.rootPackageName,
     description: rootPackageJson.description,
     version: rootPackageJson.version,
-    main: './index.js',
-    types: './types/index.d.ts',
+    main: rootPackageJson.main || './index.js',
+    types: rootPackageJson.types || './types/index.d.ts',
     author: rootPackageJson.author,
     peerDependencies: rootPackageJson.peerDependencies,
   } as any
