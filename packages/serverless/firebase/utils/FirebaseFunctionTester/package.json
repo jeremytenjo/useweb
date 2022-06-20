@@ -16,7 +16,7 @@
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0",
-    "@useweb/firebase": "^2.0.0",
+    "@useweb/firebase": "^3.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-json-view": "^1.21.3"
@@ -26,7 +26,7 @@
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0",
     "@useweb/compiler": "latest",
-    "@useweb/firebase": "^2.0.0",
+    "@useweb/firebase": "^3.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-json-view": "^1.21.3"
