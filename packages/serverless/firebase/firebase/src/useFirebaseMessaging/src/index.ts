@@ -6,7 +6,7 @@ import {
 } from 'firebase/messaging'
 import useAsync from '@useweb/use-async'
 
-import useFirebase from '../../..'
+import useFirebase from '../../useFirebase/src'
 
 const isProduction = () => process.env.NODE_ENV === 'production'
 

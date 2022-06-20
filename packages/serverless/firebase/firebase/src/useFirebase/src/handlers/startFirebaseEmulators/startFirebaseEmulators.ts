@@ -1,4 +1,4 @@
-import type { AuthOptions, DBOptions } from '../../'
+import type { AuthOptions, DBOptions } from '../..'
 
 import styleEmulatorWarning from './handlers/styleEmulatorWarning'
 import startAuthEmulator from './handlers/startAuthEmulator'

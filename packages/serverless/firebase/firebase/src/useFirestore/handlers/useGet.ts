@@ -5,8 +5,8 @@ import create from 'zustand'
 import arrayDB from '@useweb/array-db'
 import useLocalStorage from '@useweb/use-local-storage'
 
-import useFirebase from '../../../'
-import type { HandlerPayloadType } from '../src/'
+import useFirebase from '../../useFirebase/src'
+import type { HandlerPayloadType } from '../src'
 
 export type LocalStorageOptionsTypes = {
   getterFunction?: (options: { key: string }) => any

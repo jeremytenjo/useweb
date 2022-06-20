@@ -6,7 +6,7 @@ export default async function buildServices() {
     subPackageNameHook: ({ packageName }) => {
       let newPackageName = packageName
 
-      if (packageName === 'useFirebase') {
+      if (packageName === 'firebase') {
         newPackageName = '/'
       }
 
