@@ -2,15 +2,6 @@ import buildSubPackages from '../../../../../devtools/compilePackages/utils/buil
 
 export default async function buildServices() {
   await buildSubPackages({
-    rootPackageName: '@useweb/use-firebase',
-    subPackageNameHook: ({ packageName }) => {
-      let newPackageName = packageName
-
-      if (packageName === 'firebase') {
-        newPackageName = '/'
-      }
-
-      return newPackageName
-    },
+    rootPackageName: '@useweb/firebase',
   })
 }

@@ -8,7 +8,7 @@ import createPackageJson from './handlers/createPackageJson/createPackageJson.js
 
 type BuildSubPackagesProps = {
   rootPackageName: string
-  subPackageNameHook: (props: { packageName: string }) => string
+  subPackageNameHook?: (props: { packageName: string }) => string
 }
 
 export type PayloadProps = {
