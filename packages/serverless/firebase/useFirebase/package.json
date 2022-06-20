@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-firebase-builder",
-  "version": "8.7.0",
+  "version": "9.0.0",
   "author": "Jeremy Tenjo",
   "type": "module",
   "private": true,

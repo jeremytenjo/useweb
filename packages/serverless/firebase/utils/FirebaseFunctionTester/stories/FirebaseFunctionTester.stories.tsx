@@ -1,16 +1,16 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from 'react'
 
-// import { FirebaseFunctionTester, type FirebaseFunctionTesterProps } from './component'
+import { FirebaseFunctionTester, type FirebaseFunctionTesterProps } from './component'
 import Docs from './FirebaseFunctionTester.docs'
 
-// const defaultArgs: FirebaseFunctionTesterProps = {
-//   functionName: 'helloWorld',
-// }
+const defaultArgs: FirebaseFunctionTesterProps = {
+  functionName: 'helloWorld',
+}
 
 export default {
   title: 'serverless/firebase/utils/FunctionTester',
-  // args: defaultArgs,
+  args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
     docs: {
@@ -22,8 +22,7 @@ export default {
 const Template = (args) => {
   return (
     <>
-      {/* <FirebaseFunctionTester {...args} /> */}
-      update this when use-firebase is published
+      <FirebaseFunctionTester {...args} />
     </>
   )
 }
