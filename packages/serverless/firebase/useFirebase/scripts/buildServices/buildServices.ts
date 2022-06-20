@@ -1,8 +1,8 @@
-import buildSubPackages from '../../../devtools/compilePackages/utils/buildSubPackages/buildSubPackages.js'
+import buildSubPackages from '../../../../../devtools/compilePackages/utils/buildSubPackages/buildSubPackages.js'
 
-export default async function buildUiPackage() {
+export default async function buildServices() {
   await buildSubPackages({
-    rootPackageName: '@useweb/ui',
+    rootPackageName: '@useweb/use-firebase',
     subPackageNameHook: ({ packageName }) => {
       let newPackageName = packageName
 

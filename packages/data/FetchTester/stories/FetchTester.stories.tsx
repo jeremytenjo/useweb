@@ -1,8 +1,7 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
 import React from 'react'
 
-import FetchTester, { type FetchTesterProps } from '../'
-
+import { FetchTester, type FetchTesterProps } from './component'
 import Docs from './FetchTester.docs'
 
 export default {

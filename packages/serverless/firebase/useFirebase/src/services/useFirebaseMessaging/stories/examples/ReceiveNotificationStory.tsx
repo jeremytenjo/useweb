@@ -1,0 +1,97 @@
+import React, { useEffect, useState } from 'react'
+
+import CopyToClipboard from '../../../../../../../input/CopyToClipboard'
+import Donut from '../../../../../../../feedback/Progress/Donut/index'
+import Code from '../../../../../../../dataDisplay/Code/index'
+import Text from '../../../../../../../_ui/src/dataDisplay/Text/src'
+import showNotification from '../../../../../../../feedback/notification/showNotification'
+import ErrorMessage from '../../../../../../../dataDisplay/ErrorMessage'
+import ShareButton from '../../../../../../../dataDisplay/IconSpecial/ShareButton'
+import Button from '../../../../../../../_ui/src/input/Button/src'
+import useFirebaseMessaging from '../..'
+
+export default function ReceiveNotificationStory() {
+  const [message, setMessage] = useState<any>(null)
+
+  const messaging = useFirebaseMessaging({
+    onMessage: (payload) => {
+      setMessage(payload)
+    },
+  })
+
+  useEffect(() => {
+    if (message) {
+      showNotification({
+        body: message.notification,
+        title: 'asdf',
+        icon: 'asdfadf',
+      })
+    }
+  }, [message])
+
+  return (
+    <div style={{ padding: 10 }}>
+      {!messaging.isReadyToUse && (
+        <Text
+          text='Push notifications are not supported in the current device'
+          sx={{ color: 'red' }}
+        />
+      )}
+
+      {messaging.error && <ErrorMessage error={messaging.error} />}
+
+      {messaging.isReadyToUse &&
+        !messaging.error &&
+        !messaging.isReadyToUse &&
+        !messaging.initializing && (
+          <button onClick={() => messaging.init()}>Initialize</button>
+        )}
+
+      {messaging.initializing && <Donut />}
+
+      {messaging.isReadyToUse && (
+        <>
+          <p>Your FCM Registration Token:</p>
+          <br />
+          <CopyToClipboard
+            text={messaging.fcmRegistrationToken}
+            style={{ width: '100%', overflow: 'auto' }}
+          >
+            <p>{messaging.fcmRegistrationToken}</p>
+          </CopyToClipboard>
+
+          <div
+            style={{
+              display: 'grid',
+              gridAutoFlow: 'column',
+              gridGap: '10px',
+              marginTop: '10px',
+            }}
+          >
+            <ShareButton
+              data={{
+                title: messaging.fcmRegistrationToken,
+                text: messaging.fcmRegistrationToken,
+                url: messaging.fcmRegistrationToken,
+              }}
+            >
+              <Button name='share'>Share FCM Registration Token</Button>
+            </ShareButton>
+          </div>
+
+          <br />
+          <p>Setup complete. Waiting for notifications...</p>
+
+          {message && (
+            <>
+              <br />
+              <p>Notification Received</p>
+              <br />
+              <Code code={message} stringify />
+            </>
+          )}
+        </>
+      )}
+    </div>
+  )
+}

@@ -1,24 +1,29 @@
 {
-  "name": "@useweb/use-firebase",
-  "version": "8.3.0",
-  "main": "./build/index.js",
+  "name": "@useweb/use-firebase-builder",
+  "version": "8.7.0",
   "author": "Jeremy Tenjo",
-  "types": "./build/types/index.d.ts",
-  "files": [
-    "build"
-  ],
+  "type": "module",
+  "private": true,
   "scripts": {
-    "build": "node ./node_modules/@useweb/compiler/build",
-    "build:watch": "node ./node_modules/@useweb/compiler/build --watch",
-    "deploy": "npm run build && npm publish --access public"
+    "build": "node  --experimental-json-modules --loader ts-node/esm ./scripts/buildServices/run.ts",
+    "deploy": "npm run build && cd build && npm publish --access public"
   },
   "peerDependencies": {
     "firebase": "^9.6.0",
-    "react": "^18.0.0"
+    "react": "^18.0.0",
+    "swr": "^1.1.0",
+    "zustand": "^3.7.1"
   },
   "devDependencies": {
-    "@useweb/compiler": "2.0.0",
-    "@useweb/use-local-storage": "^2.2.0",
-    "firebase": "^9.6.0"
+    "@useweb/compiler": "2.7.0",
+    "firebase": "^9.6.0",
+    "swr": "^1.1.0",
+    "zustand": "^3.7.1",
+    "ts-node": "^10.8.1"
+  },
+  "dependencies": {
+    "@useweb/use-async": "^4.2.0",
+    "@useweb/array-db": "^0.6.0",
+    "@useweb/use-local-storage": "^2.3.0"
   }
 }

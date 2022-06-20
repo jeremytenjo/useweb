@@ -17,6 +17,7 @@
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0",
     "react": "^18.0.0",
+    "react-json-view": "^1.21.3",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
@@ -25,10 +26,11 @@
     "@mui/material": "^5.0.0",
     "@useweb/compiler": "2.0.0",
     "react": "^18.0.0",
+    "react-json-view": "^1.21.3",
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "@useweb/fetching-ui": "^3.0.0",
+    "@useweb/fetching-ui": "^5.3.0",
     "@useweb/use-fetch": "^1.2.1"
   }
 }

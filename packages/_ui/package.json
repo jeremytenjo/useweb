@@ -1,5 +1,5 @@
 {
-  "name": "@useweb/ui-dev",
+  "name": "@useweb/ui-builder",
   "version": "1.2.0",
   "description": "UI components to speed up app development",
   "main": "index.js",
