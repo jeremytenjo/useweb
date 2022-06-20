@@ -1,18 +1,14 @@
-import useGet from './handlers/useGet'
-import type { GetOptions, GetReturn } from './handlers/useGet'
-import useCreate from './handlers/useCreate'
-import type { CreateOptions, CreateReturn } from './handlers/useCreate'
-import useUpdate from './handlers/useUpdate'
-import type { UpdateOptions, UpdateReturn } from './handlers/useUpdate'
-import useRemove from './handlers/useRemove'
-import type { RemoveOptions, RemoveReturn } from './handlers/useRemove'
+import useGet, { type GetOptions, type GetReturn } from './handlers/useGet'
+import useCreate, { type CreateOptions, type CreateReturn } from './handlers/useCreate'
+import useUpdate, { type UpdateOptions, type UpdateReturn } from './handlers/useUpdate'
+import useRemove, { type RemoveOptions, type RemoveReturn } from './handlers/useRemove'
 export { default as prefetch } from './helpers/prefetch/prefetch'
 
 export type HandlerPayloadType = {
   id: string
   defaultData: any
   localStorageDefaultId: string
-  onlyLocalStorage: boolean
+  onlyLocalStorage: boolean | undefined
   data: any
   updateData: (newData: any) => void
   onChange?: (latestData: any) => any
@@ -22,7 +18,7 @@ export type UseDataProps = {
   id: string
   localStorageDefaultId: string
   defaultData?: any
-  onlyLocalStorage?: boolean
+  onlyLocalStorage?: boolean | undefined
   onChange?: (latestData: any) => any
   get?: GetOptions
   create?: CreateOptions

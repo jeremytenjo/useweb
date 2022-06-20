@@ -28,7 +28,7 @@ export type RemoveReturn = Object.P.Update<
 >
 
 export default function useRemove(
-  { data = [], updateData, onChange }: HandlerPayloadType,
+  { data = [], updateData, onChange = () => null }: HandlerPayloadType,
   {
     remover = () => null,
     onRemove = () => null,

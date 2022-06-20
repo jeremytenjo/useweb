@@ -29,7 +29,7 @@ export type UpdateReturn = Object.P.Update<
 >
 
 export default function useUpdate(
-  { data: allData = [], updateData, onChange }: HandlerPayloadType,
+  { data: allData = [], updateData, onChange = () => null }: HandlerPayloadType,
   {
     updater = () => null,
     onUpdate = () => null,

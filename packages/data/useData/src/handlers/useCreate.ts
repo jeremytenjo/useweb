@@ -39,7 +39,7 @@ export type CreateReturn = Object.P.Update<
 >
 
 export default function useCreate(
-  { updateData, data: allData = [], onChange }: HandlerPayloadType,
+  { updateData, data: allData = [], onChange = () => null }: HandlerPayloadType,
   {
     creator,
     onCreate = () => null,

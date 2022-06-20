@@ -35,11 +35,11 @@ export default function useGet(
     id,
     localStorageDefaultId,
     defaultData = [],
-    onChange,
+    onChange = () => null,
     onlyLocalStorage,
   }: HandlerPayloadType,
   {
-    fetcher = () => null,
+    fetcher = () => [],
     fetcherPayload = {},
     onGet = () => null,
     onGetError = () => null,
