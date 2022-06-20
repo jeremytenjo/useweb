@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect } from 'react'
+import { useEffect } from 'react'
 
 import startFirebaseEmulators from './handlers/startFirebaseEmulators/startFirebaseEmulators'
 
@@ -50,11 +50,11 @@ type Return = {
   firebaseApp: any
   firebaseConfig: FirebaseConfig
   envIsDev: boolean
-  auth: any
-  authOptions: any
-  db: any
+  auth?: any
+  authOptions?: any
+  db?: any
   localStorageOptions?: LocalStorageOptionsTypes
-  messaging: any
+  messaging?: any
   messagingOptions?: any
   analytics?: any
   analyticsOptions?: any
@@ -62,59 +62,42 @@ type Return = {
   functionsOptions?: any
 }
 
-const FirebaseContext = createContext<Return>(null as any)
-
-export const FirebaseProvider = ({
-  firebaseApp,
-  firebaseConfig,
-  envIsDev,
-  auth,
-  authOptions,
-  db,
-  dbOptions,
-  children,
-  localStorageOptions,
-  messaging,
-  messagingOptions,
-  analytics,
-  analyticsOptions,
-  functions,
-  functionsOptions,
-}: FirebaseProviderProps) => {
-  useEffect(() => {
-    startFirebaseEmulators({
-      auth,
-      authOptions,
-      db,
-      dbOptions,
-      functions,
-      enable: envIsDev,
-    })
-  }, [envIsDev])
-
-  return (
-    <FirebaseContext.Provider
-      value={{
-        firebaseApp,
-        firebaseConfig,
-        envIsDev,
-        auth,
-        db,
-        localStorageOptions,
-        messaging,
-        messagingOptions,
-        analytics,
-        analyticsOptions,
-        functions,
-        functionsOptions,
-        authOptions,
-      }}
-    >
-      {children}
-    </FirebaseContext.Provider>
-  )
+declare global {
+  interface Window {
+    useFirebaseData: any
+  }
 }
 
-const useFirebase = () => useContext(FirebaseContext)
+export const FirebaseProvider = (props: FirebaseProviderProps) => {
+  setFirebaseData(props)
 
-export default useFirebase
+  useEffect(() => {
+    startFirebaseEmulators({
+      auth: props.auth,
+      authOptions: props.authOptions,
+      db: props.db,
+      dbOptions: props.dbOptions,
+      functions: props.functions,
+      enable: props.envIsDev,
+    })
+  }, [props.envIsDev])
+
+  return props.children
+}
+
+const setFirebaseData = (props: FirebaseProviderProps) => {
+  if (typeof window !== 'undefined') {
+    window.useFirebaseData = props
+  }
+}
+
+const getFirebaseData = (): FirebaseProviderProps => {
+  if (typeof window === 'undefined') return undefined as any
+
+  return window.useFirebaseData
+}
+
+export default function useFirebase(): Return {
+  const firebaseData = getFirebaseData()
+  return firebaseData
+}
