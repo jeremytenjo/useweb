@@ -124,6 +124,7 @@ export default function TextField({
 
         {clearComponent ? (
           <Box
+            onClick={clearInput}
             sx={{
               visibility: value !== '' ? 'visible' : 'hidden',
             }}
