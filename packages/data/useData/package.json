@@ -21,7 +21,7 @@
     "@useweb/use-local-storage": "^2.2.0"
   },
   "devDependencies": {
-    "@useweb/compiler": "2.0.0",
+    "@useweb/compiler": "2.7.0",
     "swr": "^1.1.2",
     "ts-toolbelt": "^9.6.0"
   }
