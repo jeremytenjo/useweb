@@ -1,6 +1,6 @@
 {
   "name": "@useweb/next-api-tester",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -17,18 +17,20 @@
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-json-view": "^1.21.3"
   },
   "devDependencies": {
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0",
     "@useweb/compiler": "2.0.0",
+    "react-json-view": "^1.21.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "@useweb/fetch-tester": "^1.0.0",
+    "@useweb/fetch-tester": "^1.2.0",
     "@useweb/use-fetch": "^1.2.1"
   }
 }
