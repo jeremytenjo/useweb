@@ -18,6 +18,10 @@ export type TextfieldProps = {
   resetIcon?: any
 }
 
+/**
+ * @example
+ * <Textfield name='recipeQuery' placeholder='Search recipe' />
+ */
 export default function TextField({
   name,
   wrapperSx = {},
