@@ -1,6 +1,6 @@
 {
   "name": "@useweb/next-api-tester",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -30,7 +30,7 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "@useweb/fetch-tester": "^1.2.0",
+    "@useweb/fetch-tester": "^1.2.1",
     "@useweb/use-fetch": "^1.2.1"
   }
 }
