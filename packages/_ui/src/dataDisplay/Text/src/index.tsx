@@ -7,7 +7,8 @@ export type TextProps = {
 } & TypographyProps
 
 /**
- * [Docs](https://material-ui.com/api/typography/)
+ * @example
+ * <Text text='hello' />
  */
 export default function Text({
   text,
