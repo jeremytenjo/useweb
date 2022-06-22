@@ -8,7 +8,7 @@ import Text from '../../../../../dataDisplay/Text/src'
 export type TextfieldProps = {
   name: string
   placeholder?: string
-  wrapperSx?: BoxProps['sx']
+  sx?: BoxProps['sx']
   id?: string
   inputProps?: object
   required?: string
@@ -24,7 +24,7 @@ export type TextfieldProps = {
  */
 export default function TextField({
   name,
-  wrapperSx = {},
+  sx = {},
   inputProps = {},
   placeholder = '',
   id,
@@ -61,7 +61,7 @@ export default function TextField({
       sx={{
         display: 'grid',
         width: 'fit-content',
-        ...wrapperSx,
+        ...sx,
       }}
     >
       <Box
