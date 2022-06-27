@@ -1,7 +1,7 @@
 import React from 'react'
 import Box, { type BoxProps } from '@mui/material/Box'
 import Backdrop from '@mui/material/Backdrop'
-import MuiModal from '@mui/material/Modal'
+import MuiModal, { type ModalProps as MuiModalProps } from '@mui/material/Modal'
 import Fade from '@mui/material/Fade'
 
 export type ModalProps = {
@@ -9,7 +9,7 @@ export type ModalProps = {
   onClose: any
   children: any
   sx?: BoxProps['sx']
-}
+} & MuiModalProps
 
 export default function Modal({ open, onClose, children, sx = {} }: ModalProps) {
   return (
