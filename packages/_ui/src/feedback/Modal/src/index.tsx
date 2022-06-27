@@ -11,7 +11,7 @@ export type ModalProps = {
   sx?: BoxProps['sx']
 } & MuiModalProps
 
-export default function Modal({ open, onClose, children, sx = {} }: ModalProps) {
+export default function Modal({ open, onClose, children, sx = {}, ...rest }: ModalProps) {
   return (
     <MuiModal
       aria-labelledby='transition-modal-title'
@@ -33,6 +33,7 @@ export default function Modal({ open, onClose, children, sx = {} }: ModalProps) 
         },
         outline: 'none',
       }}
+      {...rest}
     >
       <Fade in={open}>
         <Box

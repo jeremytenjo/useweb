@@ -1,6 +1,6 @@
 {
   "name": "@useweb/ui-builder",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "UI components to speed up app development",
   "main": "index.js",
   "type": "module",
