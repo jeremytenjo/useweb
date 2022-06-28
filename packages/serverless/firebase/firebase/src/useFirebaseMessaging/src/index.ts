@@ -113,6 +113,6 @@ export default function useFirebaseMessaging({
     fcmRegistrationToken,
     initializing,
     error,
-    isReadyToUse,
+    isReadyToUse: Boolean(isReadyToUse),
   }
 }
