@@ -62,9 +62,9 @@ type Return = {
   functionsOptions?: any
 }
 
-export const FirebaseConfigContext = createContext(null as any)
+export const FirebaseContext = createContext(null as any)
 
-export const FirebaseConfigProvider = (props: FirebaseProviderProps) => {
+export const FirebaseProvider = (props: FirebaseProviderProps) => {
   useEffect(() => {
     startFirebaseEmulators({
       auth: props.auth,
@@ -77,12 +77,10 @@ export const FirebaseConfigProvider = (props: FirebaseProviderProps) => {
   }, [props.envIsDev])
 
   return (
-    <FirebaseConfigContext.Provider value={props}>
-      {props.children}
-    </FirebaseConfigContext.Provider>
+    <FirebaseContext.Provider value={props}>{props.children}</FirebaseContext.Provider>
   )
 }
 
-const useFirebaseConfig = () => useContext<Return>(FirebaseConfigContext)
+const useFirebase = () => useContext<Return>(FirebaseContext)
 
-export default useFirebaseConfig
+export default useFirebase
