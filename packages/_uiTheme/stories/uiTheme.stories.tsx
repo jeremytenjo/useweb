@@ -1,15 +1,15 @@
 //https://storybook.js.org/docs/react/writing-docs/docs-page
-import React from 'react'
+import React from "react";
 
-import { type UsewebThemeProps } from './component'
-import Docs from './UsewebTheme.docs'
+import { uiTheme, type UiThemeProps } from "./component";
+import Docs from "./uiTheme.docs";
 
-const defaultArgs: UsewebThemeProps = {
-  name: 'UsewebTheme',
-}
+const defaultArgs: UiThemeProps = {
+  name: "uiTheme",
+};
 
 export default {
-  title: 'Theme/UsewebTheme',
+  title: "uiTheme",
   args: defaultArgs,
   // https://storybook.js.org/docs/react/writing-docs/docs-page#remixing-docspage-using-doc-blocks
   parameters: {
@@ -17,24 +17,23 @@ export default {
       page: Docs,
     },
   },
-}
+};
 
-const Template = () => {
+const Template = (args) => {
   return (
     <>
-      UsewebTheme
-      {/* <UsewebTheme {...args} /> */}
+      <uiTheme {...args} />
     </>
-  )
-}
+  );
+};
 
 export const Default = {
   render: (args) => {
-    return <Template {...args} />
+    return <Template {...args} />;
   },
-}
+};
 
-// const variantArgs: UsewebThemeProps = {
+// const variantArgs: UiThemeProps = {
 //  name: 'World',
 // }
 
