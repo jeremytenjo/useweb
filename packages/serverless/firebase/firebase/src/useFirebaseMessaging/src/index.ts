@@ -70,7 +70,7 @@ export default function useFirebaseMessaging({
       try {
         await navigator.serviceWorker.register(serviceWorkerFileName)
       } catch (error) {
-        console.log(`Faild registering ${serviceWorkerFileName}`, error)
+        console.error(`Faild to register ${serviceWorkerFileName}`, error)
       }
     }
   }
@@ -93,10 +93,12 @@ export default function useFirebaseMessaging({
       if (token) {
         await registerServiceWorker()
         setFcmRegistrationToken(token)
+
         onMessageRemoveListenerRef.current = messagingOnMessage(
           firebase.messaging,
           onMessage,
         )
+
         onFcmRegistrationToken(token)
       }
     } catch (error) {
