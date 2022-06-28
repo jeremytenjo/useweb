@@ -63,15 +63,17 @@ export default function useFirebaseMessaging({
     }
   }, [])
 
-  const validateConfig = () => {
+  const validateConfig = ({ firebase }) => {
     if (!firebase.messaging) {
       throw new Error('Missing `messaging` property in `FirebaseProvider` (firebase.tsx)')
     }
   }
 
-  const registerServiceWorker = async () => {
-    validateConfig()
+  useEffect(() => {
+    validateConfig({ firebase })
+  }, [firebase])
 
+  const registerServiceWorker = async () => {
     if (forceSupport || isProductionApp) {
       try {
         await navigator.serviceWorker.register(serviceWorkerFileName)
@@ -82,7 +84,6 @@ export default function useFirebaseMessaging({
   }
 
   const init = async () => {
-    validateConfig()
     const isSupportedResult = await isSupported()
 
     if (isSupportedResult && !fcmRegistrationToken) {
