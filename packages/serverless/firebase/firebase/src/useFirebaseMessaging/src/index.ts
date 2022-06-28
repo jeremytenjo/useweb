@@ -76,7 +76,9 @@ export default function useFirebaseMessaging({
   }
 
   const init = async () => {
-    if (isSupportedRes.result && !fcmRegistrationToken) {
+    const isSupportedResult = await isSupported()
+
+    if (isSupportedResult && !fcmRegistrationToken) {
       startNotificationListener()
     }
   }
