@@ -1,4 +1,5 @@
-import useFirebase from '../../useFirebase/src'
+import useFirebase from '@useweb/firebase-config'
+
 import useGet from '../handlers/useGet'
 import useCreate from '../handlers/useCreate'
 import useRemove from '../handlers/useRemove'

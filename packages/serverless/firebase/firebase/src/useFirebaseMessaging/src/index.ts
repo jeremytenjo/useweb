@@ -5,8 +5,7 @@ import {
   isSupported,
 } from 'firebase/messaging'
 import useAsync from '@useweb/use-async'
-
-import useFirebase from '../../useFirebase/src'
+import useFirebase from '@useweb/firebase-config'
 
 const isProduction = () => process.env.NODE_ENV === 'production'
 
@@ -28,6 +27,9 @@ export type Return = {
   isReadyToUse: boolean
 }
 
+/**
+ * [Docs](https://firebase.google.com/docs/cloud-messaging/js/receive)
+ */
 export default function useFirebaseMessaging({
   vapidKey: defaultVapidKey,
   forceSupport: defaultForceSupport,
@@ -63,14 +65,14 @@ export default function useFirebaseMessaging({
     }
   }, [])
 
-  const validateConfig = ({ firebase }) => {
-    if (!firebase.messaging) {
+  const validateConfig = () => {
+    if (!firebase?.messaging) {
       throw new Error('Missing `messaging` property in `FirebaseProvider` (firebase.tsx)')
     }
   }
 
   useEffect(() => {
-    validateConfig({ firebase })
+    validateConfig()
   }, [firebase])
 
   const registerServiceWorker = async () => {

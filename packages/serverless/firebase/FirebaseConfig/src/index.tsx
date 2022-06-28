@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import React, { createContext, useContext, useEffect } from 'react'
 
 import startFirebaseEmulators from './handlers/startFirebaseEmulators/startFirebaseEmulators'
 
@@ -62,15 +62,9 @@ type Return = {
   functionsOptions?: any
 }
 
-declare global {
-  interface Window {
-    useFirebaseData: any
-  }
-}
+export const FirebaseConfigContext = createContext(null as any)
 
-export const FirebaseProvider = (props: FirebaseProviderProps) => {
-  setFirebaseData(props)
-
+export const FirebaseConfigProvider = (props: FirebaseProviderProps) => {
   useEffect(() => {
     startFirebaseEmulators({
       auth: props.auth,
@@ -82,22 +76,13 @@ export const FirebaseProvider = (props: FirebaseProviderProps) => {
     })
   }, [props.envIsDev])
 
-  return props.children
+  return (
+    <FirebaseConfigContext.Provider value={props}>
+      {props.children}
+    </FirebaseConfigContext.Provider>
+  )
 }
 
-const setFirebaseData = (props: FirebaseProviderProps) => {
-  if (typeof window !== 'undefined') {
-    window.useFirebaseData = props
-  }
-}
+const useFirebaseConfig = () => useContext<Return>(FirebaseConfigContext)
 
-const getFirebaseData = (): FirebaseProviderProps => {
-  if (typeof window === 'undefined') return undefined as any
-
-  return window.useFirebaseData
-}
-
-export default function useFirebase(): Return {
-  const firebaseData = getFirebaseData()
-  return firebaseData
-}
+export default useFirebaseConfig

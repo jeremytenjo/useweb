@@ -1,6 +1,5 @@
 import useAsync, { type UseAsyncProps } from '@useweb/use-async'
-
-import useFirebase from '../../useFirebase/src'
+import useFirebase from '@useweb/firebase-config'
 
 export type Props = {
   name: string

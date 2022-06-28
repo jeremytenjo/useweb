@@ -1,8 +1,8 @@
 import { doc, deleteDoc } from 'firebase/firestore'
 import useAsync from '@useweb/use-async'
 import arrayDB from '@useweb/array-db'
+import useFirebase from '@useweb/firebase-config'
 
-import useFirebase from '../../useFirebase/src'
 import type { HandlerPayloadType } from '../src'
 
 type Callbacks = {

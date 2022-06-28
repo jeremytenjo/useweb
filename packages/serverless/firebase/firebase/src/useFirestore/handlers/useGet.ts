@@ -4,8 +4,8 @@ import useSWRImmutable from 'swr/immutable'
 import create from 'zustand'
 import arrayDB from '@useweb/array-db'
 import useLocalStorage from '@useweb/use-local-storage'
+import useFirebase from '@useweb/firebase-config'
 
-import useFirebase from '../../useFirebase/src'
 import type { HandlerPayloadType } from '../src'
 
 export type LocalStorageOptionsTypes = {
