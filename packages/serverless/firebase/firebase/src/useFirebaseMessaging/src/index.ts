@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import {
   getToken,
   onMessage as messagingOnMessage,
+  getMessaging,
   isSupported,
 } from 'firebase/messaging'
 import useAsync from '@useweb/use-async'
@@ -63,10 +64,16 @@ export default function useFirebaseMessaging({
     }
   }, [])
 
-  const registerServiceWorker = async () => {
+  const validateConfig = () => {
     if (!firebase.messaging) {
-      throw new Error('Missing `messaging` key in `FirebaseProvider` (firebase.tsx)')
-    } else if (forceSupport || isProductionApp) {
+      throw new Error('Missing `messaging` property in `FirebaseProvider` (firebase.tsx)')
+    }
+  }
+
+  const registerServiceWorker = async () => {
+    validateConfig()
+
+    if (forceSupport || isProductionApp) {
       try {
         await navigator.serviceWorker.register(serviceWorkerFileName)
       } catch (error) {
@@ -76,6 +83,7 @@ export default function useFirebaseMessaging({
   }
 
   const init = async () => {
+    validateConfig()
     const isSupportedResult = await isSupported()
 
     if (isSupportedResult && !fcmRegistrationToken) {
