@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import {
   getToken,
   onMessage as messagingOnMessage,
-  getMessaging,
   isSupported,
 } from 'firebase/messaging'
 import useAsync from '@useweb/use-async'
