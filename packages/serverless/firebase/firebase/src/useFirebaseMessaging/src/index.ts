@@ -49,8 +49,6 @@ export default function useFirebaseMessaging({
     onResult: () => console.warn('Firebase messaging is not supported in this device.'),
   })
 
-  console.log(isSupportedRes)
-
   const forceSupport = firebase?.messagingOptions?.forceSupport || defaultForceSupport
   const serviceWorkerFileName =
     firebase?.messagingOptions?.serviceWorkerFileName || defaultServiceWorkerFileName
