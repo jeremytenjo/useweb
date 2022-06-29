@@ -46,21 +46,7 @@ type FirebaseProviderProps = {
   functionsOptions?: any
 }
 
-type Return = {
-  firebaseApp: any
-  firebaseConfig: FirebaseConfig
-  envIsDev: boolean
-  auth?: any
-  authOptions?: any
-  db?: any
-  localStorageOptions?: LocalStorageOptionsTypes
-  messaging?: any
-  messagingOptions?: any
-  analytics?: any
-  analyticsOptions?: any
-  functions?: any
-  functionsOptions?: any
-}
+type Return = Omit<FirebaseProviderProps, 'children'>
 
 declare global {
   interface Window {
@@ -92,6 +78,8 @@ export default function useFirebase(): Return {
 const setFirebaseData = (props: FirebaseProviderProps) => {
   if (typeof window === 'undefined') return null
   if (window.FirebaseProviderData) return window.FirebaseProviderData
+
+  delete props.children
 
   window.FirebaseProviderData = props
 }
