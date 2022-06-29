@@ -5,9 +5,8 @@ import {
   isSupported,
 } from 'firebase/messaging'
 import useAsync from '@useweb/use-async'
-import useFirebase from '@useweb/use-firebase'
 
-import useFirebaseeeee from '../../useFirebase/src'
+import useFirebase from '../../useFirebase/src'
 
 const isProduction = () => process.env.NODE_ENV === 'production'
 
@@ -40,7 +39,6 @@ export default function useFirebaseMessaging({
   onError: defaultOnError = () => null,
   onFcmRegistrationToken = () => null,
 }: MessagingProps = {}): Return {
-  console.log(useFirebaseeeee())
   const onMessageRemoveListenerRef = useRef<any>(null)
   const firebase = useFirebase()
   const isSupportedRes = useAsync({

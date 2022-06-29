@@ -1,18 +1,19 @@
-import useAsync, { type UseAsyncProps } from "@useweb/use-async";
-import useFirebase from "@useweb/use-firebase";
+import useAsync, { type UseAsyncProps } from '@useweb/use-async'
+
+import useFirebase from '../../useFirebase/src'
 
 export type Props = {
-  name: string;
+  name: string
   // eslint-disable-next-line no-undef
-  fetchOptions?: RequestInit;
-  onResult?: UseAsyncProps["onResult"];
-  onLoading?: UseAsyncProps["onLoading"];
-  onError?: UseAsyncProps["onError"];
-};
+  fetchOptions?: RequestInit
+  onResult?: UseAsyncProps['onResult']
+  onLoading?: UseAsyncProps['onLoading']
+  onError?: UseAsyncProps['onError']
+}
 
 type FetchProps = {
-  data?: object | object[];
-};
+  data?: object | object[]
+}
 
 /**
  * [Docs](https://useweb.dev/?path=/docs/packages-serverless-firebase-functions-usefirebasefunction--example)
@@ -32,38 +33,38 @@ export default function useFirebaseFunction({
   onError = () => null,
   onLoading = () => null,
 }: Props) {
-  const firebase = useFirebase();
+  const firebase = useFirebase()
 
   const fetcher = async (options?: FetchProps) => {
-    const port = firebase?.functionsOptions?.port || 5002;
-    const region = firebase?.functionsOptions?.region || "us-central1";
+    const port = firebase?.functionsOptions?.port || 5002
+    const region = firebase?.functionsOptions?.region || 'us-central1'
     const url = firebase.envIsDev
       ? `http://localhost:${port}/${firebase.firebaseConfig.projectId}/${region}/${name}`
-      : `https://${region}-${firebase.firebaseConfig.projectId}.cloudfunctions.net/${name}`;
+      : `https://${region}-${firebase.firebaseConfig.projectId}.cloudfunctions.net/${name}`
 
     let data: any = await fetch(url, {
-      method: "post",
+      method: 'post',
       body: JSON.stringify(options?.data || {}),
       ...fetchOptions,
-    });
+    })
 
-    data = await data.json();
+    data = await data.json()
 
-    if (data?.error) throw new Error(data.error);
+    if (data?.error) throw new Error(data.error)
 
-    return data;
-  };
+    return data
+  }
 
   const cloudFunction = useAsync({
     fn: fetcher,
     onResult,
     onError,
     onLoading,
-  });
+  })
 
   const exec = (options?: FetchProps) => {
-    cloudFunction.exec(options);
-  };
+    cloudFunction.exec(options)
+  }
 
-  return { ...cloudFunction, fetcher, exec };
+  return { ...cloudFunction, fetcher, exec }
 }

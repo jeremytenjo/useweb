@@ -1,45 +1,44 @@
-import useFirebase from "@useweb/use-firebase";
-
-import useGet from "../handlers/useGet";
-import useCreate from "../handlers/useCreate";
-import useRemove from "../handlers/useRemove";
-import useUpdate from "../handlers/useUpdate";
+import useFirebase from '../../useFirebase/src'
+import useGet from '../handlers/useGet'
+import useCreate from '../handlers/useCreate'
+import useRemove from '../handlers/useRemove'
+import useUpdate from '../handlers/useUpdate'
 
 export type LocalStorageOptionsTypes = {
-  getterFunction?: (options: { key: string }) => any;
-  setterFunction?: (options: { key: string; data: any }) => void;
-  removeFunction?: (options: { key: string }) => void;
-};
+  getterFunction?: (options: { key: string }) => any
+  setterFunction?: (options: { key: string; data: any }) => void
+  removeFunction?: (options: { key: string }) => void
+}
 
 export type HandlerPayloadType = {
-  userId: string;
-  collectionName: string;
-  defaultData: any;
-  updateData: (newData: any) => void;
-  data: any;
-};
+  userId: string
+  collectionName: string
+  defaultData: any
+  updateData: (newData: any) => void
+  data: any
+}
 
 type Options = {
-  fetcher?: () => any;
-  defaultData?: any;
-  localStorageOptions?: LocalStorageOptionsTypes;
+  fetcher?: () => any
+  defaultData?: any
+  localStorageOptions?: LocalStorageOptionsTypes
 
-  onGet?: (result: any) => void;
-  onGetError?: (error: any) => void;
-  onGetLoading?: (loading: boolean) => void;
+  onGet?: (result: any) => void
+  onGetError?: (error: any) => void
+  onGetLoading?: (loading: boolean) => void
 
-  onCreate?: (result: any) => void;
-  onCreateError?: (error: any) => void;
-  onCreateLoading?: (loading: boolean) => void;
+  onCreate?: (result: any) => void
+  onCreateError?: (error: any) => void
+  onCreateLoading?: (loading: boolean) => void
 
-  onRemove?: (result: any) => void;
-  onRemoveError?: (error: any) => void;
-  onRemoveLoading?: (loading: boolean) => void;
+  onRemove?: (result: any) => void
+  onRemoveError?: (error: any) => void
+  onRemoveLoading?: (loading: boolean) => void
 
-  onUpdate?: (result: any) => void;
-  onUpdateError?: (error: any) => void;
-  onUpdateLoading?: (loading: boolean) => void;
-};
+  onUpdate?: (result: any) => void
+  onUpdateError?: (error: any) => void
+  onUpdateLoading?: (loading: boolean) => void
+}
 
 export default function useFirestore(
   collectionName: string,
@@ -63,9 +62,9 @@ export default function useFirestore(
     onUpdate = () => null,
     onUpdateError = () => null,
     onUpdateLoading = () => null,
-  }: Options
+  }: Options,
 ) {
-  const firebase = useFirebase();
+  const firebase = useFirebase()
 
   const handlerPayload: HandlerPayloadType = {
     userId: firebase.auth.user?.uid,
@@ -73,7 +72,7 @@ export default function useFirestore(
     defaultData,
     updateData: () => null,
     data: [],
-  };
+  }
 
   const get = useGet(handlerPayload, {
     onGet,
@@ -81,33 +80,33 @@ export default function useFirestore(
     onGetLoading,
     localStorageOptions: localStorageOptions || firebase.localStorageOptions,
     fetcher,
-  });
+  })
 
-  handlerPayload.updateData = get.update;
-  handlerPayload.data = get.data;
+  handlerPayload.updateData = get.update
+  handlerPayload.data = get.data
 
   const create = useCreate(handlerPayload, {
     onCreate,
     onCreateError,
     onCreateLoading,
-  });
+  })
 
   const update = useUpdate(handlerPayload, {
     onUpdate,
     onUpdateError,
     onUpdateLoading,
-  });
+  })
 
   const remove = useRemove(handlerPayload, {
     onRemove,
     onRemoveError,
     onRemoveLoading,
-  });
+  })
 
   return {
     get,
     update,
     remove,
     create,
-  };
+  }
 }

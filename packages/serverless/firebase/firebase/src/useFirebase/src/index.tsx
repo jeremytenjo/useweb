@@ -1,83 +1,103 @@
-import React from 'react'
+import { useEffect } from 'react'
 
-type Firebase = any
+import startFirebaseEmulators from './handlers/startFirebaseEmulators/startFirebaseEmulators'
 
-type ContextOptions = any
+export type LocalStorageOptionsTypes = {
+  getterFunction?: (options: { key: string }) => any
+  setterFunction?: (options: { key: string; data: any }) => void
+  removeFunction?: (options: { key: string }) => void
+}
+
+export type AuthOptions = {
+  testUserEmail: string
+  testUserPassword: string
+  authEmulatorPort?: number
+}
+
+export type DBOptions = {
+  dbEmulatorPort?: number
+}
+
+type FirebaseConfig = {
+  apiKey?: string
+  authDomain?: string
+  projectId?: string
+  storageBucket?: string
+  messagingSenderId?: string
+  appId?: string
+  measurementId?: string
+}
+
+type FirebaseProviderProps = {
+  firebaseApp: any
+  firebaseConfig: FirebaseConfig
+  envIsDev: boolean
+  children: any
+  db?: any
+  dbOptions?: DBOptions
+  auth?: any
+  authOptions?: AuthOptions
+  localStorageOptions?: LocalStorageOptionsTypes
+  messaging?: any
+  messagingOptions?: any
+  analytics?: any
+  analyticsOptions?: any
+  functions?: any
+  functionsOptions?: any
+}
+
+type Return = {
+  firebaseApp: any
+  firebaseConfig: FirebaseConfig
+  envIsDev: boolean
+  auth?: any
+  authOptions?: any
+  db?: any
+  localStorageOptions?: LocalStorageOptionsTypes
+  messaging?: any
+  messagingOptions?: any
+  analytics?: any
+  analyticsOptions?: any
+  functions?: any
+  functionsOptions?: any
+}
 
 declare global {
   interface Window {
-    ReactFirebaseContext?: React.Context<Firebase | undefined>
+    FirebaseProviderData: any
   }
 }
 
-export const defaultContext = React.createContext<Firebase | undefined>(undefined)
+export const FirebaseProvider = (props: FirebaseProviderProps) => {
+  setFirebaseData(props)
 
-const FirebaseSharingContext = React.createContext<boolean>(false)
+  useEffect(() => {
+    startFirebaseEmulators({
+      auth: props.auth,
+      authOptions: props.authOptions,
+      db: props.db,
+      dbOptions: props.dbOptions,
+      functions: props.functions,
+      enable: props.envIsDev,
+    })
+  }, [props.envIsDev])
 
-// If we are given a context, we will use it.
-// Otherwise, if contextSharing is on, we share the first and at least one
-// instance of the context across the window
-// to ensure that if React Query is used across
-// different bundles or microfrontends they will
-// all use the same **instance** of context, regardless
-// of module scoping.
-function getFirebaseContext(
-  context: React.Context<Firebase | undefined> | undefined,
-  contextSharing: boolean,
-) {
-  if (context) {
-    return context
-  }
-  if (contextSharing && typeof window !== 'undefined') {
-    if (!window.ReactFirebaseContext) {
-      window.ReactFirebaseContext = defaultContext
-    }
-
-    return window.ReactFirebaseContext
-  }
-
-  return defaultContext
+  return props.children
 }
 
-export default function useFirebase({ context }: ContextOptions = {}) {
-  const queryClient = React.useContext(
-    getFirebaseContext(context, React.useContext(FirebaseSharingContext)),
-  )
-
-  if (!queryClient) {
-    throw new Error('No Firebase set, use FirebaseProvider to set one')
-  }
-
-  return queryClient
+export default function useFirebase(): Return {
+  return getFirebaseData()
 }
 
-type FirebaseProviderPropsBase = {
-  client: Firebase
-  children?: React.ReactNode
+const setFirebaseData = (props: FirebaseProviderProps) => {
+  if (typeof window === 'undefined') return null
+  if (window.FirebaseProviderData) return window.FirebaseProviderData
+
+  window.FirebaseProviderData = props
 }
-type FirebaseProviderPropsWithContext = ContextOptions & {
-  contextSharing?: never
-} & FirebaseProviderPropsBase
-type FirebaseProviderPropsWithContextSharing = {
-  context?: never
-  contextSharing?: boolean
-} & FirebaseProviderPropsBase
 
-export type FirebaseProviderProps =
-  | FirebaseProviderPropsWithContext
-  | FirebaseProviderPropsWithContextSharing
+const getFirebaseData = () => {
+  if (typeof window === 'undefined') return null
 
-export const FirebaseProvider = ({
-  value,
-  children,
-  context,
-  contextSharing = false,
-}: FirebaseProviderProps) => {
-  const Context = getFirebaseContext(context, contextSharing)
-
-  return (
-    <FirebaseSharingContext.Provider value={!context && contextSharing}>
-      <Context.Provider value={value}>{children}</Context.Provider>
-    </FirebaseSharingContext.Provider>
-  )
+  return window.FirebaseProviderData
 }

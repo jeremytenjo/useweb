@@ -1,49 +1,49 @@
-import { doc, deleteDoc } from "firebase/firestore";
-import useAsync from "@useweb/use-async";
-import arrayDB from "@useweb/array-db";
-import useFirebase from "@useweb/use-firebase";
+import { doc, deleteDoc } from 'firebase/firestore'
+import useAsync from '@useweb/use-async'
+import arrayDB from '@useweb/array-db'
 
-import type { HandlerPayloadType } from "../src";
+import useFirebase from '../../useFirebase/src'
+import type { HandlerPayloadType } from '../src'
 
 type Callbacks = {
-  onRemove?: (result: any) => void;
-  onRemoveError?: (error: any) => void;
-  onRemoveLoading?: (loading: boolean) => void;
-};
+  onRemove?: (result: any) => void
+  onRemoveError?: (error: any) => void
+  onRemoveLoading?: (loading: boolean) => void
+}
 
 export default function useRemove(
   { data = [], updateData, userId, collectionName }: HandlerPayloadType,
-  callbacks?: Callbacks
+  callbacks?: Callbacks,
 ) {
-  const firebase = useFirebase();
+  const firebase = useFirebase()
 
   const fetcher = async ({ id }) => {
     const remainingItems = arrayDB.remove(data, {
       id,
-    });
+    })
 
     if (userId) {
-      await deleteDoc(doc(firebase.db, collectionName, id));
+      await deleteDoc(doc(firebase.db, collectionName, id))
     }
 
-    const returnData = { removedItemId: id, remainingItems };
+    const returnData = { removedItemId: id, remainingItems }
 
-    return returnData;
-  };
+    return returnData
+  }
 
   const remove = useAsync({
     fn: fetcher,
     onResult: (result) => {
-      updateData(result.remainingItems);
-      callbacks?.onRemove && callbacks.onRemove(result);
+      updateData(result.remainingItems)
+      callbacks?.onRemove && callbacks.onRemove(result)
     },
     onError: (error) => {
-      callbacks?.onRemoveError && callbacks.onRemoveError(error);
+      callbacks?.onRemoveError && callbacks.onRemoveError(error)
     },
     onLoading: (loading) => {
-      callbacks?.onRemoveLoading && callbacks.onRemoveLoading(loading);
+      callbacks?.onRemoveLoading && callbacks.onRemoveLoading(loading)
     },
-  });
+  })
 
-  return remove;
+  return remove
 }

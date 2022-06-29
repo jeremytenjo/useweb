@@ -1,77 +1,69 @@
-import { collection, addDoc } from "firebase/firestore";
-import useAsync from "@useweb/use-async";
-import arrayDB from "@useweb/array-db";
-import useFirebase from "@useweb/use-firebase";
+import { collection, addDoc } from 'firebase/firestore'
+import useAsync from '@useweb/use-async'
+import arrayDB from '@useweb/array-db'
 
-import type { HandlerPayloadType } from "../src";
+import useFirebase from '../../useFirebase/src'
+import type { HandlerPayloadType } from '../src'
 
 type Callbacks = {
-  onCreate?: (result: any) => void;
-  onCreateError?: (error: any) => void;
-  onCreateLoading?: (loading: boolean) => void;
-};
+  onCreate?: (result: any) => void
+  onCreateError?: (error: any) => void
+  onCreateLoading?: (loading: boolean) => void
+}
 
 type FetcherProps = {
-  data: any;
-  disableSnackbar: boolean;
-};
+  data: any
+  disableSnackbar: boolean
+}
 
 export default function useCreate(
-  {
-    userId,
-    updateData,
-    data: allData = [],
-    collectionName,
-  }: HandlerPayloadType,
-  callbacks: Callbacks
+  { userId, updateData, data: allData = [], collectionName }: HandlerPayloadType,
+  callbacks: Callbacks,
 ) {
-  const firebase = useFirebase();
+  const firebase = useFirebase()
 
   const fetcher = async ({ data, disableSnackbar }: FetcherProps) => {
-    delete data.id;
+    delete data.id
     let createdItem = {
       ...data,
       userId,
-    };
+    }
 
     // update only locally
     if (!userId) {
       createdItem = {
         ...createdItem,
         id: Date.now().toString(),
-      };
+      }
     } else {
       // update firestore
-      const docRef = await addDoc(
-        collection(firebase.db, collectionName),
-        createdItem
-      );
+      const docRef = await addDoc(collection(firebase.db, collectionName), createdItem)
 
       createdItem = {
         ...createdItem,
         id: docRef.id,
-      };
+      }
     }
 
-    const updatedData = arrayDB.add(allData, { data: createdItem });
-    const returnData = { createdItem, updatedData, disableSnackbar };
+    const updatedData = arrayDB.add(allData, { data: createdItem })
+    const returnData = { createdItem, updatedData, disableSnackbar }
 
-    return returnData;
-  };
+    return returnData
+  }
 
   const create = useAsync({
     fn: fetcher,
     onResult: (result) => {
-      updateData(result.updatedData);
-      callbacks?.onCreate && callbacks.onCreate(result);
+      updateData(result.updatedData)
+      callbacks?.onCreate && callbacks.onCreate(result)
     },
     onError: (error) => {
-      callbacks?.onCreateError && callbacks.onCreateError(error);
+      callbacks?.onCreateError && callbacks.onCreateError(error)
     },
     onLoading: (loading) => {
-      callbacks?.onCreateLoading && callbacks.onCreateLoading(loading);
+      callbacks?.onCreateLoading && callbacks.onCreateLoading(loading)
     },
-  });
+  })
 
-  return create;
+  return create
 }
