@@ -1,5 +1,8 @@
 import { useEffect } from 'react'
 
+import { type FirebaseFunctionProviderProps } from '../../useFirebaseFunction/src'
+import { type MessagingProps } from '../../useFirebaseMessaging/src'
+
 import startFirebaseEmulators from './handlers/startFirebaseEmulators/startFirebaseEmulators'
 
 export type LocalStorageOptionsTypes = {
@@ -39,11 +42,11 @@ type FirebaseProviderProps = {
   authOptions?: AuthOptions
   localStorageOptions?: LocalStorageOptionsTypes
   messaging?: any
-  messagingOptions?: any
+  messagingOptions?: MessagingProps
   analytics?: any
   analyticsOptions?: any
   functions?: any
-  functionsOptions?: any
+  functionsOptions?: FirebaseFunctionProviderProps
 }
 
 type Return = Omit<FirebaseProviderProps, 'children'>
