@@ -7,5 +7,6 @@
   },
   "prettier.configPath": "devtools/prettier/prettierConfig.cjs",
   "superCodeGenerator.prettierConfigFilePath": "devtools/prettier/prettierConfig.cjs",
-  "superCodeGenerator.schemaFilePath": "devtools/codeGenerator/superCodeGen.schema.cjs"
+  "superCodeGenerator.schemaFilePath": "devtools/codeGenerator/superCodeGen.schema.cjs",
+  "storyExplorer.storybookConfigDir": "./devtools/storybook"
 }
