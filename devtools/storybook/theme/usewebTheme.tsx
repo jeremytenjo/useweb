@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ThemeProvider, createTheme } from '../../../packages/_ui/src/theme/Theme/src'
+import { ThemeProvider, createTheme } from '../../../packages/_uiTheme/src'
 
 import colors from './tokens/colors'
 import { variants as typography } from './tokens/typography/typography'

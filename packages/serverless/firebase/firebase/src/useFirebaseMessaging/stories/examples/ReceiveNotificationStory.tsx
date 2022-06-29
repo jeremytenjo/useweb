@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
-import CopyToClipboard from '../../../../../../../../input/CopyToClipboard'
-import Donut from '../../../../../../../../feedback/Progress/Donut/index'
-import Code from '../../../../../../../../dataDisplay/Code/index'
-import Text from '../../../../../../../../_ui/src/dataDisplay/Text/src'
-import showNotification from '../../../../../../../../feedback/notification/showNotification'
-import ErrorMessage from '../../../../../../../../dataDisplay/ErrorMessage'
-import ShareButton from '../../../../../../../../dataDisplay/IconSpecial/ShareButton'
-import Button from '../../../../../../../../_ui/src/input/Button/src'
+import CopyToClipboard from '../../../../../../../input/CopyToClipboard'
+import Donut from '../../../../../../../feedback/Progress/Donut/index'
+import Code from '../../../../../../../dataDisplay/Code/index'
+import Text from '../../../../../../../_ui/src/dataDisplay/Text/src'
+import showNotification from '../../../../../../../feedback/notification/showNotification'
+import ErrorMessage from '../../../../../../../dataDisplay/ErrorMessage'
+import ShareButton from '../../../../../../../dataDisplay/IconSpecial/ShareButton'
+import Button from '../../../../../../../_ui/src/input/Button/src'
 import useFirebaseMessaging from '../../src'
 
 export default function ReceiveNotificationStory() {

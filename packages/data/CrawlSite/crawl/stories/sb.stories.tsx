@@ -1,6 +1,6 @@
 import React from 'react'
 
-import useFirebaseFunction from '../../../../serverless/firebase/useFirebase/src/services/useFirebaseFunction/src'
+import useFirebaseFunction from '../../../../serverless/firebase/firebase/src/useFirebaseFunction/src'
 import TestDataHookDashboard from '../../../../dataDisplay/TestDataHookDashboard'
 
 export function AddEntryFromUrl() {

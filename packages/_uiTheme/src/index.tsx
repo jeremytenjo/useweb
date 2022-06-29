@@ -15,16 +15,16 @@ export type ComponentDefaultsProps = ComponentProps
 export type CreateThemeProps = CreateThemePropsD
 export type ComponentsProps = ComponentsPropsD
 
-type ThemeProviderProps = {
+export type UiThemeProviderProps = {
   children: any
   theme: MuiThemeOptions
 }
 
-type ThemeProviderReturn = {
+type UiThemeProviderReturn = {
   theme: MuiThemeOptions
 }
 
-export const ThemeContext = createContext<ThemeProviderReturn>({
+export const ThemeContext = createContext<UiThemeProviderReturn>({
   theme: {},
 })
 
@@ -46,7 +46,7 @@ export const ThemeContext = createContext<ThemeProviderReturn>({
     return <ThemeProvider theme={theme}>{children}</ThemeProvider>
   }
  */
-export const ThemeProvider = ({ children, theme: usewebTheme }: ThemeProviderProps) => {
+export const ThemeProvider = ({ children, theme: usewebTheme }: UiThemeProviderProps) => {
   return (
     <ThemeContext.Provider
       value={{
@@ -62,7 +62,7 @@ export const ThemeProvider = ({ children, theme: usewebTheme }: ThemeProviderPro
   )
 }
 
-const useTheme = () => useContext<ThemeProviderReturn>(ThemeContext)
+const useTheme = () => useContext<UiThemeProviderReturn>(ThemeContext)
 
 export default useTheme
 
