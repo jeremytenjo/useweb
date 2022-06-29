@@ -3,6 +3,7 @@ import {
   getToken,
   onMessage as messagingOnMessage,
   isSupported,
+  getMessaging,
 } from 'firebase/messaging'
 import useAsync from '@useweb/use-async'
 
@@ -39,6 +40,7 @@ export default function useFirebaseMessaging({
   onError: defaultOnError = () => null,
   onFcmRegistrationToken = () => null,
 }: MessagingProps = {}): Return {
+  const messagingInstance = getMessaging()
   const onMessageRemoveListenerRef = useRef<any>(null)
   const firebase = useFirebase()
   const isSupportedRes = useAsync({
@@ -46,6 +48,8 @@ export default function useFirebaseMessaging({
     autoExec: true,
     onResult: () => console.warn('Firebase messaging is not supported in this device.'),
   })
+
+  console.log(isSupportedRes)
 
   const forceSupport = firebase?.messagingOptions?.forceSupport || defaultForceSupport
   const serviceWorkerFileName =
@@ -67,14 +71,16 @@ export default function useFirebaseMessaging({
   }, [])
 
   const validateConfig = () => {
-    if (!firebase?.messaging) {
-      throw new Error('Missing `messaging` property in `FirebaseProvider` (firebase.tsx)')
+    const messagingInstance = getMessaging()
+
+    if (!messagingInstance) {
+      throw new Error('Missing `messaging` init in Firebase.tsx')
     }
   }
 
   useEffect(() => {
     validateConfig()
-  }, [firebase])
+  }, [messagingInstance])
 
   const registerServiceWorker = async () => {
     if (forceSupport || isProductionApp) {
@@ -95,18 +101,20 @@ export default function useFirebaseMessaging({
   }
 
   const startNotificationListener = async () => {
+    const messagingInstance = getMessaging()
+
     setInitializing(true)
     setError(false)
 
     try {
-      const token = await getToken(firebase.messaging, { vapidKey })
+      const token = await getToken(messagingInstance, { vapidKey })
 
       if (token) {
         await registerServiceWorker()
         setFcmRegistrationToken(token)
 
         onMessageRemoveListenerRef.current = messagingOnMessage(
-          firebase.messaging,
+          messagingInstance,
           onMessage,
         )
 
