@@ -2,11 +2,6 @@ import useAsync, { type UseAsyncProps } from '@useweb/use-async'
 
 import useFirebase from '../../useFirebase/src'
 
-export type FirebaseFunctionProviderProps = {
-  port?: number
-  region?: string
-}
-
 export type Props = {
   name: string
   // eslint-disable-next-line no-undef

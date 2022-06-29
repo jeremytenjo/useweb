@@ -1,8 +1,5 @@
 import { useEffect } from 'react'
 
-import { type FirebaseFunctionProviderProps } from '../../useFirebaseFunction/src'
-import { type MessagingProps } from '../../useFirebaseMessaging/src'
-
 import startFirebaseEmulators from './handlers/startFirebaseEmulators/startFirebaseEmulators'
 
 export type LocalStorageOptionsTypes = {
@@ -19,6 +16,15 @@ export type AuthOptions = {
 
 export type DBOptions = {
   dbEmulatorPort?: number
+}
+
+type MessagingProps = {
+  vapidKey?: string
+  forceSupport?: boolean
+  serviceWorkerFileName?: string
+  onMessage?: (payload: any) => any
+  onError?: (error: any) => any
+  onFcmRegistrationToken?: (fcmRegistrationToken: string) => any
 }
 
 type FirebaseConfig = {
@@ -46,7 +52,10 @@ type FirebaseProviderProps = {
   analytics?: any
   analyticsOptions?: any
   functions?: any
-  functionsOptions?: FirebaseFunctionProviderProps
+  functionsOptions?: {
+    port?: number
+    region?: string
+  }
 }
 
 type Return = Omit<FirebaseProviderProps, 'children'>

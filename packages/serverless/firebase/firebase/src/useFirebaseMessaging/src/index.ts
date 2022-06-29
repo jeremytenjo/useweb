@@ -10,7 +10,7 @@ import useFirebase from '../../useFirebase/src'
 
 const isProduction = () => process.env.NODE_ENV === 'production'
 
-export type MessagingProps = {
+type MessagingProps = {
   vapidKey?: string
   forceSupport?: boolean
   serviceWorkerFileName?: string
