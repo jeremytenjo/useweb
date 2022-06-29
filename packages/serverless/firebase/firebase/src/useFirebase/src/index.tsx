@@ -79,9 +79,10 @@ const setFirebaseData = (props: FirebaseProviderProps) => {
   if (typeof window === 'undefined') return null
   if (window.FirebaseProviderData) return window.FirebaseProviderData
 
-  delete props.children
-
-  window.FirebaseProviderData = props
+  window.FirebaseProviderData = {
+    ...props,
+    children: undefined,
+  }
 }
 
 const getFirebaseData = () => {
