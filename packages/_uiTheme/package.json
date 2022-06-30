@@ -1,6 +1,7 @@
 {
   "name": "@useweb/ui-theme",
   "version": "1.0.0",
+  "description": "Customize @useweb/ui",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
