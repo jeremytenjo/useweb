@@ -11,7 +11,18 @@ export default function Swatch({ name, color }) {
 }
 
 const Wrapper = ({ children }) => {
-  return <Box data-id='Swatch'>{children}</Box>
+  return (
+    <Box
+      data-id='Swatch'
+      sx={{
+        borderRadius: '0 0 10px 10px',
+        boxShadow:
+          '0px 12px 16px -4px rgba(16, 24, 40, 0.1), 0px 4px 6px -2px rgba(16, 24, 40, 0.05)',
+      }}
+    >
+      {children}
+    </Box>
+  )
 }
 
 const ColorBlock = ({ color }) => {
@@ -21,7 +32,7 @@ const ColorBlock = ({ color }) => {
       sx={{
         background: color,
         padding: '20px',
-        width: '200px',
+        minWidth: '200px',
         height: '200px',
         display: 'grid',
         alignItems: 'end',
@@ -43,8 +54,6 @@ const ColorInfo = ({ name, color }) => {
         color: 'black.main',
         p: 2,
         borderRadius: '0 0 10px 10px',
-        boxShadow:
-          '0px 12px 16px -4px rgba(16, 24, 40, 0.1), 0px 4px 6px -2px rgba(16, 24, 40, 0.05)',
       }}
     >
       <span>{name}</span>

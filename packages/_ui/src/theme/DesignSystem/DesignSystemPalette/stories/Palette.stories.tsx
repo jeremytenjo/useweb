@@ -10,6 +10,13 @@ const defaultArgs: PaletteProps = {
       main: '#32ee90',
       darker: '#006d37',
     },
+    gradient: {
+      primary: 'linear-gradient(83.6deg, #5D59FF 8.71%, #9076FF 98.37%)',
+      blue: 'linear-gradient(83.6deg, #59ff72 8.71%, #76ffaf 98.37%)',
+    },
+    white: {
+      main: '#fff',
+    },
   },
 }
 
