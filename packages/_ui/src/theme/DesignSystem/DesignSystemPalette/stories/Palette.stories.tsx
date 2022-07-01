@@ -8,6 +8,7 @@ const defaultArgs: PaletteProps = {
   colors: {
     primary: {
       main: '#32ee90',
+      darker: '#006d37',
     },
   },
 }
