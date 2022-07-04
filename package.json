@@ -6,6 +6,10 @@
   "type": "module",
   "author": "Jeremy Tenjo",
   "license": "ISC",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=6.0.0"
+  },
   "main": "firebase/functions/build/index.js",
   "scripts": {
     "dev": "node --loader ts-node/esm ./scripts/dev/run.ts",
