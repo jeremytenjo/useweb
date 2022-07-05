@@ -4,6 +4,8 @@ import ClickToComponent from '../../packages/navigation/ClickToComponent/src/Cli
 
 import UsewebTheme from './theme/usewebTheme'
 
+const isProd = process.env.NODE_ENV === 'production'
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -13,6 +15,7 @@ export const parameters = {
     },
   },
   options: {
+    viewMode: isProd ? 'docs' : undefined,
     storySort: {
       order: ['Introduction', '*'],
     },

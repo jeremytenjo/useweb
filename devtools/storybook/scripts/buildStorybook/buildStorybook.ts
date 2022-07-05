@@ -10,7 +10,7 @@ export default async function buildStorybook() {
   const buildDir = path.join(process.cwd(), buildDirRoot)
 
   await removeFolder(buildDir)
-  await shell(`build-storybook -o ./${buildDirRoot} -c ./devtools/storybook`)
+  await shell(`build-storybook -o ./${buildDirRoot} -c ./devtools/storybook --docs`)
 
   console.clear()
   console.log('')
