@@ -4,7 +4,6 @@ import Button from '@mui/material/Button'
 import LinearProgress from '@mui/material/LinearProgress'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
-import Typography from '@mui/material/Typography'
 
 import ReactJson from './ReactJson/ReactJson'
 import JSONToTS from './JSONToTS/JSONToTS'
