@@ -5,7 +5,7 @@ import { AsyncTester, type AsyncTesterProps } from './component'
 import Docs from './AsyncTester.docs'
 
 const defaultArgs: AsyncTesterProps = {
-  fn: () => 'this is the result',
+  fn: () => ({ hello: 'you' }),
   autoExec: true,
 }
 
