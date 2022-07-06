@@ -1,6 +1,6 @@
 {
   "name": "@useweb/async-tester",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -30,7 +30,7 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "@useweb/fetching-ui": "^5.4.0",
+    "@useweb/fetching-ui": "^5.4.1",
     "@useweb/use-async": "^4.2.0"
   }
 }
