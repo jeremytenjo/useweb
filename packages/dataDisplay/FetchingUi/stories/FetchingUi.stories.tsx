@@ -54,11 +54,11 @@ export const Default = {
   },
 }
 
-// const variantArgs: FetchingUiProps = {
-//  name: 'World',
-// }
+const variantArgs: FetchingUiProps = {
+  result: 'World',
+}
 
-// export const Variant = {
-//  ...Default,
-//  args: variantArgs
-// }
+export const StringResult = {
+  ...Default,
+  args: variantArgs,
+}

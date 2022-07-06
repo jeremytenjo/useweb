@@ -6,6 +6,7 @@ import Docs from './AsyncTester.docs'
 
 const defaultArgs: AsyncTesterProps = {
   fn: () => 'this is the result',
+  autoExec: true,
 }
 
 export default {
