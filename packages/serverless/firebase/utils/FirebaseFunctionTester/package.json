@@ -1,6 +1,6 @@
 {
   "name": "@useweb/firebase-function-tester",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -18,10 +18,10 @@
     "@mui/material": "^5.0.0",
     "@useweb/firebase": "^3.0.0",
     "firebase": "^9.8.4",
-    "zustand": "^3.7.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-json-view": "^1.21.3"
+    "react-json-view": "^1.21.3",
+    "zustand": "^3.7.2"
   },
   "devDependencies": {
     "@emotion/react": "^11.0.0",
@@ -29,13 +29,13 @@
     "@mui/material": "^5.0.0",
     "@useweb/compiler": "latest",
     "@useweb/firebase": "^3.0.0",
+    "firebase": "^9.8.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "firebase": "^9.8.4",
-    "zustand": "^3.7.2",
-    "react-json-view": "^1.21.3"
+    "react-json-view": "^1.21.3",
+    "zustand": "^3.7.2"
   },
   "dependencies": {
-    "@useweb/fetching-ui": "^5.4.1"
+    "@useweb/fetching-ui": "5.4.2"
   }
 }

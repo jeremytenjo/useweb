@@ -1,6 +1,6 @@
 {
   "name": "@useweb/async-tester",
-  "version": "2.3.2",
+  "version": "2.4.0",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
@@ -17,20 +17,20 @@
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0",
     "react": "^18.0.0",
-    "react-json-view": "^1.21.3",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-json-view": "^1.21.3"
   },
   "devDependencies": {
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@mui/material": "^5.0.0",
     "@useweb/compiler": "2.7.0",
-    "react-json-view": "^1.21.3",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-json-view": "^1.21.3"
   },
   "dependencies": {
-    "@useweb/fetching-ui": "^5.4.1",
+    "@useweb/fetching-ui": "5.4.2",
     "@useweb/use-async": "^4.2.0"
   }
 }
