@@ -38,10 +38,16 @@ export default async function updatePackagesWithDep({
         const hasDepToUpdate = pkgData.dependencies[depToUpdate.packageName]
 
         if (hasDepToUpdate) {
+          const nextVerPackage = `${depToUpdate.packageName}@${depToUpdate.packageVersion}`
           await shell(
-            `cd ${packageDirPath} && npm version minor && npm i ${depToUpdate.packageName}:"${depToUpdate.packageVersion}"`,
+            `cd ${packageDirPath} && npm i ${nextVerPackage} && npm version minor && npm run deploy`,
           )
-          log.success(`Updated ${chalk.cyan(pkgData.name)} > ${packagesPath}`)
+
+          log.success(
+            `Published ${chalk.cyan(
+              pkgData.name,
+            )} with ${nextVerPackage} > ${packagesPath}`,
+          )
         }
       }
     }),
