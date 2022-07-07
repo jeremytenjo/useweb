@@ -1,8 +1,8 @@
 import path from 'path'
 
 import chalk from 'chalk'
-import editJSONFile from 'edit-json-file'
 
+import shell from '../../../../../packages/node/shell/shell.js'
 import glob from '../../../../../devtools/utils/glob.js'
 import { type EnquireDepReturn } from '../enquireDep/enquireDep'
 import log from '../../../../../devtools/utils/log.js'
@@ -22,6 +22,11 @@ export default async function updatePackagesWithDep({
   await Promise.all(
     packagesPaths.map(async (packagesPath) => {
       const pkgPath = path.join(process.cwd(), packagesPath)
+
+      let packageDirPath: any = pkgPath.split('/')
+      packageDirPath.pop()
+      packageDirPath = packageDirPath.join('/')
+
       const { default: pkgData } = await import(pkgPath, {
         assert: {
           type: 'json',
@@ -33,10 +38,9 @@ export default async function updatePackagesWithDep({
         const hasDepToUpdate = pkgData.dependencies[depToUpdate.packageName]
 
         if (hasDepToUpdate) {
-          const file = editJSONFile(packagesPath)
-          file.set(`dependencies.${depToUpdate.packageName}`, depToUpdate.packageVersion)
-          file.save()
-
+          await shell(
+            `cd ${packageDirPath} && npm version minor && npm i ${depToUpdate.packageName}:"${depToUpdate.packageVersion}"`,
+          )
           log.success(`Updated ${chalk.cyan(pkgData.name)} > ${packagesPath}`)
         }
       }
