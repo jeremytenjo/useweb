@@ -40,19 +40,23 @@ export default function FetchingUi({ onClick, loading, error, result }: Fetching
 
       {error && <p>{error.toString()}</p>}
 
-      <Tabs value={value} onChange={handleChange} aria-label='Fetching UI Tabs'>
-        <Tab label='Results' />
-        {showTSTypesTab && <Tab label='Result TS Types' />}
-      </Tabs>
+      {!!result && (
+        <>
+          <Tabs value={value} onChange={handleChange} aria-label='Fetching UI Tabs'>
+            <Tab label='Results' />
+            {showTSTypesTab && <Tab label='Result TS Types' />}
+          </Tabs>
 
-      <TabPanel value={value} index={0}>
-        {result && <>{isResultObject ? <ReactJson json={result} /> : result}</>}
-      </TabPanel>
+          <TabPanel value={value} index={0}>
+            {result && <>{isResultObject ? <ReactJson json={result} /> : result}</>}
+          </TabPanel>
 
-      {showTSTypesTab && (
-        <TabPanel value={value} index={1}>
-          <JSONToTS json={result} />
-        </TabPanel>
+          {showTSTypesTab && (
+            <TabPanel value={value} index={1}>
+              <JSONToTS json={result} />
+            </TabPanel>
+          )}
+        </>
       )}
     </Box>
   )

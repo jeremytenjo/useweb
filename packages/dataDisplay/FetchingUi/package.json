@@ -1,6 +1,6 @@
 {
   "name": "@useweb/fetching-ui",
-  "version": "5.4.1",
+  "version": "5.4.2",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",
