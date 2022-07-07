@@ -30,6 +30,7 @@
     "lerna:minor-update": "lerna exec 'npm i && npm version minor && npm run deploy' --no-bail",
     "prettify": "node --loader  ts-node/esm ./devtools/prettier/scripts/runPrettier/runPrettier.ts",
     "tests:lint": "eslint ./ --fix",
+    "helpers:updateDepAndPublish": "node  --experimental-json-modules --loader ts-node/esm ./scripts/packages/updateDepAndPublish/run.ts",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -39,6 +40,7 @@
     "@storybook/react": "6.5.9",
     "@tippyjs/react": "4.2.6",
     "airtable": "0.11.4",
+    "edit-json-file": "1.7.0",
     "firebase-admin": "9.8.0",
     "firebase-functions": "3.14.1",
     "lerna": "5.1.1",

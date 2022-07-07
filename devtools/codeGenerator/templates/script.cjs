@@ -4,7 +4,7 @@ const files = [
     path: ({ name }) => `${name}.ts`,
     template: ({ name }) => {
       return `    
-    export default function ${name}() {
+    export default async function ${name}() {
       console.log('hello')
     }`
     },

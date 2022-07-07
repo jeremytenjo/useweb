@@ -1,10 +1,10 @@
 import chalk from 'chalk'
 
+import log from '../log.js'
+
 type TaskProps = {
   fn: (props?: any) => Promise<any>
   title: string
-  errorMessage: string
-  successMessage: string
   onError?: (error: any) => any
   noBail?: boolean
 }
@@ -17,7 +17,7 @@ export default async function task(props: TaskProps) {
     const result = await props.fn()
 
     console.log('')
-    console.log(`${chalk.green('✔')} ${props.successMessage}`)
+    log.success(props.title)
 
     return result
   } catch (error) {
@@ -27,7 +27,7 @@ export default async function task(props: TaskProps) {
     }
 
     console.log('')
-    console.log(chalk.red(props.errorMessage))
+    console.log(`ERROR: ${chalk.red(props.title)}`)
     console.log('')
     console.error(chalk.red(JSON.stringify(error, null, 2)))
 
