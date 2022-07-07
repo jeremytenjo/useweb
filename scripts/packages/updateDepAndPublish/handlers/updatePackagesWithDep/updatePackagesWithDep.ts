@@ -18,6 +18,7 @@ export default async function updatePackagesWithDep({
       ignore: '**/node_modules/**',
     },
   })
+  let packagesPublished = false
 
   await Promise.all(
     packagesPaths.map(async (packagesPath) => {
@@ -48,8 +49,14 @@ export default async function updatePackagesWithDep({
               pkgData.name,
             )} with ${nextVerPackage} > ${packagesPath}`,
           )
+          packagesPublished = true
         }
       }
     }),
   )
+
+  if (!packagesPublished) {
+    console.log('')
+    console.log(`${chalk.cyan(depToUpdate.packageName)} not found in any package`)
+  }
 }
