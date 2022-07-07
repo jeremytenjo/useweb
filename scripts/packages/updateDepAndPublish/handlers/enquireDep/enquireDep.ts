@@ -17,6 +17,7 @@ export default async function enquireDep(): Promise<EnquireDepReturn> {
       type: 'input',
       name: 'packageVersion',
       message: 'Package Version',
+      initial: 'latest',
     },
   ])
 
