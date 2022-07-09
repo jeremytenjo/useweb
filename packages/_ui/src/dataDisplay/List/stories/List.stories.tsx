@@ -36,7 +36,11 @@ export const Default = {
 
 const variantArgs: ListProps = {
   data: [<p key='1'>hola</p>, <p key='2'>hola</p>],
-  ListItemComponent: () => <p>hola</p>,
+  ListItemComponent: () => (
+    <li>
+      <p>hola</p>
+    </li>
+  ),
   AdjacentItem: () => <p>AdjacentItem</p>,
 }
 
