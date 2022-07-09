@@ -7,7 +7,7 @@ export type GoogleAdUnitProps = {
   isProd: boolean
   dataAdClient: string
   dataAdFormat: string
-  dataAdLayout: string
+  dataAdLayoutKey: string
   dataAdSlot: string
   sx?: BoxProps['sx']
 }
@@ -38,7 +38,7 @@ const Ad = (props: GoogleAdUnitProps) => {
         }}
         data-ad-client={`ca-pub-${props.dataAdClient}`}
         data-ad-format={props.dataAdFormat}
-        data-ad-layout={props.dataAdLayout}
+        data-ad-layout-key={props.dataAdLayoutKey}
         data-ad-slot={props.dataAdSlot}
       ></Box>
 
