@@ -8,7 +8,7 @@ const defaultArgs: GoogleAdUnitProps = {
   isProd: false,
   dataAdClient: '',
   dataAdFormat: '',
-  dataAdLayout: '',
+  dataAdLayoutKey: '',
   dataAdSlot: '',
 }
 
