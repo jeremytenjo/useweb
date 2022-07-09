@@ -5,8 +5,8 @@ import { List, type ListProps } from './component'
 import Docs from './List.docs'
 
 const defaultArgs: ListProps = {
-  ListItemComponent: () => <p>hola</p>,
   data: [<p key='1'>hola</p>, <p key='2'>hola</p>],
+  ListItemComponent: () => <p>hola</p>,
 }
 
 export default {
@@ -34,11 +34,13 @@ export const Default = {
   },
 }
 
-// const variantArgs: ListProps = {
-//  name: 'World',
-// }
+const variantArgs: ListProps = {
+  data: [<p key='1'>hola</p>, <p key='2'>hola</p>],
+  ListItemComponent: () => <p>hola</p>,
+  AdjacentItem: () => <p>AdjacentItem</p>,
+}
 
-// export const Variant = {
-//  ...Default,
-//  args: variantArgs
-// }
+export const WithAdjacentItem = {
+  ...Default,
+  args: variantArgs,
+}
