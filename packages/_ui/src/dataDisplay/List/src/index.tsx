@@ -69,6 +69,7 @@ const Items = ({
             index={index}
             item={item}
             listItemProps={listItemProps}
+            outputRaw
           />
         )}
       </Fragment>
@@ -76,7 +77,18 @@ const Items = ({
   })
 }
 
-const Li = ({ onItemClick, index, item, listItemProps, Child }) => {
+const Li = ({ onItemClick, index, item, listItemProps, Child, outputRaw = false }) => {
+  if (outputRaw) {
+    return (
+      <Child
+        index={index}
+        {...item}
+        {...listItemProps}
+        onClick={(e) => onItemClick({ event: e, data: item })}
+      />
+    )
+  }
+
   return (
     <Box
       component='li'
