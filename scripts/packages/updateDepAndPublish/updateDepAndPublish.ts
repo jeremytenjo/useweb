@@ -5,6 +5,10 @@ import updatePackagesWithDep from './handlers/updatePackagesWithDep/updatePackag
 
 // updates dependency and deploys a package with a selected dependency
 export default async function updateDepAndPublish() {
+  console.log(
+    'Packages that include the defined npm package in their dependencies will update it and publish a new version of the package',
+  )
+  console.log('')
   const depToUpdate = await enquireDep()
 
   await task({
