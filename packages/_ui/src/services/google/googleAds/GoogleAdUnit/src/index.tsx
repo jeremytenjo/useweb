@@ -7,7 +7,7 @@ export type GoogleAdUnitProps = {
   isProd: boolean
   dataAdClient: string
   dataAdFormat: string
-  dataAdLayoutKey: string
+  dataAdLayoutKey?: string
   dataAdSlot: string
   dataFullWidthResponsive?: string
   sx?: BoxProps['sx']
