@@ -9,6 +9,7 @@ export type GoogleAdUnitProps = {
   dataAdFormat: string
   dataAdLayoutKey: string
   dataAdSlot: string
+  dataFullWidthResponsive?: string
   sx?: BoxProps['sx']
 }
 
@@ -40,6 +41,7 @@ const Ad = (props: GoogleAdUnitProps) => {
         data-ad-format={props.dataAdFormat}
         data-ad-layout-key={props.dataAdLayoutKey}
         data-ad-slot={props.dataAdSlot}
+        data-full-width-responsive={props.dataFullWidthResponsive}
       ></Box>
 
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
