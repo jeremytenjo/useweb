@@ -1,19 +1,15 @@
 import React, { Fragment } from 'react'
 import Box, { type BoxProps } from '@mui/material/Box'
 
-type ListItem = (props: {
-  data?: unknown
-  index?: number
-  listItemProps?: unknown
-}) => any
+type ListItemProps = (props: { itemData: any; index: number; listItemProps: any }) => any
 
 export type ListProps = {
   data: any[]
-  ListItemComponent: ListItem
+  ListItemComponent: ListItemProps
   listItemProps?: any
   sx?: BoxProps['sx']
   onItemClick?: (data: { data: any }) => any
-  AdjacentItem?: ListItem
+  AdjacentItem?: ListItemProps
 }
 
 export default function List({
@@ -88,7 +84,7 @@ const Li = ({ onItemClick, index, item, listItemProps, Child, outputRaw = false 
     return (
       <Child
         index={index}
-        data={item}
+        itemData={item}
         listItemProps={listItemProps}
         onClick={(e) => onItemClick({ event: e, data: item })}
       />
@@ -103,7 +99,7 @@ const Li = ({ onItemClick, index, item, listItemProps, Child, outputRaw = false 
         listStyle: 'none',
       }}
     >
-      <Child index={index} data={item} listItemProps={listItemProps} />
+      <Child index={index} itemData={item} listItemProps={listItemProps} />
     </Box>
   )
 }
