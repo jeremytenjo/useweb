@@ -35,7 +35,7 @@ const Ad = (props: GoogleAdUnitProps) => {
   const { sx = {} } = props
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && props.isProd) {
       // eslint-disable-next-line @typescript-eslint/no-extra-semi
       ;(window.adsbygoogle = window.adsbygoogle || []).push({})
     }
