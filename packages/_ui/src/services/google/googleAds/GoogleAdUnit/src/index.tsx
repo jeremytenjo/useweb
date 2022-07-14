@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Box, { type BoxProps } from '@mui/material/Box'
 
 import Text from '../../../../../dataDisplay/Text/src'
@@ -11,6 +11,12 @@ export type GoogleAdUnitProps = {
   dataAdSlot: string
   dataFullWidthResponsive?: string
   sx?: BoxProps['sx']
+}
+
+declare global {
+  interface Window {
+    adsbygoogle: any
+  }
 }
 
 export default function GoogleAdUnit(props: GoogleAdUnitProps) {
@@ -28,6 +34,13 @@ const Wrapper = ({ children }) => {
 const Ad = (props: GoogleAdUnitProps) => {
   const { sx = {} } = props
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // eslint-disable-next-line @typescript-eslint/no-extra-semi
+      ;(window.adsbygoogle = window.adsbygoogle || []).push({})
+    }
+  }, [])
+
   return props.isProd ? (
     <>
       <Box
@@ -43,8 +56,6 @@ const Ad = (props: GoogleAdUnitProps) => {
         data-ad-slot={props.dataAdSlot}
         data-full-width-responsive={props.dataFullWidthResponsive}
       ></Box>
-
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </>
   ) : (
     <Box
