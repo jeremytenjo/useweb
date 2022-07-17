@@ -46,8 +46,7 @@ const FormElement = forwardRef(
       <Box component='form' ref={ref} onSubmit={handleSubmit(handleSumbit)} sx={sx}>
         {Array.isArray(children)
           ? children.map((child) => {
-              console.log(child)
-              return child.props.name && child.props.type !== 'submit'
+              return child.props.name && child.props?.type !== 'submit'
                 ? React.createElement(child.type, {
                     ...{
                       ...child.props,
