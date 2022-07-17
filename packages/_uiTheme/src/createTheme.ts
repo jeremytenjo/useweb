@@ -55,6 +55,7 @@ export type ComponentsProps = {
   Select?: ComponentProps
   Textfield?: ComponentProps
   Link?: ComponentProps
+  Textarea?: ComponentProps
 }
 
 // List of component that export @mui/material/* internally
