@@ -3,6 +3,7 @@ import React from 'react'
 import Button from '@mui/material/Button'
 
 import TextField from '../../fields/Textfield/src'
+import Textarea from '../../fields/Textarea/src'
 import Select from '../../fields/Select/src'
 
 import { Form } from './component'
@@ -39,6 +40,7 @@ const Template = () => {
     <>
       <Form onSubmit={onSubmit}>
         <TextField name='test-textfield' />
+        <Textarea name='test-Textarea' />
         <Select label='Season' name='selected_season' options={options} />
         <Button type='submit'>Submit</Button>
       </Form>

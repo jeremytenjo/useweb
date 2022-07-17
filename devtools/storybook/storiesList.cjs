@@ -11,6 +11,7 @@ module.exports = [
   '../../packages/_ui/src/feedback/Snackbar/stories/Snackbar.stories.tsx',
   '../../packages/_ui/src/input/Button/stories/Button.stories.tsx',
   '../../packages/_ui/src/input/forms/fields/Select/stories/Select.stories.tsx',
+  '../../packages/_ui/src/input/forms/fields/Textarea/stories/Textarea.stories.tsx',
   '../../packages/_ui/src/input/forms/fields/Textfield/stories/Textfield.stories.tsx',
   '../../packages/_ui/src/input/forms/fields/TextFieldPaste/stories/TextFieldPaste.stories.tsx',
   '../../packages/_ui/src/input/forms/Form/stories/Form.stories.tsx',
