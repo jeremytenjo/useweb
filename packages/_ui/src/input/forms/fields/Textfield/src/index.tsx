@@ -17,6 +17,7 @@ export type TextfieldProps = {
   LeftIcon?: any
   resetIcon?: any
   clearComponent?: any
+  type?: string
 }
 
 /**
@@ -35,6 +36,7 @@ export default function TextField({
   LeftIcon,
   resetIcon,
   clearComponent,
+  type,
 }: TextfieldProps) {
   const inputRef = useRef<any>(null)
 
@@ -113,6 +115,7 @@ export default function TextField({
             ref(e)
             inputRef.current = e
           }}
+          type={type}
           sx={{
             outline: 'none',
             border: 'none',
