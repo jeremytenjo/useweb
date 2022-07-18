@@ -27,7 +27,7 @@ export default function TextField({
   name,
   sx = {},
   inputProps = {},
-  placeholder = '',
+  placeholder,
   id,
   required,
   onChange = () => null,
@@ -107,7 +107,7 @@ export default function TextField({
 
         <Box
           component='input'
-          placeholder={placeholder}
+          placeholder={placeholder || name}
           {...restRegister}
           ref={(e) => {
             ref(e)
@@ -126,7 +126,7 @@ export default function TextField({
           <Box
             onClick={clearInput}
             sx={{
-              visibility: value !== '' ? 'visible' : 'hidden',
+              visibility: !!value ? 'visible' : 'hidden',
             }}
           >
             {clearComponent}
@@ -137,7 +137,7 @@ export default function TextField({
             aria-label='reset'
             onClick={clearInput}
             sx={{
-              visibility: value !== '' ? 'visible' : 'hidden',
+              visibility: !!value ? 'visible' : 'hidden',
               width: '24px',
               height: '24px',
               border: 'none',
