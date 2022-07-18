@@ -10,6 +10,7 @@ export type TextfieldProps = {
   placeholder?: string
   sx?: BoxProps['sx']
   innerSx?: BoxProps['sx']
+  errorSx?: BoxProps['sx']
   id?: string
   inputProps?: object
   required?: string
@@ -30,6 +31,7 @@ export default function TextField({
   sx = {},
   innerSx = {},
   inputProps = {},
+  errorSx = {},
   placeholder,
   id,
   required,
@@ -173,6 +175,7 @@ export default function TextField({
           sx={{
             color: 'error.main',
             mt: 2,
+            ...errorSx,
           }}
         />
       )}
