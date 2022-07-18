@@ -9,6 +9,7 @@ export type TextfieldProps = {
   name: string
   placeholder?: string
   sx?: BoxProps['sx']
+  innerSx?: BoxProps['sx']
   id?: string
   inputProps?: object
   required?: string
@@ -27,6 +28,7 @@ export type TextfieldProps = {
 export default function TextField({
   name,
   sx = {},
+  innerSx = {},
   inputProps = {},
   placeholder,
   id,
@@ -89,6 +91,7 @@ export default function TextField({
           '&:focus': {
             borderColor: 'primary.main',
           },
+          ...innerSx,
         }}
       >
         {LeftIcon && (
