@@ -4,6 +4,9 @@ export type UseNextApiProps = Omit<UseAsyncProps, 'fn'> & {
   name: string
   // eslint-disable-next-line no-undef
   fetchOptions?: RequestInit
+  onResult?: (result: any) => any
+  onError?: (error: any) => any
+  onLoading?: (state: boolean) => any
 }
 
 export default function UseNextApi({
