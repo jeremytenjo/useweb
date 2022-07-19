@@ -49,7 +49,8 @@ export default function UseNextApi({
     onLoading,
   })
 
-  const exec = (options) => {
+  // eslint-disable-next-line no-undef
+  const exec = (options = {} as RequestInit) => {
     cloudFunction.exec(options)
   }
 
