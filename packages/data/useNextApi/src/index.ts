@@ -23,12 +23,13 @@ export default function UseNextApi({
   fetcher: (fetchOptions: RequestInit) => Promise<any>
 } {
   // eslint-disable-next-line no-undef
-  const fetcher = async (fetchOptions = defaultFetchOptions as RequestInit) => {
+  const fetcher = async (fetchOptions = {} as RequestInit) => {
+    const options = { ...defaultFetchOptions, fetchOptions }
     const url = `api/${name}`
 
     let data: any = await fetch(url, {
-      ...fetchOptions,
-      body: fetchOptions?.body ? JSON.stringify(fetchOptions.body) : undefined,
+      ...options,
+      body: options?.body ? JSON.stringify(options.body) : undefined,
     })
 
     data = await data.json()
