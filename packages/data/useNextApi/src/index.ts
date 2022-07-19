@@ -1,4 +1,4 @@
-import useAsync, { type UseAsyncProps } from '@useweb/use-async'
+import useAsync, { type UseAsyncProps, UseAsyncReturn } from '@useweb/use-async'
 
 export type UseNextApiProps = Omit<UseAsyncProps, 'fn'> & {
   name: string
@@ -18,7 +18,10 @@ export default function UseNextApi({
     },
     body: {} as any,
   },
-}: UseNextApiProps) {
+}: UseNextApiProps): UseAsyncReturn & {
+  // eslint-disable-next-line no-undef
+  fetcher: (fetchOptions: RequestInit) => Promise<any>
+} {
   // eslint-disable-next-line no-undef
   const fetcher = async (fetchOptions = defaultFetchOptions as RequestInit) => {
     const url = `api/${name}`
