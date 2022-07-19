@@ -10,20 +10,20 @@ export default function UseNextApi({
   onResult = () => null,
   onError = () => null,
   onLoading = () => null,
-  fetchOptions = {
+  fetchOptions: defaultFtchOptions = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    data: {},
+    body: {},
   },
 }: UseNextApiProps) {
-  const fetcher = async ({ dynamicFetchOptions = fetchOptions } = {}) => {
+  const fetcher = async (fetchOptions = defaultFtchOptions) => {
     const url = `api/${name}`
 
     let data: any = await fetch(url, {
       ...fetchOptions,
-      body: JSON.stringify(dynamicFetchOptions?.data),
+      body: JSON.stringify(fetchOptions?.body),
     })
 
     data = await data.json()
