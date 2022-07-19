@@ -25,7 +25,7 @@ export default function UseNextApi({
 
     let data: any = await fetch(url, {
       ...fetchOptions,
-      body: JSON.stringify(fetchOptions?.body),
+      body: fetchOptions?.body ? JSON.stringify(fetchOptions.body) : undefined,
     })
 
     data = await data.json()
