@@ -2,7 +2,7 @@ import useAsync, { type UseAsyncProps } from '@useweb/use-async'
 
 export type UseNextApiProps = Omit<UseAsyncProps, 'fn'> & {
   name: string
-  fetchOptions: any
+  fetchOptions?: any
 }
 
 export default function UseNextApi({
