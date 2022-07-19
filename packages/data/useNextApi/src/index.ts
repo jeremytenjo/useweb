@@ -18,7 +18,7 @@ export default function UseNextApi({
     data: {},
   },
 }: UseNextApiProps) {
-  const fetcher = async ({ dynamicFetchOptions = fetchOptions }) => {
+  const fetcher = async ({ dynamicFetchOptions = fetchOptions } = {}) => {
     const url = `api/${name}`
 
     let data: any = await fetch(url, {
