@@ -1,6 +1,6 @@
 {
   "name": "@useweb/use-next-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "./build/index.js",
   "author": "Jeremy Tenjo",
   "types": "./build/types/index.d.ts",

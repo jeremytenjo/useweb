@@ -2,7 +2,8 @@ import useAsync, { type UseAsyncProps } from '@useweb/use-async'
 
 export type UseNextApiProps = Omit<UseAsyncProps, 'fn'> & {
   name: string
-  fetchOptions?: any
+  // eslint-disable-next-line no-undef
+  fetchOptions?: RequestInit
 }
 
 export default function UseNextApi({
@@ -10,15 +11,16 @@ export default function UseNextApi({
   onResult = () => null,
   onError = () => null,
   onLoading = () => null,
-  fetchOptions: defaultFtchOptions = {
+  fetchOptions: defaultFetchOptions = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: {},
+    body: {} as any,
   },
 }: UseNextApiProps) {
-  const fetcher = async (fetchOptions = defaultFtchOptions) => {
+  // eslint-disable-next-line no-undef
+  const fetcher = async (fetchOptions = defaultFetchOptions as RequestInit) => {
     const url = `api/${name}`
 
     let data: any = await fetch(url, {
