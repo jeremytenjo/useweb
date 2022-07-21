@@ -312,6 +312,8 @@ export const ContextMenu = React.forwardRef(
               })}
               data-click-to-component-contextmenu
               onClose=${function handleClose() {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
                 onClose(refs.floating.current.returnValue)
                 setOpen(false)
               }}
