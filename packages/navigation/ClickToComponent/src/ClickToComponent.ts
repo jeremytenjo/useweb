@@ -40,6 +40,7 @@ export default function ClickToComponent({ editor = 'vscode' }) {
     ) {
       if (state === State.HOVER && target instanceof HTMLElement) {
         const source = getSourceForElement(target)
+        if (!source) return null
         const path = getPathToSource(source)
         const url = `${editor}://file/${path}`
 
