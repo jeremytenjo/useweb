@@ -1,5 +1,5 @@
 {
-  "name": "@useweb/firebase",
+  "name": "@useweb/firebase-builder",
   "version": "5.1.6",
   "author": "Jeremy Tenjo",
   "type": "module",
