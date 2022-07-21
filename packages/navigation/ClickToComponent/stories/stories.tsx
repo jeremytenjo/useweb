@@ -19,9 +19,26 @@ const Template = () => {
   return (
     <>
       <ClickToComponent />
-      <h1>hello</h1>
+      <App />
     </>
   )
+}
+
+const App = () => {
+  return (
+    <div>
+      <Button />
+      <Box />
+    </div>
+  )
+}
+
+const Button = () => {
+  return <button>hello button component</button>
+}
+
+const Box = () => {
+  return <div>hello Box component</div>
 }
 
 export const Example = Template.bind({})

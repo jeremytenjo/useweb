@@ -29,6 +29,7 @@ module.exports = [
   '../../packages/data/FetchTester/stories/FetchTester.stories.tsx',
   '../../packages/data/NextApiTester/stories/NextApiTester.stories.tsx',
   '../../packages/data/useData/stories/stories.tsx',
+  '../../packages/data/useNextApi/stories/useNextApi.stories.tsx',
   '../../packages/dataDisplay/Carousel/stories/stories.tsx',
   '../../packages/dataDisplay/FetchingUi/stories/FetchingUi.stories.tsx',
   '../../packages/dataDisplay/Icon/stories/Icon.stories.tsx',
@@ -46,5 +47,6 @@ module.exports = [
   '../../packages/serverless/firebase/utils/FirebaseFunctionTester/stories/FirebaseFunctionTester.stories.tsx',
   '../../packages/socialMedia/EmbedSocial/utils/stories/sb.stories.tsx',
   '../../packages/utils/browser/dom/useWindowSize/stories/useWindowSize.stories.tsx',
+  '../../packages/utils/browser/InView/stories/InView.stories.tsx',
   '../../packages/utils/browser/pullToRefresh/usePullToRefresh/stories/stories.tsx',
 ]
